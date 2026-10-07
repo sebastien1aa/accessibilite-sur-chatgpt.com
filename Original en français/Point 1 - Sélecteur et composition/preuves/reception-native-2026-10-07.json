@@ -3,8 +3,7 @@
   "date": "2026-10-07",
   "fuseau": "Europe/Brussels",
   "debut": "19:18",
-  "point_etape_provisoire": "21:24",
-  "fin_reinvestigation_definitive": false,
+  "fin_reinvestigation_definitive": true,
   "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
   "comparaisons_humaines": {
     "Opera": "Meme resultat declare apres verification recente, navigateur habituellement reserve a ces verifications",
@@ -14,15 +13,37 @@
   "transcriptions": "Libelles utiles; role non cite ne signifie pas role non annonce",
   "points": {
     "1A": {
-      "ouverture": ["Espace", "Entree"],
+      "ouverture": [
+        "Espace",
+        "Entree"
+      ],
       "fermeture": "Echap",
       "selecteur_ferme_chat_et_work": "Sélectionner le modèle ChatGPT, quel que soit le niveau choisi",
-      "chat_haut_bas": ["Sélectionner le modèle. 1 sur 2", "Puissance. 2 sur 2. Arrow left arrow right"],
-      "chat_niveaux_annonces": ["Instant", "Medium", "High", "Extra high", "Pro"],
+      "chat_haut_bas": [
+        "Sélectionner le modèle. 1 sur 2",
+        "Puissance. 2 sur 2. Arrow left arrow right"
+      ],
+      "chat_niveaux_annonces": [
+        "Instant",
+        "Medium",
+        "High",
+        "Extra high",
+        "Pro"
+      ],
       "work_mode_rapide_desactive": "Activer le mode rapide non coché. 2 sur 4",
       "work_mode_rapide_active": "Activer le mode standard coché. 2 sur 4",
-      "work_autres_items": ["Sélectionner le modèle. 1 sur 4", "Rétablir la sélection par défaut. 3 sur 4"],
-      "work_orthographe_statuts_natifs": ["Minimal", "Moyenne", "Élevée", "Très élevé", "Maximum", "Ultra"],
+      "work_autres_items": [
+        "Sélectionner le modèle. 1 sur 4",
+        "Rétablir la sélection par défaut. 3 sur 4"
+      ],
+      "work_orthographe_statuts_natifs": [
+        "Minimal",
+        "Moyenne",
+        "Élevée",
+        "Très élevé",
+        "Maximum",
+        "Ultra"
+      ],
       "reference_orthographe": "1A-libelles-natifs-2026-10-07.json; ne pas deduire une difference audible des formes phonetiquement equivalentes",
       "observation_produit": "Incoherence entre niveaux et entre legende et statut; action future mode standard associee a coche alors que rapide actif",
       "nouveau_correctif_mode_rapide_revendique": false,
@@ -36,7 +57,20 @@
       "premier_comportement_apres_activation_option": true,
       "parcours_page_entiere_aux_fleches": true,
       "position_options": "Apres editeur de prompt et deux Fin de region principale",
-      "ordre": ["Ajouter", "Ajouter des photos et fichiers Importer depuis l’ordinateur", "Ajouter les fichiers d’un espace Parcourez et recherchez vos fichiers", "Travailler dans un projet Démarrez un chat dans un projet", "Recherche approfondie Obtenir un rapport détaillé", "Plugins", "Créer une image Transformez vos idées en images", "Recherche sur le Web Trouvez des infos en temps réel", "Dessiner Dessiner et joindre une image", "GitHub Triage PRs, issues, CI, and publish flows", "Autres options", "Type to search plugins"],
+      "ordre": [
+        "Ajouter",
+        "Ajouter des photos et fichiers Importer depuis l’ordinateur",
+        "Ajouter les fichiers d’un espace Parcourez et recherchez vos fichiers",
+        "Travailler dans un projet Démarrez un chat dans un projet",
+        "Recherche approfondie Obtenir un rapport détaillé",
+        "Plugins",
+        "Créer une image Transformez vos idées en images",
+        "Recherche sur le Web Trouvez des infos en temps réel",
+        "Dessiner Dessiner et joindre une image",
+        "GitHub Triage PRs, issues, CI, and publish flows",
+        "Autres options",
+        "Type to search plugins"
+      ],
       "option_fichier": "Bouton actuel sans selection volontaire",
       "recherche_plugins": "Texte simple",
       "activation_Espace_Entree": "Ferme sans activer la fonction voulue, focus au haut de page"
@@ -50,5 +84,7 @@
       "mesure_stockage_ou_synchronisation_Opera": false
     }
   },
-  "confidentialite": "Aucun corps de message, brouillon, identifiant, nom de projet, presse-papiers ou URL privee conserve"
+  "confidentialite": "Aucun corps de message, brouillon, identifiant, nom de projet, presse-papiers ou URL privee conserve",
+  "fin": "22:40",
+  "fin_source": "Déclaration utilisateur"
 }

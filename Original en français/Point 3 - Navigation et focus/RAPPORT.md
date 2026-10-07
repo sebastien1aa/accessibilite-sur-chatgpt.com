@@ -2,7 +2,7 @@
 
 Ce groupe rassemble les difficultés de navigation dans les projets, la barre latérale et ses panneaux, puis le retour de lecture après annulation des actions d’un message. L’objectif est de garder l’accès aux commandes natives et de reprendre la lecture à l’endroit quitté, sans détour obligatoire par Tab ni retour au sommet de la page.
 
-**Observations historiques : 3–5 octobre 2026 ; nouveaux retours humains natifs : 7 octobre 2026, Bruxelles.** Les essais rapportés du 7 octobre se situent provisoirement entre 19 h 18 et 21 h 24 ; leur fin et une éventuelle trace complémentaire restent à consigner. Les mécanismes décrivent les rendus examinés à ces dates, pas tous les comptes, modes ou futurs rendus.
+**Observations historiques : 3–5 octobre 2026 ; nouveaux retours humains natifs : 7 octobre 2026, de 19 h 18 à 22 h 40, Bruxelles.** La fin des tests est déclarée par l’utilisateur. Les mécanismes décrivent les rendus examinés à ces dates, pas tous les comptes, modes ou futurs rendus.
 
 Le relevé technique du 3 octobre identifie Windows 10 Home 22H2, build 19045.6466, et Chrome 154.0.8037.93. La version de JAWS 2021 utilisée reste inchangée. Le 7 octobre, l’utilisateur indique les mêmes résultats avec Edge et JAWS 2025 d’après son expérience, ainsi que dans un nouvel essai avec Opera. Ces retours lui sont attribués ; ils ne sont pas des essais mesurés par l’agent. Les [repères d’environnement](../ENVIRONNEMENT.md) centralisent cette provenance. La date d’apparition du changement d’interface, le 25 septembre à 23 h 16 à Bruxelles, vient de son récit, pas d’un horodatage de déploiement.
 

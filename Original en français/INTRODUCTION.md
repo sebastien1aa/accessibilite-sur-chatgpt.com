@@ -4,7 +4,7 @@ Ce dossier décrit des barrières rencontrées dans **l’interface française d
 
 Le travail représente **plusieurs heures de tests personnels et d’investigation technique avec Codex**. L’objectif est sa transmission aux équipes responsables de l’accessibilité et de l’interface ChatGPT pour examen et, si possible, suivi. Il peut aussi servir à prévenir les mêmes mécanismes de régression dans de futures interfaces.
 
-**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 21 h 24 pour la passe utilisateur**, complétant les preuves de septembre et des 3–6 octobre. Les observations du titre assistant et du raisonnement seront complétées par une trace du nouveau tour. Chaque preuve garde sa date et sa provenance.
+**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 22 h 40**, complétant les preuves de septembre et des 3–6 octobre. Elle comprend la comparaison du raisonnement avec GPT-6 puis GPT-5.6 ; le Point 2B en décrit les résultats. Chaque preuve garde sa date et sa provenance.
 
 ## Lire les quatre ensembles
 

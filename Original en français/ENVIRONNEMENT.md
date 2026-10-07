@@ -1,6 +1,6 @@
 # Environnement et confirmations d’usage
 
-Les vérifications utilisateur du **7 octobre 2026** ont commencé vers **19 h 18** et se sont terminées à **21 h 24**, heure de Bruxelles, Europe/Brussels, UTC+02:00. Cette borne concerne la passe de navigation décrite dans les rapports. L’observation instrumentée du prochain tour pour le titre assistant et le raisonnement reste distincte ; sa date de fin sera ajoutée à la preuve correspondante.
+Les vérifications utilisateur du **7 octobre 2026** ont commencé vers **19 h 18** et se sont terminées à **22 h 40**, heure de Bruxelles, Europe/Brussels, UTC+02:00. La passe de navigation est suivie d’une comparaison native du raisonnement : GPT-6 interrompu, puis GPT-5.6 mené à son terme. La preuve du Point 2B conserve la chronologie structurelle et les retours de lecture JAWS.
 
 ## Versions relevées sur l’ordinateur
 

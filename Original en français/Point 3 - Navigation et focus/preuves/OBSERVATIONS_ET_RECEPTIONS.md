@@ -69,7 +69,7 @@ Le libellé Réagir du signalement du 5 octobre n’est plus trouvé lors des de
 
 ## Retour humain natif du 7 octobre 2026
 
-Source : réponses détaillées de l’utilisateur aux compléments de réception et précisions ultérieures. Plage **19 h 18–21 h 24 provisoire**, Europe/Brussels ; fin des essais et éventuelle trace complémentaire à consigner. Le [JSON dérivé](retour-humain-natif-2026-10-07.json) ne conserve que les observations du produit. La version de JAWS 2021 reste inchangée ; l’utilisateur rapporte les mêmes résultats avec Edge/JAWS 2025 d’après son expérience, et lors d’un nouvel essai Opera. Ce sont des retours humains, pas des mesures de l’agent.
+Source : réponses détaillées de l’utilisateur aux compléments de réception et précisions ultérieures. Plage **19 h 18–22 h 40**, Europe/Brussels. Le [JSON dérivé](retour-humain-natif-2026-10-07.json) ne conserve que les observations du produit. La version de JAWS 2021 reste inchangée ; l’utilisateur rapporte les mêmes résultats avec Edge/JAWS 2025 d’après son expérience, et lors d’un nouvel essai Opera. Ce sont des retours humains, pas des mesures de l’agent.
 
 | Cas | Observation actuelle rapportée |
 |---|---|

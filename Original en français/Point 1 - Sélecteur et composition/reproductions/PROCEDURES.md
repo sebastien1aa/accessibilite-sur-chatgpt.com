@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 1
 
-Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Ces procédures permettent à un tiers de reproduire les comportements ; elles ne demandent pas à l’utilisateur de refaire les réceptions acquises. Les [retours natifs reçus le 7 octobre, entre 19 h 18 et le point d’étape provisoire de 21 h 24](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) donnent les conditions et leur provenance. Ne pas envoyer de message pour ces essais.
+Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Ces procédures permettent à un tiers de reproduire les comportements ; elles ne demandent pas à l’utilisateur de refaire les réceptions acquises. Les [retours natifs reçus le 7 octobre, de 19 h 18 à 22 h 40](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) donnent les conditions et leur provenance. Ne pas envoyer de message pour ces essais.
 
 ## 1A — Le sélecteur fermé ne permet pas d’identifier rapidement le choix
 1. Ouvrir chatgpt.com en français, avec un choix de modèle/niveau déjà effectué et l’extension désactivée.

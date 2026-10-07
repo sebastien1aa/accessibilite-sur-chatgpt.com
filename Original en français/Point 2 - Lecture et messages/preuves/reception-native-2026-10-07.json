@@ -3,8 +3,7 @@
   "date": "2026-10-07",
   "fuseau": "Europe/Brussels",
   "debut": "19:18",
-  "point_etape_provisoire": "21:24",
-  "fin_reinvestigation_definitive": false,
+  "fin_reinvestigation_definitive": true,
   "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
   "comparaisons_humaines": {
     "Opera": "Memes resultats declares apres verification recente",
@@ -20,18 +19,23 @@
       "mesures_techniques_separees": "2A-virtualisation-2026-10-07.json"
     },
     "2B": {
-      "titre_assistant": "Amelioration native possible declaree par utilisateur",
-      "statut": "En attente de trace du nouveau tour autorise avant conclusion et eventuel retrait local",
-      "etat_raisonnement_courant": "Place avant titre assistant selon retour, a verifier par trace",
-      "details_deja_realises": "Apres titre, dans bon ordre selon retour utilisateur",
+      "titre_assistant": "GPT-5.6 : absent pendant la réflexion, apparaît après ; GPT-6 : titre pendant une activité intermédiaire dans la génération interrompue",
+      "statut": "Réception terminée ; adaptations maintenues",
+      "etat_raisonnement_courant": "Au-dessus pour JAWS dans les deux modèles ; ordre de lecture à corriger",
+      "details_deja_realises": "Après titre dans le bon ordre selon retour utilisateur",
       "correction_native_confirmee": false,
-      "effet_signalement_assistance_prouve": false,
-      "retrait_fonction_extension_revendique": false
+      "retrait_fonction_extension_revendique": false,
+      "preuve_structurelle": "2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json"
     },
     "2C": {
       "selection_native": "Fonctionne sauf en cas de sauts de position",
       "obstacle_accessibilite": "Sauts empechant stabilite des messages, navigation et copie de longues portions",
-      "metadonnees_absentes_copie_native": ["Vous avez dit", "ChatGPT a dit", "Duree de reflexion", "Dates et heures"],
+      "metadonnees_absentes_copie_native": [
+        "Vous avez dit",
+        "ChatGPT a dit",
+        "Duree de reflexion",
+        "Dates et heures"
+      ],
       "inclusion_metadonnees": "Demande produit distincte; pas un defaut accessibilite etabli en soi",
       "retour_4_octobre_ChatGPT_a_dit_copie": "Historique du parcours adapte, contexte conserve"
     },
@@ -44,7 +48,11 @@
     },
     "2E": {
       "Writing_Blocks": "Probleme natif inchange selon verification utilisateur",
-      "reproduction": ["Demander une redaction reutilisable et copiable", "Attendre la fin complete de generation", "Aller au bas de page et relever boutons sans commande explicitement comprehensible"],
+      "reproduction": [
+        "Demander une redaction reutilisable et copiable",
+        "Attendre la fin complete de generation",
+        "Aller au bas de page et relever boutons sans commande explicitement comprehensible"
+      ],
       "nouveau_compte_technique_poignees": false
     },
     "2F": {
@@ -52,5 +60,7 @@
       "qualification": "Simplification de navigation demandee, distincte d'une violation universelle"
     }
   },
-  "confidentialite": "Aucun corps de message, brouillon, identifiant, nom de projet, presse-papiers ou URL privee conserve"
+  "confidentialite": "Aucun corps de message, brouillon, identifiant, nom de projet, presse-papiers ou URL privee conserve",
+  "fin": "22:40",
+  "fin_source": "Déclaration utilisateur"
 }

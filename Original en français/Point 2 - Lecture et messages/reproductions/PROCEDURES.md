@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 2
 
-Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers, sans demander à l’utilisateur de refaire ses réceptions. Les [retours natifs du 7 octobre, 19 h 18–21 h 24 provisoire](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
+Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers, sans demander à l’utilisateur de refaire ses réceptions. Les [retours natifs du 7 octobre, 19 h 18–22 h 40](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
 
 Les essais de mode/curseur doivent partir d’un document frais, sans cumuler des variantes ni préactiver leur commande. Les actions ordinaires qui ne laissent aucun mode perturbé peuvent partager le même document. Espace est l’activation habituelle de l’utilisateur ; dans sa configuration française, U atteint le bouton suivant.
 
@@ -17,8 +17,8 @@ Attendu : les tours disponibles restent lisibles dans les deux sens. Le 7 octobr
 ## 2B — Raisonnement
 
 1. Lors d’une génération habituelle autorisée, repérer le début du tour assistant par les titres.
-2. Relever la disponibilité précoce du repère « ChatGPT a dit », sa provenance native et sa position avant la réponse finale. L’amélioration possible déclarée le 7 octobre attend une trace ; le sous-point n’est pas clos et aucun retrait de la fonction locale n’est encore revendiqué.
-3. Ouvrir les détails du raisonnement, si proposés ; distinguer l’état courant placé avant le titre assistant, à vérifier, des éléments déjà réalisés que l’utilisateur reçoit après le titre dans le bon ordre. Relever le nom de commande et l’état rendu sans inventer une étape non exposée.
+2. Relever si « ChatGPT a dit » est présent dès le début de la réflexion, puis pendant les commentaires intermédiaires et la réponse finale. Noter le modèle : GPT-5.6 et GPT-6 peuvent présenter des structures différentes. Dans la comparaison du 7 octobre, GPT-5.6 n’expose ce titre qu’après la réflexion ; le premier essai GPT-6 a été interrompu, sans conclusion sur sa réponse achevée.
+3. Ouvrir les détails du raisonnement, si proposés ; parcourir aux flèches depuis le repère assistant. Comparer la position de l’état courant et celle des détails déjà réalisés. Dans les deux modèles du test du 7 octobre, l’état courant est au-dessus pour JAWS tandis que les détails réalisés suivent le titre dans le bon ordre. Attendu : repère de locuteur avant le début de la réflexion, état courant ensuite dans la continuité de lecture. Relever le nom de commande et l’état rendu sans inventer une étape non exposée.
 4. À la fin, relever le nom/durée de la commande et une éventuelle seconde annonce identique.
 5. Dans un tour existant qui présente réellement des cartes d’analyse, replier le raisonnement puis parcourir les cartes ; ouvrir l’ensemble puis une commande « Analysé » avec Espace.
 
