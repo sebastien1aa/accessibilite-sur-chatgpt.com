@@ -1,0 +1,39 @@
+{
+  "nature": "Retour JAWS de la 4.1.0 et inspection de la dernière carte de la réponse précédente",
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "human": {
+    "version": "4.1.0",
+    "role": "lien graphique",
+    "announcement": "S2/favicons Codex ResetCodex ResetCodex Radar: Reset, Limits & Service SignalsTotal lines: 27",
+    "copiedLayout": "plusieurs lignes",
+    "spokenLayout": "une ligne"
+  },
+  "observed": {
+    "visibleLines": [
+      "Codex Reset",
+      "Codex Radar: Reset, Limits & Service Signals",
+      "Total lines: 277"
+    ],
+    "innerTextHasLineBreaks": true,
+    "textContentJoinsAdjacentSpans": true,
+    "cardRole": "link",
+    "cardAriaLabel": null,
+    "favicon": {
+      "imageAltAttribute": null,
+      "imageRoleAttribute": null,
+      "parentRole": "presentation",
+      "srcPath": "/s2/favicons"
+    },
+    "thumbnailAlt": "",
+    "computedLinkName": "Codex Reset Codex Radar: Reset, Limits & Service Signals Total lines: 277"
+  },
+  "interpretation": {
+    "metadataIsVisibleToSightedUsers": true,
+    "faviconAddressIsNotVisibleCardText": true,
+    "imageNotExplicitlyDecorative": true,
+    "visualLineBreaksDoNotEnsureSeparateLinkAnnouncements": true,
+    "physicalReceptionAccepted": false
+  },
+  "privacy": "Uniquement données publiques de carte et attributs ; aucun contenu de conversation ni identifiant privé."
+}
