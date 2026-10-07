@@ -3,10 +3,9 @@
   "date": "2026-10-07",
   "fuseau": "Europe/Brussels",
   "debut": "19:18",
-  "fin_reinvestigation_definitive": true,
   "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
   "comparaisons_humaines": {
-    "Opera": "Meme resultat declare apres verification recente, navigateur habituellement reserve a ces verifications",
+    "Opera": "Meme resultat declare apres verification recente",
     "Edge_et_JAWS_2025": "Resultats identiques declares selon experience utilisateur",
     "nouvelle_mesure_instrumentee_autres_environnements": false
   },

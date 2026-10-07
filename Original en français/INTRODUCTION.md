@@ -37,7 +37,7 @@ Les captures purement visuelles ne suffisent généralement pas à montrer ces p
 
 Les quatre ensembles distinguent mécanisme natif observé, difficulté d’interopérabilité, demande d’organisation et limite de l’adaptation. Le succès d’un contournement ne signifie pas que le site a été corrigé et ne suffit pas à attribuer sa cause à OpenAI.
 
-La réinsertion de prompts avec Flèche haut reste une barrière de navigation et un risque d’envoi involontaire ; la limite de l’extension est l’absence d’accès alternatif à cet historique. Le regroupement des analyses et l’emplacement stable de la barre sont décrits avec leur composante d’organisation. Le contrôle actuellement présent est « Évaluer la réponse » : son rôle de menu et la reprise de lecture à sa fermeture sont examinés au Point 3G. L’ancien libellé « Réagir » n’a pas été retrouvé dans les dernières réceptions.
+La réinsertion de prompts avec Flèche haut reste une barrière de navigation et un risque d’envoi involontaire ; la limite de l’extension est l’absence d’accès alternatif à cet historique. Le regroupement des analyses et l’emplacement stable de la barre sont décrits avec leur composante d’organisation. Le contrôle actuellement présent est « Évaluer la réponse » : son rôle de menu et la reprise de lecture à sa fermeture sont examinés au Point 3G.
 
 
 La sélection manuelle et la copie fonctionnent hors sauts de lecture, conformément au retour natif du 7 octobre. Les sauts dans les longues discussions interrompent la continuité de lecture et de sélection. L’ajout des locuteurs, durées de réflexion et horodatages au texte copié est distingué comme demande produit au Point 2C.

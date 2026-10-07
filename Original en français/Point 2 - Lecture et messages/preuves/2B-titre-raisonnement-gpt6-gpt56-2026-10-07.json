@@ -11,9 +11,7 @@
     "version": 2,
     "trigger": "dom-observation",
     "raisonnement_extension_inactif": true,
-    "titres_possedes_extension": 0,
-    "arret": "user-tests-finished",
-    "capture_supprimee_verifiee": true
+    "titres_possedes_extension": 0
   },
   "attribution_modeles": "GPT-6 puis GPT-5.6, ordre et interruption de la première génération déclarés par l’utilisateur ; les noms de modèle ne sont pas enregistrés par la capture",
   "serie_1": {
@@ -171,7 +169,7 @@
     "GPT56": "Pas de titre de locuteur ajouté au début de la réflexion",
     "deux_modeles": "Réflexion en cours au-dessus dans le parcours JAWS, hors continuité de lecture sous le repère assistant",
     "details_deja_effectues": "Sous le titre dans le bon ordre, selon le retour utilisateur",
-    "decision": "Conserver les adaptations du titre et de l’ordre de réflexion ; aucune capture supplémentaire demandée"
+    "adaptations_maintenues": "Repère de locuteur précoce et ordre de l’état de réflexion courant"
   },
   "limites": [
     "Les temps ms sont relatifs au début de la capture, pas à l’envoi ; aucun identifiant privé de tour conservé.",

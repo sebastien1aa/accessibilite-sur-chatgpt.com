@@ -1,0 +1,20 @@
+{
+  "nature": "inspection passive DOM et arbre d’accessibilité Chromium du bouton adapté",
+  "date": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "moduleActive": true,
+  "observedButtonCount": 9,
+  "allObservedButtons": { "aria-label": "Évaluer la réponse", "aria-haspopup": "menu", "aria-expanded": "false" },
+  "targetedAccessibilityNode": {
+    "ignored": false,
+    "role": "button",
+    "name": "Évaluer la réponse",
+    "properties": { "invalid": "false", "focusable": true, "hasPopup": "menu", "expanded": false }
+  },
+  "interpretation": "La fonction de menu est exposée par hasPopup=menu sur le bouton activable, avec son état replié ; le nom accessible reste inchangé.",
+  "speechRecorded": false,
+  "focusChanged": false,
+  "menuOpenedByAgent": false,
+  "evaluationSubmitted": false,
+  "extensionSourcesChanged": false
+}

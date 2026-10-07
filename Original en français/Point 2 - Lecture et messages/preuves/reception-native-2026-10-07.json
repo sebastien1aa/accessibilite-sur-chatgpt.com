@@ -3,7 +3,6 @@
   "date": "2026-10-07",
   "fuseau": "Europe/Brussels",
   "debut": "19:18",
-  "fin_reinvestigation_definitive": true,
   "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
   "comparaisons_humaines": {
     "Opera": "Memes resultats declares apres verification recente",
@@ -43,7 +42,6 @@
       "copier_reponse": "Pas d'annonce; saut vers Partager",
       "partager_discussion": "Focus au haut de page sans annonce de confirmation JAWS",
       "statut": "Resultats natifs revérifiés par utilisateur et strictement identiques",
-      "nouvelle_demande_test_identique": false,
       "receptions_adaptees_5_octobre": "Acquises, dates conservees dans constats-2026-10-03-05.json"
     },
     "2E": {

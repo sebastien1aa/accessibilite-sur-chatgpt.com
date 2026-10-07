@@ -1,8 +1,8 @@
 # Procédures de reproduction — Point 2
 
-Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers, sans demander à l’utilisateur de refaire ses réceptions. Les [retours natifs du 7 octobre, 19 h 18–22 h 40](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
+Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers. Les [retours natifs du 7 octobre, 19 h 18–22 h 40](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
 
-Les essais de mode/curseur doivent partir d’un document frais, sans cumuler des variantes ni préactiver leur commande. Les actions ordinaires qui ne laissent aucun mode perturbé peuvent partager le même document. Espace est l’activation habituelle de l’utilisateur ; dans sa configuration française, U atteint le bouton suivant.
+Pour comparer des variantes touchant au mode ou au curseur JAWS, partir d’un document frais pour chacune. Espace est l’activation habituelle de l’utilisateur ; dans sa configuration française, U atteint le bouton suivant.
 
 ## 2A — Lecture longue
 
@@ -19,10 +19,10 @@ Attendu : les tours disponibles restent lisibles dans les deux sens. Le 7 octobr
 1. Lors d’une génération habituelle autorisée, repérer le début du tour assistant par les titres.
 2. Relever si « ChatGPT a dit » est présent dès le début de la réflexion, puis pendant les commentaires intermédiaires et la réponse finale. Noter le modèle : GPT-5.6 et GPT-6 peuvent présenter des structures différentes. Dans la comparaison du 7 octobre, GPT-5.6 n’expose ce titre qu’après la réflexion ; le premier essai GPT-6 a été interrompu, sans conclusion sur sa réponse achevée.
 3. Ouvrir les détails du raisonnement, si proposés ; parcourir aux flèches depuis le repère assistant. Comparer la position de l’état courant et celle des détails déjà réalisés. Dans les deux modèles du test du 7 octobre, l’état courant est au-dessus pour JAWS tandis que les détails réalisés suivent le titre dans le bon ordre. Attendu : repère de locuteur avant le début de la réflexion, état courant ensuite dans la continuité de lecture. Relever le nom de commande et l’état rendu sans inventer une étape non exposée.
-4. À la fin, relever le nom/durée de la commande et une éventuelle seconde annonce identique.
-5. Dans un tour existant qui présente réellement des cartes d’analyse, replier le raisonnement puis parcourir les cartes ; ouvrir l’ensemble puis une commande « Analysé » avec Espace.
+4. À la fin, relever le nom/durée de la commande et une éventuelle seconde exposition identique dans le parcours. Comparer avec l’adaptation : le nom constant pendant la réflexion doit céder au nom et à la durée natifs à la fin, sans doublon exact.
+5. Dans un tour existant qui présente réellement des cartes d’analyse autonomes, replier le raisonnement puis parcourir la suite. Relever si les cartes restent exposées indépendamment du repli principal. Avec l’adaptation, ouvrir la commande d’ensemble, puis une commande native « Analysé » avec Espace ; vérifier que le détail existant s’ouvre et que le repli d’ensemble masque les cartes sans les supprimer.
 
-Attendu : repère précoce, état lisible, commande finale cohérente et détails natifs accessibles. Le cas des 43 cartes est un exemple observé, pas une condition à fabriquer en lançant de nouvelles analyses.
+Attendu : repère de locuteur dès le début de la réflexion, puis état courant dans la continuité de lecture ; détails déjà réalisés accessibles après le repère ; commande finale avec son nom et sa durée sans doublon exact. Pour les cartes autonomes, une commande d’ensemble accessible permet de maîtriser leur exposition tout en conservant les commandes natives de détail. Le cas des 43 cartes est un exemple observé, pas une condition à fabriquer en lançant de nouvelles analyses.
 
 ## 2C — Sélection accessible et sélection native
 
@@ -44,14 +44,14 @@ Partager produit un lien public : cet essai doit utiliser une conversation prév
 4. Répéter pour Copier le message sous un message envoyé.
 5. Vérifier que les boutons redeviennent disponibles et que la confirmation ne prétend pas une réussite en cas d’échec.
 
-Réception native du 7 octobre déjà acquise : aucune annonce, saut vers Partager après copie d’une réponse et retour au haut de page après Partager la conversation. Ces actions ne sont pas à redemander. Attendu avec l’adaptation reçue : position préservée, bouton parcourable, indisponibilité signalée quand l’action est suspendue, « Message copié » après réussite. Cette dernière phrase est un ajout local ; les deux phrases du partage sont natives.
+Réception native du 7 octobre : aucune annonce, saut vers Partager après copie d’une réponse et retour au haut de page après Partager la conversation. Attendu : confirmation audible après réussite, position préservée, bouton parcourable et indisponibilité signalée pendant la suspension réelle de son action. L’adaptation reçue ajoute « Message copié » ; les deux phrases du partage sont natives.
 
 ## 2E — Champ de rédaction
 
 1. Utiliser une génération autorisée d’un texte réutilisable et copiable, ou ouvrir un exemple existant de Writing Block copiable/modifiable.
 2. Attendre la fin complète de la génération puis aller tout au bas de la page, comme dans la réception utilisateur du 7 octobre.
 3. Relever les boutons sans commande descriptivement compréhensible et, séparément, leur visibilité/activité effective et leur parcours par Tab.
-4. Avec l’adaptation, vérifier que seules les poignées inactives disparaissent et que le champ/Copier demeurent utilisables. Le défaut natif est déjà reçu comme inchangé ; ces étapes n’appellent pas une nouvelle génération par l’utilisateur.
+4. Avec l’adaptation, vérifier que seules les poignées inactives disparaissent et que le champ/Copier demeurent utilisables. La réception du 7 octobre confirme le défaut natif inchangé.
 
 Attendu : aucun contrôle inactif invisible inutile dans le parcours ; des commandes réellement actives doivent rester disponibles et correctement nommées.
 
@@ -59,7 +59,8 @@ Attendu : aucun contrôle inactif invisible inutile dans le parcours ; des comma
 
 1. Parcourir les titres d’une conversation existante.
 2. Relever la position de « Dernière réponse » par rapport au message et aux titres utiles.
-3. Avec l’adaptation, vérifier le retrait de ce seul repère, sans suppression des titres du contenu.
+3. Inspecter séparément le `h4.sr-only` exact « Dernière réponse » hors du message ; distinguer ce repère des titres placés dans le contenu.
+4. Avec l’adaptation, vérifier le retrait de ce seul repère, sans suppression des titres du contenu. Le contrôle structurel consiste à vérifier le ciblage exact de `hideLastResponseHeading` dans [ui-accessibility.js](../../../extension/ui-accessibility.js), puis le parcours humain décrit ici.
 
 La présence native de Dernière réponse est reçue le 7 octobre. Le retrait reçoit une préférence de simplification ; il ne démontre pas une invalidité générale de toute navigation comportant ce titre.
 

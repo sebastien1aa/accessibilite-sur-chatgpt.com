@@ -22,7 +22,7 @@ Il faut distinguer le rôle et sa description : `button`, `link` ou `listitem` n
 
 Le contournement retire les valeurs exactes `sortable` dans la portée reconnue et `draggable` sur les conversations reconnues ou leurs parents propriétaires. Il conserve les rôles, liens, commandes, instructions de déplacement `aria-describedby` et callbacks natifs. Il ne désactive pas le tri. Les [sources communes](../../extension/sidebar-sortable-accessibility.js) montrent ce ciblage et sa restauration à l’arrêt.
 
-Les rôles informatifs ont été reçus historiquement dans le parcours global 3.2.3, avec une réserve sur le chargement initial. Le démarrage a ensuite été avancé à `document_start` ; la réception 3.3.1 considère le résultat correct sauf observation contraire, le délai précis d’apparition n’a pas été mesuré. Le 6 octobre, les trois boutons natifs sans extension portent toujours `sortable` et `tabindex="0"`. Ce dernier attribut ne doit pas être confondu avec le parent `tabindex="-1"` étudié en 4D.
+Les rôles informatifs ont été reçus dans le parcours global 3.2.3. Le démarrage a ensuite été avancé à `document_start`, avec un retour positif en 3.3.1. Le 6 octobre, les trois boutons natifs sans extension portent toujours `sortable` et `tabindex="0"`. Ce dernier attribut ne doit pas être confondu avec le parent `tabindex="-1"` étudié en 4D.
 
 Une solution en amont devrait garder le rôle reconnaissable, localiser les informations de déplacement réellement utiles et vérifier les annonces au focus initial comme après les mises à jour. La correction de la description de rôle ne doit pas supprimer l’accès au tri ni ses instructions.
 
@@ -77,7 +77,7 @@ La focalisabilité du parent est causale **dans ces deux reproductions**. Le foc
 
 Le contournement traite les conteneurs et lignes documentaires reconnus portant exactement `tabindex="-1"` au repos. Il garde les liens et boutons focalisables et préserve les appels de focus natifs nécessaires, notamment pour la pagination. Voir [le module de listes](../../extension/sidebar-list-accessibility.js). La transformation du nom de projet en texte statique et le placement d’un bouton de dépliage distinct sont, séparément, des choix d’organisation demandés ; ils déplacent visuellement le chevron et ne doivent pas être présentés comme une correction invisible imposée à tous.
 
-La réception 0.1.9 reçoit les parcours Récents et projets mais garde une réserve sur les chats imbriqués. Le complément 3.2.3 couvre ces lignes ; la réception globale suivante accepte la navigation ordinaire et le dépliage. Les réceptions ultérieures conservent ces acquis. La correction des listes simples et imbriquées est reçue ; ces réceptions de l’adaptation et la reconfirmation native du 7 octobre restent des preuves distinctes.
+Les parcours Récents et projets sont reçus en 0.1.9 ; le complément 3.2.3 couvre aussi les chats imbriqués, avec une réception globale de la navigation ordinaire et du dépliage. La correction des listes simples et imbriquées est reçue ; ces réceptions de l’adaptation et la reconfirmation native du 7 octobre restent des preuves distinctes.
 
 ## 4E — « Pin project » et « Unpin project » en interface française
 

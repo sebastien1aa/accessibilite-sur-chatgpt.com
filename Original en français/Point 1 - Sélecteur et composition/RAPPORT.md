@@ -25,7 +25,7 @@ Ce défaut gêne la vérification du réglage avant une tâche : le bouton devra
 3. Écouter si son nom fournit le choix courant. Ouvrir par Espace ou Entrée, rejoindre Puissance avec haut/bas, puis utiliser gauche/droite pour comparer les annonces de niveau, la langue et les légendes affichées.
 4. Fermer par Échap ; comparer l’information exposée par le bouton fermé. Dans Work, relever aussi le libellé et l’état coché du mode rapide, sans les confondre avec l’action proposée.
 
-**Attendu :** nom utile du sélecteur fermé, comprenant le modèle et le niveau réellement choisis lorsqu’ils font partie de l’information proposée par le produit. Le dossier ne demande pas de révéler un identifiant interne non destiné à l’utilisateur.
+**Attendu :** nom utile du sélecteur fermé, comprenant le modèle et le niveau réellement choisis lorsqu’ils font partie de l’information proposée par le produit ; niveaux annoncés dans la langue de l’interface, avec légendes et statuts cohérents ; distinction claire entre l’état actuel du mode rapide et l’action proposée pour le changer. Le dossier ne demande pas de révéler un identifiant interne non destiné à l’utilisateur.
 
 ### Preuve et adaptation
 
@@ -114,4 +114,4 @@ Une première protection était installée trop tard, à `document_idle`. Cette 
 
 ## Portée de ce premier signalement
 
-Les trois sous-points sont liés à la composition mais n’ont pas nécessairement une même cause. Les réceptions natives du 7 octobre sont acquises pour les parcours décrits et ne sont pas à redemander. L’analyse du code, le DOM et les retours Chrome, Opera, Edge et JAWS 2025 gardent leur provenance propre ; ils ne couvrent pas tous les rendus futurs. La [pièce historique](preuves/constats-et-receptions.json) et la [réception récente](preuves/reception-native-2026-10-07.json) conservent cette séparation.
+Les trois sous-points sont liés à la composition mais n’ont pas nécessairement une même cause. Les réceptions natives du 7 octobre confirment les obstacles pour les parcours décrits. L’analyse du code, le DOM et les retours Chrome, Opera, Edge et JAWS 2025 gardent leur provenance propre ; ils ne couvrent pas tous les rendus futurs. La [pièce historique](preuves/constats-et-receptions.json) et la [réception récente](preuves/reception-native-2026-10-07.json) conservent cette séparation.

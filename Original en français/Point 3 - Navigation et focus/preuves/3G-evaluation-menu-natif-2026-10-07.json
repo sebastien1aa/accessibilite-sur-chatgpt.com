@@ -38,7 +38,14 @@
     "escapeCount": 1,
     "readingPosition": "Haut de la page"
   },
-  "cause": "Les propriétés de menu sont sur le parent SPAN, pas sur le bouton effectivement exposé et focalisable.",
+  "constat_semantique": "Les propriétés de menu sont sur le parent SPAN, pas sur le bouton effectivement exposé et focalisable.",
+  "limite_attribution": "La structure étaye le défaut de sémantique du bouton ; elle ne mesure pas la cause interne du retour du curseur JAWS au sommet.",
   "demonstration": "Propriétés natives copiées sur le bouton, relation au menu vérifiée ; contrôleur de retour existant, identité du tour protégée.",
+  "validation_dom_3_7_0": {
+    "tests_node_semantique": 35,
+    "tests_node_retour_menus": 36,
+    "controles_chromium_fixture": 11,
+    "portee": "Propriétés, association, callbacks natifs, Échap, retour depuis BODY, relations ambiguës, recyclage du tour et restauration ; pas mesure de parole ou de curseur JAWS."
+  },
   "reference": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/"
 }

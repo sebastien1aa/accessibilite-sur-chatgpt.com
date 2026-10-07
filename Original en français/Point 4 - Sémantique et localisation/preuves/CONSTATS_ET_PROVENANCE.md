@@ -19,7 +19,7 @@ Extrait structurel normalisé, noms et identifiants réels omis ; **ce n’est p
 
 L’extrait essentiel du contournement est consultable dans [la source commune](../../../extension/sidebar-sortable-accessibility.js) : la fonction `suppressedValue` reconnaît exactement `sortable`, ou `draggable` lorsque `chatRole` confirme une conversation. Ce code est celui de l’extension, **pas un extrait natif du site**.
 
-Au jalon 3.2.3 : 227 tests Node, dont 18 sur les descriptions ; 26 contrôles Chromium de descriptions et huit contrôles conjoints. La réception globale accepte les rôles informatifs, avec réserve sur le chargement initial. En 3.3.0, les scripts automatiques passent à `document_start`. La réception 3.3.1 accepte avec réserve : l’utilisateur juge le résultat correct sauf observation contraire, sans certifier le délai.
+Au jalon 3.2.3 : 227 tests Node, dont 18 sur les descriptions ; 26 contrôles Chromium de descriptions et huit contrôles conjoints. La réception globale accepte les rôles informatifs. En 3.3.0, les scripts automatiques passent à `document_start` ; le retour 3.3.1 est positif. Aucun délai précis de mise à disposition des annonces n’est mesuré.
 
 ## 4B — État d’aperçu et navigation
 
@@ -50,7 +50,7 @@ Le 4 octobre, version JAWS 2021 déclarée : A normal, B reproduit exactement le
 
 Comparaison C/D : C normal ; D bruit et blocage initiaux, répétition normale. Différence pertinente identique sur le parent ; mêmes boutons HTML, gardes et relais synthétiques. Trace passive : 37 entrées, flèches reçues au DOM sur button-d. Le retour Alt+Tab de D reproduit un blocage que l’utilisateur distingue du site. Aucun mode interne mesuré. Les [deux pages locales](../reproductions/PROCEDURES.md) sont des copies d’exemples synthétiques historiques et non une capture du compte.
 
-Le parent focalisable est causal dans ces structures. Le symptôme initial du projet sur le site ne dispose pas d’une attribution exclusive ni d’une décision interne JAWS connue. L’adaptation 0.1.9 reçoit certains parcours mais garde la réserve des chats imbriqués. Le complément 3.2.3 cible ces lignes et sa réception globale reçoit la navigation ordinaire. Le module [sidebar-list-accessibility.js](../../../extension/sidebar-list-accessibility.js) conserve les focus directs et la pagination natifs en traitant les tabindex des structures reconnues au repos.
+Le parent focalisable est causal dans ces structures. Le symptôme initial du projet sur le site ne dispose pas d’une attribution exclusive ni d’une décision interne JAWS connue. L’adaptation 0.1.9 reçoit les parcours simples ; le complément 3.2.3 cible aussi les chats imbriqués, avec une réception globale de la navigation ordinaire. Le module [sidebar-list-accessibility.js](../../../extension/sidebar-list-accessibility.js) conserve les focus directs et la pagination natifs en traitant les tabindex des structures reconnues au repos.
 
 ## 4E — Localisation
 

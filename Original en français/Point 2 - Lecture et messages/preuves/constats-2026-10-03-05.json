@@ -18,6 +18,7 @@
     {"id": "2E", "technique": {"poignees": 4, "types": ["row", "column"], "texte": "⋮⋮", "opacity": "0", "pointer_events": "none", "controles_chromium": 16, "boutons_accessibles_avant": 4, "boutons_accessibles_apres": 0}, "humain": {"date": "2026-10-04T21:15:07+02:00", "statut": "Retrait poignees et maintien edition/Copier acceptes"}, "limites": ["Manque de nom des poignees actives non corrige par leur masquage inactif", "Pas de preuve de tous les tableaux futurs"]},
     {"id": "2F", "technique": "h4 Derniere reponse exact hors message exclu; titres utiles conserves", "humain": {"date": "2026-10-04T17:21:58+02:00", "statut": "Inclus dans acceptation globale sans reserve"}, "attribution": "Simplification de navigation demandee, pas violation universelle deduite"}
   ],
-  "demonstrateur": {"version": "3.6.2", "version_fin_receptions_historiques": "3.6.0", "portee": "Adaptations historiques conservees; resultats et receptions gardent leurs dates et versions respectives", "limite": "Pas de nouvelle reception exhaustive de ces adaptations en 3.6.2"},
+  "demonstrateur": {"version_fin_receptions_historiques": "3.6.0", "portee": "Adaptations historiques conservees; resultats et receptions gardent leurs dates et versions respectives"},
+  "preuves_complementaires_7_octobre": {"reception_native": "reception-native-2026-10-07.json", "navigation_adaptee_3_6_2": "2A-virtualisation-2026-10-07.json", "raisonnement_natif_comparatif": "2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json"},
   "confidentialite": {"corps_messages": false, "contenu_presse_papiers": false, "url_conversation": false, "identifiant_compte": false, "nom_projet": false}
 }

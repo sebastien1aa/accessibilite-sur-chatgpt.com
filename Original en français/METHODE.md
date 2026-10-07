@@ -29,7 +29,7 @@ Les preuves structurelles motivent un examen du produit avant des recommandation
 
 ## Dates et versions
 
-Les constats initiaux de septembre et des 3–6 octobre sont complétés par la réinvestigation utilisateur du 7 octobre à partir de 19 h 18. Les annonces et symptômes reconfirmés portent cette nouvelle date ; les mesures antérieures ne sont pas artificiellement redatées. La date d’apparition générale du 25 septembre à 23:16 Bruxelles vient du récit utilisateur. Les anciens numéros 0.1.x désignent les versions effectivement testées ; leur reconditionnement sous un autre numéro ne constitue pas un nouveau test humain.
+Les constats initiaux de septembre et des 3–6 octobre sont complétés par la réinvestigation utilisateur du 7 octobre, de 19 h 18 à 22 h 40. Les annonces et symptômes reconfirmés portent cette nouvelle date ; les mesures antérieures ne sont pas artificiellement redatées. La date d’apparition générale du 25 septembre à 23:16 Bruxelles vient du récit utilisateur. Les anciens numéros 0.1.x désignent les versions effectivement testées ; leur reconditionnement sous un autre numéro ne constitue pas un nouveau test humain.
 
 Une réception générale sans réserve porte sur les points effectivement proposés. Une validation ultérieure peut lever une attente historique sans transformer rétroactivement son ancien test en réussite. Les réserves de reproductibilité, acceptations nuancées et essais négatifs restent visibles lorsqu’ils changent l’interprétation.
 
@@ -41,10 +41,10 @@ Les pièces copiées conservent leur provenance et leur version. Les fichiers d�
 
 L’extension 3.7.0 est une copie du démonstrateur de travail, pas une proposition de patch prêt à intégrer. Elle conserve les nœuds et actions natifs autant que le mécanisme le permet. Les contrats internes peuvent changer. Elle n’est pas une solution pérenne de l’accessibilité de ChatGPT : cette accessibilité doit être assurée dans le produit.
 
-Les fonctions complètes du démonstrateur incluent des choix personnels hors grief. Les références de chaque sous-point disent quel module est pertinent. Aucun message, partage public, modification de projet ou suppression n’est nécessaire pour les comparaisons de parcours proposées ; une vraie génération ou publication se fait seulement quand l’utilisateur décide de l’effectuer.
+Les fonctions complètes du démonstrateur incluent des choix personnels hors grief. Les références de chaque sous-point indiquent le module pertinent. Les parcours des menus et listes peuvent être comparés sans publier de partage ni modifier ou supprimer un projet. Les procédures du raisonnement et des Writing Blocks utilisent une génération de texte choisie par le testeur ; les autres constats structurels peuvent être examinés directement dans le code et les pièces du Point concerné.
 
 ## Contrôle des pièces distribuées — 7 octobre 2026
 
-Les huit fichiers de tests Node joints dans les Points 1 et 2 passent **206 tests, zéro échec**. Les autres pages sont des fixtures historiques avec leurs procédures et limites ; leur copie n’est pas déclarée comme une nouvelle réception physique. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **24 fichiers** de l’extension correspondent exactement aux sources 3.7.0 du projet de travail et à l’archive jointe, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
+Les huit fichiers de tests Node joints dans les Points 1 et 2 passent **206 tests, zéro échec**. Les pages de fixtures isolent les mécanismes annoncés, avec leurs procédures et résultats documentés dans chaque Point. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **24 fichiers** de l’extension correspondent exactement aux sources 3.7.0 du projet de travail et à l’archive jointe, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
 
-Ces contrôles confirment la cohérence des éléments distribués ; ils ne revérifient pas chaque problème dans le site en production. Les lectures et mesures ciblées des 6 et 7 octobre restent datées séparément.
+La cohérence du démonstrateur est vérifiée par identité des sources et des empreintes. Les constats natifs reposent sur les retours utilisateur du 7 octobre et sur les mesures DOM, d’accessibilité et de code liées dans chaque Point ; les mesures antérieures gardent leur date.

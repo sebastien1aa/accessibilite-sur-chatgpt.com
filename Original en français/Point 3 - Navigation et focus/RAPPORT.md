@@ -2,7 +2,7 @@
 
 Ce groupe rassemble les difficultés de navigation dans les projets, la barre latérale et ses panneaux, puis le retour de lecture après annulation des actions d’un message. L’objectif est de garder l’accès aux commandes natives et de reprendre la lecture à l’endroit quitté, sans détour obligatoire par Tab ni retour au sommet de la page.
 
-**Observations historiques : 3–5 octobre 2026 ; nouveaux retours humains natifs : 7 octobre 2026, de 19 h 18 à 22 h 40, Bruxelles.** La fin des tests est déclarée par l’utilisateur. Les mécanismes décrivent les rendus examinés à ces dates, pas tous les comptes, modes ou futurs rendus.
+**Observations historiques : 3–5 octobre 2026 ; retours humains natifs : 7 octobre 2026, de 19 h 18 à 22 h 40, Bruxelles.** Les mécanismes décrivent les rendus examinés à ces dates.
 
 Le relevé technique du 3 octobre identifie Windows 10 Home 22H2, build 19045.6466, et Chrome 154.0.8037.93. La version de JAWS 2021 utilisée reste inchangée. Le 7 octobre, l’utilisateur indique les mêmes résultats avec Edge et JAWS 2025 d’après son expérience, ainsi que dans un nouvel essai avec Opera. Ces retours lui sont attribués ; ils ne sont pas des essais mesurés par l’agent. Les [repères d’environnement](../ENVIRONNEMENT.md) centralisent cette provenance. La date d’apparition du changement d’interface, le 25 septembre à 23 h 16 à Bruxelles, vient de son récit, pas d’un horodatage de déploiement.
 
@@ -70,7 +70,7 @@ Des traces ultérieures donnent un résultat plus précis : le bouton d’origin
 
 Les premières adaptations excluaient certains popovers dialog et assimilaient data-state=closed d’un bouton déclencheur à un élément caché. Elles revenaient trop tard ou interrompaient trop tôt leur suivi. Ces erreurs locales sont documentées séparément du défaut natif.
 
-Le retour dès la microtâche constatant le retrait du panneau obtient une réception positive sur Profil puis sur les menus en 3.3.2 le 4 octobre, **avec réserve Explorer à cette étape**. Le module conserve fermeture Échap, association au bouton précis et intentions de l’utilisateur. L’attendu est de retrouver ce bouton et le point de lecture correspondant, sans déplacement volontaire concurrent annulé.
+Le retour dès la microtâche constatant le retrait du panneau obtient une réception positive sur Profil puis sur les menus en 3.3.2 le 4 octobre. Explorer reçoit ensuite son adaptation distincte en 3.4.0, décrite en 3E. Le module conserve fermeture Échap, association au bouton précis et intentions de l’utilisateur. L’attendu est de retrouver ce bouton et le point de lecture correspondant, sans déplacement volontaire concurrent annulé.
 
 ## 3E — Explorer : entrée, fermeture et propriété popup
 
@@ -82,11 +82,9 @@ L’alignement de l’entrée ordinaire vers la première destination est reçu 
 
 Une comparaison ciblée retire seulement la propriété popup du déclencheur fermé juste avant son retour de focus, puis la restaure à la prochaine ouverture/interaction pertinente. Rôle button, aria-expanded, callbacks et flèches restent natifs. Le prototype reçoit un résultat positif avec nuance ; **la distribution 3.4.0 est reçue le 5 octobre**, également après désépinglage par l’utilisateur. Cette adaptation de compatibilité ne prouve pas que l’attribut natif valide était erroné ni quelle décision interne JAWS provoquait le phénomène.
 
-Chaque nouvelle comparaison de mode a été préparée sur un document frais. Les répétitions sur un même document restent des observations complémentaires ; elles ne sont pas comptées comme essais indépendants.
-
 ## 3F — Annuler un partage ou une édition : revenir au même message
 
-Le retour natif du 7 octobre confirme que les remontées au haut de la page après Partager, Actions, Modifier et les autres boutons de chat restent identiques à celles des ajustements de l’extension. Le 5 octobre, après annulation de Partager sous une réponse, Partager le prompt envoyé ou Modifier le message, l’utilisateur retrouvait déjà la lecture au sommet. Avant le nouveau module, la fermeture native était mesurée vers BODY. Les partages de messages ne possèdent pas tous l’association ARIA utilisée pour les menus ; l’édition remplace le bouton par un formulaire intégré puis recrée un bouton.
+Le retour natif du 7 octobre reconfirme les remontées au haut de la page après Partager, Actions, Modifier et les autres boutons de chat décrites avant les adaptations locales. Le 5 octobre, après annulation de Partager sous une réponse, Partager le prompt envoyé ou Modifier le message, l’utilisateur retrouvait déjà la lecture au sommet. Avant le nouveau module, la fermeture native était mesurée vers BODY. Les partages de messages ne possèdent pas tous l’association ARIA utilisée pour les menus ; l’édition remplace le bouton par un formulaire intégré puis recrée un bouton.
 
 L’adaptation 3.6.0 associe l’activation à une surface nouvellement ouverte et revient au bouton du **même message** après fermeture effective. Le partage reprend le bouton d’origine ; l’édition peut reprendre son unique bouton recréé dans le même objet de message. Aucun message n’est modifié/envoyé et aucun partage n’est publié pour ces essais.
 
@@ -98,13 +96,17 @@ Avec le focus dans le champ, JAWS est initialement en mode formulaire. Un premie
 
 ## 3G — Évaluer la réponse : rôle de menu et reprise après Échap
 
-Le 7 octobre, l’utilisateur ne trouve plus « Réagir » : le contrôle courant est **« Évaluer la réponse »**, annoncé comme **« bouton »** alors qu’il ouvre un menu. **Un seul Échap ferme ce menu puis renvoie le focus au haut de la page.** L’attendu est d’annoncer sa fonction de menu et de retrouver le contrôle du même message à la fermeture. Le relevé structurel ci-dessous précise la sémantique native ; le démonstrateur fournit une adaptation ciblée.
+Le 7 octobre, l’utilisateur ne trouve plus « Réagir » : le contrôle courant est **« Évaluer la réponse »**, annoncé comme **« bouton »** alors qu’il ouvre un menu. **Un seul Échap ferme ce menu puis la lecture reprend au haut de la page.** L’attendu est d’annoncer sa fonction de menu et de retrouver le contrôle du même message à la fermeture. Le relevé structurel ci-dessous précise la sémantique native ; le démonstrateur fournit une adaptation ciblée.
 
 Le signalement du 5 octobre « Réagir, deux Échap » est conservé comme limite historique d’un ancien libellé, absent lors des dernières réceptions. Il ne décrit pas le contrôle courant. On ne transpose pas les causes possibles de l’édition, d’Explorer ou des menus Actions à Évaluer la réponse.
 
 Le [relevé natif](preuves/3G-evaluation-menu-natif-2026-10-07.json) confirme que les propriétés de menu `aria-haspopup` et `aria-expanded` sont placées sur un SPAN entourant le bouton ; ce dernier ne les porte pas. Le menu natif contient Bonne réponse et Mauvaise réponse. Dans l’inspection, Échap ferme puis rend le focus DOM au bouton ; le retour utilisateur décrit une reprise du curseur de lecture au sommet. Ces positions sont distinctes. Le [schéma WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/) place la sémantique du menu sur le contrôle bouton.
 
 Le module [evaluation-menu-accessibility.js](../../extension/evaluation-menu-accessibility.js) reporte les propriétés natives sur le bouton existant et vérifie sa relation au menu. Il conserve ses enfants et callbacks et ne consomme pas Échap. L’association permet au contrôleur de retour existant d’intervenir, avec garde sur l’identité du message. La [fixture locale](reproductions/evaluation-menu.html) vérifie ces invariants et leur restauration sans envoyer d’évaluation.
+
+La validation 3.7.0 comprend 35 tests Node de cette sémantique, 36 du contrôleur de retour et 11 contrôles Chromium de la fixture. Elle couvre notamment les relations ambiguës, les attributs étrangers, la restauration à l’arrêt et le recyclage d’un tour vers un autre message. Ces résultats établissent le fonctionnement DOM du contournement ; ils ne constituent pas une mesure de parole ou de position du curseur JAWS.
+
+Le [relevé passif du bouton adapté](preuves/3G-evaluation-menu-adapte-2026-10-07.json), le 7 octobre, confirme `aria-haspopup=menu` et `aria-expanded=false` sur les neuf boutons Évaluer présents. Le nœud accessible ciblé conserve son nom et expose `hasPopup=menu`, avec son état fermé. Cette inspection confirme la structure adaptée sans mesurer la parole JAWS ni provoquer d’ouverture ou de fermeture du menu.
 
 ## Demande d’examen
 

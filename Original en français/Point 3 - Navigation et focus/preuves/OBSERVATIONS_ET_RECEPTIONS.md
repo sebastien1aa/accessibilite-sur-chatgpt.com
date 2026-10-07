@@ -1,6 +1,6 @@
 # Preuves du Point 3 : provenance, résultats et limites
 
-Ce document est une **synthèse dérivée** des diagnostics et réceptions conservés des 3–5 octobre 2026, complétée par le retour humain natif du 7 octobre. Les paragraphes de synthèse ne sont pas des journaux bruts ni des essais de l’agent. Parmi les huit JSON historiques liés ci-dessous, six sont des copies identiques, vérifiées par SHA-256, de pièces sélectionnées. Les pièces 3A de réception des projets et de comparaison des boutons sont des extraits documentaires : seuls des champs de logistique et une précision sur l’installation ont été retirés ; les observations, résultats, dates et limites utiles sont conservés. Le [JSON du retour du 7 octobre](retour-humain-natif-2026-10-07.json) est une nouvelle transcription dérivée, pas une capture technique. Certains champs techniques ou noms de fixtures gardent leur forme historique ; les liens utilisables vers les reproductions figurent dans [le protocole local](../reproductions/PROCEDURES.md).
+Ce document est une **synthèse dérivée** des diagnostics et réceptions des 3–5 octobre 2026, du retour humain natif du 7 octobre et de l’inspection du menu Évaluer la réponse. Les pièces historiques conservent leurs observations, dates, versions et limites. Le [JSON du retour du 7 octobre](retour-humain-natif-2026-10-07.json) transcrit le témoignage ; le [relevé 3G](3G-evaluation-menu-natif-2026-10-07.json) documente séparément la structure et le focus DOM. Les [procédures locales](../reproductions/PROCEDURES.md) relient ces constats aux parcours de reproduction.
 
 Les chaînes des JSON ont été examinées avant sélection : libellés connus du produit, structures, clés suivies, compteurs et identifiants synthétiques. Aucun contenu de conversation, nom de projet personnel, chemin Windows nominatif, cookie ou jeton n’y a été sélectionné. Les titres d’onglets conservés désignent des essais synthétiques. Les traces peuvent mentionner une région, une cible ou une propriété sans exposer son contenu.
 
@@ -18,7 +18,7 @@ Le code public de liste examiné le 4 octobre expose role=list et tabindex=-1 ; 
 
 **Synthèse des constats du 3–4 octobre**, sans trace brute supplémentaire jointe : rail réduit sans commande de réouverture dans le rendu examiné, cycle natif Ctrl+Maj+S vérifié ; commande native devenue inerte à fermeture puis BODY. La préférence d’emplacement après Profil et la correction de l’ancien proxy local instable sont séparées de ces faits. Réception positive de la commande persistante en 3.3.1, 4 octobre.
 
-La synthèse n’affirme pas que tous les rendus futurs ou tous les modes auront le même rail. L’ancien point de doublons, explicitement retiré par l’utilisateur, n’est pas un défaut actif de ce dossier.
+Le retour natif du 7 octobre reconfirme l’absence d’accès à la commande de réouverture par flèches et par Tab. L’ancien point de doublons a été retiré du signalement.
 
 ## 3C — Pagination Afficher plus
 
@@ -36,22 +36,22 @@ Le mécanisme ciblé est contrôlé dans une fixture Chromium : 34 contrôles de
 | Actions chat récent | Même retour au sommet. | Bouton exact retrouvé environ 35 ms après Échap, encore focalisé jusqu’à 500 ms. |
 | Profil répété | Cette fois reprise correcte. | Même retour DOM, environ 68 ms après Échap ; pas de mutation aria-hidden/inert observée ni masquage dans les douze ancêtres examinés. |
 
-Ces délais sont des mesures des essais, pas des seuils indiquant que JAWS est prêt. Le retour DOM n’acquitte pas le curseur virtuel. Après correction de la garde locale data-state=closed et élargissement aux popovers associés, deux essais Profil et un chat récent échouent encore physiquement malgré DOM correct. Un retour unique dans la microtâche du retrait obtient ensuite une réception positive Profil, puis répétée, et est intégré. La 3.3.2 est acceptée pour les autres menus avec réserve Explorer.
+Ces délais sont des mesures des essais, pas des seuils indiquant que JAWS est prêt. Le retour DOM n’acquitte pas le curseur virtuel. Après correction de la garde locale data-state=closed et élargissement aux popovers associés, deux essais Profil et un chat récent échouent encore physiquement malgré DOM correct. Un retour unique dans la microtâche du retrait obtient ensuite une réception positive Profil, puis répétée, et est intégré. La 3.3.2 est acceptée pour les autres menus ; Explorer reçoit ensuite le contournement distinct décrit en 3E.
 
 Les contrôles synthétiques joints couvrent association, retour natif déjà correct, retrait et masquage réels, tâches tardives et annulation par intention de l’utilisateur. Ils ne reproduisent pas à eux seuls le flux d’événements accessible Windows/JAWS. Le module existant couvre également Autres actions des messages ; les trois actions 3F ont une association différente.
 
-## 3E — Explorer : garder les essais distincts
+## 3E — Explorer : entrée et propriété popup
 
 | Pièce du 5 octobre | Ce qu’elle établit | Limite et résultat |
 |---|---|---|
-| [Entrée alignée sur destination](3E-entree-explorer-2026-10-05.json) | Transfert conteneur → destination ; Échap à 153385 ms, bouton exact focalisé à 153399 ms, lifecycle à 153410 ms ; Flèche bas à 158469 ms rouvre. | Entrée bornée reçue, souci de sortie inchangé. Ouvertures ultérieures du même document pour observer épingles ne sont pas nouveaux essais frais. |
-| [Retour après lifecycle](3E-sortie-lifecycle-2026-10-05.json) | Premier Échap à 389868 ms, panneau retiré 389880 ms, lifecycle 389894 ms, retour exact 389895 ms et focus encore présent à 250 ms. | Variante exécutée mais résultat physique inchangé. NumPad+ utilisé par l’utilisateur lors du premier parcours explique absence de la flèche prévue ; touche non suivie dans cette trace. Variante arrêtée/non intégrée. |
-| [Comparaison propriété popup](3E-propriete-popup-2026-10-05.json) | Deux Échap avec retrait du panneau, retour exact et propriété popup absente au focus. | Impression positive ; deuxième parcours sur même document complémentaire. Aucune flèche DOM observée : pas mesure d’un état JAWS. |
-| [Réception intégrée 3.4.0](3E-reception-3.4.0-2026-10-05.json) | Distribution reçue après document frais ; comportement attendu déclaré aussi après désépinglage par l’utilisateur. Cinquante-trois entrées. | Deux Échap tracés ne sont pas deux essais indépendants ; actions d’épinglage/désépinglage attribuées d’après retour humain, pas déduites uniquement du journal. |
+| [Entrée alignée sur destination](3E-entree-explorer-2026-10-05.json) | Transfert conteneur → destination ; Échap ferme puis restaure le bouton, Flèche bas rouvre nativement. | Entrée bornée reçue ; souci de sortie encore présent à cette étape. |
+| [Retour après lifecycle](3E-sortie-lifecycle-2026-10-05.json) | Panneau retiré, retour au bouton après lifecycle natif, focus encore présent à 250 ms. | Résultat physique inchangé ; variante non intégrée. |
+| [Comparaison propriété popup](3E-propriete-popup-2026-10-05.json) | Retrait du panneau, retour exact et propriété popup absente au focus. | Retour humain positif avec nuance ; aucun état interne JAWS mesuré. |
+| [Réception intégrée 3.4.0](3E-reception-3.4.0-2026-10-05.json) | Comportement attendu déclaré, également après désépinglage par l’utilisateur. | Réception physique de la distribution intégrée ; les actions d’épinglage/désépinglage sont attribuées au retour humain. |
 
 Comparaison native indépendante : Entrée focalisait DIV dialog tabindex=-1 ; Flèche bas focalisait la première destination Projets. Les douze boutons destination/épinglage avaient les mêmes rôles/tabindex dans les deux ouvertures observées. Le bouton fermé exposait hasPopup=dialog dans l’arbre Chrome ; la propriété est valide pour le panneau dialog. L’adaptation finale de propriété popup est un contournement d’interopérabilité et ne démontre pas une erreur sémantique native.
 
-La variante après lifecycle échouée n’a pas été empilée avec le correctif suivant. Les répétitions sur un même document restent distinguées des premières comparaisons sur pages fraîchement chargées. L’entrée et les flèches natives sont conservées dans la distribution finale reçue.
+L’entrée et les flèches natives sont conservées dans la distribution finale reçue. Les répétitions d’un même document ne sont pas comptées comme des essais indépendants.
 
 ## 3F — Partage/édition du même message
 
@@ -61,11 +61,19 @@ La variante après lifecycle échouée n’a pas été empilée avec le correcti
 
 Premier Échap en mode formulaire édition : changement vers curseur virtuel, édition encore ouverte. Échap de fermeture : saut natif concerné. Déjà au curseur virtuel : un appui ferme. Aucun événement DOM du premier appui de mode n’est inventé. Ce constat ne détermine pas les mécanismes d’autres menus.
 
-## 3G — Évaluer la réponse ; limite historique Réagir
+## 3G — Évaluer la réponse : structure native et contournement
 
 **Retour natif direct du 7 octobre** : le contrôle présent est « Évaluer la réponse », annoncé « bouton », bien qu’il ouvre un menu. Un Échap ferme puis renvoie le focus au haut de la page. Aucune relation ARIA ni cause interne n’est mesurée par ce témoignage ; aucune correction nouvelle reçue n’est affirmée.
 
 Le libellé Réagir du signalement du 5 octobre n’est plus trouvé lors des dernières réceptions. Son ancienne mention de deux Échap reste une limite historique et ne décrit pas le contrôle courant. La fixture historique 3F comporte un contrôle d’exclusion Réagir ; il ne reproduit ni le panneau courant ni son annonce.
+
+Le [relevé natif du 7 octobre](3G-evaluation-menu-natif-2026-10-07.json) montre un `BUTTON type=button` nommé Évaluer la réponse, sans `aria-haspopup`, `aria-expanded` ni `aria-controls`. Son parent `SPAN` porte `aria-haspopup=menu`, `aria-expanded=false` à l’état fermé et un identifiant unique. Le menu porte `role=menu`, référence cet identifiant par `aria-labelledby` et contient Bonne réponse/Mauvaise réponse. À la fermeture native par Échap, le focus DOM retrouve le bouton. Le témoignage de reprise au sommet concerne donc un autre niveau : la position du curseur de lecture.
+
+Le module [evaluation-menu-accessibility.js](../../../extension/evaluation-menu-accessibility.js) reprend `aria-haspopup` et l’état ouvert/fermé sur le bouton existant. Il fournit `aria-controls` seulement quand le menu associé et son identifiant sont uniques ; les relations périmées sont retirées, les propriétés étrangères préservées. Le [contrôleur de retour](../../../extension/sidebar-menu-focus.js) vérifie l’identité du tour avant de rendre le focus, afin qu’un nœud recyclé ne désigne pas un autre message.
+
+Validation 3.7.0 déjà exécutée : 35 tests Node du module sémantique, 36 du contrôleur de retour et 11 contrôles Chromium de la [fixture Évaluer](../reproductions/evaluation-menu.html), parmi 478 tests Node réussis au total. Ces contrôles couvrent callbacks natifs, Échap, retour depuis BODY, conservation d’un retour natif déjà correct, ambiguïtés, recyclage et restauration. Ils établissent le mécanisme DOM du contournement sans fournir une mesure de parole ou de curseur JAWS.
+
+L’[inspection passive de la structure adaptée](3G-evaluation-menu-adapte-2026-10-07.json) relève ensuite neuf boutons existants portant `aria-haspopup=menu` et `aria-expanded=false`. Le nœud AX ciblé est un bouton focalisable non ignoré, nommé Évaluer la réponse, avec `hasPopup=menu` et `expanded=false`. Aucune parole n’est enregistrée et aucun menu n’est ouvert pendant ce relevé ; la preuve porte sur la sémantique exposée du bouton fermé.
 
 ## Retour humain natif du 7 octobre 2026
 
@@ -84,4 +92,4 @@ Les rapprochements entre mode formulaire, nombre d’Échap et remplacement des 
 
 ## Limites communes de provenance
 
-Les preuves techniques historiques gardent leur date des 3–5 octobre ; le retour humain du 7 octobre actualise les symptômes explicitement reconfirmés sans redater ces mesures. Les réceptions valent pour le contexte déclaré et gardent leur nuance. L’attribution d’une perte native vers BODY est plus étayée sur certains chemins que sur toutes les familles citées. La cause interne des phénomènes virtuels reste ouverte. Aucun nouvel essai physique JAWS/Edge ni message n’est effectué par l’agent pour cette intégration documentaire.
+Les preuves techniques historiques gardent leur date des 3–5 octobre ; le retour humain du 7 octobre actualise les symptômes explicitement reconfirmés sans redater ces mesures. Les réceptions valent pour le contexte déclaré et gardent leur nuance. L’attribution d’une perte native vers BODY est plus étayée sur certains chemins que sur toutes les familles citées. La cause interne des phénomènes virtuels reste ouverte.

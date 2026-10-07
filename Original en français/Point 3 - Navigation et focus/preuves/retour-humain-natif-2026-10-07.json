@@ -38,7 +38,7 @@
       "libelle_courant": "Évaluer la réponse",
       "annonce": "bouton",
       "fonction_rapportee": "ouvre un menu",
-      "fermeture": "un Échap ferme puis renvoie le focus au haut de la page",
+      "fermeture": "un Échap ferme puis la lecture reprend au haut de la page",
       "libelle_ancien": "Réagir absent des dernières réceptions"
     }
   },

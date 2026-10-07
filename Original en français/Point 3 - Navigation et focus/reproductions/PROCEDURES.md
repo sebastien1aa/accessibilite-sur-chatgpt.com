@@ -6,7 +6,7 @@ Les retours humains natifs du 7 octobre 2026 (19 h 18–22 h 40, Bruxelles) actu
 
 ## Conditions à noter
 
-Relever date/heure, version Windows/navigateur/lecteur d’écran, langue, mode Chat/Work effectivement testé, extension absente ou version réellement chargée. Distinguer premier passage et répétition, activation Espace/Entrée et mode initial de JAWS. Pour chaque nouveau test de mode/curseur, partir d’un document fraîchement chargé, sans cumuler les variantes ni activer le contrôle avant la personne qui réalise l’essai.
+Relever date/heure, version Windows/navigateur/lecteur d’écran, langue, mode Chat/Work effectivement testé, extension absente ou version réellement chargée. Distinguer premier passage et répétition, activation Espace/Entrée et mode initial de JAWS. Comparer les variantes sur des documents fraîchement chargés distincts.
 
 Évaluer séparément présence du panneau, focus DOM, propriétés accessibles, parole et point de lecture. Des touches peuvent être absorbées par le lecteur d’écran : aucune entrée DOM ne signifie pas aucun appui physique. Ne pas attribuer aux défauts les mouvements de focus dus à une manipulation simultanée de l’onglet par une autre personne. Les parcours ci-dessous évitent créations de chats, modification des projets, envois de messages et publication de partages.
 
@@ -71,8 +71,8 @@ Attendu : retour au bouton du même message à la fermeture effective. Le rempla
 1. Sur un document frais, atteindre Évaluer la réponse sous une réponse existante ; relever l’annonce de sa fonction, le rôle DOM et les propriétés accessibles du déclencheur.
 2. Ouvrir avec Espace sans choisir d’évaluation ; relever le panneau réellement ouvert et ses relations avec le bouton.
 3. Appuyer une fois sur Échap puis essayer Flèche bas ; relever fermeture, focus DOM et point de lecture.
-4. Comparer sans/avec adaptation lorsqu’une version candidate sera disponible, en datant chaque résultat, sans déduire la cause d’Explorer ou de l’édition.
+4. Comparer le rendu natif au démonstrateur 3.7.0 dans un document distinct. Vérifier les propriétés du bouton fermé puis ouvert, la relation au menu et la reprise au même message. Dater chaque résultat et distinguer le focus DOM de la position du curseur de lecture.
 
-Retour natif du 7 octobre : « bouton », menu ouvert, un seul Échap ferme puis focus au haut de la page. Attendu : fonction de menu identifiable et reprise au déclencheur du même message. L’ancien libellé Réagir n’est plus présent lors des dernières réceptions ; son signalement historique de deux Échap ne s’applique pas à ce cas courant.
+Retour natif du 7 octobre : « bouton », menu ouvert, un seul Échap ferme puis lecture au haut de la page. L’inspection native retrouve pourtant le bouton au focus DOM et situe ses propriétés de menu sur le SPAN parent. Attendu : fonction de menu identifiable sur le bouton activable et reprise au déclencheur du même message. L’ancien libellé Réagir est absent ; son signalement historique de deux Échap ne s’applique pas à ce contrôle courant.
 
 Les [pages synthétiques et leur exécution](EXECUTION.md) permettent des comparaisons ciblées en dehors du compte.
