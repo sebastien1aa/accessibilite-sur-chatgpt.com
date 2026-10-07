@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 4
 
-Utiliser une interface française et relever date, système, navigateur, version/mode du lecteur d’écran et état de l’extension. Comparer dans des documents frais distincts. Les gestes ci-dessous permettent de reproduire ou de rechercher un comportement ; ils ne sont pas de nouveaux résultats.
+Utiliser une interface française et relever date, système, navigateur, version/mode du lecteur d’écran et état de l’extension. Comparer dans des documents frais distincts. Les gestes ci-dessous permettent de reproduire ou de comparer les comportements du rapport ; les observations et validations datées y sont indiquées séparément.
 
 ## 4A — Descriptions de rôle
 

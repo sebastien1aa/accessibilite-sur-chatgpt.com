@@ -1,6 +1,6 @@
 # Tests et fixtures — Point 4
 
-Ces pages utilisent des noms et routes synthétiques. Elles ne contactent pas ChatGPT et ne contiennent ni compte ni conversation réelle. Elles sont reprises des exemples historiques ; la copie publique n’a pas encore fait l’objet d’un nouveau test JAWS.
+Ces pages utilisent des noms et routes synthétiques. Elles ne contactent pas ChatGPT et ne contiennent ni compte ni conversation réelle. Les comparaisons A/B et C/D ont reçu les retours physiques du 4 octobre décrits ci-dessous. Les contrôles DOM de la troisième page vérifient séparément les invariants de l’adaptation.
 
 ## Comparer le premier passage dans des listes — 4D
 

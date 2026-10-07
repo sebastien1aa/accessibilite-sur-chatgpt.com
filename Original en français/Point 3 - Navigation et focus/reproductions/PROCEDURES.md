@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 3
 
-Les gestes suivants sont des **protocoles proposés pour l’examen par les équipes**, pas des essais nouvellement effectués. Les résultats historiques et leurs versions se trouvent dans les [preuves locales](../preuves/OBSERVATIONS_ET_RECEPTIONS.md).
+Les étapes suivantes permettent aux équipes de reproduire et de comparer les comportements décrits. Les observations et validations datées se trouvent dans les [preuves locales](../preuves/OBSERVATIONS_ET_RECEPTIONS.md).
 
 ## Conditions à noter
 

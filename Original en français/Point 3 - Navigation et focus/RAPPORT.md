@@ -6,7 +6,7 @@ Ce groupe rassemble les difficultés de navigation dans les projets, la barre la
 
 Le relevé technique du 3 octobre identifie Windows 10 Home 22H2, build 19045.6466, et Chrome 154.0.8037.93. JAWS 2021 est déclaré utilisé pendant les investigations. L’utilisateur rapporte également des observations initiales avec JAWS 2025 et Edge ; cela ne constitue pas une réception complète actuelle dans ces environnements. La date d’apparition du changement d’interface, le 25 septembre à 23 h 16 à Bruxelles, vient de son récit, pas d’un horodatage de déploiement.
 
-L’[extension locale commune](../../extension), version 3.6.2, conserve les adaptations reçues dans leurs versions historiques respectives, indiquées ci-dessous. Elles ne signifient pas que chatgpt.com a été corrigé par OpenAI. Le démonstrateur actuel ne constitue pas une nouvelle réception exhaustive des parcours de ce point.
+L’[extension locale commune](../../extension), version 3.6.2, conserve les adaptations reçues dans leurs versions historiques respectives, indiquées ci-dessous. Elles ne signifient pas que chatgpt.com a été corrigé par OpenAI. Les validations des parcours adaptés restent acquises ; les procédures sont fournies pour permettre leur examen par les équipes.
 
 ## Repères pour lire les preuves
 
@@ -88,7 +88,7 @@ Le 5 octobre, après annulation de Partager sous une réponse, Partager le promp
 
 L’adaptation 3.6.0 associe l’activation à une surface nouvellement ouverte et revient au bouton du **même message** après fermeture effective. Le partage reprend le bouton d’origine ; l’édition peut reprendre son unique bouton recréé dans le même objet de message. Aucun message n’est modifié/envoyé et aucun partage n’est publié pour ces essais.
 
-**Les trois retours sont reçus le 5 octobre en 3.6.0**, avec une réponse positive globale nuancée. La trace jointe atteint sa limite de 60 événements ; elle ne couvre pas exhaustivement les trois parcours. La déclaration de réception reste une preuve distincte.
+**Les trois retours sont reçus le 5 octobre en 3.6.0**, avec une réponse positive globale nuancée. Les conditions de ces retours et la portée de la trace complémentaire sont détaillées dans les preuves.
 
 ### Édition : distinguer mode et fermeture
 

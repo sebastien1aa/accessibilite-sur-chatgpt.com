@@ -1,6 +1,6 @@
 # Limites et validations ouvertes
 
-Les retours d’usage gardent leur date, leur version et leur portée. Une adaptation conservée dans le démonstrateur 3.6.2 ne constitue pas, à elle seule, une nouvelle réception de tous ses parcours.
+Les parcours adaptés sont validés par les retours d’usage datés dans les rapports, y compris la navigation longue en 3.6.2 le 7 octobre. Aucun nouvel essai de ces adaptations n’est requis en l’absence de régression. La confirmation de l’actualité des défauts du site sans extension est distincte de ces validations.
 
 ## Réserves de sélection
 
@@ -8,7 +8,7 @@ La sélection native à la souris et sa copie multiparagraphe existent dans l’
 
 ## Annonces et cas non résolus
 
-Une annonce exacte exige un retour humain correspondant ; les formulations générales et mesures de l’arbre d’accessibilité ne sont pas des transcriptions de parole JAWS.
+Les citations de parole reproduisent les mots effectivement rapportés par l’utilisateur. Les noms calculés et rôles mesurés restent identifiés comme des observations de l’arbre d’accessibilité ; une transcription mot à mot n’est pas nécessaire pour décrire un obstacle de navigation.
 
 Réagir reste constaté, non investigué et non traité ; aucune campagne ni correction spéculative n’est engagée ici. La réserve sur la reproductibilité des nombreuses cartes d’analyse reste explicite. L’autre accès à l’historique des prompts n’a pas été créé.
 
@@ -16,4 +16,4 @@ Réagir reste constaté, non investigué et non traité ; aucune campagne ni cor
 
 Les constats historiques ne garantissent pas que le produit présente encore tous ces comportements. Une reproduction ultérieure peut modifier une conclusion ; les problèmes disparus deviennent historiques et les attributions ouvertes gardent leur qualification.
 
-Le parcours ciblé de la longue conversation est reçu positivement avec le démonstrateur 3.6.2 le 7 octobre. Les autres adaptations conservées gardent les réceptions de leurs versions historiques et leurs limites.
+Le parcours ciblé de la longue conversation est reçu positivement avec le démonstrateur 3.6.2 le 7 octobre. Les autres parcours adaptés restent validés aux dates indiquées dans leurs rapports.

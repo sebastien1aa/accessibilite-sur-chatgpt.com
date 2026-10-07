@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 1
 
-Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Ces procédures ne sont pas des essais humains supplémentaires ; les résultats datés et leurs limites figurent dans le rapport. Ne pas envoyer de message pour ces essais.
+Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Les résultats de validation et leurs dates figurent dans le rapport. Ces étapes permettent à un tiers de comparer les comportements natifs et adaptés. Ne pas envoyer de message pour ces essais.
 
 ## 1A — Le sélecteur fermé ne permet pas d’identifier rapidement le choix
 1. Ouvrir chatgpt.com en français, avec un choix de modèle/niveau déjà effectué et l’extension désactivée.

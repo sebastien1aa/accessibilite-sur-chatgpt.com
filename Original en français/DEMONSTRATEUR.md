@@ -10,7 +10,7 @@ Le dossier [extension](../extension/manifest.json) contient la version complète
 4. Ouvrir une nouvelle page ChatGPT en français et refaire le parcours indiqué. Les modules de conservation et plusieurs adaptations doivent être présents dès le démarrage : charger l’extension après l’ouverture du document ne remplace pas une page fraîche.
 5. Désactiver l’exemplaire de diagnostic et rouvrir une page fraîche pour une comparaison native. Restaurer les réglages initiaux et fermer les onglets de test sans brouillon utile.
 
-La version 3.6.2 conserve les adaptations décrites et reçues dans leurs versions historiques respectives. Le parcours montant et descendant d’une longue conversation a reçu un retour positif ciblé le 7 octobre en 3.6.2. Cela ne constitue pas une nouvelle réception exhaustive des autres parcours.
+La version 3.6.2 conserve les adaptations validées par l’utilisateur aux dates indiquées dans les rapports. Le parcours montant et descendant d’une longue conversation est également validé le 7 octobre en 3.6.2. Les procédures permettent aux équipes de comparer le site et le démonstrateur ; elles ne remettent pas en attente les validations déjà acquises.
 
 Les gestes de lecture et de réception sont décrits dans chaque rapport. Espace correspond à l’usage habituel de l’utilisateur pour activer un bouton. Tab atteint parfois des commandes que le parcours aux flèches expose mal ; cette réussite ne remplace pas la comparaison du curseur virtuel.
 

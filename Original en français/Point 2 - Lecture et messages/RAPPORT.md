@@ -52,7 +52,7 @@ Une petite sélection synthétique dans Chrome comprend les deux locuteurs, une 
 
 ### Partager la conversation
 
-L’utilisateur rapporte une absence d’annonce après activation et un retour au sommet. Les deux phrases de confirmation sont toujours présentes dans la notification native : « Le lien public a été copié. » et « Toute personne disposant du lien peut consulter cette conversation. » Le bouton est temporairement désactivé nativement ; le focus DOM tombe sur `BODY`, puis n’est pas rendu au bouton.
+L’utilisateur rapporte une absence d’annonce après activation et un retour au sommet. Les deux phrases de confirmation étaient présentes dans la notification native inspectée le 5 octobre : « Le lien public a été copié. » et « Toute personne disposant du lien peut consulter cette conversation. » Le bouton est temporairement désactivé nativement ; le focus DOM tombe sur `BODY`, puis n’est pas rendu au bouton.
 
 Le premier retour différé de l’extension était insuffisant : l’utilisateur subissait encore le saut initial avant le rappel. La variante conservant le bouton focalisable durant l’attente, avec indisponibilité exposée et seconde activation empêchée, est reçue le 5 octobre : le bouton semble fonctionner comme attendu. [feedback-actions.js](../../extension/feedback-actions.js) reprend les phrases natives après confirmation et conserve la position. Le maintien du focus DOM et la réception JAWS ont été contrôlés séparément.
 
@@ -88,6 +88,6 @@ Le retrait figure dans les points sans réserve acceptés lors de la réception 
 
 Ces cas précis peuvent servir de vérifications pour les futures interfaces : continuité de lecture, nom/stabilité des commandes, disponibilité fonctionnelle, mise à jour des annonces et exposition des contrôles inactifs. Ils ne valident pas tous les comptes, navigateurs, lecteurs d’écran ou rendus futurs.
 
-Les adaptations reçues dans les versions historiques respectives sont conservées dans le démonstrateur 3.6.2. Le retour du 7 octobre porte sur le parcours montant et descendant d’une longue conversation ; il ne constitue pas une nouvelle réception exhaustive des autres adaptations. Les acquis physiques, mesures DOM et résultats synthétiques gardent leur portée propre.
+Les parcours adaptés restent validés aux dates indiquées. La navigation montante et descendante est également reçue en 3.6.2 le 7 octobre. Aucun nouvel essai adapté n’est demandé en l’absence de régression ; l’actualité des défauts natifs se vérifie séparément.
 
 Les constats décrivent les rendus examinés aux dates indiquées. Une reproduction ultérieure doit relever son propre environnement et peut modifier les conclusions. Aucun corps de conversation, identifiant, nom de projet, adresse personnelle, contenu de presse-papiers ni URL de conversation privée n’est requis par les pièces locales.
