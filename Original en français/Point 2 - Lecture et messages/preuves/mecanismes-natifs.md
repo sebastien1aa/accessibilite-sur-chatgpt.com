@@ -1,5 +1,7 @@
 # Sources et mécanismes natifs — Point 2
 
+Les heures locales citées dans ce document sont en heure de Bruxelles (Europe/Brussels, UTC+02:00 pour les dates de septembre et début octobre 2026). Les horodatages techniques conservent leur fuseau explicite ; le suffixe ISO `Z` désigne UTC.
+
 Cette pièce donne les racines techniques des constats. Elle distingue le code public du site inspecté, les propriétés réellement rendues, les essais de l’adaptation et la réception humaine. Elle ne remplace pas le code du site par le comportement du module correctif comme preuve d’un défaut natif.
 
 Les identifiants minifiés et noms d’assets sont des repères historiques. Ils peuvent changer et ne sont pas nécessairement uniques dans un même bundle. Une recherche par nom seule ne suffit pas : vérifier le contrat et la branche décrits. Aucun dump de bundle ni contenu de conversation n’est joint.

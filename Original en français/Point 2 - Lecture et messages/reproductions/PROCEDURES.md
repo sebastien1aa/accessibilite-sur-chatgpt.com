@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 2
 
-Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers. Les [retours natifs du 7 octobre, 19 h 18–22 h 40](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
+Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers. Les [retours natifs du 7 octobre, 19 h 18–22 h 40, heure de Bruxelles (Europe/Brussels, UTC+02:00)](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
 
 Pour comparer des variantes touchant au mode ou au curseur JAWS, partir d’un document frais pour chacune. Espace est l’activation habituelle de l’utilisateur ; dans sa configuration française, U atteint le bouton suivant.
 

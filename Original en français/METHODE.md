@@ -1,5 +1,7 @@
 # Méthode et limites des preuves
 
+Les heures locales citées dans ce document sont en heure de Bruxelles (Europe/Brussels, UTC+02:00 pour les dates de septembre et début octobre 2026). Les horodatages techniques conservent leur fuseau explicite ; le suffixe ISO `Z` désigne UTC.
+
 La documentation originale est française et fait foi. Le dossier décrit chatgpt.com, étudié sous Windows avec JAWS et une interface réglée en français. Les [versions actuelles et confirmations](ENVIRONNEMENT.md) accompagnent les retours reçus du 7 octobre. Chaque ensemble introduit ses pièces sur place afin de rester lisible sans consulter un historique de développement.
 
 ## Lire une preuve

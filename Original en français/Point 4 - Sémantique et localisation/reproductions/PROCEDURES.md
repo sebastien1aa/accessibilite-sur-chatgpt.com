@@ -2,7 +2,7 @@
 
 Utiliser une interface française et relever date, système, navigateur, version/mode du lecteur d’écran et état de l’extension. Comparer dans des documents frais distincts. Les gestes ci-dessous permettent de reproduire ou de comparer les comportements du rapport ; les observations et validations datées y sont indiquées séparément.
 
-Actualisation humaine native du 7 octobre 2026, Bruxelles, plage 19 h 18–22 h 40 : JAWS 2021 inchangé ; résultats identiques déclarés d’après l’expérience Edge/JAWS 2025 et un nouvel essai Opera. Voir les [repères d’environnement](../../ENVIRONNEMENT.md). Les transcriptions ne listent que les mots et états utiles réellement rapportés, sans imposer un rôle prononcé à chaque ligne.
+Actualisation humaine native du 7 octobre 2026, plage 19 h 18–22 h 40, heure de Bruxelles (Europe/Brussels, UTC+02:00) : JAWS 2021 inchangé ; résultats identiques déclarés d’après l’expérience Edge/JAWS 2025 et un nouvel essai Opera. Voir les [repères d’environnement](../../ENVIRONNEMENT.md). Les transcriptions ne listent que les mots et états utiles réellement rapportés, sans imposer un rôle prononcé à chaque ligne.
 
 ## 4A — Descriptions de rôle
 

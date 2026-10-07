@@ -1,5 +1,7 @@
 # Point 3 — Navigation et retour de focus sur chatgpt.com
 
+Les heures locales citées dans ce document sont en heure de Bruxelles (Europe/Brussels, UTC+02:00 pour les dates de septembre et début octobre 2026). Les horodatages techniques conservent leur fuseau explicite ; le suffixe ISO `Z` désigne UTC.
+
 Ce groupe rassemble les difficultés de navigation dans les projets, la barre latérale et ses panneaux, puis le retour de lecture après annulation des actions d’un message. L’objectif est de garder l’accès aux commandes natives et de reprendre la lecture à l’endroit quitté, sans détour obligatoire par Tab ni retour au sommet de la page.
 
 **Observations historiques : 3–5 octobre 2026 ; retours humains natifs : 7 octobre 2026, de 19 h 18 à 22 h 40, Bruxelles.** Les mécanismes décrivent les rendus examinés à ces dates.

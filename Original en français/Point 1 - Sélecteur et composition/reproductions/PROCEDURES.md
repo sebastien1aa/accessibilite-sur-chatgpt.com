@@ -1,6 +1,6 @@
 # Procédures de reproduction — Point 1
 
-Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Ces procédures permettent à un tiers de reproduire les comportements. Les [retours natifs reçus le 7 octobre, de 19 h 18 à 22 h 40](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) donnent les conditions et leur provenance. Aucun envoi de message n’est nécessaire pour ces essais.
+Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Ces procédures permettent à un tiers de reproduire les comportements. Les [retours natifs reçus le 7 octobre, de 19 h 18 à 22 h 40, heure de Bruxelles (Europe/Brussels, UTC+02:00)](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) donnent les conditions et leur provenance. Aucun envoi de message n’est nécessaire pour ces essais.
 
 ## 1A — Le sélecteur fermé ne permet pas d’identifier rapidement le choix
 

@@ -4,7 +4,7 @@ Les retours natifs détaillés du 7 octobre actualisent les annonces et comporte
 
 ## Titre assistant et raisonnement
 
-La comparaison native du 7 octobre est terminée à **22 h 40**. Avec GPT-5.6, le titre assistant n’apparaît qu’après la réflexion. Le titre observé pendant la séquence GPT-6 interrompue relève d’un rendu intermédiaire différent et ne permet pas de conclure à une correction générale. Dans les deux modèles, l’état courant est au-dessus dans le parcours JAWS ; les détails déjà effectués suivent le titre dans le bon ordre. Le repère précoce et l’adaptation de l’ordre courant restent nécessaires. Voir la [preuve comparative](Point%202%20-%20Lecture%20et%20messages/preuves/2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json).
+La comparaison native du 7 octobre est terminée à **22 h 40**, heure de Bruxelles (Europe/Brussels, UTC+02:00). Avec GPT-5.6, le titre assistant n’apparaît qu’après la réflexion. Le titre observé pendant la séquence GPT-6 interrompue relève d’un rendu intermédiaire différent et ne permet pas de conclure à une correction générale. Dans les deux modèles, l’état courant est au-dessus dans le parcours JAWS ; les détails déjà effectués suivent le titre dans le bon ordre. Le repère précoce et l’adaptation de l’ordre courant restent nécessaires. Voir la [preuve comparative](Point%202%20-%20Lecture%20et%20messages/preuves/2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json).
 
 ## Sélection et copie
 

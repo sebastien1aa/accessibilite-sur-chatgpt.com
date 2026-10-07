@@ -1,5 +1,7 @@
 # Preuves sélectionnées du Point 4
 
+Les heures locales citées dans ce document sont en heure de Bruxelles (Europe/Brussels, UTC+02:00 pour les dates de septembre et début octobre 2026). Les horodatages techniques conservent leur fuseau explicite ; le suffixe ISO `Z` désigne UTC.
+
 Cette pièce est une **synthèse dérivée**, préparée le 6 octobre 2026 puis actualisée le 7 octobre à partir des notes de diagnostic, validations et réceptions historiques, du signalement initial, d’une actualisation passive du 6 octobre et du nouveau retour humain natif. Elle ne remplace pas un journal brut et ne prétend pas être une nouvelle capture. Les pièces privées ne sont pas liées depuis ce livrable. Aucun nom de projet réel, identifiant, chemin personnel, adresse de compte ou lien de conversation n’est conservé.
 
 ## 4A — Structures et résultats

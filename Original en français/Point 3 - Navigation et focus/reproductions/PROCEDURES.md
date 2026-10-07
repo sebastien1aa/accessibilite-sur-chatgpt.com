@@ -2,7 +2,7 @@
 
 Les étapes suivantes permettent aux équipes de reproduire et de comparer les comportements décrits. Les observations et validations datées se trouvent dans les [preuves locales](../preuves/OBSERVATIONS_ET_RECEPTIONS.md).
 
-Les retours humains natifs du 7 octobre 2026 (19 h 18–22 h 40, Bruxelles) actualisent les procédures ci-dessous. Ils proviennent de l’utilisateur ; les [repères d’environnement](../../ENVIRONNEMENT.md) indiquent JAWS 2021 inchangé, expérience identique Edge/JAWS 2025 et nouvel essai Opera. Aucun nouvel essai mesuré par l’agent n’est ajouté.
+Les retours humains natifs du 7 octobre 2026 (19 h 18–22 h 40, heure de Bruxelles (Europe/Brussels, UTC+02:00)) actualisent les procédures ci-dessous. Ils proviennent de l’utilisateur ; les [repères d’environnement](../../ENVIRONNEMENT.md) indiquent JAWS 2021 inchangé, expérience identique Edge/JAWS 2025 et nouvel essai Opera. Aucun nouvel essai mesuré par l’agent n’est ajouté.
 
 ## Conditions à noter
 

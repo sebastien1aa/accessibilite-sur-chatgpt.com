@@ -23,7 +23,7 @@ Le changement général d’interface a été constaté **le 25 septembre 2026 �
 
 Les [versions actuelles, les scripts JAWS et les confirmations utilisateur](ENVIRONNEMENT.md) sont réunies dans le document d’environnement : Chrome 154.0.8037.98, Edge 154.0.4258.62, Opera 136.0.6008.80, JAWS 2021.2107.12.400 et 2025.2503.39.400. Les mêmes difficultés sont confirmées par l’utilisateur sur les navigateurs et versions de JAWS indiqués. Les sources du démonstrateur et les preuves instrumentées sont présentées séparément.
 
-Tous les horaires sont exprimés en **Europe/Brussels** ; en septembre et début octobre 2026, UTC+02:00. Une date sans heure signifie que seule cette précision est attestée.
+Les horaires humains locaux cités dans le dossier sont en **heure de Bruxelles (Europe/Brussels, UTC+02:00)** pour septembre et début octobre 2026. Les horodatages techniques des preuves gardent leur fuseau explicite : les valeurs ISO suffixées par `Z` sont en UTC, celles avec un décalage conservent ce décalage. Une date sans heure signifie que seule cette précision est attestée.
 
 ## Portée et origine du travail
 
