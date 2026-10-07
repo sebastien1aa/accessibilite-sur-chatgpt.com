@@ -11,11 +11,12 @@
       "traduction_sliderLabel_prioritaire_sur_repli": true,
       "localisation_anglais_constat_historique": "chemin sliderLabel examine le 3 octobre ; ne decrit pas les libelles francais releves le 7 octobre",
       "releve_natif_2026_10_07": "1A-libelles-natifs-2026-10-07.json",
-      "chat_legendes_et_statuts_natifs": ["Instantané", "Moyenne", "Élevée", "Très élevé", "Pro"],
+      "chat_legendes_natives": ["Instantané", "Moyenne", "Élevée", "Très élevé", "6Pro"],
+      "chat_statuts_accessibles_natifs": ["Instantané", "Moyenne", "Élevée", "Très élevé", "Pro"],
       "work_modele_observe": "GPT-6.1 Sol",
       "work_legendes_natives": ["Minimal", "Moyen", "Élevé", "Très élevé", "Max", "Ultra"],
       "work_statuts_accessibles_natifs": ["Minimal", "Moyenne", "Élevée", "Très élevé", "Maximum", "Ultra"],
-      "difference_work_constitue_nouveau_defaut": false,
+      "difference_work": "Heterogeneite entre niveaux et ecart legende/statut a examiner cote produit; aucune faute grammaticale deduite de la seule transcription phonetique",
       "adaptation_conserve_libelles_francais_natifs": true,
       "releve_7_octobre_mesure_parole_JAWS": false,
       "reception": "selecteur francais accepte dans reception globale 3.2.3 le 4 octobre, sans couverture de toutes combinaisons"
@@ -40,10 +41,10 @@
     }
   },
   "limites": [
-    "pas de nouvelle reception physique dans la passe de redaction",
+    "Receptions historiques conservees; nouvelle reception native du 7 octobre dans reception-native-2026-10-07.json",
     "noms AX distincts de parole JAWS",
     "pas de verification exhaustive des fonctions fichiers et plugins",
-    "pas de reception exhaustive JAWS 2025 ou Edge",
+    "Opera, Edge et JAWS 2025: resultats identiques declares par utilisateur; pas de nouvelles mesures instrumentees dans ces environnements",
     "verification finale de fraicheur apres traduction"
   ]
 }

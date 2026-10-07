@@ -1,6 +1,6 @@
 # Preuves sélectionnées du Point 4
 
-Cette pièce est une **synthèse dérivée**, préparée le 6 octobre 2026 à partir des notes de diagnostic, validations et réceptions historiques, de la discussion d’origine et d’une actualisation passive du 6 octobre. Elle ne remplace pas un journal brut et ne prétend pas être une nouvelle capture. Les pièces privées ne sont pas liées depuis ce livrable. Aucun nom de projet réel, identifiant, chemin personnel, adresse de compte ou lien de conversation n’est conservé.
+Cette pièce est une **synthèse dérivée**, préparée le 6 octobre 2026 puis actualisée le 7 octobre à partir des notes de diagnostic, validations et réceptions historiques, du signalement initial, d’une actualisation passive du 6 octobre et du nouveau retour humain natif. Elle ne remplace pas un journal brut et ne prétend pas être une nouvelle capture. Les pièces privées ne sont pas liées depuis ce livrable. Aucun nom de projet réel, identifiant, chemin personnel, adresse de compte ou lien de conversation n’est conservé.
 
 ## 4A — Structures et résultats
 
@@ -62,10 +62,22 @@ Extrait littéral du **code de l’extension**, fonction de localisation du modu
 const translation = label === "Pin project" ? "Épingler le projet" : label === "Unpin project" ? "Désépingler le projet" : null;
 ```
 
-Source : [project-accessibility.js](../../../extension/project-accessibility.js). Réception d’ensemble historique, aucun nouveau parcours galerie/Edge ou JAWS récent prétendu.
+Source : [project-accessibility.js](../../../extension/project-accessibility.js). Réception d’ensemble historique ; les observations humaines actuelles sont documentées séparément ci-dessous.
 
 ## Actualisation passive du 6 octobre
 
 **23 h 48, Europe/Brussels, UTC+02:00.** Relevé réalisé dans Edge, sans extension, conversation partagée. Trois éléments `BUTTON`, rôle `button`, `aria-roledescription=sortable`, `tabindex=0`. Accueil, Espace, Planifié et Plugins exposés comme reduced/collapsed dans l’arbre d’accessibilité. Le rendu comprend aussi un h4 « Dernière réponse », traité dans un autre point du dossier.
 
 Ce résumé ne conserve ni URL ni identifiant de discussion. Le relevé haute entropie indique Edge 154.0.4258.62 et Chromium 154.0.8037.98. Aucun clic, aucune parole JAWS ni nouvel essai de groupes, projets ou galerie n’est établi par ces observations. Elles actualisent seulement 4A et 4B.
+
+## Retour humain natif du 7 octobre
+
+Source directe : réponses détaillées de l’utilisateur aux compléments de réception, et précisions ultérieures. Le [JSON dérivé](retour-humain-natif-2026-10-07.json) reprend uniquement les faits utiles du produit ; ce n’est pas une trace DOM ni un enregistrement audio. Plage provisoire **19 h 18–21 h 24**, Bruxelles ; fin et éventuelle trace complémentaire à consigner. La version de JAWS 2021 reste inchangée. L’utilisateur rapporte les mêmes résultats d’après son expérience Edge/JAWS 2025 et dans un nouvel essai Opera ; aucune mesure physique de l’agent ne leur est substituée.
+
+- **4A :** sortable persiste sur Épinglés, Projets et Récents ; « sortable étendu » pour Projets, « sortable réduit menu » pour les actions imbriquées, et substitution de lien/bouton dans les chats des projets. Après Tab sur le premier chat de Récents, sortie du mode formulaire puis retour aux flèches, draggable remplace les annonces lien/bouton. L’utilisateur corrèle aussi le remplacement à l’activation d’Actions du chat. Le code historique d’initialisation au premier focus et cette corrélation actuelle restent distincts.
+- **4B :** les destinations restent annoncées « réduites », avec « page courante » sur la destination active. Les commandes Projets/Épinglés/Récents déplient réellement leurs listes ; leur état expanded n’est pas assimilé au défaut des destinations de navigation.
+- **4C :** groupes reconfirmés tels que décrits dans le signalement initial. Transcription autorisée et anonymisée : Début du groupe [Nom du chat] ; [Nom du chat] ; Actions du chat ; Épingler le chat ; Fin du groupe ; puis le groupe suivant. Deux lignes supplémentaires s’ajoutent par groupe. Aucun rôle prononcé non fourni n’est inventé.
+- **4D :** afficher/masquer les chats d’un projet et Tab avant ou dans Récents provoquent le bruit, le passage ressenti en mode formulaire et le blocage des flèches ; Échap ou retour manuel au curseur PC permet la reprise. Corrélation humaine ; cause interne JAWS non mesurée.
+- **4E :** traduction manquante toujours observée dans la galerie pour les libellés d’épinglage. Le menu Actions du projet dans la barre latérale, où se trouve l’épinglage, reste atteint seulement par Tab, tout comme Nouveau chat. Le menu latéral déjà français n’est pas présenté comme un cas Pin/Unpin anglais.
+
+Le signalement initial à l’assistance est une source textuelle autorisée pour le passage sur les groupes, reconfirmé le 7 octobre. Seul ce parcours est repris ; les coordonnées personnelles et informations de compte de cette source ne sont pas intégrées au livrable. Les preuves DOM/AX et fixtures historiques gardent leurs dates, compteurs et limites.

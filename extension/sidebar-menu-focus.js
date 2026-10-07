@@ -69,6 +69,7 @@
   }
   function identity(node) {
     const owner = node.closest('[data-app-action-sidebar-project-row], [role="listitem"]');
+    const turn = node.closest('[data-turn-key]');
     const routes = new Set();
     if (owner) for (const link of owner.querySelectorAll("a[href]")) {
       if (link.closest('[data-app-action-sidebar-project-row], [role="listitem"]') !== owner) continue;
@@ -82,8 +83,9 @@
     }
     // These primitives live only in the pending Escape lease (at most 150 ms).
     // Never retain a conversation label, React props or a native callback.
-    return { parent: node.parentElement, owner,
+    return { parent: node.parentElement, owner, turn,
       signature: JSON.stringify([node.id, node.getAttribute("aria-label"), node.getAttribute("aria-labelledby"),
+        turn?.getAttribute('data-turn-key'),
         owner?.getAttribute("data-app-action-sidebar-project-id"),
         owner?.getAttribute("data-app-action-sidebar-project-label"), Array.from(routes).sort()]) };
   }
@@ -124,7 +126,7 @@
     // Radix removes aria-controls when open becomes false. The association was
     // established on Escape; a different explicit association still cancels it.
     if (!triggerInScope(trigger) || currentIdentity.parent !== entry.identity.parent ||
-        currentIdentity.owner !== entry.identity.owner || currentIdentity.signature !== entry.identity.signature || entry.menu.id !== entry.menuId ||
+        currentIdentity.owner !== entry.identity.owner || currentIdentity.turn !== entry.identity.turn || currentIdentity.signature !== entry.identity.signature || entry.menu.id !== entry.menuId ||
         popupValue(trigger) !== entry.popupRole || entry.menu.getAttribute("role") !== entry.popupRole ||
         (trigger.hasAttribute("aria-controls") && !controls(trigger, entry.menuId))) { cancel(); return; }
     if (trigger.getAttribute("aria-expanded") === "true" || !hidden(entry.menu)) return;
@@ -189,7 +191,7 @@
   });
   // Observing Document works at document_start before an HTML element exists.
   observer.observe(document, { subtree: true, childList: true, attributes: true,
-    attributeFilter: ["aria-expanded", "aria-controls", "aria-haspopup", "aria-label", "aria-labelledby", "aria-hidden", "role", "data-state", "data-slot", "data-app-navigation-rail", "hidden", "inert", "style", "class", "disabled", "lang", "id", "href", "data-app-action-sidebar-project-id", "data-app-action-sidebar-project-label"] });
+    attributeFilter: ["aria-expanded", "aria-controls", "aria-haspopup", "aria-label", "aria-labelledby", "aria-hidden", "role", "data-state", "data-slot", "data-app-navigation-rail", "hidden", "inert", "style", "class", "disabled", "lang", "id", "href", "data-turn-key", "data-app-action-sidebar-project-id", "data-app-action-sidebar-project-label"] });
   window.addEventListener("keydown", keydown, true);
   window.addEventListener("click", restoreHints, true);
   document.addEventListener("pointerdown", restoreHints, true);

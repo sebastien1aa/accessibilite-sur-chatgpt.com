@@ -2,7 +2,9 @@
 
 Le premier ensemble concerne les commandes utilisées avant l’envoi : reconnaître le modèle et son niveau, choisir une fonction, puis rédiger un prompt sans ajout involontaire. L’interface étudiée est française, avec JAWS sous Windows. L’ordre suit le parcours de composition : **sélecteur et traduction ensemble**, menu d’ajout, historique des prompts.
 
-Les constats initiaux sont rapportés après le changement général observé le **25 septembre 2026 à 23:16 Bruxelles**. Les investigations techniques de ce dossier datent des 3–4 octobre ; le parcours adapté a été accepté dans la réception globale du 4 octobre, sous les limites précisées ci-dessous. Les gestes suivants sont des procédures de reproduction, pas des essais humains déclarés refaits.
+Les constats initiaux sont rapportés après le changement général observé le **25 septembre 2026 à 23:16 Bruxelles**. Les investigations techniques des 3–4 octobre et la réception de l’adaptation du 4 octobre sont conservées. Le site natif a ensuite été revérifié par l’utilisateur dans Chrome, extension désactivée, avec JAWS 2021 inchangé : réception commencée le **7 octobre à 19 h 18**, point d’étape provisoire à **21 h 24**, Europe/Brussels. Cette heure ne clôt pas la réinvestigation. Les [retours reçus](preuves/reception-native-2026-10-07.json) complètent les constats historiques ; les procédures restent disponibles pour leur reproduction par un tiers.
+
+L’utilisateur déclare des résultats identiques dans Opera lors d’une vérification récente, ainsi que dans Edge et avec JAWS 2025 d’après son expérience. Ces confirmations d’usage complètent les mesures du produit. Les versions et leur provenance figurent dans [l’environnement commun](../ENVIRONNEMENT.md). Les transcriptions privilégient les libellés utiles : l’absence d’un rôle dans une citation ne prouve pas que JAWS ne l’a pas annoncé.
 
 Les [procédures de reproduction](reproductions/PROCEDURES.md) réunissent les parcours du site ; les [tests et fixtures](reproductions/EXECUTION.md) vérifient séparément les mécanismes synthétiques.
 
@@ -10,7 +12,9 @@ Les [procédures de reproduction](reproductions/PROCEDURES.md) réunissent les p
 
 ### Obstacle et conséquence
 
-Dans le premier signalement, JAWS annonce **« Sélectionner le modèle ChatGPT »**, sans le modèle ni le niveau de raisonnement sélectionné. L’utilisateur décrit ce problème dans Chat et Work sur le Web. Il doit ouvrir le menu, rejoindre « Puissance », puis utiliser les flèches gauche/droite pour écouter le niveau. Le modèle sélectionné reste difficile à déterminer dans le parcours décrit.
+Le 7 octobre, JAWS annonce toujours **« Sélectionner le modèle ChatGPT »**, sans le choix courant, après fermeture par Échap et quel que soit le niveau sélectionné, dans Chat comme dans Work. Espace ou Entrée ouvre le sélecteur. Dans Chat, les flèches haut/bas parcourent « Sélectionner le modèle. 1 sur 2 », puis « Puissance. 2 sur 2. Arrow left arrow right ». Sur Puissance, gauche/droite annonce successivement **« Instant », « Medium », « High », « Extra high », « Pro »** : ces annonces reçues sont anglaises dans une interface française. Elles sont distinctes du relevé DOM/AX français décrit plus bas.
+
+Dans Work, le parcours reçu comporte « Sélectionner le modèle. 1 sur 4 », puis, mode rapide désactivé, « Activer le mode rapide non coché. 2 sur 4 ». Mode rapide activé, JAWS annonce **« Activer le mode standard coché. 2 sur 4 »** : le libellé désigne une action future tandis que « coché » peut faire comprendre que le mode standard est déjà actif. « Rétablir la sélection par défaut. 3 sur 4 » est aussi annoncé. Les niveaux Work sont français ; leur orthographe native est donnée ci-dessous. L’ambiguïté de l’état du mode rapide est une observation produit reçue, sans nouveau correctif local revendiqué.
 
 Ce défaut gêne la vérification du réglage avant une tâche : le bouton devrait fournir immédiatement le choix courant lors du parcours aux flèches. L’utilisateur indique que l’application Windows expose davantage d’information dans Work/Codex, mais rencontre un problème comparable en Chat. Cette comparaison est un retour d’usage, pas une preuve de cause commune entre surfaces.
 
@@ -18,8 +22,8 @@ Ce défaut gêne la vérification du réglage avant une tâche : le bouton devra
 
 1. Ouvrir chatgpt.com en français, avec un choix de modèle/niveau déjà effectué et l’extension désactivée.
 2. En curseur PC virtuel, parcourir les commandes du composeur aux flèches ; rejoindre le sélecteur fermé.
-3. Écouter si son nom fournit le choix courant. Ouvrir par Espace, rejoindre Puissance, puis utiliser gauche/droite pour comparer l’information disponible dans le menu.
-4. Fermer le menu sans changer de réglage ; comparer l’information exposée par le bouton fermé.
+3. Écouter si son nom fournit le choix courant. Ouvrir par Espace ou Entrée, rejoindre Puissance avec haut/bas, puis utiliser gauche/droite pour comparer les annonces de niveau, la langue et les légendes affichées.
+4. Fermer par Échap ; comparer l’information exposée par le bouton fermé. Dans Work, relever aussi le libellé et l’état coché du mode rapide, sans les confondre avec l’action proposée.
 
 **Attendu :** nom utile du sélecteur fermé, comprenant le modèle et le niveau réellement choisis lorsqu’ils font partie de l’information proposée par le produit. Le dossier ne demande pas de révéler un identifiant interne non destiné à l’utilisateur.
 
@@ -35,7 +39,9 @@ Module : [model-accessibility.js](../../extension/model-accessibility.js), fonct
 
 Le code public examiné le 3 octobre calcule `sliderLabel` à partir de la sélection et l’utilise avant un repli traduit. Une valeur anglaise peut donc gagner sur le texte localisé. Cette piste de localisation reste liée à cette observation datée. La [note technique](preuves/mecanismes-natifs.md) donne les modules, l’asset, les offsets et les limites. L’adaptation conserve les libellés français natifs et les autres informations.
 
-Le [relevé natif du 7 octobre](preuves/1A-libelles-natifs-2026-10-07.json), réalisé dans Chrome sur une page `fr-FR` avec le module d’adaptation du sélecteur inactif, expose en Chat les légendes et statuts « Instantané », « Moyenne », « Élevée », « Très élevé » et « Pro ». Dans Work, pour GPT-6.1 Sol, les légendes sont « Minimal », « Moyen », « Élevé », « Très élevé », « Max » et « Ultra » ; les statuts accessibles sont « Minimal », « Moyenne », « Élevée », « Très élevé », « Maximum » et « Ultra ». Ces libellés français et la différence entre légendes et statuts de Work ne constituent pas un nouveau défaut dans ce dossier. L’adaptation doit respecter les valeurs natives, sans correction grammaticale. Ce relevé de DOM et d’accessibilité ne mesure pas la parole JAWS.
+Le [relevé natif du 7 octobre](preuves/1A-libelles-natifs-2026-10-07.json), réalisé dans Chrome sur une page `fr-FR` avec le module d’adaptation du sélecteur inactif, expose en Chat les statuts « Instantané », « Moyenne », « Élevée », « Très élevé » et « Pro » ; les légendes concordent sauf la dernière, relevée « 6Pro ». Dans Work, pour GPT-6.1 Sol, les légendes sont **« Minimal », « Moyen », « Élevé », « Très élevé », « Max », « Ultra »**, tandis que les statuts accessibles sont **« Minimal », « Moyenne », « Élevée », « Très élevé », « Maximum », « Ultra »**. Le rapport reprend cette orthographe native : les formes féminines écrites dans la transcription utilisateur ne démontrent pas un écart audible, notamment pour Minimal/Minimale ou Élevé/Élevée.
+
+Le signalement relève l’hétérogénéité des formes entre niveaux et l’écart entre légende affichée et statut accessible dans Work. Il distingue aussi le relevé français DOM/AX des annonces anglaises reçues en Chat, sans supposer leur cause ni qu’ils correspondent au même instant de rendu. Le démonstrateur conserve le statut français natif ; son alignement ne constitue pas une correction native du site et n’efface pas ces observations produit. Aucun grief grammatical ne repose sur la seule transcription phonétique.
 
 Le sélecteur français fait partie des points acceptés globalement le 4 octobre. Cela reçoit le parcours décrit, sans valider toute combinaison de modèle, langue, mode, compte ou lecteur d’écran.
 
@@ -43,17 +49,21 @@ Le sélecteur français fait partie des points acceptés globalement le 4 octobr
 
 ### Obstacle et annonces rapportées
 
-Le premier signalement rapporte **« bouton réduit »**, puis **« bouton étendu »**, sans transfert naturel vers les options après Espace. Celles-ci apparaissent plus loin dans l’ordre du curseur virtuel, après le composeur et ses autres commandes. Un ajout récemment utilisé est annoncé **« bouton actuel »**. L’utilisateur décrit enfin une fermeture lors de l’activation clavier, sans sélection de la fonctionnalité visée.
+La réception native du 7 octobre confirme **« Ajouter des fichiers et plus encore, bouton réduit »**. À la première activation, le focus va dans le champ d’édition du prompt ; aux ouvertures suivantes, le curseur reste sur le bouton. Aucune annonce d’ouverture n’est reçue dans les deux cas. Après une tentative d’activation d’une option par Espace ou Entrée, le premier comportement se reproduit. Sans Échap pour fermer, relire le déclencheur donne **« bouton étendu »**.
+
+Toute la page reste parcourable aux flèches au lieu de borner ce parcours aux options. Le contenu du popup est lu après l’éditeur et **deux « Fin de région principale »**. L’ordre reçu est : texte « Ajouter » ; « Ajouter des photos et fichiers Importer depuis l’ordinateur », annoncé **« bouton actuel »** sans sélection volontaire ; « Ajouter les fichiers d’un espace Parcourez et recherchez vos fichiers » ; « Travailler dans un projet Démarrez un chat dans un projet » ; « Recherche approfondie Obtenir un rapport détaillé » ; texte « Plugins » ; boutons « Créer une image Transformez vos idées en images », « Recherche sur le Web Trouvez des infos en temps réel », « Dessiner Dessiner et joindre une image », « GitHub Triage PRs, issues, CI, and publish flows », puis d’autres options et texte simple **« Type to search plugins »**. L’omission d’un rôle dans cette transcription ne suffit pas à conclure à son absence.
+
+Quelle que soit l’option essayée par l’utilisateur, Espace ou Entrée ferme le menu, **renvoie le focus au haut de la page** et n’active pas la fonction voulue. Le rôle attendu doit correspondre à un composant de menu utilisable ; l’absence de rôle sur la racine est, séparément, un constat DOM historique.
 
 L’impact concerne des fonctions essentielles : pièces jointes, bibliothèque, recherche et autres options. Le déplacement visuel d’un popup ne garantit pas que le lecteur d’écran y soit conduit ni que l’option parcourue soit celle activée.
 
 ### Reproduction
 
 1. Sur une page fraîche française, composeur vide, rejoindre Ajouter des fichiers et plus encore avec le curseur virtuel.
-2. Appuyer sur Espace. Vérifier la position de lecture et le focus à l’ouverture.
-3. Parcourir une option qui ne transmet pas de données, telle qu’une fonction de recherche, puis l’activer par Espace ou Entrée.
-4. Constater si cette option est effectivement sélectionnée dans le composeur ou si seul le popup se ferme. Ne pas envoyer le message.
-5. Comparer aussi le rôle du déclencheur et l’annonce de l’item de fichier récemment utilisé, puis fermer et retirer uniquement la sélection de test.
+2. Appuyer sur Espace. Relever l’absence ou la présence d’annonce, le focus initial, puis la position lors d’une deuxième ouverture. Relire l’état réduit/étendu du déclencheur.
+3. Descendre aux flèches après l’éditeur et les deux fins de région principale ; relever l’ordre des options, « bouton actuel » et le texte de recherche de plugins.
+4. Activer une option qui ne transmet pas de données par Espace ou Entrée. Relever activation effective, fermeture et destination du focus. Ne pas envoyer le message.
+5. Après cette tentative, rouvrir pour comparer le focus avec la première ouverture ; fermer par Échap et retirer uniquement une éventuelle sélection de test.
 
 **Attendu :** déclencheur et popup cohérents, accès clavier aux items disponibles, activation fiable de l’item focalisé et retour au contexte à la fermeture. Le choix précis des rôles dépend du composant retenu par le produit, mais il doit être utilisable avec le lecteur d’écran.
 
@@ -81,14 +91,14 @@ Le menu utilisable est accepté dans la réception globale 3.2.3 du 4 octobre. L
 
 Quand le focus est dans le composeur vide, Flèche haut peut y rappeler un ancien prompt. L’utilisateur dépend des flèches pour parcourir et quitter les champs ; il peut donc amorcer une nouvelle rédaction sur un contenu qu’il ne souhaitait pas réutiliser. Si ce remplissage n’est pas remarqué, le message envoyé contient des éléments non voulus.
 
-La précision finale du premier signalement élargit le scénario aux nouvelles discussions : après avoir envoyé au moins un prompt de création depuis le même compte, le rappel peut se produire aussi sur une nouvelle discussion. Le dossier ne reste pas limité à l’historique de la conversation actuellement ouverte.
+La réception du 7 octobre confirme le rappel dans les discussions existantes et nouvelles, y compris dans **Opera, navigateur où l’utilisateur n’avait pas encore envoyé de prompt pour créer une discussion**. Le compte possédait déjà un historique. Ce retour précise la portée : un envoi préalable depuis ce navigateur n’est pas une précondition exigible ; le dossier ne reste pas limité à l’historique de la conversation ouverte. Il s’agit d’une déclaration humaine, sans nouvelle mesure de stockage ou de synchronisation dans Opera.
 
 Ce problème a un effet d’accessibilité et de fiabilité de rédaction. Le choix de bloquer le rappel dans l’extension est un contournement ; cela ne réduit pas l’obstacle à une simple préférence esthétique.
 
 ### Reproduction et attendu
 
-1. Disposer d’au moins un prompt déjà envoyé depuis le compte dans le contexte décrit.
-2. Ouvrir une discussion existante, puis éventuellement une nouvelle discussion, sans brouillon à préserver.
+1. Utiliser un compte ayant déjà un historique de prompts ; ne pas imposer un premier envoi depuis le navigateur de test.
+2. Ouvrir une discussion existante, puis une nouvelle discussion sans brouillon à préserver ; relever séparément si ce navigateur a déjà servi à créer un chat.
 3. Avec le composeur réellement vide et focalisé, appuyer une fois sur Flèche haut non modifiée, dans le mode où cette touche atteint le champ.
 4. Vérifier si le texte d’un prompt antérieur remplit l’éditeur. Ne rien envoyer ; noter la distinction avec un menu de suggestions déjà ouvert.
 
@@ -104,4 +114,4 @@ Une première protection était installée trop tard, à `document_idle`. Cette 
 
 ## Portée de ce premier signalement
 
-Les trois sous-points sont liés à la composition mais n’ont pas nécessairement une même cause. L’analyse du code et du DOM donne des pistes ciblées de correction ; elle ne permet pas d’exclure chaque configuration de navigateur ou lecteur d’écran. Les retours 2021/2025 du premier signalement ne constituent pas des réceptions de toutes les nouvelles adaptations. La [pièce de constats](preuves/constats-et-receptions.json) conserve cette séparation.
+Les trois sous-points sont liés à la composition mais n’ont pas nécessairement une même cause. Les réceptions natives du 7 octobre sont acquises pour les parcours décrits et ne sont pas à redemander. L’analyse du code, le DOM et les retours Chrome, Opera, Edge et JAWS 2025 gardent leur provenance propre ; ils ne couvrent pas tous les rendus futurs. La [pièce historique](preuves/constats-et-receptions.json) et la [réception récente](preuves/reception-native-2026-10-07.json) conservent cette séparation.

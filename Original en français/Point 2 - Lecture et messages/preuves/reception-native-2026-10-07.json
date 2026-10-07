@@ -1,0 +1,56 @@
+{
+  "nature": "Synthese expurgee de reception humaine native, distincte des mesures DOM/AX et des receptions du demonstrateur",
+  "date": "2026-10-07",
+  "fuseau": "Europe/Brussels",
+  "debut": "19:18",
+  "point_etape_provisoire": "21:24",
+  "fin_reinvestigation_definitive": false,
+  "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
+  "comparaisons_humaines": {
+    "Opera": "Memes resultats declares apres verification recente",
+    "Edge_et_JAWS_2025": "Resultats identiques declares selon experience utilisateur",
+    "nouvelle_mesure_instrumentee_autres_environnements": false
+  },
+  "transcriptions": "Libelles utiles; role non cite ne signifie pas role non annonce",
+  "points": {
+    "2A": {
+      "lecture_aux_fleches": "Sauts de position en remontant et en redescendant une longue discussion",
+      "reproduction_humaine": "Lecture du bas vers le haut puis retour vers le bas",
+      "seuil_precis_longueur": null,
+      "mesures_techniques_separees": "2A-virtualisation-2026-10-07.json"
+    },
+    "2B": {
+      "titre_assistant": "Amelioration native possible declaree par utilisateur",
+      "statut": "En attente de trace du nouveau tour autorise avant conclusion et eventuel retrait local",
+      "etat_raisonnement_courant": "Place avant titre assistant selon retour, a verifier par trace",
+      "details_deja_realises": "Apres titre, dans bon ordre selon retour utilisateur",
+      "correction_native_confirmee": false,
+      "effet_signalement_assistance_prouve": false,
+      "retrait_fonction_extension_revendique": false
+    },
+    "2C": {
+      "selection_native": "Fonctionne sauf en cas de sauts de position",
+      "obstacle_accessibilite": "Sauts empechant stabilite des messages, navigation et copie de longues portions",
+      "metadonnees_absentes_copie_native": ["Vous avez dit", "ChatGPT a dit", "Duree de reflexion", "Dates et heures"],
+      "inclusion_metadonnees": "Demande produit distincte; pas un defaut accessibilite etabli en soi",
+      "retour_4_octobre_ChatGPT_a_dit_copie": "Historique du parcours adapte, contexte conserve"
+    },
+    "2D": {
+      "copier_reponse": "Pas d'annonce; saut vers Partager",
+      "partager_discussion": "Focus au haut de page sans annonce de confirmation JAWS",
+      "statut": "Resultats natifs revérifiés par utilisateur et strictement identiques",
+      "nouvelle_demande_test_identique": false,
+      "receptions_adaptees_5_octobre": "Acquises, dates conservees dans constats-2026-10-03-05.json"
+    },
+    "2E": {
+      "Writing_Blocks": "Probleme natif inchange selon verification utilisateur",
+      "reproduction": ["Demander une redaction reutilisable et copiable", "Attendre la fin complete de generation", "Aller au bas de page et relever boutons sans commande explicitement comprehensible"],
+      "nouveau_compte_technique_poignees": false
+    },
+    "2F": {
+      "Derniere_reponse": "Presence native persistante confirmee",
+      "qualification": "Simplification de navigation demandee, distincte d'une violation universelle"
+    }
+  },
+  "confidentialite": "Aucun corps de message, brouillon, identifiant, nom de projet, presse-papiers ou URL privee conserve"
+}

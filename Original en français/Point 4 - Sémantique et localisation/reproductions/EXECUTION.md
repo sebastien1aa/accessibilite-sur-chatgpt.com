@@ -28,3 +28,5 @@ Le bouton « Exécuter les contrôles DOM » vérifie le retrait ciblé de sorta
 Cette reproduction vérifie des invariants DOM ; elle ne certifie pas les annonces de JAWS. Pour comparer une parole native à la correction, conserver des documents frais et distinguer version/configuration de JAWS, navigateur, rôle DOM et nom calculé.
 
 Les parcours sur le site pour les cinq sous-points sont réunis dans [PROCEDURES.md](PROCEDURES.md).
+
+Les [observations humaines natives du 7 octobre](../preuves/retour-humain-natif-2026-10-07.json) complètent les preuves historiques sans ajouter de nouvelle exécution des fixtures. Elles distinguent notamment les remplacements de rôle après Tab et après Actions du chat, et la sortie du mode formulaire par Échap ou retour manuel au curseur PC. Ces corrélations ne mesurent pas la cause interne JAWS.

@@ -1,5 +1,5 @@
 {
-  "version": "3.6.3",
+  "version": "3.7.0",
   "algorithm": "SHA-256",
   "files": [
     {
@@ -13,6 +13,10 @@
     {
       "file": "extension/diagnostics.js",
       "sha256": "d381279c17bbd6f9e82d985bfb024b7e059dd49fb2bc0760938e06d10fc2d3b7"
+    },
+    {
+      "file": "extension/evaluation-menu-accessibility.js",
+      "sha256": "25adf822c98bf5045354c5d23c93c267c478b2f4d67421262d51594e586b5dac"
     },
     {
       "file": "extension/explorer-accessibility.js",
@@ -32,7 +36,7 @@
     },
     {
       "file": "extension/manifest.json",
-      "sha256": "2b50be918cec60e41c2078447597c2f897250dc185aaa753acae179ff3a6c7ef"
+      "sha256": "21642139ea6cb79f9903c3e625409a4d4ebf32d64d9e08c364b91ace13f6debd"
     },
     {
       "file": "extension/message-action-focus.js",
@@ -80,7 +84,7 @@
     },
     {
       "file": "extension/sidebar-menu-focus.js",
-      "sha256": "2ec31a23c8a4228ef49098f75f721535adf2a3fe2dcf3ca749a41ede263bf9f9"
+      "sha256": "28fce90b44268e34631756e7e0ff8d418bce08ae6d557fed1aeac76c1a3d5c03"
     },
     {
       "file": "extension/sidebar-sortable-accessibility.js",

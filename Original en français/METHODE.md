@@ -1,6 +1,6 @@
 # Méthode et limites des preuves
 
-La documentation originale est française et fait foi. Le dossier décrit l’interface française de chatgpt.com, étudiée sous Windows avec JAWS. Chaque ensemble introduit ses pièces sur place afin de rester lisible sans consulter un historique de développement.
+La documentation originale est française et fait foi. Le dossier décrit chatgpt.com, étudié sous Windows avec JAWS et une interface réglée en français. Les [versions actuelles et confirmations](ENVIRONNEMENT.md) accompagnent les retours reçus du 7 octobre. Chaque ensemble introduit ses pièces sur place afin de rester lisible sans consulter un historique de développement.
 
 ## Lire une preuve
 
@@ -15,7 +15,7 @@ La documentation originale est française et fait foi. Le dossier décrit l’in
 | Réception physique de fixture | Effet déclaré des conditions comparées hors du site | Une cause unique de tous les symptômes du site |
 | Réception de l’extension | Résultat accepté dans le parcours décrit et la version indiquée | Correction du produit natif ou réception exhaustive des autres parcours |
 
-Les résultats techniques et les retours humains sont reliés, sans être interchangeables. Une phrase « JAWS annonce… » exige un retour réel correspondant. Sinon, le dossier précise « nom exposé dans l’arbre d’accessibilité » ou décrit généralement le comportement. Les nombreuses cartes d’analyse sont décrites par leur effet sur la lecture ; une transcription artificielle de dizaines d’annonces n’apporterait pas de preuve.
+Les résultats techniques et les retours humains sont reliés, sans être interchangeables. Les transcriptions de l’utilisateur sélectionnent les informations pertinentes ; l’omission d’un rôle ou d’un état dans une citation abrégée ne signifie pas que JAWS ne l’annonce pas. Une phrase « JAWS annonce… » repose sur un retour réel correspondant. Sinon, le dossier précise « nom exposé dans l’arbre d’accessibilité » ou décrit généralement le comportement. Les nombreuses cartes d’analyse sont décrites par leur effet sur la lecture ; une transcription artificielle de dizaines d’annonces n’apporterait pas de preuve.
 
 Chaque signalement suit autant que possible le même fil : obstacle d’usage et étapes de reproduction, rendu/code natif qui lui est effectivement relié, cause démontrée ou encore ouverte, mécanisme du contournement local, résultats et limites. Une correction historique ne prouve pas qu’elle reconnaît un nouveau rendu. Une fonction disponible seulement sous conditions doit être testée dans ces conditions avant de comparer accès visuel et accès au lecteur d’écran.
 
@@ -29,7 +29,7 @@ Les preuves structurelles motivent un examen du produit avant des recommandation
 
 ## Dates et versions
 
-Les constats d’interface sont principalement ceux de septembre et des 3–5 octobre 2026, complétés par les inspections ciblées des 6 et 7 octobre. La date d’apparition générale du 25 septembre à 23:16 Bruxelles vient du récit utilisateur. Les anciens numéros 0.1.x désignent les versions effectivement testées ; leur reconditionnement sous un autre numéro ne constitue pas un nouveau test humain.
+Les constats initiaux de septembre et des 3–6 octobre sont complétés par la réinvestigation utilisateur du 7 octobre à partir de 19 h 18. Les annonces et symptômes reconfirmés portent cette nouvelle date ; les mesures antérieures ne sont pas artificiellement redatées. La date d’apparition générale du 25 septembre à 23:16 Bruxelles vient du récit utilisateur. Les anciens numéros 0.1.x désignent les versions effectivement testées ; leur reconditionnement sous un autre numéro ne constitue pas un nouveau test humain.
 
 Une réception générale sans réserve porte sur les points effectivement proposés. Une validation ultérieure peut lever une attente historique sans transformer rétroactivement son ancien test en réussite. Les réserves de reproductibilité, acceptations nuancées et essais négatifs restent visibles lorsqu’ils changent l’interprétation.
 
@@ -39,12 +39,12 @@ Une reproduction ultérieure doit porter sa propre date et son environnement. Un
 
 Les pièces copiées conservent leur provenance et leur version. Les fichiers dérivés indiquent qu’ils synthétisent des preuves, plutôt que de se présenter comme de nouvelles captures brutes. Les corps de discussions, coordonnées personnelles, noms de projets, chemins de profil, identifiants privés, cookies et jetons ne sont pas inclus. Les reproductions utilisent des contenus synthétiques.
 
-L’extension 3.6.3 est une copie du démonstrateur de travail, pas une proposition de patch prêt à intégrer. Elle conserve les nœuds et actions natifs autant que le mécanisme le permet. Les contrats internes peuvent changer. Elle n’est pas une solution pérenne de l’accessibilité de ChatGPT : cette accessibilité doit être assurée dans le produit.
+L’extension 3.7.0 est une copie du démonstrateur de travail, pas une proposition de patch prêt à intégrer. Elle conserve les nœuds et actions natifs autant que le mécanisme le permet. Les contrats internes peuvent changer. Elle n’est pas une solution pérenne de l’accessibilité de ChatGPT : cette accessibilité doit être assurée dans le produit.
 
 Les fonctions complètes du démonstrateur incluent des choix personnels hors grief. Les références de chaque sous-point disent quel module est pertinent. Aucun message, partage public, modification de projet ou suppression n’est nécessaire pour les comparaisons de parcours proposées ; une vraie génération ou publication se fait seulement quand l’utilisateur décide de l’effectuer.
 
 ## Contrôle des pièces distribuées — 7 octobre 2026
 
-Les huit fichiers de tests Node joints dans les Points 1 et 2 passent **206 tests, zéro échec**. Les autres pages sont des fixtures historiques avec leurs procédures et limites ; leur copie n’est pas déclarée comme une nouvelle réception physique. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **23 fichiers** de l’extension correspondent exactement aux sources 3.6.3 du projet de travail et à l’archive jointe, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
+Les huit fichiers de tests Node joints dans les Points 1 et 2 passent **206 tests, zéro échec**. Les autres pages sont des fixtures historiques avec leurs procédures et limites ; leur copie n’est pas déclarée comme une nouvelle réception physique. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **24 fichiers** de l’extension correspondent exactement aux sources 3.7.0 du projet de travail et à l’archive jointe, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
 
 Ces contrôles confirment la cohérence des éléments distribués ; ils ne revérifient pas chaque problème dans le site en production. Les lectures et mesures ciblées des 6 et 7 octobre restent datées séparément.

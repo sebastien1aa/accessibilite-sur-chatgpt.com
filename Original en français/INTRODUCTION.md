@@ -4,7 +4,7 @@ Ce dossier décrit des barrières rencontrées dans **l’interface française d
 
 Le travail représente **plusieurs heures de tests personnels et d’investigation technique avec Codex**. L’objectif est sa transmission aux équipes responsables de l’accessibilité et de l’interface ChatGPT pour examen et, si possible, suivi. Il peut aussi servir à prévenir les mêmes mécanismes de régression dans de futures interfaces.
 
-**Observations historiques de septembre et des 3–5 octobre 2026, complétées par des inspections ciblées les 6 et 7 octobre.** Chaque preuve garde sa date et sa version testée. La date de rédaction ne constitue pas une nouvelle reproduction du problème dans le produit.
+**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 21 h 24 pour la passe utilisateur**, complétant les preuves de septembre et des 3–6 octobre. Les observations du titre assistant et du raisonnement seront complétées par une trace du nouveau tour. Chaque preuve garde sa date et sa provenance.
 
 ## Lire les quatre ensembles
 
@@ -12,23 +12,16 @@ L’ordre correspond à l’impact et aux priorités de l’utilisateur. Chaque 
 
 1. [Sélecteur et composition](Point%201%20-%20Sélecteur%20et%20composition/RAPPORT.md) : modèle et niveau de raisonnement, traduction de ce niveau, menu d’ajout, rappel involontaire de prompts.
 2. [Lecture et messages](Point%202%20-%20Lecture%20et%20messages/RAPPORT.md) : conversations longues, raisonnement, sélection, copie et partage, champs générés et repères.
-3. [Navigation et focus](Point%203%20-%20Navigation%20et%20focus/RAPPORT.md) : actions des projets, barre latérale, pagination, fermetures de menus et panneaux, cas Explorer, signalement Réagir.
+3. [Navigation et focus](Point%203%20-%20Navigation%20et%20focus/RAPPORT.md) : actions des projets, barre latérale, pagination, fermetures de menus et panneaux, cas Explorer, menu Évaluer la réponse.
 4. [Sémantique et localisation](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) : descriptions de rôles, états de destinations, groupes redondants, premier passage dans un mode bloquant et commandes de projets en anglais.
 
-La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **3.6.3**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
+La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **3.7.0**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
 
 ## Chronologie et environnement
 
 Le changement général d’interface a été constaté **le 25 septembre 2026 à 23 h 16, heure de Bruxelles**, alors que quelques heures auparavant l’ancien affichage était encore présent. Il s’agit du récit de l’utilisateur, pas d’un horodatage technique de déploiement. La difficulté de virtualisation des longues conversations avait déjà été examinée à partir du **17 septembre** ; elle a ensuite été réexaminée après le changement de rendu.
 
-| Élément | Contexte attesté | Limite |
-|---|---|---|
-| Langue | Interface du site en français ; annonces et adaptation étudiées dans cette configuration | Ne décrit pas toutes les langues |
-| Windows | Relevé du 3 octobre : Windows 10 Home 22H2, build 19045.6466 | Valeur historique, propre au contexte relevé |
-| Chrome | Relevé du 3 octobre à 22:28:10 Bruxelles : 154.0.8037.93 | Ne date pas rétroactivement les essais de septembre |
-| JAWS | Usage principal de JAWS 2021 déclaré ; JAWS 2025 cité dans le premier signalement et même blocage initial confirmé lors d’un bref essai | Aucune réception exhaustive des adaptations sur les deux versions |
-| Edge | Comparaison initiale déclarée ; inspection ciblée sans extension le 6 octobre : Edge 154.0.4258.62, Chromium 154.0.8037.98 | Inspection DOM/AX et sélection manuelle, pas réception JAWS complète |
-| Extension | Sources 3.6.3 jointes ; parcours de longue conversation reçu le 7 octobre, adaptations des autres réceptions historiques conservées | Réception ciblée déclarée par l’utilisateur ; comptes DOM et parole JAWS distincts, sans nouvelle réception exhaustive de tous les parcours en 3.6.2 |
+Les [versions actuelles, les scripts JAWS et les confirmations utilisateur](ENVIRONNEMENT.md) sont réunies dans le document d’environnement : Chrome 154.0.8037.98, Edge 154.0.4258.62, Opera 136.0.6008.80, JAWS 2021.2107.12.400 et 2025.2503.39.400. Les mêmes difficultés sont confirmées par l’utilisateur sur les navigateurs et versions de JAWS indiqués. Les sources du démonstrateur et les preuves instrumentées sont présentées séparément.
 
 Tous les horaires sont exprimés en **Europe/Brussels** ; en septembre et début octobre 2026, UTC+02:00. Une date sans heure signifie que seule cette précision est attestée.
 
@@ -44,10 +37,10 @@ Les captures purement visuelles ne suffisent généralement pas à montrer ces p
 
 Les quatre ensembles distinguent mécanisme natif observé, difficulté d’interopérabilité, demande d’organisation et limite de l’adaptation. Le succès d’un contournement ne signifie pas que le site a été corrigé et ne suffit pas à attribuer sa cause à OpenAI.
 
-La réinsertion de prompts avec Flèche haut reste une barrière de navigation et un risque d’envoi involontaire ; la limite de l’extension est l’absence d’accès alternatif à cet historique. Le regroupement des analyses et l’emplacement stable de la barre sont décrits avec leur composante d’organisation. Réagir est conservé comme **constaté, non investigué et non traité**.
+La réinsertion de prompts avec Flèche haut reste une barrière de navigation et un risque d’envoi involontaire ; la limite de l’extension est l’absence d’accès alternatif à cet historique. Le regroupement des analyses et l’emplacement stable de la barre sont décrits avec leur composante d’organisation. Le contrôle actuellement présent est « Évaluer la réponse » : son rôle de menu et la reprise de lecture à sa fermeture sont examinés au Point 3G. L’ancien libellé « Réagir » n’a pas été retrouvé dans les dernières réceptions.
 
 
-La sélection manuelle de plusieurs paragraphes et leur copie ont été constatées sans l’extension dans Edge le 6 octobre. Le point 2 examine donc les barrières de sélection étendue tout en gardant distinctes sélection de petits extraits, copie massive, canal de presse-papiers du navigateur et résultat physique Windows/JAWS. L’intention générale du produit ne se déduit pas de cet essai.
+La sélection manuelle et la copie fonctionnent hors sauts de lecture, conformément au retour natif du 7 octobre. Les sauts dans les longues discussions interrompent la continuité de lecture et de sélection. L’ajout des locuteurs, durées de réflexion et horodatages au texte copié est distingué comme demande produit au Point 2C.
 
 Les autres préférences de l’extension — retrait du lien Accueil sur l’accueil, ajout rapide de projet en Liste unique, arrangement exact d’une ligne de projet — ne sont pas transformées en défauts universels. L’ancien signalement des doublons au-dessus de la page a été retiré par l’utilisateur ; le lien « Retour à l’application » n’a pas été retrouvé dans les paramètres examinés. Ni compteur de quota absent ni détails de raisonnement inexistants ne sont inventés.
 

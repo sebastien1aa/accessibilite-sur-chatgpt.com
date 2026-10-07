@@ -30,6 +30,8 @@ Le snapshot public du 3 octobre pour l’état de raisonnement est [385910.71a81
 
 **Repère assistant.** Les captures DOM/AX identifient son absence pendant une partie de la génération puis son arrivée tardive. La légende finale sert au nom du bouton par référence et reste aussi exposée séparément. Cela établit une double exposition dans le rendu inspecté, sans garantir chaque instant de transition. Les fonctions `labelReference`, `groupParts`, `updateTurn` et `repairControl` de [reasoning-accessibility.js](../../../extension/reasoning-accessibility.js) traitent ces relations ; les [tests correspondants](../reproductions/reasoning-accessibility.test.cjs) en vérifient les invariants sur des doubles synthétiques.
 
+**Actualisation humaine du 7 octobre : en attente de trace.** L’utilisateur remarque une amélioration possible du titre natif « ChatGPT a dit ». Le prochain tour autorisé doit en établir la provenance et la disponibilité précoce avant toute clôture du défaut ou retrait local. Le même retour distingue l’état de raisonnement courant avant le titre des détails déjà réalisés, bien après le titre. Les preuves historiques ne suffisent pas à trancher ce nouveau rendu ; aucun effet d’un contact avec l’assistance n’est établi.
+
 **43 cartes Python : correction de l’attribution de branche.** Le type natif vérifié est `chatgpt-python-execution`. La fonction montante inspectée `dU`, avec `streamingParentRegion` absent, sépare les items d’analyse, rend le reste via `dK`, puis rend les cartes par `o8` comme sœurs dans un Fragment. Elles sont ainsi hors du repli principal. Une première déduction fondée sur une autre branche préfixe de `dK` avait été incorrecte pour ce tour ; elle a été rectifiée avant la validation. Ne pas attribuer le cas à cette branche préfixe.
 
 Ces noms proviennent de l’inspection des fonctions publiques **effectivement montées** et de leurs contrats ; aucun offset de `dU/dK` n’est revendiqué dans le snapshot ci-dessus. Des homonymes y existent dans d’autres composants. Pour réexaminer, relier le propriétaire rendu aux types/phase/région et au sibling réel plutôt que retenir la première occurrence d’un nom minifié.
@@ -45,6 +47,8 @@ Dans le rendu inspecté le 4 octobre : `.thread-scroll-container`, tours `[data-
 La [fixture de sélection](../reproductions/page-selection.html) reproduit des métadonnées synthétiques avec ces exclusions, puis vérifie la sélection, le focus, les éditeurs, le texte replié et la réversibilité de l’adaptation [page-selection.js](../../../extension/page-selection.js) / [reasoning-selection.css](../../../extension/reasoning-selection.css). Les exemples de code visibles de la [fixture historique de réflexion](../reproductions/reasoning-selection.html) restent du contenu synthétique explicitement affiché.
 
 La [comparaison Edge native du 6 octobre](selection-native-2026-10-06.json) est indépendante : sélection manuelle de deux paragraphes, copie correspondante après normalisation des espaces, sans adaptation. Elle interdit de conclure à une impossibilité générale de sélection native ; elle ne valide ni sélection globale massive ni gestes JAWS Windows.
+
+Le [retour natif du 7 octobre](reception-native-2026-10-07.json) confirme la sélection fonctionnelle hors sauts de position. Le problème d’accessibilité de stabilité est rattaché à 2A. L’inclusion des locuteurs, durées et horodatages absents de la copie native est conservée comme demande produit ; leur exclusion seule n’est pas qualifiée de défaut d’accessibilité démontré.
 
 ## 2D — Code public de copie, états natifs et notifications
 
@@ -68,6 +72,8 @@ Les fonctions `protect`, `protectCopyName`, `maintainCopyIcons`, `onClick`, `ins
 
 Les deux JSON natifs copiés ici sont les relevés historiques d’origine, avec uniquement noms de commandes, attributs, temps relatifs, styles et booléens. Ils ne contiennent pas de corps de messages ou de texte du presse-papiers. Les mouvements ultérieurs de fenêtre/document ne sont pas automatiquement imputés à la copie.
 
+Le 7 octobre, l’utilisateur reçoit à nouveau les défauts natifs sans changement : copie silencieuse et saut vers Partager pour les réponses ; partage global silencieux avec retour au haut de page. Ces parcours et les réceptions adaptées antérieures sont acquis, sans nouvelle demande de répétition.
+
 ## 2E — Writing Blocks
 
 L’inspection du 4 octobre relève quatre BUTTON directement sous BODY : `type=button`, `contenteditable=false`, `data-writing-block-table-grab-handle=row/column`, classes `writing-block-table-grab-handle` et suffixe correspondant. Texte unique « ⋮⋮ », sans nom descriptif. Style calculé `opacity=0`, `pointer-events=none` ; malgré cette inactivité visuelle/souris, boutons encore exposés.
@@ -76,6 +82,10 @@ Le code public des gestionnaires inspectés ouvre les menus d’ajout de ligne a
 
 Fonctions locales `handle`, `inactive`, `update`, `restore` dans [writing-block-accessibility.js](../../../extension/writing-block-accessibility.js). La [fixture existante](../reproductions/writing-block-accessibility.html) vérifie les quatre contrôles synthétiques, leur exclusion quand inactifs, leur retour quand activés, les callbacks conservés et l’édition/Copier. Elle ne démontre pas le bon étiquetage de tout menu de tableau actif. Le retrait des poignées inactives est reçu le 4 octobre ; leur absence de nom natif descriptif demeure un fait distinct.
 
+Le 7 octobre, le défaut natif est reçu comme inchangé : demande de rédaction réutilisable/copiable, attente de la fin complète de génération, puis parcours au bas de page. Cette réception ne constitue pas un nouveau compte DOM des quatre poignées.
+
 ## 2F — Dernière réponse
 
 La racine est un relevé DOM/AX : `h4.sr-only`, texte exact « Dernière réponse », hors du message. C’est cette exposition qui ajoute un arrêt de titre ; aucun algorithme natif de navigation particulier n’est attribué à ce seul élément. La fonction `hideLastResponseHeading` de [ui-accessibility.js](../../../extension/ui-accessibility.js) cible le repère exact et conserve les titres dans les messages. La reproduction humaine et son acceptation globale sont dans [REPRODUCTIONS.md](../reproductions/PROCEDURES.md) et [les constats](constats-2026-10-03-05.json). Il s’agit d’une simplification demandée, pas d’une preuve universelle qu’un tel titre est invalide.
+
+La présence native de ce titre est confirmée par l’utilisateur le 7 octobre ; elle ne demande pas une nouvelle réception identique.

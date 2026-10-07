@@ -1,0 +1,73 @@
+{
+  "nature": "transcription documentaire dérivée de retours humains natifs, pas trace technique ni enregistrement audio",
+  "date": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "periode_provisoire": {
+    "debut": "19:18",
+    "dernier_repere": "21:24",
+    "fin_des_essais_a_consigner": true,
+    "trace_complementaire_a_consigner": true
+  },
+  "sources": [
+    "réponses détaillées de l’utilisateur aux compléments de réception",
+    "signalement initial à l’assistance : passage autorisé sur les groupes, reconfirmé le 7 octobre",
+    "précisions ultérieures de l’utilisateur"
+  ],
+  "environnement_declare": {
+    "jaws_principal": "2021",
+    "edge_jaws_2025": "résultats identiques d’après l’expérience déclarée de l’utilisateur",
+    "opera": "nouvel essai utilisateur, mêmes points d’accessibilité",
+    "mesures_physiques_par_agent": false
+  },
+  "observations": {
+    "4A": {
+      "sections": [
+        "Épinglés : sortable",
+        "Projets : sortable étendu selon l’état",
+        "Récents : sortable"
+      ],
+      "chats_imbriques": "sortable à la place des annonces lien/bouton ; sortable réduit menu pour les boutons de menu",
+      "apres_tab": "draggable après Tab sur une ligne, Échap ou retour manuel au curseur PC, puis relecture aux flèches",
+      "apres_actions_chat": "remplacement des annonces lien/bouton également observé sur le chat dont Actions a été activé",
+      "roles_dom": "les rôles natifs ne sont pas réputés disparus ; la substitution concerne la parole rapportée"
+    },
+    "4B": "destinations annoncées réduites et page courante le cas échéant ; distinctes des sections qui déplient réellement leurs listes",
+    "4C": {
+      "parcours_initial_reconfirme": [
+        "Début du groupe [Nom du chat]",
+        "[Nom du chat]",
+        "Actions du chat",
+        "Épingler le chat",
+        "Fin du groupe",
+        "Début du groupe [Nom du chat suivant]",
+        "[Nom du chat suivant]"
+      ],
+      "surcout": "deux lignes supplémentaires par groupe",
+      "portee": [
+        "chats ordinaires",
+        "chats épinglés",
+        "chats de projets dépliés"
+      ],
+      "attendu": "liste et actions conservées sans arrêts de groupe répétés autour de chaque chat"
+    },
+    "4D": {
+      "gestes": [
+        "afficher/masquer les chats d’un projet",
+        "Tab avant ou dans Récents"
+      ],
+      "symptomes": "bruit, passage ressenti en mode formulaire, blocage des flèches",
+      "retablissement": "Échap ou retour manuel au curseur PC"
+    },
+    "4E": {
+      "galerie": "traduction manquante des libellés Pin project/Unpin project reconfirmée",
+      "barre_laterale": "épinglage dans Actions du projet, menu seulement atteint par Tab et inaccessible aux flèches/raccourcis ; défaut d’accès distinct de la localisation de galerie"
+    }
+  },
+  "limites": [
+    "aucune mesure de causalité interne JAWS",
+    "aucun rôle prononcé ajouté aux transcriptions",
+    "aucune nouvelle mesure DOM/AX dans cette transcription",
+    "les preuves techniques historiques gardent leurs dates",
+    "coordonnées et données de compte de la source initiale exclues"
+  ]
+}

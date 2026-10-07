@@ -1,6 +1,6 @@
 # Preuves du Point 3 : provenance, résultats et limites
 
-Ce document est une **synthèse dérivée** des diagnostics et réceptions conservés des 3–5 octobre 2026. Les paragraphes de synthèse ne sont pas des journaux bruts ni de nouveaux essais. Six des huit JSON liés ci-dessous sont des copies identiques, vérifiées par SHA-256, de pièces historiques sélectionnées. Les pièces 3A de réception des projets et de comparaison des boutons sont des extraits documentaires : seuls des champs de logistique et une précision sur l’installation ont été retirés ; les observations, résultats, dates et limites utiles sont conservés. Certains champs techniques ou noms de fixtures gardent leur forme historique ; les liens utilisables vers les reproductions figurent dans [le protocole local](../reproductions/PROCEDURES.md).
+Ce document est une **synthèse dérivée** des diagnostics et réceptions conservés des 3–5 octobre 2026, complétée par le retour humain natif du 7 octobre. Les paragraphes de synthèse ne sont pas des journaux bruts ni des essais de l’agent. Parmi les huit JSON historiques liés ci-dessous, six sont des copies identiques, vérifiées par SHA-256, de pièces sélectionnées. Les pièces 3A de réception des projets et de comparaison des boutons sont des extraits documentaires : seuls des champs de logistique et une précision sur l’installation ont été retirés ; les observations, résultats, dates et limites utiles sont conservés. Le [JSON du retour du 7 octobre](retour-humain-natif-2026-10-07.json) est une nouvelle transcription dérivée, pas une capture technique. Certains champs techniques ou noms de fixtures gardent leur forme historique ; les liens utilisables vers les reproductions figurent dans [le protocole local](../reproductions/PROCEDURES.md).
 
 Les chaînes des JSON ont été examinées avant sélection : libellés connus du produit, structures, clés suivies, compteurs et identifiants synthétiques. Aucun contenu de conversation, nom de projet personnel, chemin Windows nominatif, cookie ou jeton n’y a été sélectionné. Les titres d’onglets conservés désignent des essais synthétiques. Les traces peuvent mentionner une région, une cible ou une propriété sans exposer son contenu.
 
@@ -57,14 +57,31 @@ La variante après lifecycle échouée n’a pas été empilée avec le correcti
 
 [Réception 3.6.0 et trace passive du 5 octobre](3F-reception-3.6.0-2026-10-05.json) : déclaration positive des retours après partage d’une réponse, partage du prompt et annulation d’édition. La précision de mode initial est conservée. La trace atteint **60 événements**, son plafond ; elle n’atteste donc pas exhaustivement chaque étape des trois retours.
 
-**Synthèse de l’inspection native** : avant le nouveau module, fermeture effective vers BODY ; partage conserve son bouton, édition retire le formulaire puis recrée le bouton. Les trois retours adaptés ont été vérifiés dans Chrome sans envoi/modification du message ni publication du partage. Onze contrôles synthétiques de fermeture/annulation ont réussi pour l’adaptation 3.6.0. Les trois gestes physiques ont ensuite reçu un retour positif avec cette version le 5 octobre ; cette adaptation est conservée dans le démonstrateur 3.6.2.
+**Synthèse de l’inspection native** : avant le nouveau module, fermeture effective vers BODY ; partage conserve son bouton, édition retire le formulaire puis recrée le bouton. Les trois retours adaptés ont été vérifiés dans Chrome sans envoi/modification du message ni publication du partage. Onze contrôles synthétiques de fermeture/annulation ont réussi pour l’adaptation 3.6.0. Les trois gestes physiques ont ensuite reçu un retour positif avec cette version le 5 octobre ; cette adaptation est conservée dans le démonstrateur 3.7.0.
 
-Premier Échap en mode formulaire édition : changement vers curseur virtuel, édition encore ouverte. Échap de fermeture : saut natif concerné. Déjà au curseur virtuel : un appui ferme. Aucun événement DOM du premier appui de mode n’est inventé. Ce constat ne détermine pas le premier appui de Réagir.
+Premier Échap en mode formulaire édition : changement vers curseur virtuel, édition encore ouverte. Échap de fermeture : saut natif concerné. Déjà au curseur virtuel : un appui ferme. Aucun événement DOM du premier appui de mode n’est inventé. Ce constat ne détermine pas les mécanismes d’autres menus.
 
-## 3G — Réagir
+## 3G — Évaluer la réponse ; limite historique Réagir
 
-**Synthèse du seul signalement utilisateur du 5 octobre** : deux Échap seraient nécessaires pour sortir. Pas de trace comportementale, pas de comparaison sans extension, pas de version exacte chargée relevée, effet du premier appui inconnu. Aucune cause ni correction reçue n’est affirmée. Le contrôle synthétique « Réagir non traité » de la fixture 3F établit seulement l’exclusion du module local ; il ne reproduit pas le symptôme du vrai panneau Réagir.
+**Retour natif direct du 7 octobre** : le contrôle présent est « Évaluer la réponse », annoncé « bouton », bien qu’il ouvre un menu. Un Échap ferme puis renvoie le focus au haut de la page. Aucune relation ARIA ni cause interne n’est mesurée par ce témoignage ; aucune correction nouvelle reçue n’est affirmée.
+
+Le libellé Réagir du signalement du 5 octobre n’est plus trouvé lors des dernières réceptions. Son ancienne mention de deux Échap reste une limite historique et ne décrit pas le contrôle courant. La fixture historique 3F comporte un contrôle d’exclusion Réagir ; il ne reproduit ni le panneau courant ni son annonce.
+
+## Retour humain natif du 7 octobre 2026
+
+Source : réponses détaillées de l’utilisateur aux compléments de réception et précisions ultérieures. Plage **19 h 18–21 h 24 provisoire**, Europe/Brussels ; fin des essais et éventuelle trace complémentaire à consigner. Le [JSON dérivé](retour-humain-natif-2026-10-07.json) ne conserve que les observations du produit. La version de JAWS 2021 reste inchangée ; l’utilisateur rapporte les mêmes résultats avec Edge/JAWS 2025 d’après son expérience, et lors d’un nouvel essai Opera. Ce sont des retours humains, pas des mesures de l’agent.
+
+| Cas | Observation actuelle rapportée |
+|---|---|
+| 3A | Actions et Nouveau chat des projets atteints uniquement par Tab, inaccessibles aux flèches/raccourcis. Afficher/masquer les chats et Tab avant/dans Récents provoquent bruit, passage ressenti en mode formulaire et blocage ; Échap ou retour manuel au curseur PC permet la reprise. |
+| 3B | Afficher la barre latérale masquée inaccessible aux flèches et à Tab. |
+| 3C | Afficher plus renvoie au début des chats du projet. |
+| 3D | Profil et Actions des chats demandent deux Échap ; Filtrer et Options de la barre latérale du projet/du chat un seul. Remplacement lien/bouton également observé sur le chat dont Actions vient d’être activé. |
+| 3F | Retours au haut de la page après Partager, Actions, Modifier et autres boutons de chat inchangés depuis les ajustements antérieurs. |
+| 3G | Évaluer la réponse annoncé bouton, ouvre un menu ; un Échap ferme puis retour au haut de la page. |
+
+Les rapprochements entre mode formulaire, nombre d’Échap et remplacement des rôles sont des corrélations rapportées. Ils ne démontrent ni un même chemin DOM ni une causalité interne JAWS.
 
 ## Limites communes de provenance
 
-Les observations du produit datent des 3–5 octobre ; les copies et explications de ce dossier ne les rendent pas actuelles. Les réceptions valent pour le contexte déclaré et gardent leur nuance. L’attribution d’une perte native vers BODY est plus étayée sur certains chemins que sur toutes les familles citées. La cause interne des phénomènes virtuels reste ouverte. Aucun nouveau test JAWS/Edge, message ou réglage n’a été réalisé pour constituer ces pièces.
+Les preuves techniques historiques gardent leur date des 3–5 octobre ; le retour humain du 7 octobre actualise les symptômes explicitement reconfirmés sans redater ces mesures. Les réceptions valent pour le contexte déclaré et gardent leur nuance. L’attribution d’une perte native vers BODY est plus étayée sur certains chemins que sur toutes les familles citées. La cause interne des phénomènes virtuels reste ouverte. Aucun nouvel essai physique JAWS/Edge ni message n’est effectué par l’agent pour cette intégration documentaire.

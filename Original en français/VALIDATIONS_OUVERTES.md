@@ -1,19 +1,17 @@
-# Limites et validations ouvertes
+# Points à compléter et portée des preuves
 
-Les parcours adaptés sont validés par les retours d’usage datés dans les rapports, y compris la navigation longue en 3.6.2 le 7 octobre. Aucun nouvel essai de ces adaptations n’est requis en l’absence de régression. La confirmation de l’actualité des défauts du site sans extension est distincte de ces validations.
+Les retours natifs détaillés du 7 octobre actualisent les annonces et comportements des quatre Points. Les parcours adaptés déjà reçus restent acquis. Les [versions et confirmations](ENVIRONNEMENT.md) définissent le contexte de reproduction.
 
-## Réserves de sélection
+## Titre assistant et raisonnement
 
-La sélection native à la souris et sa copie multiparagraphe existent dans l’essai Edge du 6 octobre. Le rapport de sélection garde ses preuves et les réserves de copie massive. Cet essai ne valide ni la sélection globale d’une longue conversation ni les gestes et la relecture du presse-papiers Windows/JAWS.
+L’utilisateur constate une possible amélioration native de « ChatGPT a dit ». Une trace du nouveau tour permettra de vérifier la présence et le moment d’apparition du titre, ainsi que l’ordre du raisonnement courant et des détails déjà réalisés. Le constat n’est pas attribué à la prise en compte d’un signalement sans preuve de ce lien. Le correctif correspondant ne sera retiré qu’après cette vérification.
 
-## Annonces et cas non résolus
+## Sélection et copie
 
-Les citations de parole reproduisent les mots effectivement rapportés par l’utilisateur. Les noms calculés et rôles mesurés restent identifiés comme des observations de l’arbre d’accessibilité ; une transcription mot à mot n’est pas nécessaire pour décrire un obstacle de navigation.
+La sélection ordinaire est confirmée fonctionnelle tant qu’un saut de lecture ne l’interrompt pas. La continuité de navigation et de sélection dans les longues conversations reste le problème d’accessibilité. L’inclusion des locuteurs, durées et horodatages dans le texte copié est une demande produit séparée. Le dossier ne promet pas une copie intégrale exacte de toute taille.
 
-Réagir reste constaté, non investigué et non traité ; aucune campagne ni correction spéculative n’est engagée ici. La réserve sur la reproductibilité des nombreuses cartes d’analyse reste explicite. L’autre accès à l’historique des prompts n’a pas été créé.
+## Autres limites qui changent l’interprétation
 
-## Dates et portée des réceptions
+Le cas des nombreuses cartes d’analyse reste lié à l’exemple disponible et à sa reproductibilité. Le besoin d’un accès volontaire à l’historique des prompts demeure. Le bouton courant est « Évaluer la réponse » ; l’ancien nom « Réagir » ne décrit plus le contrôle observé le 7 octobre. Les noms, rôles et relations DOM sont distingués des annonces et positions de lecture réellement rapportées.
 
-Les constats historiques ne garantissent pas que le produit présente encore tous ces comportements. Une reproduction ultérieure peut modifier une conclusion ; les problèmes disparus deviennent historiques et les attributions ouvertes gardent leur qualification.
-
-Le parcours ciblé de la longue conversation est reçu positivement avec le démonstrateur 3.6.2 le 7 octobre. Les autres parcours adaptés restent validés aux dates indiquées dans leurs rapports.
+Les preuves techniques gardent leurs dates ; les transcriptions utilisateur privilégient les libellés utiles au signalement. La dernière vérification avant publication peut modifier un constat si le produit évolue.

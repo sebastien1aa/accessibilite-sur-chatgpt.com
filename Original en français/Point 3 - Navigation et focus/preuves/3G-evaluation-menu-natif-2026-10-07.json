@@ -1,0 +1,44 @@
+{
+  "dateLocal": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "method": "Inspection DOM/AX et ouverture/fermeture natives dans un onglet dédié, aucune évaluation envoyée.",
+  "nativeButton": {
+    "tag": "BUTTON",
+    "type": "button",
+    "ariaLabel": "Évaluer la réponse",
+    "ariaHaspopup": null,
+    "ariaExpanded": null,
+    "ariaControls": null
+  },
+  "nativeParent": {
+    "tag": "SPAN",
+    "type": "button",
+    "idPresent": true,
+    "ariaHaspopup": "menu",
+    "ariaExpanded": "false",
+    "dataState": "closed",
+    "onlyOneButton": true
+  },
+  "nativeMenu": {
+    "role": "menu",
+    "labelledByParentId": true,
+    "items": [
+      "Bonne réponse",
+      "Mauvaise réponse"
+    ]
+  },
+  "afterNativeEscape": {
+    "menuClosed": true,
+    "domFocusTag": "BUTTON",
+    "domFocusLabel": "Évaluer la réponse"
+  },
+  "userReceipt": {
+    "date": "2026-10-07",
+    "announcementRelevantRole": "bouton",
+    "escapeCount": 1,
+    "readingPosition": "Haut de la page"
+  },
+  "cause": "Les propriétés de menu sont sur le parent SPAN, pas sur le bouton effectivement exposé et focalisable.",
+  "demonstration": "Propriétés natives copiées sur le bouton, relation au menu vérifiée ; contrôleur de retour existant, identité du tour protégée.",
+  "reference": "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/"
+}
