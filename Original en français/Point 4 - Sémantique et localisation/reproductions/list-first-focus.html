@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Comparaison de l’entrée dans les listes</title>
+  <style>body{font:18px system-ui;max-width:55rem;margin:2rem auto;padding:0 1rem}a{display:inline-block;padding:.6rem}pre{white-space:pre-wrap;font:14px monospace}</style>
+</head>
+<body>
+  <h1>Comparaison de l’entrée dans les listes</h1>
+  <p>Page autonome de diagnostic. Elle ne charge pas l’extension et ne modifie aucun réglage. Les consignes de l’essai sont données dans le chat.</p>
+  <h2>Liste A</h2>
+  <div role="list" id="list-a"><div role="listitem"><a id="link-a" href="#after-a">Lien de la liste A</a></div></div>
+  <p id="after-a">Texte après la liste A.</p>
+  <h2>Liste B</h2>
+  <div role="list" id="list-b" tabindex="-1"><div role="listitem"><a id="link-b" href="#after-b">Lien de la liste B</a></div></div>
+  <p id="after-b">Texte après la liste B.</p>
+  <h2>Relevé technique</h2>
+  <pre id="report">Aucune entrée enregistrée.</pre>
+  <script>
+  (()=>{
+    const frames=[];
+    const describe=node=>{
+      if(!node)return null;
+      const result=[];
+      for(let n=node;n&&result.length<5;n=n.parentElement)result.push({tag:n.tagName,id:n.id||null,role:n.getAttribute('role'),tabindex:n.getAttribute('tabindex')});
+      return result;
+    };
+    const record=event=>{
+      if(frames.length>=100)return;
+      if(event.type.startsWith('key')&&!['Tab','ArrowDown','ArrowUp','Escape'].includes(event.key))return;
+      frames.push({type:event.type,key:event.key||null,alt:!!event.altKey,ctrl:!!event.ctrlKey,shift:!!event.shiftKey,target:describe(event.target),focus:describe(document.activeElement)});
+      document.querySelector('#report').textContent=JSON.stringify({frames},null,2);
+    };
+    const types=['focusin','focusout','keydown','keyup'];
+    types.forEach(type=>document.addEventListener(type,record,true));
+    window[Symbol.for('chatgpt-a11y-list-first-focus.fixture')]= {report:()=>({frames:frames.slice()}),stop(){types.forEach(type=>document.removeEventListener(type,record,true))}};
+  })();
+  </script>
+</body>
+</html>

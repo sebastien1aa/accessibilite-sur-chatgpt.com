@@ -1,0 +1,27 @@
+{
+  "dateLocal": "2026-10-04",
+  "timezone": "Europe/Brussels",
+  "version": "0.1.6",
+  "nature": "Extrait documentaire de la piece historique; bloc de logistique delivery retire, resultats techniques et humains conserves.",
+  "functionalCommit": "ef20fde",
+  "source": "Retour direct de l'utilisateur dans le chat courant, apres l'essai propose.",
+  "userFeedback": "tout semble OK",
+  "status": "reception_positive_initiale",
+  "scope": [
+    "Parcours d'un projet avec fleches ou raccourcis JAWS sans Tab indispensable.",
+    "Acces a Actions puis Nouveau chat, sans activer Nouveau chat.",
+    "Espace sur Actions, presence de Page d'accueil du projet, fermeture par Echap."
+  ],
+  "limits": [
+    "Nuance semble conservee ; aucun releve independant des gestes ou de la parole.",
+    "Pas de creation de chat ni activation de l'accueil revendiquee par ce retour.",
+    "Pas de reception globale de R0/P1-P10, ni de tous les navigateurs et versions de JAWS."
+  ],
+  "technicalChecksBeforeHandoff": {
+    "dateLocal": "2026-10-04",
+    "nodeTests": { "total": 167, "pass": 167, "fail": 0, "skipped": 0 },
+    "archiveFileCount": 16,
+    "allArchiveFilesMatchSources": true,
+    "archiveSha256": "734F86C95CFB0BE596042518AB04659409438DACFC7236A47392CEC94730F5E7"
+  }
+}

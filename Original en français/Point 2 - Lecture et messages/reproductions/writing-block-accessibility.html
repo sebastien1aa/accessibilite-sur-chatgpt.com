@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Poignées inactives des champs éditables</title>
+<style>body{font:18px/1.5 system-ui;margin:2rem}button,textarea{font:inherit}pre{white-space:pre-wrap}.writing-block-table-grab-handle{opacity:0;pointer-events:none;position:fixed;left:0;bottom:0}</style>
+<script src="../../../extension/writing-block-accessibility.js"></script>
+<script>window.bootBeforeBody=!!window[Symbol.for('chatgpt-navigation-continue.writing-block.current')]?.active&&!document.body;</script>
+</head>
+<body>
+<h1>Poignées inactives des champs éditables</h1>
+<p>Fixture publique : les commandes inactives sont exclues, le texte éditable et ses commandes restent disponibles.</p>
+<button id="run">Exécuter les contrôles</button>
+<pre id="results" role="status">En attente</pre>
+<button id="before">Avant les poignées</button>
+<button type="button" contenteditable="false" data-writing-block-table-grab-handle="row" class="writing-block-table-grab-handle writing-block-table-grab-handle-row">⋮⋮</button>
+<button type="button" contenteditable="false" data-writing-block-table-grab-handle="column" class="writing-block-table-grab-handle writing-block-table-grab-handle-column">⋮⋮</button>
+<button type="button" contenteditable="false" data-writing-block-table-grab-handle="row" class="writing-block-table-grab-handle writing-block-table-grab-handle-row">⋮⋮</button>
+<button type="button" contenteditable="false" data-writing-block-table-grab-handle="column" class="writing-block-table-grab-handle writing-block-table-grab-handle-column">⋮⋮</button>
+<button id="after">Après les poignées</button>
+<textarea id="editor" aria-label="Texte de contrôle">Texte éditable conservé.</textarea>
+<button id="copy">Copier le texte</button>
+<script>
+const api=()=>window[Symbol.for('chatgpt-navigation-continue.writing-block.current')];
+const settle=async()=>{await Promise.resolve();await Promise.resolve();await Promise.resolve();};
+const load=()=>new Promise((resolve,reject)=>{const s=document.createElement('script');s.src='../../../extension/writing-block-accessibility.js';s.onload=resolve;s.onerror=reject;document.head.append(s);});
+const handles=Array.from(document.querySelectorAll('[data-writing-block-table-grab-handle]'));
+const editor=document.querySelector('#editor');let calls=0;const callback=()=>calls++;handles[0].addEventListener('click',callback);
+document.querySelector('#run').onclick=async()=>{
+ const checks=[],check=(name,ok)=>checks.push({name,ok:!!ok});
+ try{
+  check('Démarrage avant BODY et quatre poignées inactives exclues',bootBeforeBody&&handles.every(n=>n.inert));
+  check('Champ, copie, texte et nœuds natifs conservés',!editor.inert&&!document.querySelector('#copy').inert&&editor.value==='Texte éditable conservé.'&&handles.every(n=>n.textContent==='⋮⋮'&&n.parentElement===document.body));
+  editor.focus();handles[0].focus();check('Une poignée inactive ne reçoit pas le focus programmatique',document.activeElement===editor);
+  handles[0].style.opacity='1';handles[0].style.pointerEvents='auto';await settle();
+  handles[0].click();check('Poignée activée par le site restaurée, callback natif conservé',!handles[0].inert&&calls===1);
+  handles[0].style.removeProperty('opacity');handles[0].style.removeProperty('pointer-events');await settle();check('Retour à l’état inactif traité sans rechargement',handles[0].inert);
+  const later=handles[0].cloneNode(true);later.removeAttribute('inert');document.body.append(later);await settle();check('Nouvelle paire/poignée native couverte',later.inert);later.remove();await settle();check('Nœud retiré restauré',!later.hasAttribute('inert'));
+  handles[2].setAttribute('data-writing-block-table-grab-handle','other');await settle();check('Recyclage hors signature restaure le nœud',!handles[2].inert);handles[2].setAttribute('data-writing-block-table-grab-handle','row');await settle();
+  document.documentElement.lang='en';await settle();check('Autre langue restaure les propriétés',handles.every(n=>!n.inert));document.documentElement.lang='fr';await settle();check('Retour français réapplique sans chargement',handles.every(n=>n.inert));
+  const outside=document.createElement('button');outside.textContent='Autre bouton';outside.style.opacity='0';outside.style.pointerEvents='none';document.body.append(outside);await settle();check('Bouton sans rapport conservé',!outside.inert);outside.remove();
+  handles[1].setAttribute('inert','');await settle();handles[3].removeAttribute('inert');await settle();api().stop();
+  check('Arrêt préserve la dernière écriture native, même identique',handles[1].hasAttribute('inert')&&!handles[0].hasAttribute('inert')&&!handles[2].hasAttribute('inert')&&!handles[3].hasAttribute('inert'));
+  handles[1].removeAttribute('inert');handles[0].focus();await load();check('Injection sur poignée déjà focalisée ne déplace pas le focus',document.activeElement===handles[0]&&!handles[0].inert);
+  editor.focus();await settle();check('Départ volontaire exclut ensuite la poignée sans refocus',document.activeElement===editor&&handles[0].inert);
+  api().stop();check('Arrêt complet et nouvel état natif restaurés',!api().active&&handles.every(n=>!n.hasAttribute('inert'))&&editor.value==='Texte éditable conservé.');
+  await load();check('Réinjection propre avec les mêmes contrôles',api().active&&handles.every(n=>n.inert));
+ }catch(error){check(String(error),false);}
+ document.querySelector('#results').textContent=JSON.stringify({passed:checks.filter(c=>c.ok).length,total:checks.length,checks},null,2);
+};
+</script>
+</body>
+</html>

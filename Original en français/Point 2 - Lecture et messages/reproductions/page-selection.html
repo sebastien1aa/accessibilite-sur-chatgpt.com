@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Sélection naturelle de la page</title>
+<style>
+  body { font: 16px/1.5 system-ui; }
+  .select-none { -webkit-user-select: none; user-select: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  #results { white-space: pre-wrap; }
+</style>
+<link rel="stylesheet" href="../../../extension/reasoning-selection.css">
+<button id="run">Exécuter les contrôles</button>
+<pre id="results" role="status">En attente</pre>
+<div id="fixture">
+  <nav class="select-none"><a id="nav" href="#fixture">Navigation visible</a></nav>
+  <div class="thread-scroll-container" role="presentation">
+    <article data-turn-key="fixture">
+      <div role="separator"><time datetime="2026-10-04T16:35:00+02:00" class="select-none">4 oct. 2026, 16:35</time></div>
+      <h4 id="user" class="sr-only m-0 select-none">Vous avez dit :</h4>
+      <p>Question de contrôle.</p>
+      <h4 id="assistant" class="sr-only" data-chatgpt-reasoning-accessibility="heading">ChatGPT a dit :</h4>
+      <span hidden data-chatgpt-agent-turn-start></span>
+      <div class="select-none">Texte de réflexion visible.</div>
+      <h4 id="duplicate" class="sr-only m-0 select-none" aria-hidden="true">ChatGPT a dit :</h4>
+      <p>Réponse de contrôle.</p>
+      <div hidden class="select-none">Texte replié exclu.</div>
+    </article>
+  </div>
+  <button id="native" class="select-none" aria-expanded="false">Action native</button>
+</div>
+<textarea id="composer" class="select-none">Brouillon conservé</textarea>
+<div contenteditable="true" id="editor"><span class="select-none">Texte éditable</span></div>
+<h4 id="unrelated" class="sr-only select-none">Annonce séparée</h4>
+<script>
+const api = () => window[Symbol.for('chatgpt-navigation-continue.page-selection.current')];
+const fixture = document.querySelector('#fixture');
+const select = () => { const range = document.createRange(); range.selectNodeContents(fixture); const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range); return selection.toString(); };
+const load = () => new Promise((resolve, reject) => { const script = document.createElement('script'); script.src = '../../../extension/page-selection.js'; script.onload = resolve; script.onerror = reject; document.head.append(script); });
+let clicks = 0; document.querySelector('#native').onclick = () => { clicks++; document.querySelector('#native').setAttribute('aria-expanded', 'true'); };
+document.querySelector('#run').onclick = async () => {
+  const results = [], check = (name, pass) => results.push({ name, pass: !!pass });
+  try {
+    const before = select();
+    check('Défaut : navigation, date et locuteur utilisateur exclus', !before.includes('Navigation visible') && !before.includes('16:35') && !before.includes('Vous avez dit :'));
+    const headings = ['user', 'assistant', 'duplicate'].map(id => document.getElementById(id));
+    const original = headings.map(node => ({ node, text: node.textContent, className: node.className, position: getComputedStyle(node).position }));
+    const editable = [document.querySelector('#composer'), document.querySelector('#editor span')].map(node => getComputedStyle(node).userSelect);
+    const focused = document.activeElement;
+    await load(); const corrected = select();
+    check('Texte visible de toute la page et date avec heure inclus', corrected.includes('Navigation visible') && corrected.includes('4 oct. 2026, 16:35') && corrected.includes('Texte de réflexion visible.') && corrected.includes('Action native'));
+    check('Deux locuteurs chacun exactement une fois', corrected.split('Vous avez dit :').length === 2 && corrected.split('ChatGPT a dit :').length === 2);
+    check('Titres natifs et repère existant inchangés', original.every(({ node, text, className, position }, index) => node === headings[index] && node.textContent === text && node.className === className && getComputedStyle(node).position === position) && headings[2].getAttribute('aria-hidden') === 'true');
+    check('Texte replié et autre annonce exclus', !corrected.includes('Texte replié exclu.') && getComputedStyle(document.querySelector('#unrelated')).userSelect === 'none');
+    check('Éditeurs et brouillon préservés', editable[0] === getComputedStyle(document.querySelector('#composer')).userSelect && editable[1] === getComputedStyle(document.querySelector('#editor span')).userSelect && document.querySelector('#composer').value === 'Brouillon conservé');
+    check('Activation et sélection sans déplacement de focus', document.activeElement === focused);
+    document.querySelector('#native').click(); check('Callback et état natifs conservés', clicks === 1 && document.querySelector('#native').getAttribute('aria-expanded') === 'true');
+    const later = document.createElement('h4'); later.className = 'sr-only select-none'; later.textContent = 'Vous avez dit :'; document.querySelector('[data-turn-key]').append(later); await Promise.resolve();
+    check('Nouveau locuteur couvert sans copie de message', later.getAttribute('data-chatgpt-selectable-speaker') === 'active'); later.remove(); await Promise.resolve();
+    api().stop(); check('Arrêt restaure sélection et retire ses seuls marqueurs', select() === before && !document.documentElement.hasAttribute('data-chatgpt-page-selection') && headings.every(node => !node.hasAttribute('data-chatgpt-selectable-speaker')));
+    await load(); check('Redémarrage restaure la sélection corrigée', select() === corrected);
+    headings[0].firstChild.data = 'Autre annonce'; await Promise.resolve();
+    check('Titre recyclé : autre annonce exclue', !headings[0].hasAttribute('data-chatgpt-selectable-speaker'));
+    headings[0].firstChild.data = 'Vous avez dit :'; await Promise.resolve();
+    check('Titre utilisateur rétabli sans réinjection', headings[0].getAttribute('data-chatgpt-selectable-speaker') === 'active');
+    document.documentElement.lang = 'en'; await Promise.resolve();
+    check('Autre langue : portée et sélection natives restaurées', !document.documentElement.hasAttribute('data-chatgpt-page-selection') && select() === before);
+    document.documentElement.lang = 'fr'; await Promise.resolve();
+    check('Retour français : sélection réappliquée sans chargement', select() === corrected);
+  } catch (error) { results.push({ name: String(error), pass: false }); }
+  document.querySelector('#results').textContent = JSON.stringify({ passed: results.filter(result => result.pass).length, total: results.length, results }, null, 2);
+};
+</script>
+</html>

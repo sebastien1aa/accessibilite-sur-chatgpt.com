@@ -1,0 +1,40 @@
+<!doctype html><html lang="fr-FR"><meta charset="utf-8"><title>Propriété popup après fermeture Explorer</title>
+<body><h1>Comparaison de la propriété popup</h1><p>Fixture DOM publique ; aucun mode JAWS n’est mesuré.</p>
+<nav data-app-navigation-rail><button id="explorer" data-slot="popover-trigger" aria-haspopup="dialog" aria-expanded="false">Explorer</button></nav>
+<button id="profile" aria-haspopup="menu" aria-expanded="false">Profil synthétique</button><input id="outside"><button id="run">Vérifier la propriété</button><pre id="results" role="status"></pre>
+<script src="../../../extension/sidebar-menu-focus.js"></script><script src="../../../extension/explorer-accessibility.js"></script>
+<script>
+const api=()=>window[Symbol.for('chatgpt-navigation-continue.sidebar-menu-focus.v4')];
+const current=()=>window[Symbol.for('chatgpt-navigation-continue.sidebar-menu-focus.current')];
+const explorer=document.getElementById('explorer'),profile=document.getElementById('profile'),outside=document.getElementById('outside');
+const tick=()=>new Promise(r=>setTimeout(r,0));let serial=0,fixture=null,mode='Explorer',nativeArrows=0,hintAtFocus='unset';
+function open(button,label='Explorer'){
+ const p=document.createElement('div');p.id='hint-popup-'+ ++serial;p.setAttribute('role',button.getAttribute('aria-haspopup'));p.setAttribute('data-state','open');p.tabIndex=-1;
+ if(p.getAttribute('role')==='dialog'){p.setAttribute('data-slot','popover-content');p.setAttribute('aria-label',label);}
+ const g=document.createElement('div');g.setAttribute('role','group');const first=document.createElement('button');first.textContent='Projets';g.append(first);p.append(g);document.body.append(p);
+ button.setAttribute('aria-controls',p.id);button.setAttribute('aria-expanded','true');p.focus();
+ const f={p,first,escape(){p.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true}));},close(){button.setAttribute('aria-expanded','false');button.removeAttribute('aria-controls');p.remove();}};fixture=f;return f;
+}
+explorer.addEventListener('focusin',()=>hintAtFocus=explorer.getAttribute('aria-haspopup'));
+explorer.addEventListener('click',()=>open(explorer,mode));
+explorer.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown'].includes(e.key)){nativeArrows++;open(explorer);fixture.first.focus();}});
+document.getElementById('run').onclick=async()=>{
+ const checks=[],check=(name,ok)=>checks.push({name,ok:!!ok});
+ check('Propriété native intacte avant premier parcours',explorer.getAttribute('aria-haspopup')==='dialog');
+ explorer.click();await tick();check('Clic accessible initial conserve entrée reçue et type dialogue',document.activeElement===fixture.first&&explorer.getAttribute('aria-haspopup')==='dialog');
+ fixture.escape();fixture.close();await tick();check('Popup retiré et retour exact avec propriété absente avant focus',!fixture.p.isConnected&&document.activeElement===explorer&&hintAtFocus===null&&!explorer.hasAttribute('aria-haspopup'));
+ check('État réduit et rôle natifs conservés',explorer.getAttribute('aria-expanded')==='false'&&explorer.getAttribute('role')===null&&api().suppressedCount===1);
+ await new Promise(r=>setTimeout(r,170));check('Fin de bail ne réintroduit pas le type popup sur le bouton fermé',!explorer.hasAttribute('aria-haspopup')&&document.activeElement===explorer);
+ explorer.click();await tick();check('Réactivation accessible sans key/pointer conserve entrée et restaure le type avant callback',document.activeElement===fixture.first&&explorer.getAttribute('aria-haspopup')==='dialog');
+ fixture.escape();fixture.close();await tick();explorer.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true,cancelable:true}));await tick();check('Flèche native volontaire ouvre toujours le panneau et sa destination',nativeArrows===1&&explorer.getAttribute('aria-expanded')==='true'&&explorer.getAttribute('aria-haspopup')==='dialog'&&document.activeElement===fixture.first);fixture.close();
+ let f=open(profile);f.escape();f.close();await tick();check('Profil et ses métadonnées popup inchangés',profile.getAttribute('aria-haspopup')==='menu'&&document.activeElement===profile);
+ mode='Autre panneau';explorer.click();await tick();fixture.escape();fixture.close();await tick();check('Autre dialogue du même bouton non neutralisé',explorer.getAttribute('aria-haspopup')==='dialog');mode='Explorer';
+ explorer.click();await tick();fixture.escape();fixture.close();await tick();explorer.setAttribute('aria-haspopup','menu');await tick();check('Nouvelle propriété native prioritaire sans écrasement',explorer.getAttribute('aria-haspopup')==='menu'&&api().suppressedCount===0);explorer.setAttribute('aria-haspopup','dialog');
+ explorer.click();await tick();fixture.escape();fixture.close();await tick();explorer.setAttribute('aria-haspopup','dialog');await tick();check('Réécriture native dialog du bouton fermé corrigée sans nouveau focus',!explorer.hasAttribute('aria-haspopup')&&document.activeElement===explorer);
+ document.documentElement.lang='en';await tick();check('Changement de langue restaure le type natif',explorer.getAttribute('aria-haspopup')==='dialog'&&api().suppressedCount===0);document.documentElement.lang='fr-FR';
+ explorer.click();await tick();fixture.escape();fixture.close();await tick();explorer.removeAttribute('data-slot');await tick();check('Recyclage du seul data-slot restaure la propriété native',explorer.getAttribute('aria-haspopup')==='dialog'&&api().suppressedCount===0);explorer.setAttribute('data-slot','popover-trigger');
+ explorer.click();await tick();fixture.escape();fixture.close();await tick();const rail=explorer.parentElement;rail.removeAttribute('data-app-navigation-rail');await tick();check('Perte du seul marqueur rail restaure la propriété native',explorer.getAttribute('aria-haspopup')==='dialog'&&api().suppressedCount===0);rail.setAttribute('data-app-navigation-rail','');
+ explorer.click();await tick();fixture.escape();fixture.close();await tick();api().stop();await tick();check('Arrêt restaure propriété sans saut de focus et retire le contrôleur',explorer.getAttribute('aria-haspopup')==='dialog'&&!current()&&!api().active&&document.activeElement===explorer);current()?.stop();window[Symbol.for('chatgpt-navigation-continue.explorer-accessibility.v1')]?.stop();
+ window.popupHintResults={passed:checks.filter(c=>c.ok).length,total:checks.length,checks};document.getElementById('results').textContent=JSON.stringify(window.popupHintResults,null,2);
+};
+</script></body></html>

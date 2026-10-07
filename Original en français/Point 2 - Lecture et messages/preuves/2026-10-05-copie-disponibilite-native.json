@@ -1,0 +1,168 @@
+{
+  "nativeProbe": true,
+  "privateContentPersisted": false,
+  "modules": [
+    {
+      "active": false,
+      "v": 1
+    },
+    {
+      "active": false,
+      "v": 2
+    },
+    {
+      "active": false,
+      "v": 3
+    },
+    {
+      "active": false,
+      "v": 4
+    }
+  ],
+  "samples": [
+    {
+      "ancestors": [
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "contents",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        }
+      ],
+      "busy": null,
+      "connected": true,
+      "disabled": false,
+      "domClick": "function",
+      "focus": false,
+      "ms": 28022,
+      "name": "Copier",
+      "reactClick": "function",
+      "unavailable": null
+    },
+    {
+      "ancestors": [
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "0.4",
+          "visibility": "visible"
+        },
+        {
+          "display": "contents",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        }
+      ],
+      "busy": "true",
+      "connected": true,
+      "disabled": false,
+      "domClick": "function",
+      "focus": true,
+      "ms": 28800,
+      "name": "Copier",
+      "reactClick": "function",
+      "unavailable": "true"
+    },
+    {
+      "ancestors": [
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "contents",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        }
+      ],
+      "busy": null,
+      "connected": true,
+      "disabled": false,
+      "domClick": "function",
+      "focus": true,
+      "ms": 28817,
+      "name": "Copié",
+      "reactClick": "undefined",
+      "unavailable": null
+    },
+    {
+      "ancestors": [
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "contents",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "display": "flex",
+          "hidden": null,
+          "inert": false,
+          "opacity": "1",
+          "visibility": "visible"
+        }
+      ],
+      "busy": null,
+      "connected": true,
+      "disabled": false,
+      "domClick": "function",
+      "focus": true,
+      "ms": 30829,
+      "name": "Copier",
+      "reactClick": "function",
+      "unavailable": null
+    }
+  ],
+  "axSuccess": {
+    "role": "button",
+    "ignored": false,
+    "focusable": true,
+    "focused": true,
+    "name": "Copié"
+  },
+  "note": "DOM onclick and intrinsic button accessibility persist despite React callback removal. This does not prove JAWS virtual cursor visibility."
+}

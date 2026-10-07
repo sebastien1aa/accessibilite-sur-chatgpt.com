@@ -1,0 +1,25 @@
+/* ChatGPT marks expanded reasoning as select-none, except when selection starts
+ * inside it. A selection spanning the conversation therefore skips its text.
+ * Match that specific wrapper and its explicit select-none descendants only.
+ * Keep the DOM, disclosure state, editable controls and native copy untouched.
+ */
+#thread div.select-none[class~="active:select-auto"][class~="data-has-range-start:select-auto"]:has(> button[aria-expanded]),
+#thread div.select-none[class~="active:select-auto"][class~="data-has-range-start:select-auto"]:has(> button[aria-expanded]) .select-none {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+/* The current interface also opts visible page text (navigation, timestamps
+ * and captions) out of normal selection. Activation is owned by the stoppable
+ * page-selection module. Keep native editor behavior and clipped accessibility
+ * variants; only confirmed, non-duplicate speaker headings opt in separately.
+ * No layout, pointer, keyboard, copy or focus behavior is overridden. */
+html[lang|="fr" i][data-chatgpt-page-selection="active"] .select-none:not(:where(
+  .sr-only, .sr-only *, input, textarea, select,
+  [contenteditable]:not([contenteditable="false"]),
+  [contenteditable]:not([contenteditable="false"]) *
+)),
+html[lang|="fr" i][data-chatgpt-page-selection="active"] h4[data-chatgpt-selectable-speaker="active"] {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}

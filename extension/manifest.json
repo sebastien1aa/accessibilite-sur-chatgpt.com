@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Accessibilité pour ChatGPT web",
+  "version": "3.6.2",
+  "description": "Améliore la lecture, la sélection, les menus et la navigation au clavier sur chatgpt.com avec un lecteur d’écran.",
+  "minimum_chrome_version": "111",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "prompt-history-accessibility.js",
+        "keep-turns.js",
+        "keep-modern-turns.js",
+        "sidebar-list-accessibility.js",
+        "sidebar-sortable-accessibility.js",
+        "sidebar-menu-focus.js",
+        "message-action-focus.js",
+        "ui-accessibility.js",
+        "explorer-accessibility.js",
+        "model-accessibility.js",
+        "add-menu-accessibility.js",
+        "reasoning-accessibility.js",
+        "analysis-details-accessibility.js",
+        "project-accessibility.js",
+        "page-selection.js",
+        "feedback-actions.js",
+        "writing-block-accessibility.js"
+      ],
+      "css": [
+        "reasoning-selection.css"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "diagnostics.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Accessibilité pour ChatGPT web : état",
+    "default_popup": "popup.html"
+  }
+}

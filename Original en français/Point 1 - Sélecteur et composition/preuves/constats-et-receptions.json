@@ -1,0 +1,41 @@
+{
+  "type": "synthese_derivee_des_sources_historiques",
+  "redaction": "2026-10-06",
+  "fuseau": "Europe/Brussels",
+  "langue_interface": "francais",
+  "source_native": "code public et DOM observes le 3 octobre 2026",
+  "points": {
+    "1A": {
+      "annonce_utilisateur_initiale": "Sélectionner le modèle ChatGPT",
+      "nom_AX_adapte_mesure": "Niveau de raisonnement : 6 Pro",
+      "traduction_sliderLabel_prioritaire_sur_repli": true,
+      "cause_anglais_attribuee_a_extension": false,
+      "reception": "selecteur francais accepte dans reception globale 3.2.3 le 4 octobre, sans couverture de toutes combinaisons"
+    },
+    "1B": {
+      "popup_sans_role_menu_dans_rendu_examine": true,
+      "focus_initial_composeur": true,
+      "blur_native_dismiss": true,
+      "keydown_window_capture_index_surligne": true,
+      "aria_current_native_sur_ajout_fichier": true,
+      "activation_native_recherche_approfondie_entree": true,
+      "selection_test_retiree_sans_envoi": true,
+      "reception": "menu utilisable accepte dans reception globale 3.2.3 le 4 octobre"
+    },
+    "1C": {
+      "rappel_native_nombre_caracteres": 163,
+      "contenu_non_conserve": true,
+      "nouvelle_discussion_aussi_selon_precision_utilisateur": true,
+      "garde_idle_initiale_limite_locale": true,
+      "garde_document_start_recue": true,
+      "acces_alternatif_historique_fourni": false
+    }
+  },
+  "limites": [
+    "pas de nouvelle reception physique dans la passe de redaction",
+    "noms AX distincts de parole JAWS",
+    "pas de verification exhaustive des fonctions fichiers et plugins",
+    "pas de reception exhaustive JAWS 2025 ou Edge",
+    "verification finale de fraicheur apres traduction"
+  ]
+}

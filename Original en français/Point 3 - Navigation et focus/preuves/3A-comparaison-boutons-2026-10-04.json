@@ -1,0 +1,35 @@
+{
+  "dateLocal": "2026-10-04",
+  "nature": "Extrait documentaire de la piece historique; mention d'autorisation d'implementation et precision d'installation retirees, observations et limites utiles conservees.",
+  "fixture": "tests/list-button-first-focus.html",
+  "source": "Retour direct de l’utilisateur, navigation habituelle aux flèches puis activation C et D",
+  "jawsVersionReported": "2021",
+  "cParentTabindex": null,
+  "cBlocksArrowReading": false,
+  "dParentTabindex": "-1",
+  "dInitialSoundAndArrowBlocking": true,
+  "dRepeatWithoutReloadDoesNotRetrigger": true,
+  "dAltTabReturnAfterLeavingModeRetriggers": true,
+  "altTabDifferenceFromOriginalSiteExplicitlyReported": true,
+  "frenchNextButtonShortcutReported": "U",
+  "internalJawsModeRead": false,
+  "newExtensionFixPhysicallyReceived": false,
+  "passiveVisibleTrace": {
+    "frames": 37,
+    "nativeRowActivations": {"c": 1, "d": 5},
+    "focusinTargets": ["button-c", "button-d"],
+    "keydowns": [
+      {"key": "ArrowDown", "target": "button-d"},
+      {"key": "ArrowDown", "target": "button-d"},
+      {"key": "ArrowUp", "target": "button-d"}
+    ],
+    "syntheticIdsOnly": true,
+    "noAgentFocusClickOrReload": true,
+    "soundAndModeNotTimestamped": true
+  },
+  "limits": [
+    "Parent focalisable causal dans les structures synthétiques de liens et boutons ; aucune lecture du mode interne JAWS.",
+    "Le retour Alt+Tab de D ne reproduit pas exactement celui du site ; cette divergence est conservée.",
+    "Le relevé structurel ne date pas le son et ne lit pas le mode JAWS."
+  ]
+}

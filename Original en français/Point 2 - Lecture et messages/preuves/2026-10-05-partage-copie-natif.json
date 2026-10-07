@@ -1,0 +1,547 @@
+{
+  "date": "2026-10-05",
+  "versionNativeInspection": "3.4.1 / page-selection v2 présent",
+  "privacy": "Aucun contenu de conversation, presse-papiers ou URL de partage enregistré.",
+  "share": {
+    "log": [
+      {
+        "focus": {
+          "role": null,
+          "tag": "BUTTON"
+        },
+        "header": true,
+        "knownButton": "Partager",
+        "ms": 125,
+        "tag": "BUTTON",
+        "type": "focusin"
+      },
+      {
+        "disabled": false,
+        "focus": {
+          "role": null,
+          "tag": "BUTTON"
+        },
+        "header": true,
+        "ms": 131,
+        "name": "Partager",
+        "type": "click"
+      },
+      {
+        "attribute": null,
+        "disabled": true,
+        "focus": {
+          "role": null,
+          "tag": "BUTTON"
+        },
+        "header": true,
+        "ms": 148,
+        "name": "Partager",
+        "type": "button-mutation"
+      },
+      {
+        "attribute": null,
+        "disabled": true,
+        "focus": {
+          "role": null,
+          "tag": "BUTTON"
+        },
+        "header": true,
+        "ms": 148,
+        "name": "Partager",
+        "type": "button-mutation"
+      },
+      {
+        "attribute": "disabled",
+        "disabled": true,
+        "focus": {
+          "role": null,
+          "tag": "BUTTON"
+        },
+        "header": true,
+        "ms": 148,
+        "name": "Partager",
+        "type": "button-mutation"
+      },
+      {
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "header": true,
+        "knownButton": "Partager",
+        "ms": 154,
+        "tag": "BUTTON",
+        "type": "focusout"
+      },
+      {
+        "attribute": null,
+        "disabled": false,
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "header": true,
+        "ms": 1615,
+        "name": "Partager",
+        "type": "button-mutation"
+      },
+      {
+        "attribute": null,
+        "disabled": false,
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "header": true,
+        "ms": 1615,
+        "name": "Partager",
+        "type": "button-mutation"
+      },
+      {
+        "attribute": "disabled",
+        "disabled": false,
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "header": true,
+        "ms": 1615,
+        "name": "Partager",
+        "type": "button-mutation"
+      },
+      {
+        "attrs": [
+          [
+            "tabindex",
+            "0"
+          ],
+          [
+            "data-sonner-toast",
+            ""
+          ],
+          [
+            "data-styled",
+            "false"
+          ],
+          [
+            "data-mounted",
+            "false"
+          ],
+          [
+            "data-promise",
+            "false"
+          ],
+          [
+            "data-swiped",
+            "false"
+          ],
+          [
+            "data-removed",
+            "false"
+          ],
+          [
+            "data-visible",
+            "true"
+          ],
+          [
+            "data-y-position",
+            "top"
+          ],
+          [
+            "data-x-position",
+            "center"
+          ],
+          [
+            "data-index",
+            "0"
+          ],
+          [
+            "data-front",
+            "true"
+          ],
+          [
+            "data-swiping",
+            "false"
+          ],
+          [
+            "data-dismissible",
+            "true"
+          ],
+          [
+            "data-swipe-out",
+            "false"
+          ],
+          [
+            "data-expanded",
+            "false"
+          ],
+          [
+            "style",
+            "--index: 0; --toasts-before: 0; --z-index: 1; --offset: -8px; --initial-height: 0px;"
+          ]
+        ],
+        "description": "",
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "grandparent": [
+          [
+            "aria-label",
+            "Notifications alt+T"
+          ],
+          [
+            "tabindex",
+            "-1"
+          ],
+          [
+            "aria-live",
+            "polite"
+          ],
+          [
+            "aria-relevant",
+            "additions text"
+          ],
+          [
+            "aria-atomic",
+            "false"
+          ]
+        ],
+        "ms": 1620,
+        "parent": [
+          [
+            "dir",
+            "ltr"
+          ],
+          [
+            "tabindex",
+            "-1"
+          ],
+          [
+            "class",
+            "codex-sonner-toaster flex max-w-(--composer-adjacent-max-width) justify-center"
+          ],
+          [
+            "data-sonner-toaster",
+            "true"
+          ],
+          [
+            "data-sonner-theme",
+            "light"
+          ],
+          [
+            "data-y-position",
+            "top"
+          ],
+          [
+            "data-x-position",
+            "center"
+          ]
+        ],
+        "title": " Le lien public a été copié.Toute personne disposant du lien peut consulter cette conversation. En savoir plusGérer les liens",
+        "type": "toast"
+      },
+      {
+        "attrs": [
+          [
+            "tabindex",
+            "0"
+          ],
+          [
+            "data-sonner-toast",
+            ""
+          ],
+          [
+            "data-styled",
+            "false"
+          ],
+          [
+            "data-mounted",
+            "false"
+          ],
+          [
+            "data-promise",
+            "false"
+          ],
+          [
+            "data-swiped",
+            "false"
+          ],
+          [
+            "data-removed",
+            "false"
+          ],
+          [
+            "data-visible",
+            "true"
+          ],
+          [
+            "data-y-position",
+            "top"
+          ],
+          [
+            "data-x-position",
+            "center"
+          ],
+          [
+            "data-index",
+            "0"
+          ],
+          [
+            "data-front",
+            "true"
+          ],
+          [
+            "data-swiping",
+            "false"
+          ],
+          [
+            "data-dismissible",
+            "true"
+          ],
+          [
+            "data-swipe-out",
+            "false"
+          ],
+          [
+            "data-expanded",
+            "false"
+          ],
+          [
+            "style",
+            "--index: 0; --toasts-before: 0; --z-index: 1; --offset: -8px; --initial-height: 0px;"
+          ]
+        ],
+        "description": "",
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "grandparent": [
+          [
+            "aria-label",
+            "Notifications alt+T"
+          ],
+          [
+            "tabindex",
+            "-1"
+          ],
+          [
+            "aria-live",
+            "polite"
+          ],
+          [
+            "aria-relevant",
+            "additions text"
+          ],
+          [
+            "aria-atomic",
+            "false"
+          ]
+        ],
+        "ms": 1620,
+        "parent": [
+          [
+            "dir",
+            "ltr"
+          ],
+          [
+            "tabindex",
+            "-1"
+          ],
+          [
+            "class",
+            "codex-sonner-toaster flex max-w-(--composer-adjacent-max-width) justify-center"
+          ],
+          [
+            "data-sonner-toaster",
+            "true"
+          ],
+          [
+            "data-sonner-theme",
+            "light"
+          ],
+          [
+            "data-y-position",
+            "top"
+          ],
+          [
+            "data-x-position",
+            "center"
+          ]
+        ],
+        "title": " Le lien public a été copié.Toute personne disposant du lien peut consulter cette conversation. En savoir plusGérer les liens",
+        "type": "toast"
+      },
+      {
+        "attrs": [
+          [
+            "tabindex",
+            "0"
+          ],
+          [
+            "data-sonner-toast",
+            ""
+          ],
+          [
+            "data-styled",
+            "false"
+          ],
+          [
+            "data-mounted",
+            "true"
+          ],
+          [
+            "data-promise",
+            "false"
+          ],
+          [
+            "data-swiped",
+            "false"
+          ],
+          [
+            "data-removed",
+            "false"
+          ],
+          [
+            "data-visible",
+            "true"
+          ],
+          [
+            "data-y-position",
+            "top"
+          ],
+          [
+            "data-x-position",
+            "center"
+          ],
+          [
+            "data-index",
+            "0"
+          ],
+          [
+            "data-front",
+            "true"
+          ],
+          [
+            "data-swiping",
+            "false"
+          ],
+          [
+            "data-dismissible",
+            "true"
+          ],
+          [
+            "data-swipe-out",
+            "false"
+          ],
+          [
+            "data-expanded",
+            "false"
+          ],
+          [
+            "style",
+            "--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 61.60000228881836px;"
+          ]
+        ],
+        "description": "",
+        "focus": {
+          "role": null,
+          "tag": "BODY"
+        },
+        "grandparent": [
+          [
+            "aria-label",
+            "Notifications alt+T"
+          ],
+          [
+            "tabindex",
+            "-1"
+          ],
+          [
+            "aria-live",
+            "polite"
+          ],
+          [
+            "aria-relevant",
+            "additions text"
+          ],
+          [
+            "aria-atomic",
+            "false"
+          ]
+        ],
+        "ms": 1622,
+        "parent": [
+          [
+            "dir",
+            "ltr"
+          ],
+          [
+            "tabindex",
+            "-1"
+          ],
+          [
+            "class",
+            "codex-sonner-toaster flex max-w-(--composer-adjacent-max-width) justify-center"
+          ],
+          [
+            "data-sonner-toaster",
+            "true"
+          ],
+          [
+            "data-sonner-theme",
+            "light"
+          ],
+          [
+            "data-y-position",
+            "top"
+          ],
+          [
+            "data-x-position",
+            "center"
+          ]
+        ],
+        "title": " Le lien public a été copié.Toute personne disposant du lien peut consulter cette conversation. En savoir plusGérer les liens",
+        "type": "toast"
+      }
+    ],
+    "focusAfter": {
+      "tag": "BODY"
+    },
+    "text": [
+      "Le lien public a été copié.",
+      "Toute personne disposant du lien peut consulter cette conversation."
+    ],
+    "structure": {
+      "toast": "LI[data-sonner-toast], tabindex=0, aucun role ou aria-live propre",
+      "parent": "OL[data-sonner-toaster]",
+      "region": {
+        "aria-label": "Notifications alt+T",
+        "aria-live": "polite",
+        "aria-relevant": "additions text",
+        "aria-atomic": "false"
+      }
+    },
+    "diagnosticStopped": true
+  },
+  "copy": {
+    "modelLabel": "Copié",
+    "modelFocus": "BUTTON conservé",
+    "user": {
+      "attrs": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "aria-label",
+          "Copié"
+        ]
+      ],
+      "focusMatches": true,
+      "label": "Copié"
+    },
+    "nativeSuccess": "aria-label devient Copié après réussite, retourne au libellé initial après environ 1500 ms. Aucun toast de copie observé."
+  }
+}

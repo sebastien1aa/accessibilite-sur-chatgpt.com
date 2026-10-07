@@ -1,0 +1,98 @@
+{
+  "version": "3.6.2",
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "file": "extension/add-menu-accessibility.js",
+      "sha256": "343dbb8d4795393e1fd5e5982d82981a298b44d9070ba00ae2caf06fddb3eba9"
+    },
+    {
+      "file": "extension/analysis-details-accessibility.js",
+      "sha256": "6d95388f05223c2eaba527fa0cd8d88d7ef36de0a506af9de3381407763fce0c"
+    },
+    {
+      "file": "extension/diagnostics.js",
+      "sha256": "d381279c17bbd6f9e82d985bfb024b7e059dd49fb2bc0760938e06d10fc2d3b7"
+    },
+    {
+      "file": "extension/explorer-accessibility.js",
+      "sha256": "d99132631e4ca5fb44167194c2b7528793c58f327e55814b540c17f7df449303"
+    },
+    {
+      "file": "extension/feedback-actions.js",
+      "sha256": "49eb4c16f98b3492fc3ccd87db3e1d509f7b9d0ce576ddff4b158a9dac762c5e"
+    },
+    {
+      "file": "extension/keep-modern-turns.js",
+      "sha256": "9a3276cf7af96149d863f6edfd88bdff5c43c9d92b8fa0a8eb4d2b865e6376e8"
+    },
+    {
+      "file": "extension/keep-turns.js",
+      "sha256": "cebadf6e7dceeab5b416aed666adf6d0ffd134ddb29931d55b23c271a9291996"
+    },
+    {
+      "file": "extension/manifest.json",
+      "sha256": "ec88bc92596aafcaae4f39b5cb485a0531025965e497e76d60495bd47f24eaf0"
+    },
+    {
+      "file": "extension/message-action-focus.js",
+      "sha256": "9ba6de1f0fc26392b5b39681ba97b6a2cc10ba293a8da34c7aa72e0d4e47d55a"
+    },
+    {
+      "file": "extension/model-accessibility.js",
+      "sha256": "3bb10133ee9f7ff3374c8ac3557cd87edd80a1557105106d9743a9336ead009d"
+    },
+    {
+      "file": "extension/page-selection.js",
+      "sha256": "ecd582826546ca3d0494fa518f10b08a9d47e70e25943941264b5e9e8f518ad4"
+    },
+    {
+      "file": "extension/popup.css",
+      "sha256": "8c0c96b682b2319eea49cda7015af9718913534b67994e9e33ec9c6000fc9f86"
+    },
+    {
+      "file": "extension/popup.html",
+      "sha256": "32dcf873ab956d2182b50dfba92fb4ad11e4b1518169ea3ea7702120cdf779bf"
+    },
+    {
+      "file": "extension/popup.js",
+      "sha256": "7d5ad1436faf7d299b8a90e314fec4444dfbd5ebf72090abe32242353518dd78"
+    },
+    {
+      "file": "extension/project-accessibility.js",
+      "sha256": "45a24c4d1a8ad72627a0ec0f7f156008720b52fa7a321bd6c27b4b9d6c18a27b"
+    },
+    {
+      "file": "extension/prompt-history-accessibility.js",
+      "sha256": "e70fc05e2ee1fe86a7eeb51f88c7a68ba5fcbb9a9361f14fc7d968149cc12000"
+    },
+    {
+      "file": "extension/reasoning-accessibility.js",
+      "sha256": "5d0f6073d2b3a39b6683d43e50f9350ebfdf86dc5591be61d2ab678c465e2a79"
+    },
+    {
+      "file": "extension/reasoning-selection.css",
+      "sha256": "a79d390d2ae4e35986bef71655a02fe6c3503ef028b8525147e4370c74be4c50"
+    },
+    {
+      "file": "extension/sidebar-list-accessibility.js",
+      "sha256": "c7e97466a333c8ae9af8a977aad9fcac97f2e1b71cd73c8070aac8ce189d9968"
+    },
+    {
+      "file": "extension/sidebar-menu-focus.js",
+      "sha256": "2ec31a23c8a4228ef49098f75f721535adf2a3fe2dcf3ca749a41ede263bf9f9"
+    },
+    {
+      "file": "extension/sidebar-sortable-accessibility.js",
+      "sha256": "926d0cb58ddc2a26d27bd9c576de0771d9163e1b22744c5b6ee150d8b4e83b2d"
+    },
+    {
+      "file": "extension/ui-accessibility.js",
+      "sha256": "a84427e4640d00089ffdbfdbee7017030f3b849bba45b8d144703c65cf01366a"
+    },
+    {
+      "file": "extension/writing-block-accessibility.js",
+      "sha256": "d6270570ae65c133f5533177929f77e1fbfd0e442928b01b42fcddaf5d89111a"
+    }
+  ]
+}

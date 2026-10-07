@@ -1,0 +1,2769 @@
+{
+  "dateLocal": "2026-10-05",
+  "timezone": "Europe/Brussels",
+  "extensionVersion": "3.3.3",
+  "userOutcome": {
+    "pinnedDestinationsAccepted": true,
+    "escapeStrictlyUnchanged": true,
+    "firstTrialExitedFormsWithNumpadPlus": true,
+    "preferredButtonActivation": "Space",
+    "spaceAndEnterSameEffectReported": true,
+    "repetitionsNotIndependentFreshTrials": true
+  },
+  "capture": {
+    "menuVersion": "3+lifecycle",
+    "prototype": {
+      "active": true,
+      "expiresAt": 1791155283093
+    },
+    "title": "ChatGPT — essai neuf sortie Explorer",
+    "trace": {
+      "active": false,
+      "expiresAt": 1791154683126,
+      "log": [
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": "textbox",
+            "tabindex": "0",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 0,
+          "panel": null,
+          "target": null,
+          "triggerState": "closed",
+          "type": "start"
+        },
+        {
+          "documentFocused": false,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": "textbox",
+            "tabindex": "0",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 200321,
+          "panel": null,
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": "textbox",
+            "tabindex": "0",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 363702,
+          "panel": null,
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": false,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": "textbox",
+            "tabindex": "0",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 365931,
+          "panel": null,
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": "textbox",
+            "tabindex": "0",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 367022,
+          "panel": null,
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 375303,
+          "panel": null,
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 375333,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 375334,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 375337,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 375338,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 375339,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "Escape",
+          "moduleVersion": "3+lifecycle",
+          "ms": 389868,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389877,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389880,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389894,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389894,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389894,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": true,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount:after"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389895,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 389923,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 390122,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 393575,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 393577,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 393579,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 393580,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 393581,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "Escape",
+          "moduleVersion": "3+lifecycle",
+          "ms": 401889,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401896,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401899,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401913,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401913,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401913,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": true,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount:after"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401914,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 401944,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402144,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "ArrowDown",
+          "moduleVersion": "3+lifecycle",
+          "ms": 402707,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402723,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402724,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402725,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402726,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402728,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "ArrowDown",
+          "moduleVersion": "3+lifecycle",
+          "ms": 402735,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keyup:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "ArrowDown",
+          "moduleVersion": "3+lifecycle",
+          "ms": 402735,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keyup:bubble"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402747,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402764,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 402963,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "Escape",
+          "moduleVersion": "3+lifecycle",
+          "ms": 406208,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406215,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406217,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406230,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406231,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406231,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": true,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount:after"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406231,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406260,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 406459,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "ArrowUp",
+          "moduleVersion": "3+lifecycle",
+          "ms": 407337,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407352,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407353,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407353,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407354,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407356,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "ArrowUp",
+          "moduleVersion": "3+lifecycle",
+          "ms": 407363,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keyup:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "ArrowUp",
+          "moduleVersion": "3+lifecycle",
+          "ms": 407363,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keyup:bubble"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407375,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407388,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 407587,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "Escape",
+          "moduleVersion": "3+lifecycle",
+          "ms": 414694,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414703,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414707,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414722,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414723,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414723,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": true,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount:after"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414724,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414749,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 414944,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 429536,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 429537,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 429540,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 429541,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 429541,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "target": null,
+          "triggerState": "open",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 433823,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 433824,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 437846,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 437847,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "true",
+          "focus": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "key": "Escape",
+          "moduleVersion": "3+lifecycle",
+          "ms": 441676,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": false,
+            "role": "dialog",
+            "state": "open",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "open",
+          "type": "keydown:capture"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441684,
+          "panel": {
+            "ariaHidden": null,
+            "connected": true,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": true
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": true,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusout"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441687,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "state-change"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441701,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:0"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441701,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": null,
+            "role": null,
+            "tabindex": null,
+            "tag": "BODY"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441702,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": true,
+          "target": {
+            "groupAncestor": false,
+            "id": "radix-_r_k_",
+            "popup": null,
+            "role": "dialog",
+            "tabindex": "-1",
+            "tag": "DIV"
+          },
+          "triggerState": "closed",
+          "type": "focusScope.autoFocusOnUnmount:after"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441702,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusin"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441728,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:50"
+        },
+        {
+          "documentFocused": true,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 441927,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "target": null,
+          "triggerState": "closed",
+          "type": "after:250"
+        },
+        {
+          "documentFocused": false,
+          "expanded": "false",
+          "focus": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "moduleVersion": "3+lifecycle",
+          "ms": 451334,
+          "panel": {
+            "ariaHidden": null,
+            "connected": false,
+            "inert": true,
+            "role": "dialog",
+            "state": "closed",
+            "visible": false
+          },
+          "prevented": false,
+          "target": {
+            "groupAncestor": false,
+            "id": "",
+            "popup": "dialog",
+            "role": null,
+            "tabindex": null,
+            "tag": "BUTTON"
+          },
+          "triggerState": "closed",
+          "type": "focusout"
+        }
+      ]
+    }
+  }
+}

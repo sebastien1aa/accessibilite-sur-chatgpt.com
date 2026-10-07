@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Comparaison des boutons de dépliage C et D</title>
+  <style>body{font:18px system-ui;max-width:55rem;margin:2rem auto;padding:0 1rem}.row{display:flex;align-items:center;gap:1rem}button{padding:.6rem;font:inherit}pre{white-space:pre-wrap;font:14px monospace}</style>
+</head>
+<body>
+  <h1>Comparaison des boutons de dépliage C et D</h1>
+  <p>Page autonome, sans extension ni réglage modifié. Les consignes sont données dans le chat.</p>
+  <h2>Projet C</h2>
+  <div role="list" id="list-c"><div role="listitem">
+    <div class="row" role="none" id="row-c"><span>Nom du projet C</span><button id="button-c" type="button" aria-expanded="false" aria-label="Afficher les chats du projet C" title="Afficher les chats du projet C">▸</button></div>
+    <div role="list" id="chats-c" hidden><div role="listitem">Chat synthétique du projet C</div></div>
+  </div></div>
+  <p>Texte après le projet C.</p>
+  <h2>Projet D</h2>
+  <div role="list" id="list-d" tabindex="-1"><div role="listitem">
+    <div class="row" role="none" id="row-d"><span>Nom du projet D</span><button id="button-d" type="button" aria-expanded="false" aria-label="Afficher les chats du projet D" title="Afficher les chats du projet D">▸</button></div>
+    <div role="list" id="chats-d" hidden><div role="listitem">Chat synthétique du projet D</div></div>
+  </div></div>
+  <p>Texte après le projet D.</p>
+  <h2>Relevé technique</h2>
+  <pre id="report">Aucune entrée enregistrée.</pre>
+  <script>
+  (()=>{
+    let active=true;
+    const frames=[],counts={c:0,d:0},bindings=[];
+    const render=()=>{document.querySelector('#report').textContent=JSON.stringify({active,counts,frames},null,2)};
+    const describe=node=>{
+      if(!node)return null;
+      const result=[];
+      for(let n=node;n&&result.length<6;n=n.parentElement)result.push({tag:n.tagName,id:n.id||null,role:n.getAttribute('role'),tabindex:n.getAttribute('tabindex'),expanded:n.getAttribute('aria-expanded')});
+      return result;
+    };
+    for(const letter of ['c','d']){
+      const row=document.querySelector('#row-'+letter),button=document.querySelector('#button-'+letter),chats=document.querySelector('#chats-'+letter);
+      let relay=false;
+      const nativeClick=event=>{
+        if(!active||event.target!==row||!relay)return;
+        counts[letter]++;
+        const expanded=button.getAttribute('aria-expanded')!=='true';
+        button.setAttribute('aria-expanded',String(expanded));
+        const name=(expanded?'Masquer':'Afficher')+' les chats du projet '+letter.toUpperCase();
+        button.setAttribute('aria-label',name);button.title=name;button.textContent=expanded?'▾':'▸';chats.hidden=!expanded;
+        render();
+      };
+      const click=event=>{event.stopPropagation();if(!active||event.defaultPrevented||event.button!==0||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;relay=true;try{row.click()}finally{relay=false}};
+      const guard=event=>{if(!active||event.target!==button||!['Enter',' '].includes(event.key)||event.isComposing||event.keyCode===229||event.ctrlKey||event.altKey||event.metaKey||event.shiftKey)return;event.stopPropagation();if(event.repeat)event.preventDefault()};
+      row.addEventListener('click',nativeClick);button.addEventListener('click',click);button.addEventListener('keydown',guard);button.addEventListener('keyup',guard);
+      bindings.push({row,button,nativeClick,click,guard});
+    }
+    const record=event=>{
+      if(!active||frames.length>=100)return;
+      if(event.type.startsWith('key')&&!['Tab','Enter',' ','Escape','ArrowDown','ArrowUp'].includes(event.key))return;
+      frames.push({type:event.type,key:event.key||null,trusted:event.isTrusted,defaultPreventedAtCapture:event.defaultPrevented,alt:!!event.altKey,ctrl:!!event.ctrlKey,shift:!!event.shiftKey,target:describe(event.target),focus:describe(document.activeElement)});
+      render();
+    };
+    const types=['focusin','focusout','click','keydown','keyup'];
+    types.forEach(type=>document.addEventListener(type,record,true));
+    window[Symbol.for('chatgpt-a11y-list-button-first-focus.fixture')]= {report:()=>({active,counts:{...counts},frames:frames.slice()}),stop(){if(!active)return;active=false;types.forEach(type=>document.removeEventListener(type,record,true));for(const b of bindings){b.row.removeEventListener('click',b.nativeClick);b.button.removeEventListener('click',b.click);b.button.removeEventListener('keydown',b.guard);b.button.removeEventListener('keyup',b.guard)}render()}};
+  })();
+  </script>
+</body>
+</html>
