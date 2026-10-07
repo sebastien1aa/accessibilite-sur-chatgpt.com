@@ -9,7 +9,15 @@
       "annonce_utilisateur_initiale": "Sélectionner le modèle ChatGPT",
       "nom_AX_adapte_mesure": "Niveau de raisonnement : 6 Pro",
       "traduction_sliderLabel_prioritaire_sur_repli": true,
-      "cause_anglais_attribuee_a_extension": false,
+      "localisation_anglais_constat_historique": "chemin sliderLabel examine le 3 octobre ; ne decrit pas les libelles francais releves le 7 octobre",
+      "releve_natif_2026_10_07": "1A-libelles-natifs-2026-10-07.json",
+      "chat_legendes_et_statuts_natifs": ["Instantané", "Moyenne", "Élevée", "Très élevé", "Pro"],
+      "work_modele_observe": "GPT-6.1 Sol",
+      "work_legendes_natives": ["Minimal", "Moyen", "Élevé", "Très élevé", "Max", "Ultra"],
+      "work_statuts_accessibles_natifs": ["Minimal", "Moyenne", "Élevée", "Très élevé", "Maximum", "Ultra"],
+      "difference_work_constitue_nouveau_defaut": false,
+      "adaptation_conserve_libelles_francais_natifs": true,
+      "releve_7_octobre_mesure_parole_JAWS": false,
       "reception": "selecteur francais accepte dans reception globale 3.2.3 le 4 octobre, sans couverture de toutes combinaisons"
     },
     "1B": {

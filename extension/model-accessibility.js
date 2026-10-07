@@ -11,12 +11,17 @@
   const baseName = "Sélectionner le modèle ChatGPT";
   const reasoningName = "Niveau de raisonnement";
   const labels = new Map([
-    ["Instant", "Instantané"], ["Medium", "Moyen"], ["High", "Élevé"],
+    ["Instant", "Instantané"], ["Minimal", "Minimal"], ["Medium", "Moyenne"], ["High", "Élevée"],
     ["Extra High", "Très élevé"], ["Pro", "Pro"],
-    ["Instantané", "Instantané"], ["Moyen", "Moyen"], ["Moyenne", "Moyen"], ["Élevé", "Élevé"],
-    ["Très élevé", "Très élevé"], ["Élevée", "Élevé"],
-    ["Très élevée", "Très élevé"], ["très élevée", "Très élevé"]
+    ["Instantané", "Instantané"], ["Moyen", "Moyen"], ["Moyenne", "Moyenne"], ["Élevé", "Élevé"],
+    ["Très élevé", "Très élevé"], ["Élevée", "Élevée"],
+    ["Très élevée", "Très élevée"], ["très élevée", "très élevée"]
   ]);
+  // Work captions use Moyen/Élevé, while the native accessible power status
+  // uses Moyenne/Élevée. Keep French captions intact; name the closed trigger
+  // with the same level wording as that accessible status.
+  const accessibleLevels = new Map([["Moyen", "Moyenne"], ["Élevé", "Élevée"]]);
+  const accessibleLevel = value => accessibleLevels.get(value) || labels.get(value);
   const changes = new WeakMap();
   const changedRefs = new Set();
   let watched = new WeakSet();
@@ -165,7 +170,7 @@
       if (control.matches(triggerSelector)) {
         translateText(control);
         const selected = selectedModel(control);
-        const level = labels.get(selected?.sliderLabel);
+        const level = accessibleLevel(selected?.sliderLabel);
         const exposed = exposedLabel(control);
         const name = control.getAttribute("aria-label");
         const previous = changes.get(control)?.get("aria-label");
@@ -177,10 +182,14 @@
             // Chat exposes an effort preset, not its underlying internal model.
             // Keep a model name only when the native visible caption includes it.
             choice = exposed && exposed.includes(selected.modelLabel) && !labels.has(exposed) ? exposed : level;
+            const captionLevel = labels.get(selected.sliderLabel);
+            if (captionLevel && captionLevel !== level && choice.endsWith(` ${captionLevel}`)) {
+              choice = choice.slice(0, -captionLevel.length) + level;
+            }
           }
         } else if (exposed && exposed !== "Effort de réflexion" &&
                    exposed.length <= 200 && control.getAttribute("aria-expanded") !== "true") {
-          choice = labels.get(exposed) || exposed;
+          choice = accessibleLevel(exposed) || exposed;
         }
         const legacy = window[Symbol.for("chatgpt-navigation-continue.model-labels.v1")] && name?.startsWith(`${baseName} : `);
         if (choice && (name === baseName || name === previous?.applied || name?.startsWith(`${reasoningName} : `) || legacy)) {

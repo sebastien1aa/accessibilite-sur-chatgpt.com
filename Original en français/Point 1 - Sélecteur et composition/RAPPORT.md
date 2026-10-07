@@ -33,9 +33,9 @@ Module : [model-accessibility.js](../../extension/model-accessibility.js), fonct
 
 ### Traduction des niveaux, dans le même sous-point
 
-Le code public examiné le 3 octobre calcule `sliderLabel` à partir de la sélection et l’utilise avant un repli traduit. Une valeur anglaise peut donc gagner sur le texte localisé. La [note technique](preuves/mecanismes-natifs.md) donne les modules, l’asset, les offsets et les limites. L’adaptation traduit les valeurs connues : Instantané, Moyen, Élevé, Très élevé, et conserve les autres informations.
+Le code public examiné le 3 octobre calcule `sliderLabel` à partir de la sélection et l’utilise avant un repli traduit. Une valeur anglaise peut donc gagner sur le texte localisé. Cette piste de localisation reste liée à cette observation datée. La [note technique](preuves/mecanismes-natifs.md) donne les modules, l’asset, les offsets et les limites. L’adaptation conserve les libellés français natifs et les autres informations.
 
-L’utilisateur avait d’abord corrélé l’anglais à l’activation de l’extension. Il a ensuite également constaté l’anglais extension désactivée ; le lien causal avec le mécanisme de rétention n’est pas établi. De même, le retour du français avait précédé son rechargement, ce qui interdit de l’attribuer simplement à ce rechargement. La correction « Moyenne » → « Moyen » correspond à la forme demandée pour le niveau.
+Le [relevé natif du 7 octobre](preuves/1A-libelles-natifs-2026-10-07.json), réalisé dans Chrome sur une page `fr-FR` avec le module d’adaptation du sélecteur inactif, expose en Chat les légendes et statuts « Instantané », « Moyenne », « Élevée », « Très élevé » et « Pro ». Dans Work, pour GPT-6.1 Sol, les légendes sont « Minimal », « Moyen », « Élevé », « Très élevé », « Max » et « Ultra » ; les statuts accessibles sont « Minimal », « Moyenne », « Élevée », « Très élevé », « Maximum » et « Ultra ». Ces libellés français et la différence entre légendes et statuts de Work ne constituent pas un nouveau défaut dans ce dossier. L’adaptation doit respecter les valeurs natives, sans correction grammaticale. Ce relevé de DOM et d’accessibilité ne mesure pas la parole JAWS.
 
 Le sélecteur français fait partie des points acceptés globalement le 4 octobre. Cela reçoit le parcours décrit, sans valider toute combinaison de modèle, langue, mode, compte ou lecteur d’écran.
 
@@ -105,4 +105,3 @@ Une première protection était installée trop tard, à `document_idle`. Cette 
 ## Portée de ce premier signalement
 
 Les trois sous-points sont liés à la composition mais n’ont pas nécessairement une même cause. L’analyse du code et du DOM donne des pistes ciblées de correction ; elle ne permet pas d’exclure chaque configuration de navigateur ou lecteur d’écran. Les retours 2021/2025 du premier signalement ne constituent pas des réceptions de toutes les nouvelles adaptations. La [pièce de constats](preuves/constats-et-receptions.json) conserve cette séparation.
-

@@ -39,12 +39,12 @@ Une reproduction ultérieure doit porter sa propre date et son environnement. Un
 
 Les pièces copiées conservent leur provenance et leur version. Les fichiers dérivés indiquent qu’ils synthétisent des preuves, plutôt que de se présenter comme de nouvelles captures brutes. Les corps de discussions, coordonnées personnelles, noms de projets, chemins de profil, identifiants privés, cookies et jetons ne sont pas inclus. Les reproductions utilisent des contenus synthétiques.
 
-L’extension 3.6.2 est une copie du démonstrateur de travail, pas une proposition de patch prêt à intégrer. Elle conserve les nœuds et actions natifs autant que le mécanisme le permet. Les contrats internes peuvent changer. Elle n’est pas une solution pérenne de l’accessibilité de ChatGPT : cette accessibilité doit être assurée dans le produit.
+L’extension 3.6.3 est une copie du démonstrateur de travail, pas une proposition de patch prêt à intégrer. Elle conserve les nœuds et actions natifs autant que le mécanisme le permet. Les contrats internes peuvent changer. Elle n’est pas une solution pérenne de l’accessibilité de ChatGPT : cette accessibilité doit être assurée dans le produit.
 
 Les fonctions complètes du démonstrateur incluent des choix personnels hors grief. Les références de chaque sous-point disent quel module est pertinent. Aucun message, partage public, modification de projet ou suppression n’est nécessaire pour les comparaisons de parcours proposées ; une vraie génération ou publication se fait seulement quand l’utilisateur décide de l’effectuer.
 
 ## Contrôle des pièces distribuées — 7 octobre 2026
 
-Les huit fichiers de tests Node joints dans les Points 1 et 2 passent **205 tests, zéro échec**. Les autres pages sont des fixtures historiques avec leurs procédures et limites ; leur copie n’est pas déclarée comme une nouvelle réception physique. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **23 fichiers** de l’extension correspondent exactement aux sources 3.6.2 du projet de travail et à l’archive jointe, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
+Les huit fichiers de tests Node joints dans les Points 1 et 2 passent **206 tests, zéro échec**. Les autres pages sont des fixtures historiques avec leurs procédures et limites ; leur copie n’est pas déclarée comme une nouvelle réception physique. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **23 fichiers** de l’extension correspondent exactement aux sources 3.6.3 du projet de travail et à l’archive jointe, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
 
 Ces contrôles confirment la cohérence des éléments distribués ; ils ne revérifient pas chaque problème dans le site en production. Les lectures et mesures ciblées des 6 et 7 octobre restent datées séparément.

@@ -1,6 +1,6 @@
 # Conditions de réutilisation
 
-[Version anglaise](LICENSE.md). Le français constitue la version originale faisant foi.
+[Version anglaise](LICENSE%20%28eng%29.md). Le français constitue la version originale faisant foi.
 
 Les droits ci-dessous portent uniquement sur les éléments originaux de ce projet que leur titulaire peut concéder. Les extraits du produit ChatGPT, marques, citations et autres éléments de tiers conservent leurs droits propres. Les faits et les idées ne deviennent pas réservés du seul fait de leur présence dans ce dossier.
 

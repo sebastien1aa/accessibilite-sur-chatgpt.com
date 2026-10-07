@@ -15,7 +15,7 @@ L’ordre correspond à l’impact et aux priorités de l’utilisateur. Chaque 
 3. [Navigation et focus](Point%203%20-%20Navigation%20et%20focus/RAPPORT.md) : actions des projets, barre latérale, pagination, fermetures de menus et panneaux, cas Explorer, signalement Réagir.
 4. [Sémantique et localisation](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) : descriptions de rôles, états de destinations, groupes redondants, premier passage dans un mode bloquant et commandes de projets en anglais.
 
-La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **3.6.2**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
+La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **3.6.3**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
 
 ## Chronologie et environnement
 
@@ -28,7 +28,7 @@ Le changement général d’interface a été constaté **le 25 septembre 2026 �
 | Chrome | Relevé du 3 octobre à 22:28:10 Bruxelles : 154.0.8037.93 | Ne date pas rétroactivement les essais de septembre |
 | JAWS | Usage principal de JAWS 2021 déclaré ; JAWS 2025 cité dans le premier signalement et même blocage initial confirmé lors d’un bref essai | Aucune réception exhaustive des adaptations sur les deux versions |
 | Edge | Comparaison initiale déclarée ; inspection ciblée sans extension le 6 octobre : Edge 154.0.4258.62, Chromium 154.0.8037.98 | Inspection DOM/AX et sélection manuelle, pas réception JAWS complète |
-| Extension | Sources 3.6.2 jointes ; parcours de longue conversation reçu le 7 octobre, adaptations des autres réceptions historiques conservées | Réception ciblée déclarée par l’utilisateur ; comptes DOM et parole JAWS distincts, sans nouvelle réception exhaustive de tous les parcours en 3.6.2 |
+| Extension | Sources 3.6.3 jointes ; parcours de longue conversation reçu le 7 octobre, adaptations des autres réceptions historiques conservées | Réception ciblée déclarée par l’utilisateur ; comptes DOM et parole JAWS distincts, sans nouvelle réception exhaustive de tous les parcours en 3.6.2 |
 
 Tous les horaires sont exprimés en **Europe/Brussels** ; en septembre et début octobre 2026, UTC+02:00. Une date sans heure signifie que seule cette précision est attestée.
 
