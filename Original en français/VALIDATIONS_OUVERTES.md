@@ -15,3 +15,7 @@ La sélection ordinaire est confirmée fonctionnelle tant qu’un saut de lectur
 Le cas des nombreuses cartes d’analyse reste lié à l’exemple disponible et à sa reproductibilité. Le besoin d’un accès volontaire à l’historique des prompts demeure. Le bouton courant est « Évaluer la réponse » ; l’ancien nom « Réagir » ne décrit plus le contrôle observé le 7 octobre. Les noms, rôles et relations DOM sont distingués des annonces et positions de lecture réellement rapportées.
 
 Les preuves techniques gardent leurs dates ; les transcriptions utilisateur privilégient les libellés utiles au signalement. La dernière vérification avant publication peut modifier un constat si le produit évolue.
+
+## Aperçus de sources
+
+Les observations JAWS du 8 octobre et les inspections natives établissent le rôle trompeur des références et le nom abrégé des cartes malgré leur contenu visible. Le [Point 4F](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) détaille le mécanisme et la comparaison avec le démonstrateur ; les noms calculés, la navigation et la fermeture sont contrôlés dans Chromium. Les contrôles techniques sont distingués de la réception vocale de chaque adaptation.

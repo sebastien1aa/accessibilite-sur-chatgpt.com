@@ -110,6 +110,158 @@ function fixture(e, phaseProps = phase()) {
   return { turn, user, assistant, anchor, group, header, button, label, chevron, body, owner };
 }
 
+function regionalProps(overrides = {}) {
+  return { region: { kind: 'prefix' }, completed: false, reasoningRecap: null,
+    activeSummary: null, canExpand: true, hasStandaloneItems: false, hideHeader: false, ...overrides };
+}
+function regionalFixture(e, local = regionalProps(), global = phase()) {
+  const f = fixture(e, global);
+  f.component = f.header.__reactFiber$test.return;
+  f.component.memoizedProps = local;
+  return f;
+}
+
+test('GPT-6 prefix and suffix disclosures use their local completed state despite the global reply phase', () => {
+  for (const kind of ['prefix', 'suffix']) for (const completed of [false, true]) {
+    const e = environment();
+    const f = regionalFixture(e, regionalProps({ region: { kind }, completed }),
+      phase({ completed: false, hasFinalAssistantStarted: !completed }));
+    if (completed) f.label.textContent = 'Réfléchi pendant 9 min 17 s';
+    e.run();
+    assert.equal(f.button.parentElement, f.header); assert.equal(f.body.parentElement, f.group);
+    assert.equal(owned(f.turn, 'heading').nextSibling, f.anchor);
+    if (completed) {
+      assert.equal(owned(f.turn, 'summary'), null); assert.equal(owned(f.turn, 'caption'), null);
+      assert.equal(f.button.getAttribute('aria-labelledby'), 'summary');
+      assert.equal(computedName(f.button, e.document), 'Réfléchi pendant 9 min 17 s');
+      assert.equal(f.label.hasAttribute('hidden'), false); assert.equal(f.label.getAttribute('aria-hidden'), 'true');
+    } else {
+      assert.equal(owned(f.turn, 'summary').textContent, 'Recherche en cours');
+      assert.equal(f.group.querySelectorAll('[data-chatgpt-reasoning-accessibility-v2="summary"]').length, 1);
+      assert.equal(owned(f.turn, 'summary').nextSibling, null);
+      assert.equal(computedName(f.button, e.document), 'Afficher/Masquer les détails du raisonnement');
+      assert.equal(f.label.hasAttribute('hidden'), true); assert.equal(f.label.getAttribute('aria-hidden'), 'true');
+    }
+  }
+});
+
+test('GPT-6 activity can finish then resume with the native control and the status kept after all details', () => {
+  for (const kind of ['prefix', 'suffix']) {
+    const e = environment(); const f = regionalFixture(e, regionalProps({ region: { kind } }));
+    const handler = () => 'native'; f.button.onclick = handler; f.button.setAttribute('aria-label', 'Nom natif');
+    e.run(); const heading = owned(f.turn, 'heading');
+    f.component.memoizedProps.completed = true; f.label.textContent = 'Réflexion terminée'; e.flush();
+    assert.equal(owned(f.turn, 'summary'), null); assert.equal(owned(f.turn, 'caption'), null);
+    assert.equal(f.button.getAttribute('aria-label'), 'Nom natif');
+    assert.equal(computedName(f.button, e.document), 'Réflexion terminée'); assert.equal(f.label.hasAttribute('hidden'), false);
+    f.owner.memoizedProps = phase({ completed: true, hasFinalAssistantStarted: true });
+    f.component.memoizedProps.completed = false; f.label.textContent = 'Vérification actuelle'; e.flush();
+    const summary = owned(f.turn, 'summary'); assert.equal(summary.textContent, 'Vérification actuelle');
+    const detail = e.element('div', {}, 'Détail natif'); f.group.appendChild(detail); e.observerOnly();
+    assert.equal(summary.nextSibling, null); assert.ok(detail.compareDocumentPosition(summary) & 4); e.flush();
+    f.button.setAttribute('aria-expanded', 'false'); e.observerOnly();
+    assert.equal(summary.hasAttribute('hidden'), true); assert.equal(summary.getAttribute('aria-hidden'), 'true'); e.flush();
+    f.label.textContent = 'Dernier état'; e.flush(); assert.equal(summary.textContent, 'Dernier état');
+    f.button.setAttribute('aria-expanded', 'true'); e.observerOnly();
+    assert.equal(summary.hasAttribute('hidden'), false); assert.equal(summary.getAttribute('aria-hidden'), null); e.flush();
+    assert.equal(summary.nextSibling, null); assert.equal(f.button.onclick, handler);
+    assert.equal(computedName(f.button, e.document), 'Afficher/Masquer les détails du raisonnement');
+    assert.equal(owned(f.turn, 'heading'), heading); assert.equal(f.body.parentElement, f.group);
+  }
+});
+
+test('incomplete or malformed nearest GPT-6 contracts cannot borrow an outer valid disclosure', () => {
+  const invalid = [];
+  for (const missing of ['region', 'completed', 'reasoningRecap', 'activeSummary', 'hasStandaloneItems', 'hideHeader']) {
+    const props = regionalProps(); delete props[missing]; invalid.push(props);
+  }
+  for (const region of [null, 'prefix', {}, { kind: 'other' }]) invalid.push(regionalProps({ region }));
+  for (const completed of [undefined, null, 'false']) invalid.push(regionalProps({ completed }));
+  for (const key of ['hasStandaloneItems', 'hideHeader']) invalid.push(regionalProps({ [key]: 'false' }));
+  for (const canExpand of [false, undefined, 'true']) invalid.push(regionalProps({ canExpand }));
+  for (const props of invalid) {
+    const e = environment(); const f = regionalFixture(e, props);
+    f.component.return = { memoizedProps: regionalProps(), return: f.owner };
+    e.run();
+    assert.equal(owned(f.turn, 'summary'), null); assert.equal(owned(f.turn, 'caption'), null);
+    assert.equal(f.button.getAttribute('aria-labelledby'), 'summary'); assert.equal(f.button.getAttribute('aria-label'), null);
+    assert.equal(f.label.hasAttribute('hidden'), false); assert.equal(f.label.getAttribute('aria-hidden'), null);
+  }
+});
+
+test('GPT-6 recognition still requires a committed ancestor containing reasoning items', () => {
+  for (const items of [undefined, 'reasoning', [], [{ type: 'tool' }]]) {
+    const e = environment(); const f = regionalFixture(e, regionalProps(), phase({ items })); e.run();
+    assert.equal(owned(f.turn, 'summary'), null); assert.equal(f.label.getAttribute('aria-hidden'), null);
+  }
+  const e = environment(); const f = fixture(e);
+  fibers(f.header, phase(), phase({ items: [{ type: 'tool' }] }));
+  f.header.__reactFiber$test.return.memoizedProps = regionalProps();
+  f.header.__reactFiber$test.return.alternate.memoizedProps = regionalProps();
+  e.run(); assert.equal(owned(f.turn, 'summary'), null); assert.equal(f.button.getAttribute('aria-labelledby'), 'summary');
+});
+
+test('the committed GPT-6 component wins over its alternate local phase or signature', () => {
+  for (const completed of [true, false]) {
+    const e = environment(); const f = fixture(e); fibers(f.header, phase(), phase());
+    const component = f.header.__reactFiber$test.return;
+    component.memoizedProps = regionalProps({ completed: !completed });
+    component.alternate.memoizedProps = regionalProps({ completed });
+    e.run();
+    assert.equal(!!owned(f.turn, 'summary'), !completed);
+    assert.equal(f.button.getAttribute('aria-labelledby'), completed ? 'summary' : null);
+  }
+  const e = environment(); const f = fixture(e); fibers(f.header, phase(), phase());
+  const component = f.header.__reactFiber$test.return;
+  component.memoizedProps = regionalProps(); component.alternate.memoizedProps = regionalProps({ region: { kind: 'other' } });
+  e.run(); assert.equal(owned(f.turn, 'summary'), null);
+  const unavailable = environment(); const g = fixture(unavailable); fibers(g.header, phase(), phase(), false);
+  g.header.__reactFiber$test.return.memoizedProps = regionalProps();
+  g.header.__reactFiber$test.return.alternate.memoizedProps = regionalProps();
+  unavailable.run(); assert.equal(owned(g.turn, 'summary'), null);
+});
+
+test('a nested tool disclosure keeps its native UI even with a complete GPT-6 component signature', () => {
+  const e = environment(); const f = regionalFixture(e);
+  const tool = e.element('div'); const header = e.element('div', { class: 'group/activity-header' });
+  const button = e.element('button', { 'aria-expanded': 'true', 'aria-labelledby': 'regional-tool', 'aria-label': 'Outil natif' });
+  const label = e.element('span', { id: 'regional-tool' }, 'Exécution du code'); const handler = () => 'tool'; button.onclick = handler;
+  header.append(button, label); tool.append(header); f.body.append(tool); fibers(header);
+  header.__reactFiber$test.return.memoizedProps = regionalProps(); e.run();
+  assert.equal(button.getAttribute('aria-labelledby'), 'regional-tool'); assert.equal(button.getAttribute('aria-label'), 'Outil natif');
+  assert.equal(button.onclick, handler); assert.equal(label.hasAttribute('hidden'), false); assert.equal(label.getAttribute('aria-hidden'), null);
+  assert.equal(owned(tool, 'summary'), null); assert.equal(owned(f.group, 'summary').textContent, 'Recherche en cours');
+});
+
+test('GPT-6 cleanup restores native UI on language changes and stop in active and finished phases', () => {
+  for (const completed of [false, true]) {
+    const e = environment(); const f = regionalFixture(e, regionalProps({ completed }));
+    f.button.setAttribute('aria-label', 'Nom natif'); f.label.setAttribute('aria-hidden', 'false'); e.run();
+    e.document.documentElement.lang = 'en-US'; e.flush();
+    assert.equal(owned(f.turn, 'summary'), null); assert.equal(owned(f.turn, 'caption'), null); assert.equal(owned(f.turn, 'heading'), null);
+    assert.equal(f.button.getAttribute('aria-labelledby'), 'summary'); assert.equal(f.button.getAttribute('aria-label'), 'Nom natif');
+    assert.equal(f.label.getAttribute('aria-hidden'), 'false'); assert.equal(f.label.hasAttribute('hidden'), false);
+    e.document.documentElement.lang = 'fr-BE'; e.flush(); assert.ok(owned(f.turn, 'heading')); assert.equal(!!owned(f.turn, 'summary'), !completed);
+    e.context.window[Symbol.for('chatgpt-navigation-continue.reasoning-accessibility.current')].stop(); e.flush();
+    assert.equal(owned(f.turn, 'heading'), null); assert.equal(owned(f.turn, 'summary'), null);
+    assert.equal(f.button.getAttribute('aria-labelledby'), 'summary'); assert.equal(f.button.getAttribute('aria-label'), 'Nom natif');
+    assert.equal(f.label.getAttribute('aria-hidden'), 'false'); assert.equal(f.label.hasAttribute('hidden'), false);
+  }
+});
+
+test('GPT-6 recognition reads no recap, active summary, region identifier or reasoning body content', () => {
+  for (const completed of [false, true]) {
+    const e = environment(); const f = regionalFixture(e, regionalProps({ completed })); let reads = 0;
+    const forbidden = { get() { reads++; throw new Error('private content must not be read'); } };
+    for (const key of ['reasoningRecap', 'activeSummary', 'children']) Object.defineProperty(f.component.memoizedProps, key, forbidden);
+    for (const key of ['id', 'prefixActivity']) Object.defineProperty(f.component.memoizedProps.region, key, forbidden);
+    for (const key of ['text', 'content']) Object.defineProperty(f.owner.memoizedProps.items[0], key, forbidden);
+    Object.defineProperty(f.body, 'textContent', forbidden); e.run();
+    assert.equal(reads, 0); assert.equal(!!owned(f.turn, 'summary'), !completed);
+    assert.equal(f.label.getAttribute('aria-hidden'), 'true');
+  }
+});
+
 test('an early accessible h4 appears after the user heading, immediately before the hidden assistant anchor', () => {
   const e = environment(); const f = fixture(e); e.run(); const heading = owned(f.turn, 'heading');
   assert.equal(heading.tagName, 'H4'); assert.equal(heading.textContent, 'ChatGPT a dit :'); assert.equal(heading.className, 'sr-only');
@@ -374,7 +526,7 @@ test('the referenced caption may be inside a native header icon wrapper but neve
 test('stop disconnects observation and handlers, cancels pending work, restores native state and permits a fresh injection', () => {
   const e = environment(); const f = fixture(e); const late = e.element('h4', { class: 'sr-only' }, 'ChatGPT a dit :'); f.assistant.append(late); e.run();
   const api = e.context.window[Symbol.for('chatgpt-navigation-continue.reasoning-accessibility.current')];
-  assert.equal(api.version, 6); assert.equal(api.active, true); e.document.listeners.click({ target: f.button });
+  assert.equal(api.version, 7); assert.equal(api.active, true); e.document.listeners.click({ target: f.button });
   api.stop(); api.stop(); e.flush(); assert.equal(api.active, false); assert.equal(owned(f.turn, 'heading'), null); assert.equal(owned(f.turn, 'summary'), null);
   assert.equal(f.button.getAttribute('aria-labelledby'), 'summary'); assert.equal(f.button.getAttribute('aria-label'), null); assert.equal(f.label.hasAttribute('hidden'), false); assert.equal(late.getAttribute('aria-hidden'), null);
   assert.equal(e.document.listeners.click, undefined); const writes = e.writes(); f.body.childNodes[0].textContent = 'Suite'; e.flush(); assert.equal(e.writes(), writes + 1);

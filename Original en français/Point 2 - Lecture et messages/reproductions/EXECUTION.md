@@ -20,6 +20,7 @@ Pour les contrôles de navigateur, servir la racine sur localhost, puis ouvrir l
 | --- | --- |
 | [browser.html](browser.html) | Ancien virtualiseur synthétique, 80 messages, isolation des autres observateurs. |
 | [modern-browser.html](modern-browser.html) | Contrat moderne synthétique, 126 messages et identité de leurs nœuds. |
+| [reasoning-regions.html](reasoning-regions.html) | Contrats régionaux prefix/suffix GPT-6, phases locales indépendantes, maintien du contrat GPT-5.6, état courant en fin, caption sans doublon et restauration. |
 | [reasoning-selection.html](reasoning-selection.html) | Sélection de détails affichés, fermeture native et texte/nœuds préservés ; grand texte exclusivement synthétique. |
 | [page-selection.html](page-selection.html) | Locuteurs, date/heure, navigation, éditeurs et texte replié, sans contenu privé. |
 | [feedback-actions.html](feedback-actions.html) | Annonces après réussite simulée, disponibilité, focus, retour à l’état natif et gardes. Ne crée aucun lien public ni copie de vraie conversation. |
@@ -32,7 +33,7 @@ Les contenus sont fictifs. Les routes `chatgpt.com/c/fixture` ou `example.test` 
 | Sous-point | Contrôles et preuves |
 | --- | --- |
 | 2A — Lecture longue | Tests `keep-turns` et `keep-modern-turns`, fixtures ancienne/moderne ; [mesure du site et réception 3.6.2](../preuves/2A-virtualisation-2026-10-07.json). |
-| 2B — Raisonnement | Tests `reasoning-accessibility` pour les repères, états et noms ; tests `analysis-details-accessibility` pour les cartes autonomes ; [comparaison native GPT-6/GPT-5.6](../preuves/2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json). |
+| 2B — Raisonnement | Tests `reasoning-accessibility` pour les repères, états et noms ; 52 tests `reasoning-accessibility`, dont huit cas régionaux ; [fixture régionale](reasoning-regions.html) et [13 contrôles Chromium](../preuves/2026-10-07-raisonnement-regions-controles.json) ; tests `analysis-details-accessibility` pour les cartes autonomes ; [comparaison native GPT-6/GPT-5.6](../preuves/2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json). |
 | 2C — Sélection | Fixtures `reasoning-selection` et `page-selection` ; [comparaison native du 6 octobre](../preuves/selection-native-2026-10-06.json) et [réception native du 7 octobre](../preuves/reception-native-2026-10-07.json). |
 | 2D — Copier et Partager | Tests et fixture `feedback-actions` ; traces natives [de partage](../preuves/2026-10-05-partage-copie-natif.json) et [de disponibilité de copie](../preuves/2026-10-05-copie-disponibilite-native.json), [réceptions adaptées datées](../preuves/constats-2026-10-03-05.json) et [retour natif récent](../preuves/reception-native-2026-10-07.json). |
 | 2E — Writing Blocks | Fixture `writing-block-accessibility` ; [signature DOM et callbacks natifs](../preuves/mecanismes-natifs.md), [réception du retrait adapté](../preuves/constats-2026-10-03-05.json) et [confirmation native récente](../preuves/reception-native-2026-10-07.json). |

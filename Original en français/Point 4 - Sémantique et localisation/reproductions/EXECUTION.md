@@ -11,6 +11,7 @@ Ces pages utilisent des noms et routes synthétiques. Elles ne contactent pas Ch
 | 4C | Procédure chats ordinaires, épinglés et projets ; structure normalisée et contrôles DOM/Chromium historiques | [Retrait des groupes reconnus](../../../extension/ui-accessibility.js), liens/actions/listes conservés |
 | 4D | Procédure premier passage ; comparaisons physiques A/B et C/D | [Listes simples et imbriquées](../../../extension/sidebar-list-accessibility.js), focus natifs et pagination conservés |
 | 4E | Procédure galerie/menu latéral ; compteurs avant/après et noms exacts dans le code | [Localisation](../../../extension/project-accessibility.js), callbacks conservés |
+| 4F | [Fixture de sources](sources.html), douze tests Node, treize scénarios Chromium ; [noms et contenu DOM/AX](../preuves/2026-10-08-contenu-apercu-sources.json) | [Liens et nom des cartes](../../../extension/source-links-accessibility.js), callbacks/clavier et aperçu conservés |
 
 Les [preuves datées](../preuves/CONSTATS_ET_PROVENANCE.md) précisent les résultats de chaque cas. Les pages dédiées ci-dessous isolent 4A et 4D ; 4B, 4C et 4E s’examinent avec leurs parcours sur le site et les sources communes. Les validations historiques des mécanismes ne deviennent pas des mesures de parole JAWS.
 
@@ -32,6 +33,20 @@ Le bouton « Exécuter les contrôles DOM » vérifie le retrait ciblé de sorta
 
 Cette reproduction vérifie des invariants DOM ; elle ne certifie pas les annonces de JAWS. Pour comparer une parole native à la correction, conserver des documents frais et distinguer version/configuration de JAWS, navigateur, rôle DOM et nom calculé.
 
-Les parcours sur le site pour les cinq sous-points sont réunis dans [PROCEDURES.md](PROCEDURES.md).
+Les parcours sur le site pour les six sous-points sont réunis dans [PROCEDURES.md](PROCEDURES.md).
 
 Les [observations humaines natives du 7 octobre](../preuves/retour-humain-natif-2026-10-07.json) complètent les preuves historiques sans ajouter de nouvelle exécution des fixtures. Elles distinguent notamment les remplacements de rôle après Tab et après Actions du chat, et la sortie du mode formulaire par Échap ou retour manuel au curseur PC. Ces corrélations ne mesurent pas la cause interne JAWS.
+
+## Contrôler les références et cartes de sources — 4F
+
+Depuis la racine du dépôt contenant `extension/` et `Original en français/`, exécuter :
+
+```powershell
+node --test "Original en français/Point 4 - Sémantique et localisation/reproductions/source-links-accessibility.test.cjs"
+```
+
+Ces douze tests Node n’exigent aucune dépendance externe. Servir cette même racine sur localhost et ouvrir [sources.html](sources.html) pour les contrôles Chromium. La fixture charge explicitement `../../../extension/source-links-accessibility.js` ; elle n’installe pas l’extension. Les références, titres, textes et callbacks sont synthétiques.
+
+Les treize scénarios exécutés dans Chromium couvrent adaptation initiale, noms issus du contenu, activation native, carte vidée puis remplie, arrêt/reprise, langue hors français puis retour, ambiguïté d’ID puis unicité, remplacement de contrôle et activation d’une référence regroupée par Espace. Leurs 172 vérifications répétées d’invariants n’ont relevé aucun échec. Les rôles et noms calculés de l’exemple réel, avec conservation de Tab, Entrée et Échap, figurent dans la [preuve complémentaire](../preuves/2026-10-08-contenu-apercu-sources.json).
+
+Les tests conservent les éléments et callbacks natifs ; ils vérifient aussi l’exclusion des boutons et panneaux non reconnus. Le passage d’un nom explicite abrégé au nom issu du contenu est établi dans l’arbre Chromium. Les données de la carte demeurent celles rendues ; les résultats ne constituent pas une nouvelle transcription JAWS ni une garantie sur tous les aperçus futurs.

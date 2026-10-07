@@ -1,5 +1,5 @@
 {
-  "version": "3.7.0",
+  "version": "4.1.0",
   "algorithm": "SHA-256",
   "files": [
     {
@@ -36,7 +36,7 @@
     },
     {
       "file": "extension/manifest.json",
-      "sha256": "21642139ea6cb79f9903c3e625409a4d4ebf32d64d9e08c364b91ace13f6debd"
+      "sha256": "0471c4962dff50caa07a456c128c7ff7b126181d4b562c7a33125c8f1813839f"
     },
     {
       "file": "extension/message-action-focus.js",
@@ -72,7 +72,7 @@
     },
     {
       "file": "extension/reasoning-accessibility.js",
-      "sha256": "5d0f6073d2b3a39b6683d43e50f9350ebfdf86dc5591be61d2ab678c465e2a79"
+      "sha256": "a8fb123c279bfca55564671563bbc5e5fe01f60d368be08b95d804061e185fa7"
     },
     {
       "file": "extension/reasoning-selection.css",
@@ -89,6 +89,10 @@
     {
       "file": "extension/sidebar-sortable-accessibility.js",
       "sha256": "926d0cb58ddc2a26d27bd9c576de0771d9163e1b22744c5b6ee150d8b4e83b2d"
+    },
+    {
+      "file": "extension/source-links-accessibility.js",
+      "sha256": "5b896bac67587529861b77421cdfe47d6ce6d710c8b2a19139d7f246d9851c3d"
     },
     {
       "file": "extension/ui-accessibility.js",

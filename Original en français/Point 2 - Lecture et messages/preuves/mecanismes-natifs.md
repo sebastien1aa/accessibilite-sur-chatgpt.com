@@ -34,6 +34,22 @@ Le snapshot public du 3 octobre pour l’état de raisonnement est [385910.71a81
 
 **Actualisation du 7 octobre, tests terminés à 22 h 40.** La [chronologie comparative GPT-6/GPT-5.6](2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json) confirme l’absence de titre assistant pendant la réflexion GPT-5.6 et son arrivée après l’état terminé. La séquence GPT-6 interrompue expose un titre pendant une activité intermédiaire, puis le retire après l’arrêt ; elle ne démontre pas une correction native générale. Dans les deux modèles, le retour JAWS situe l’état courant au-dessus du repère assistant ; l’en-tête d’activité précède le titre dans les états DOM où celui-ci existe. Les détails déjà effectués après le titre sont reçus dans le bon ordre. Le repère précoce et l’adaptation de l’ordre courant sont conservés.
 
+**Contrat régional GPT-6, complément du 7 octobre vers 23 h 20, heure de Bruxelles.** La [structure native inspectée](2026-10-07-contrat-raisonnement-gpt6.json) expose un bouton direct, un nom par référence et une légende SPAN hors du bouton, séparément accessible. Son propriétaire engagé fournit `region`, `completed`, `reasoningRecap`, `activeSummary`, `canExpand`, `hasStandaloneItems` et `hideHeader`. Les propriétés `summary` et `shouldAnimateInitialCollapse` du contrat GPT-5.6 ne sont pas présentes dans ce groupe. Extrait réduit du code natif, noms minifiés conservés, sans contenu de conversation :
+
+```text
+region:d, completed:u, reasoningRecap:g, activeSummary:m,
+canExpand:p, hasStandaloneItems:f, hideHeader:b, children:_
+// Choix de l’ouverture ; suffix représente ici la branche de région.
+C = g?.type === keep_inline ||
+    (x ?? (w?.visibility === visible ? w.default_expanded : !u || suffix === d.kind));
+disclosure: p ? {expanded:C, onToggle:()=>I(!C)} : undefined;
+summary: k ?? (u ? Previous activity : m);
+```
+
+Il s’agit d’un extrait structurel de logique, pas d’un programme autonome : les constantes et libellés proviennent du contexte du composant. Le booléen `completed` local choisit l’activité et l’ouverture du groupe. La phase globale de la réponse ne suffit donc pas pour rendre sa fin. Le retour JAWS complémentaire situe le statut courant avant les détails déjà réalisés et décrit une seconde ligne sans rôle reproduisant l’activité ou « Réfléchi pendant [durée] ». L’exposition séparée de la légende référencée soutient ce doublon observé ; elle ne constitue pas un enregistrement vocal.
+
+Le [module du démonstrateur 4.1.0](../../../extension/reasoning-accessibility.js) reconnaît les deux signatures, conserve les commandes d’outil indépendantes, ajoute le statut courant en fin des détails ouverts et retire seulement la seconde lecture de la légende. Les noms et durée natifs sont restaurés à la fin ; les corps et callbacks sont conservés. [52 tests Node](../reproductions/reasoning-accessibility.test.cjs) et [13 contrôles Chromium régionaux](2026-10-07-raisonnement-regions-controles.json) vérifient les mécanismes sans se substituer à la réception JAWS de cette adaptation. La [fixture locale](../reproductions/reasoning-regions.html) est synthétique et n’exécute aucun message.
+
 **43 cartes Python : branche native inspectée.** Le type natif vérifié est `chatgpt-python-execution`. La fonction montante inspectée `dU`, avec `streamingParentRegion` absent, sépare les items d’analyse, rend le reste via `dK`, puis rend les cartes par `o8` comme sœurs dans un Fragment. Elles sont ainsi hors du repli principal. Ce cas relève de cette branche effectivement montée, et non d’une autre branche préfixe de `dK`.
 
 Ces noms proviennent de l’inspection des fonctions publiques **effectivement montées** et de leurs contrats ; aucun offset de `dU/dK` n’est revendiqué dans le snapshot ci-dessus. Des homonymes y existent dans d’autres composants. Pour réexaminer, relier le propriétaire rendu aux types/phase/région et au sibling réel plutôt que retenir la première occurrence d’un nom minifié.

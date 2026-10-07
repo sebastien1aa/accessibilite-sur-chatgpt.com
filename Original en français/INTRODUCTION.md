@@ -4,7 +4,7 @@ Ce dossier décrit des barrières rencontrées dans **l’interface française d
 
 Le travail représente **plusieurs heures de tests personnels et d’investigation technique avec Codex**. L’objectif est sa transmission aux équipes responsables de l’accessibilité et de l’interface ChatGPT pour examen et, si possible, suivi. Il peut aussi servir à prévenir les mêmes mécanismes de régression dans de futures interfaces.
 
-**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 22 h 40**, complétant les preuves de septembre et des 3–6 octobre. Elle comprend la comparaison du raisonnement avec GPT-6 puis GPT-5.6 ; le Point 2B en décrit les résultats. Chaque preuve garde sa date et sa provenance.
+**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 22 h 40**, complétant les preuves de septembre et des 3–6 octobre. Elle comprend la comparaison du raisonnement avec GPT-6 puis GPT-5.6 ; le Point 2B en décrit les résultats. Les observations complémentaires de raisonnement se poursuivent vers **23 h 20**, heure de Bruxelles, puis celles des cartes de sources le **8 octobre**. Chaque preuve garde sa date et sa provenance.
 
 ## Lire les quatre ensembles
 
@@ -15,7 +15,7 @@ L’ordre correspond à l’impact et aux priorités de l’utilisateur. Chaque 
 3. [Navigation et focus](Point%203%20-%20Navigation%20et%20focus/RAPPORT.md) : actions des projets, barre latérale, pagination, fermetures de menus et panneaux, cas Explorer, menu Évaluer la réponse.
 4. [Sémantique et localisation](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) : descriptions de rôles, états de destinations, groupes redondants, premier passage dans un mode bloquant et commandes de projets en anglais.
 
-La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **3.7.0**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
+La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **4.1.0**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
 
 ## Chronologie et environnement
 

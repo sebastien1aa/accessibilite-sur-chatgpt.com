@@ -1,0 +1,34 @@
+{
+  "nature": "Contrôles techniques du mécanisme régional de raisonnement ; mesures historiques du 7 octobre, code conservé dans le démonstrateur 4.1.0",
+  "date": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "technicalCheckpoint": "23:41:28",
+  "userObservations": "23:20",
+  "moduleRevision": 7,
+  "node": {
+    "passed": 486,
+    "failed": 0,
+    "reasoningPassed": 52,
+    "newRegionalTests": 8
+  },
+  "chromiumFixture": {
+    "file": "../reproductions/reasoning-regions.html",
+    "passed": 13,
+    "total": 13,
+    "checks": [
+      "région prefix active malgré début de réponse globale",
+      "suffix indépendant",
+      "ancien contrat conservé",
+      "état courant dernier enfant",
+      "activité native sans doublon",
+      "corps et callbacks conservés",
+      "durée finale native",
+      "caption finale uniquement exclue de la lecture séparée",
+      "suffix reste actif après fin prefix",
+      "résumé masqué au repli",
+      "résumé visible en fin après ouverture",
+      "nouvelle activité reprend adaptation",
+      "arrêt restaure les propriétés natives"
+    ]
+  }
+}

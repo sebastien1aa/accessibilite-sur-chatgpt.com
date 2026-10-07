@@ -1,6 +1,6 @@
 # Environnement et confirmations d’usage
 
-Les vérifications utilisateur du **7 octobre 2026** ont commencé vers **19 h 18** et se sont terminées à **22 h 40**, heure de Bruxelles, Europe/Brussels, UTC+02:00. La passe de navigation est suivie d’une comparaison native du raisonnement : GPT-6 interrompu, puis GPT-5.6 mené à son terme. La preuve du Point 2B conserve la chronologie structurelle et les retours de lecture JAWS.
+Les vérifications utilisateur du **7 octobre 2026** ont commencé vers **19 h 18** et se sont terminées à **22 h 40**, heure de Bruxelles, Europe/Brussels, UTC+02:00. Les observations complémentaires de raisonnement se poursuivent jusqu’à environ **23 h 20**, heure de Bruxelles, le même jour. Le **8 octobre**, un retour JAWS supplémentaire décrit le nom abrégé des cartes de sources ; l’inspection DOM/AX et les essais clavier établissent leur contenu et leur fonctionnement. La passe de navigation est suivie d’une comparaison native du raisonnement : GPT-6 interrompu, puis GPT-5.6 mené à son terme. La preuve du Point 2B conserve la chronologie structurelle et les retours de lecture JAWS.
 
 ## Versions relevées sur l’ordinateur
 
@@ -26,3 +26,5 @@ JAWS utilise ses scripts standards pour les navigateurs. L’inspection des doss
 Les annonces rapportées reproduisent les informations utiles au signalement. L’utilisateur ne recopie pas systématiquement les rôles ou informations secondaires tels que « bouton de menu » lorsqu’ils ne sont pas pertinents pour le point examiné. Leur absence d’une citation abrégée ne signifie donc pas leur absence dans l’annonce complète de JAWS.
 
 Les différences entre libellés affichés, noms accessibles mesurés et informations réellement entendues sont décrites séparément lorsqu’elles changent la compréhension du problème. Les transcriptions phonétiquement identiques sont orthographiées selon les chaînes natives effectivement relevées, sans modifier le sens du retour utilisateur.
+
+Dernier contrôle technique du dossier : **8 octobre 2026 à 01 h 28, heure de Bruxelles (Europe/Brussels, UTC+02:00)**. Il vérifie code, noms calculés, procédures et identité du démonstrateur ; il ne redéfinit pas la date des observations humaines ou des captures antérieures.

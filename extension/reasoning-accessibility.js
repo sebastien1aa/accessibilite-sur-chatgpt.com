@@ -3,7 +3,7 @@
  * read, cloned, logged or stored. React properties are read only. */
 (() => {
   "use strict";
-  const marker = Symbol.for("chatgpt-navigation-continue.reasoning-accessibility.v6");
+  const marker = Symbol.for("chatgpt-navigation-continue.reasoning-accessibility.v7");
   const currentMarker = Symbol.for("chatgpt-navigation-continue.reasoning-accessibility.current");
   if (window[marker]?.active) return;
   window[currentMarker]?.stop?.();
@@ -85,6 +85,8 @@
       let groupFound = false;
       let principalGroup = false;
       let defaultMissing = false;
+      let groupContract = null;
+      const regionalPhases = new Set();
       let reasoningSeen = false;
       const phases = new Set();
       for (let depth = 0; fiber && depth < 40; depth++, fiber = fiber.return) {
@@ -95,9 +97,21 @@
           if (!groupFound && props && Object.hasOwn(props, "canExpand")) {
             // Stop at the nearest disclosure component. An outer reflection
             // group must never confer its identity on a nested tool control.
-            disclosureCandidates.push({ valid: props.canExpand === true &&
+            const legacy = props.canExpand === true &&
               (!Object.hasOwn(props, "defaultExpanded") || typeof props.defaultExpanded === "boolean") &&
-              Object.hasOwn(props, "shouldAnimateInitialCollapse") && Object.hasOwn(props, "summary"),
+              Object.hasOwn(props, "shouldAnimateInitialCollapse") && Object.hasOwn(props, "summary");
+            // GPT-6 renders activity regions through a different disclosure.
+            // Its local completed flag governs the region even after an
+            // intermediate assistant message has started elsewhere in the turn.
+            // Caption/content props qualify the contract by presence only.
+            const regional = props.canExpand === true &&
+              ["prefix", "suffix"].includes(props.region?.kind) &&
+              typeof props.completed === "boolean" &&
+              Object.hasOwn(props, "reasoningRecap") && Object.hasOwn(props, "activeSummary") &&
+              typeof props.hasStandaloneItems === "boolean" && typeof props.hideHeader === "boolean";
+            disclosureCandidates.push({ valid: legacy || regional,
+              contract: regional ? "regional" : "legacy",
+              mode: regional ? props.completed ? "finished" : "active" : null,
               missing: !Object.hasOwn(props, "defaultExpanded") });
           }
           if (!Array.isArray(props?.items) || props.items.length > 1000) continue;
@@ -115,9 +129,14 @@
           groupFound = true;
           principalGroup = disclosureCandidates.every(candidate => candidate.valid);
           defaultMissing = disclosureCandidates.some(candidate => candidate.missing);
+          const contracts = new Set(disclosureCandidates.map(candidate => candidate.contract));
+          groupContract = contracts.size === 1 ? [...contracts][0] : null;
+          for (const candidate of disclosureCandidates) if (candidate.mode) regionalPhases.add(candidate.mode);
         }
       }
       if (!principalGroup || !reasoningSeen) return "invalid";
+      if (groupContract === "regional") return regionalPhases.size === 1 ? [...regionalPhases][0] : "unknown";
+      if (groupContract !== "legacy") return "invalid";
       if (phases.has("finished")) return "finished";
       if (defaultMissing) return "invalid";
       if (phases.has("active")) return "active";
@@ -508,7 +527,7 @@
   };
   const events = ["click", "focusin", "change"];
   for (const event of events) document.addEventListener(event, nativeEvent, true);
-  const api = { version: 6, active: true, stop() {
+  const api = { version: 7, active: true, stop() {
     if (stopped) return;
     stopped = true;
     api.active = false;
