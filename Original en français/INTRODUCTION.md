@@ -27,7 +27,7 @@ Les horaires humains locaux cités dans le dossier sont en **heure de Bruxelles 
 
 ## Portée et origine du travail
 
-Les observations d’usage et les réceptions physiques proviennent de l’utilisateur. Les inspections du DOM, de l’arbre d’accessibilité et du code public, les tests et l’extension ont été effectués avec Codex, principalement avec **GPT-6.1 Sol**, sous sa direction. Cette provenance explique la répartition du travail ; elle ne donne pas au modèle valeur de preuve. L’utilisateur peut préciser son parcours et ses annonces, mais ne doit pas être supposé pouvoir répondre personnellement de mémoire à chaque détail de React ou de Chromium.
+Les observations d’usage et les réceptions physiques ont été effectuées personnellement par l’utilisateur. Les inspections du DOM, de l’arbre d’accessibilité et du code public, les tests et l’extension ont été effectués avec Codex, principalement avec **GPT-6.1 Sol**, sous sa direction. Le dossier a également été principalement rédigé et organisé par ce modèle dans Codex, qui a recueilli les preuves techniques. L’ensemble du dossier français a été relu et approuvé par l’utilisateur. Cette provenance explique la répartition du travail ; elle ne donne pas au modèle valeur de preuve. L’utilisateur peut préciser son parcours et ses annonces, mais ne doit pas être supposé pouvoir répondre personnellement de mémoire à chaque détail de React ou de Chromium.
 
 Plusieurs difficultés ont aussi été rencontrées ou décrites dans l’application Windows réunissant ChatGPT et Codex. Les preuves techniques de ce dossier concernent le **Web**. Il est souhaitable que les équipes examinent les comportements équivalents dans l’application Windows, sans présumer qu’ils partagent exactement le même code ou la même cause.
 

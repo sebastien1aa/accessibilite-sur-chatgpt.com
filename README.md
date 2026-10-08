@@ -4,6 +4,8 @@
 
 This repository presents barriers encountered on chatgpt.com with JAWS on Windows, their consequences, expected results and evidence useful for examination by technical teams. It brings together usage feedback, code and accessibility-structure inspections, reproductions and a local demonstration extension.
 
+The author personally carried out the JAWS observations and user-validation tests. The dossier was primarily drafted and organized by **GPT-6.1 Sol in Codex**, under the author’s direction; Codex collected the technical evidence. **The author reviewed and approved the entire French dossier.** The [detailed account of the work’s origin](English%20translation/INTRODUCTION.md#scope-and-origin-of-the-work) distinguishes these contributions.
+
 Observations concern an interface set to French. Navigation and rendering mechanisms are distinguished from translation defects. The general interface change was reported on 25 September 2026; dated evidence and confirmations from 7–8 October supplement earlier investigations.
 
 The [English translation](English%20translation/INTRODUCTION.md) is a complete counterpart of the [authoritative French original](Original%20en%20français/INTRODUCTION.md). French announcements, native strings and raw evidence remain in their original language; explanatory translations do not represent speech heard with English JAWS. Both folders use the same 22 subpoint identifiers and share the demonstration sources and archive.

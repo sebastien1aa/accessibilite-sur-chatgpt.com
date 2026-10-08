@@ -27,7 +27,7 @@ Local human observation times cited in this dossier are in **Brussels time (Euro
 
 ## Scope and origin of the work
 
-Usage observations and physical user validation come from the user. Inspection of the DOM, accessibility tree and public code, tests and the extension were carried out with Codex, primarily using **GPT-6.1 Sol**, under the user's direction. This provenance explains how the work was divided; it does not give the model evidentiary authority. The user can describe their navigation and announcements, but should not be assumed able to personally recall every React or Chromium detail.
+The user personally carried out the usage observations and physical validation. Inspection of the DOM, accessibility tree and public code, tests and the extension were carried out with Codex, primarily using **GPT-6.1 Sol**, under the user's direction. The dossier was also primarily drafted and organized by this model in Codex, which collected the technical evidence. The user reviewed and approved the entire French dossier. This provenance explains how the work was divided; it does not give the model evidentiary authority. The user can describe their navigation and announcements, but should not be assumed able to personally recall every React or Chromium detail.
 
 Several difficulties were also encountered or described in the Windows application combining ChatGPT and Codex. The technical evidence in this dossier concerns the **Web**. It would be useful for the teams to examine equivalent behavior in the Windows application without assuming that it shares exactly the same code or cause.
 

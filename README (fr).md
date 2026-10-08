@@ -4,6 +4,8 @@
 
 Ce dépôt présente les obstacles rencontrés avec JAWS sous Windows dans chatgpt.com, leurs conséquences, les résultats attendus et les preuves utiles à leur examen par les équipes techniques. Il réunit des retours d’usage, des inspections du code et de la structure accessible, des reproductions et un démonstrateur local.
 
+Les observations et les réceptions JAWS ont été effectuées personnellement par l’auteur. Le dossier a été principalement rédigé et organisé par **GPT-6.1 Sol dans Codex**, sous sa direction ; Codex a recueilli les preuves techniques. **L’ensemble du dossier français a été relu et approuvé par l’auteur.** L’[origine détaillée du travail](Original%20en%20français/INTRODUCTION.md#portée-et-origine-du-travail) distingue ces contributions.
+
 Les observations concernent une interface réglée en français. Les mécanismes de navigation et de rendu sont distingués des défauts de traduction. Le changement général d’interface est rapporté le 25 septembre 2026 ; les preuves et confirmations datées des 7–8 octobre complètent les investigations antérieures.
 
 L’[original français](Original%20en%20français/INTRODUCTION.md) fait foi ; le dossier [English translation/](English%20translation/INTRODUCTION.md) en fournit une traduction complète. Les annonces françaises, chaînes natives et pièces de preuve restent dans leur langue d’origine ; les traductions explicatives ne sont pas des annonces entendues avec JAWS anglais. Les deux dossiers utilisent les mêmes 22 identifiants et les ressources communes du démonstrateur.
