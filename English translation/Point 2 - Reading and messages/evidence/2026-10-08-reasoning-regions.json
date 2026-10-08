@@ -1,0 +1,98 @@
+{
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "version": "4.1.1",
+  "nature": "Structures de régions GPT-6 et contrôles du contournement, sans contenu de génération",
+  "human": "Pendant la réflexion, l’activité courante précède encore les détails dans le parcours JAWS ; plusieurs repères assistant apparaissent dans les commentaires intermédiaires.",
+  "finalStructure": {
+    "turnCount": 4,
+    "nativeAssistantHeadingCountInLastTurn": 2,
+    "earlyHeadingAddedByDemonstrator": 1,
+    "sequence": [
+      "repère précoce",
+      "groupe activité avec commande",
+      "repère assistant natif",
+      "activité sans commande",
+      "repère assistant natif"
+    ]
+  },
+  "contract": "Chaque région prefix/suffix porte son completed local ; le contexte activité peut précéder le premier item de type reasoning.",
+  "node": {
+    "passed": 60,
+    "failed": 0
+  },
+  "chromium": {
+    "passed": 15,
+    "results": [
+      {
+        "label": "Prefix régional acquis dès activité Web sans item reasoning",
+        "pass": true
+      },
+      {
+        "label": "Suffix régional actif traité séparément",
+        "pass": true
+      },
+      {
+        "label": "Ancien contrat conservé",
+        "pass": true
+      },
+      {
+        "label": "Trois résumés actifs à la fin",
+        "pass": true
+      },
+      {
+        "label": "Activité native non dupliquée",
+        "pass": true
+      },
+      {
+        "label": "Corps et commandes natifs conservés",
+        "pass": true
+      },
+      {
+        "label": "Fin du prefix respecte durée native",
+        "pass": true
+      },
+      {
+        "label": "Doublon de durée exclu seul",
+        "pass": true
+      },
+      {
+        "label": "Suffix actif après fin du prefix",
+        "pass": true
+      },
+      {
+        "label": "Repli suffix masque résumé sans retirer détails",
+        "pass": true
+      },
+      {
+        "label": "Ouverture retrouve état courant à la fin",
+        "pass": true
+      },
+      {
+        "label": "Nouvelle activité régionale reprend son adaptation",
+        "pass": true
+      },
+      {
+        "label": "Contexte manquant non acquis",
+        "pass": true
+      },
+      {
+        "label": "Contexte tardif acquis sur changement du corps seul",
+        "pass": true
+      },
+      {
+        "label": "Arrêt restitue noms et captions natifs",
+        "pass": true
+      }
+    ],
+    "total": 15
+  },
+  "physicalReceiptOfNewCorrection": false,
+  "privacy": "Compteurs, enums et ordre structurel ; aucun texte de réflexion, titre privé ou identifiant de tour.",
+  "receptionFollowUp": {
+    "currentDemonstrator": "4.1.2",
+    "currentRelevantAdaptationStatus": "received",
+    "reference": "../../Point 1 - Sélecteur et composition/preuves/2026-10-08-reception-adaptee.json",
+    "meaningOfEarlierReceiptFields": "Les valeurs de réception false décrivent le point de contrôle technique avant confirmation humaine ; elles ne constituent pas un statut actuel."
+  }
+}

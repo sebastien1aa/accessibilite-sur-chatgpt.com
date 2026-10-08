@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><title>Conservation moderne des messages</title>
+<script src="../../../extension/keep-modern-turns.js"></script>
+<h1>Conservation de 126 messages</h1>
+<button id="top">Haut</button><button id="bottom">Bas</button><button id="check">Vérifier</button>
+<pre id="results"></pre><div class="thread-scroll-container" style="height:300px;overflow:auto"><div data-chatgpt-conversation-selection-target></div></div>
+<script>
+const exports={};
+function List(props) {
+  const {retainedTurnKeys: keys,synchronousMeasurementTurnKey: synchronous,
+    getPendingRestoreScrollDistanceFromBottomPx: restore,RowComponent: Row}=props;
+  return props;
+}
+Object.defineProperty(exports,'a',{enumerable:true,get:()=>List});
+const entries=Array.from({length:126},(_,i)=>({turnKey:String(i),conversationId:'fixture',turn:{}}));
+const scroller=document.querySelector('.thread-scroll-container');
+const container=document.querySelector('[data-chatgpt-conversation-selection-target]');
+const originals=new Map();
+let rangeStart=0;
+function render() {
+  const props=exports.a({entries,retainedTurnKeys:[],RowComponent(){}});
+  const keys=new Set([...props.retainedTurnKeys,...entries.slice(rangeStart,rangeStart+5).map(e=>e.turnKey)]);
+  for(const node of [...container.children])if(!keys.has(node.dataset.turnKey))node.remove();
+  for(const entry of entries)if(keys.has(entry.turnKey)&&!container.querySelector(`[data-turn-key="${entry.turnKey}"]`)) {
+    const row=document.createElement('section');row.dataset.turnKey=entry.turnKey;row.style.minHeight='70px';
+    row.textContent=`Message ${entry.turnKey}`;container.append(row);if(!originals.has(entry.turnKey))originals.set(entry.turnKey,row);
+  }
+}
+document.querySelector('#top').onclick=()=>{rangeStart=0;render();scroller.scrollTop=0;};
+document.querySelector('#bottom').onclick=()=>{rangeStart=121;render();scroller.scrollTop=scroller.scrollHeight;};
+document.querySelector('#check').onclick=()=>document.querySelector('#results').textContent=JSON.stringify({count:container.children.length,identities:[...originals].every(([key,node])=>container.querySelector(`[data-turn-key="${key}"]`)===node),nativeRestored:Object.defineProperty.name==='defineProperty'});
+render();document.querySelector('#check').click();
+</script></html>

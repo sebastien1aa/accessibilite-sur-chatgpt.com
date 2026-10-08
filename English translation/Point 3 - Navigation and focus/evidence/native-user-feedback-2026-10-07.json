@@ -1,0 +1,57 @@
+{
+  "nature": "transcription documentaire dérivée de retours humains natifs, pas trace technique ni enregistrement audio",
+  "date": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "sources": [
+    "réponses détaillées de l’utilisateur aux compléments de réception",
+    "précisions ultérieures de l’utilisateur"
+  ],
+  "environnement_declare": {
+    "jaws_principal": "2021",
+    "edge_jaws_2025": "résultats identiques d’après l’expérience déclarée de l’utilisateur",
+    "opera": "nouvel essai utilisateur, mêmes points d’accessibilité",
+    "mesures_physiques_par_agent": false
+  },
+  "extension_version_documentaire": "3.7.0",
+  "observations": {
+    "3A": {
+      "actions_et_nouveau_chat_projet": "atteints uniquement par Tab, inaccessibles aux flèches/raccourcis",
+      "afficher_masquer_chats_et_tab_listes": "bruit, passage ressenti en mode formulaire et blocage des flèches",
+      "retablissement": "Échap ou commande manuelle de retour au curseur PC"
+    },
+    "3B": "Afficher la barre latérale masquée inaccessible aux flèches et à Tab",
+    "3C": "Afficher plus reprend au début des chats du projet plutôt que juste avant le premier nouveau chat",
+    "3D": {
+      "deux_echap": [
+        "Profil",
+        "Actions des chats"
+      ],
+      "un_echap": [
+        "Filtrer",
+        "Options de la barre latérale du projet",
+        "Options de la barre latérale du chat"
+      ],
+      "correlation_roles": "remplacement des annonces lien/bouton sur le chat dont Actions vient d’être activé"
+    },
+    "3F": "remontées au haut de la page après Partager, Actions, Modifier et autres boutons des chats reconfirmées sans changement",
+    "3G": {
+      "libelle_courant": "Évaluer la réponse",
+      "annonce": "bouton",
+      "fonction_rapportee": "ouvre un menu",
+      "fermeture": "un Échap ferme puis la lecture reprend au haut de la page",
+      "libelle_ancien": "Réagir absent des dernières réceptions"
+    }
+  },
+  "limites": [
+    "corrélations humaines, causalité interne JAWS non mesurée",
+    "aucune nouvelle mesure DOM/AX dans cette transcription",
+    "aucune correction nouvelle reçue affirmée",
+    "les preuves historiques gardent leurs dates et versions"
+  ],
+  "periode": {
+    "debut": "19:18",
+    "fin": "22:40",
+    "fin_source": "Déclaration utilisateur",
+    "trace_complementaire": "preuve 2B dédiée dans le Point 2"
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr-FR"><meta charset="utf-8"><title>Rôles natifs de la barre latérale</title>
+<h1>Fixture des rôles natifs de la barre latérale</h1>
+<button id="run">Exécuter les contrôles DOM</button><pre id="results" role="status"></pre>
+<p id="dnd-instructions">Instructions synthétiques : maintenir Espace pour déplacer cet élément.</p>
+<aside id="app-shell-sidebar">
+  <button id="project" role="button" tabindex="0" aria-expanded="false" aria-roledescription="sortable" aria-describedby="dnd-instructions" draggable="true" style="transform:translate(0px,0px)">Projet synthétique</button>
+  <div id="list" role="list"><div id="chat" role="listitem" tabindex="-1" aria-roledescription="sortable" aria-describedby="dnd-instructions"><a id="link" href="/c/synthetic-chat" aria-roledescription="sortable">Chat synthétique</a><button>Actions du chat</button></div></div>
+  <button id="unknown" role="menuitem" aria-roledescription="sortable">Rôle inconnu conservé</button>
+  <div id="non-control" aria-roledescription="sortable">Élément générique conservé</div>
+  <button id="other-description" aria-roledescription="déplaçable">Autre description conservée</button>
+  <div id="draggable-chat" role="listitem" tabindex="-1" aria-roledescription="draggable" aria-describedby="dnd-instructions"><a id="draggable-link" href="/g/synthetic-project/c/synthetic-chat" aria-roledescription="draggable" draggable="true">Chat de projet synthétique</a></div>
+  <div id="late-focus-chat" role="listitem" tabindex="0" aria-describedby="dnd-instructions"><a href="/c/synthetic-late-focus">Chat avec métadonnées ajoutées au focus</a></div>
+  <button id="draggable-button" aria-roledescription="draggable">Bouton draggable conservé</button>
+  <div id="unrelated-listitem" role="listitem" aria-roledescription="draggable"><a href="/settings">Autre destination conservée</a></div>
+  <a id="unknown-draggable" role="menuitem" href="/c/synthetic-unknown" aria-roledescription="draggable">Rôle inconnu conservé</a>
+  <a id="other-draggable" href="/c/synthetic-other" aria-roledescription="Draggable">Autre casse conservée</a>
+  <div id="outer-listitem" role="listitem" aria-roledescription="draggable"><div role="list"><div id="inner-listitem" role="listitem" aria-roledescription="draggable"><a href="/c/synthetic-nested">Chat imbriqué synthétique</a><a href="/c/synthetic-nested">Même chat, second lien</a></div></div></div>
+</aside>
+<main><button id="outside" aria-roledescription="sortable">Commande hors barre latérale</button></main>
+<script>
+const project = document.querySelector('#project');
+const originalAttributes = [...project.attributes].filter(a => a.name !== 'aria-roledescription').map(a => [a.name, a.value]);
+let clicks = 0, drags = 0;
+const nativeClick = project.onclick = () => clicks++;
+project.addEventListener('dragstart', () => drags++);
+document.querySelector('#late-focus-chat').addEventListener('focus', event => event.target.setAttribute('aria-roledescription', 'draggable'));
+</script>
+<script src="../../../extension/sidebar-sortable-accessibility.js"></script>
+<script>
+const tick = () => new Promise(resolve => setTimeout(resolve, 0));
+document.querySelector('#run').onclick = async () => {
+  const checks = []; const check = (name, ok) => checks.push({ name, ok: !!ok });
+  const attr = 'aria-roledescription';
+  const api = window[Symbol.for('chatgpt-navigation-continue.sidebar-sortable.v2')];
+  const sidebar = document.querySelector('#app-shell-sidebar');
+  const chat = document.querySelector('#chat');
+  const link = document.querySelector('#link');
+  const draggableChat = document.querySelector('#draggable-chat');
+  const draggableLink = document.querySelector('#draggable-link');
+  const lateFocusChat = document.querySelector('#late-focus-chat');
+  await tick();
+  check('Projet, élément de liste et lien sans description sortable', [project, chat, link].every(n => !n.hasAttribute(attr)));
+  check('Tous les autres attributs du projet conservés', JSON.stringify(originalAttributes) === JSON.stringify([...project.attributes].filter(a => a.name !== attr).map(a => [a.name, a.value])));
+  check('Rôles et instructions natifs conservés', chat.getAttribute('role') === 'listitem' && document.querySelector('#list').getAttribute('role') === 'list' && chat.getAttribute('aria-describedby') === 'dnd-instructions');
+  project.click(); project.dispatchEvent(new Event('dragstart'));
+  check('Callbacks natifs conservés', project.onclick === nativeClick && clicks === 1 && drags === 1);
+  check('Éléments inconnus et hors portée conservés', ['unknown', 'non-control', 'outside'].every(id => document.getElementById(id).getAttribute(attr) === 'sortable') && document.querySelector('#other-description').getAttribute(attr) === 'déplaçable');
+  check('Description draggable retirée seulement sur chat et lien de conversation reconnus', !draggableChat.hasAttribute(attr) && !draggableLink.hasAttribute(attr) && !document.querySelector('#inner-listitem').hasAttribute(attr) && ['draggable-button', 'unrelated-listitem', 'unknown-draggable', 'outer-listitem'].every(id => document.getElementById(id).getAttribute(attr) === 'draggable') && document.querySelector('#other-draggable').getAttribute(attr) === 'Draggable');
+  check('Rôle, instructions et déplacement natifs des chats conservés', draggableChat.getAttribute('role') === 'listitem' && draggableChat.getAttribute('aria-describedby') === 'dnd-instructions' && draggableLink.getAttribute('draggable') === 'true' && draggableLink.getAttribute('href') === '/g/synthetic-project/c/synthetic-chat');
+  lateFocusChat.focus();
+  const removedAtFirstDelivery = await new Promise(resolve => queueMicrotask(() => resolve(!lateFocusChat.hasAttribute(attr))));
+  check('Métadonnée ajoutée au focus retirée dès la première livraison sans microtâche supplémentaire', removedAtFirstDelivery && document.activeElement === lateFocusChat);
+  project.setAttribute(attr, 'Nouvelle description native'); await tick();
+  check('Nouvelle description native conservée', project.getAttribute(attr) === 'Nouvelle description native');
+  project.setAttribute(attr, 'sortable'); await tick();
+  project.setAttribute(attr, 'Intermédiaire natif'); project.removeAttribute(attr); await tick();
+  document.documentElement.lang = 'en'; await tick();
+  check('Dernière absence native conservée au changement de langue', !project.hasAttribute(attr));
+  check('Restauration native des autres éléments au changement de langue', chat.getAttribute(attr) === 'sortable' && link.getAttribute(attr) === 'sortable');
+  document.documentElement.lang = 'fr-BE'; await tick();
+  check('Correction réappliquée en français', !chat.hasAttribute(attr) && !link.hasAttribute(attr));
+  link.removeAttribute('href'); await tick();
+  check('Lien recyclé sans href restauré', link.getAttribute(attr) === 'sortable');
+  link.setAttribute('href', '/c/synthetic-chat'); await tick();
+  document.querySelector('main').append(chat); await tick();
+  check('Élément sorti de la barre restauré', chat.getAttribute(attr) === 'sortable' && link.getAttribute(attr) === 'sortable');
+  document.querySelector('#list').append(chat); await tick();
+  const later = document.createElement('div'); later.setAttribute('role', 'listitem'); later.setAttribute(attr, 'sortable'); sidebar.append(later); await tick();
+  check('Élément remonté et nouvel élément corrigés', !chat.hasAttribute(attr) && !later.hasAttribute(attr));
+  for (const value of ['sortable', 'draggable', 'sortable', 'draggable']) {
+    draggableChat.setAttribute(attr, value); await tick();
+    check('Réécriture native ' + value + ' retirée sur le chat', !draggableChat.hasAttribute(attr));
+  }
+  document.documentElement.lang = 'en'; await tick();
+  check('Dernière valeur draggable restaurée au changement de langue', draggableChat.getAttribute(attr) === 'draggable' && draggableLink.getAttribute(attr) === 'draggable' && lateFocusChat.getAttribute(attr) === 'draggable');
+  document.documentElement.lang = 'fr'; await tick();
+  draggableLink.setAttribute('href', '/settings'); await tick();
+  check('Chat et lien recyclés vers une autre destination restaurés', draggableChat.getAttribute(attr) === 'draggable' && draggableLink.getAttribute(attr) === 'draggable');
+  draggableLink.setAttribute('href', '/c/synthetic-return'); await tick();
+  check('Chat et lien redevenus conversation corrigés', !draggableChat.hasAttribute(attr) && !draggableLink.hasAttribute(attr));
+  draggableLink.setAttribute(attr, 'sortable'); await tick();
+  project.setAttribute(attr, 'sortable'); await tick();
+  draggableLink.setAttribute(attr, 'draggable');
+  draggableChat.setAttribute(attr, 'Intermédiaire natif'); draggableChat.removeAttribute(attr);
+  project.setAttribute(attr, 'Dernière description native');
+  api.stop(); await tick();
+  check('Arrêt immédiat préserve le dernier remplacement natif', project.getAttribute(attr) === 'Dernière description native');
+  check('Arrêt restaure les suppressions et désactive le module', !api.active && chat.getAttribute(attr) === 'sortable' && later.getAttribute(attr) === 'sortable');
+  check('Arrêt immédiat distingue les suppressions propres des deux valeurs et la dernière absence native', draggableLink.getAttribute(attr) === 'draggable' && !draggableChat.hasAttribute(attr) && lateFocusChat.getAttribute(attr) === 'draggable');
+  later.setAttribute(attr, 'sortable'); await tick();
+  check('Observation arrêtée', later.getAttribute(attr) === 'sortable');
+  document.querySelector('#results').textContent = JSON.stringify({ passed: checks.filter(c => c.ok).length, total: checks.length, checks }, null, 2);
+  document.querySelector('#run').disabled = true;
+};
+</script></html>

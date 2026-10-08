@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Essai Navigation continue</title>
+<script src="../../../extension/keep-turns.js"></script>
+<style>body{font:18px system-ui}#scroll{height:300px;overflow:auto;border:1px solid}section{min-height:180px}#results{white-space:pre-wrap}</style>
+<h1>Essai avec le moteur réel du navigateur</h1>
+<button id="top">Haut</button><button id="bottom">Bas</button><button id="check">Vérifier</button>
+<pre id="results">Chargement</pre>
+<div id="scroll"><div id="thread"></div><div id="sentinel">Fin</div></div>
+<script>
+const scrollRoot=document.querySelector('#scroll');
+const thread=document.querySelector('#thread');
+const initial=new Map(); let nativeOffscreen=false, tocOffscreen=false;
+const virtualizer=new IntersectionObserver(entries=>{
+  for(const entry of entries){
+    const el=entry.target;
+    if(entry.isIntersecting && entry.intersectionRatio>=.01){
+      if(!el.firstChild){const section=document.createElement('section');section.dataset.testid='conversation-turn-'+el.dataset.turnIdContainer;section.textContent=`Message ${el.dataset.turnIdContainer}\n`+'Texte de contrôle, sélection stable. '.repeat(40);el.append(section);}
+    }else{el.replaceChildren();}
+    el.dataset.isIntersecting=String(entry.isIntersecting);
+  }
+},{root:scrollRoot,rootMargin:'1000px 0px 1000px 0px',threshold:.01});
+for(let i=1;i<=80;i++){const el=document.createElement('div');el.dataset.turnIdContainer=String(i);el.dataset.isIntersecting='false';thread.append(el);virtualizer.observe(el);}
+const other=new IntersectionObserver(entries=>{if(entries.some(e=>!e.isIntersecting))nativeOffscreen=true;},{root:scrollRoot});
+other.observe(document.querySelector('#sentinel'));
+const toc=new IntersectionObserver(entries=>{if(entries.some(e=>!e.isIntersecting))tocOffscreen=true;},{root:scrollRoot,rootMargin:'-49% 0px -49% 0px',threshold:0});
+toc.observe(thread.lastChild);
+document.querySelector('#top').onclick=()=>{scrollRoot.scrollTop=0;};
+document.querySelector('#bottom').onclick=()=>{scrollRoot.scrollTop=scrollRoot.scrollHeight;};
+document.querySelector('#check').onclick=()=>{
+  const sections=[...thread.querySelectorAll('section')];
+  const stable=sections.every(n=>!initial.has(n.parentElement.dataset.turnIdContainer)||initial.get(n.parentElement.dataset.turnIdContainer)===n);
+  for(const n of sections)initial.set(n.parentElement.dataset.turnIdContainer,n);
+  document.querySelector('#results').textContent=JSON.stringify({all80:sections.length===80,nodesStable:stable,nativeOffscreen,tocOffscreen,entryPrototype:virtualizer instanceof IntersectionObserver},null,2);
+};
+</script>
+</html>

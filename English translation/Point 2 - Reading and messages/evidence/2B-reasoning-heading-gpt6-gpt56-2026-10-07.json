@@ -1,0 +1,180 @@
+{
+  "nature": "Chronologie structurelle dérivée de la capture passive v2 ; événements pertinents sélectionnés, sans texte de conversation",
+  "date": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "debut_reinvestigation_humaine": "19:18",
+  "fin_tests_humains": "22:40",
+  "fin_tests_source": "Déclaration utilisateur",
+  "trace_startedAt": "2026-10-07T20:33:36.416Z",
+  "trace_collectedAt": "2026-10-07T20:44:15.587Z",
+  "capture": {
+    "version": 2,
+    "trigger": "dom-observation",
+    "raisonnement_extension_inactif": true,
+    "titres_possedes_extension": 0
+  },
+  "attribution_modeles": "GPT-6 puis GPT-5.6, ordre et interruption de la première génération déclarés par l’utilisateur ; les noms de modèle ne sont pas enregistrés par la capture",
+  "serie_1": {
+    "modele": "GPT-6",
+    "interrompue_par_utilisateur": true,
+    "chronologie": [
+      {
+        "ms": 211788.5,
+        "titre_assistant": 0,
+        "etat_courant": null,
+        "commande_arreter_presente": true
+      },
+      {
+        "ms": 225596.3,
+        "titre_assistant": 1,
+        "etat_courant": "active-reasoning",
+        "etat_avant_titre": true,
+        "details_etendus": true
+      },
+      {
+        "ms": 227178.2,
+        "titre_assistant": 1,
+        "etat_courant": "other-or-unavailable",
+        "etat_avant_titre": true
+      },
+      {
+        "ms": 240395.2,
+        "titre_assistant": 0,
+        "etat_courant": "other-or-unavailable",
+        "commande_arreter_presente": false
+      },
+      {
+        "ms": 251907,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "commande_arreter_presente": false
+      }
+    ],
+    "limite": "Génération interrompue ; ces états ne représentent pas une réponse GPT-6 achevée. Le nombre de titres de commentaires rapporté par l’utilisateur est distinct de ce compteur de titre de locuteur."
+  },
+  "serie_2": {
+    "modele": "GPT-5.6",
+    "interrompue_par_utilisateur": false,
+    "chronologie": [
+      {
+        "ms": 274197.8,
+        "titre_assistant": 0,
+        "entetes_activite": 0,
+        "commande_arreter_presente": true
+      },
+      {
+        "ms": 280948.8,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "entetes_activite": 1,
+        "details_etendus": true
+      },
+      {
+        "ms": 283889.6,
+        "titre_assistant": 0,
+        "etat_courant": "other-or-unavailable",
+        "entetes_activite": 1
+      },
+      {
+        "ms": 306302.2,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "entetes_activite": 2
+      },
+      {
+        "ms": 306595.6,
+        "titre_assistant": 0,
+        "etat_courant": "other-or-unavailable",
+        "entetes_activite": 2
+      },
+      {
+        "ms": 318230.1,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "entetes_activite": 2
+      },
+      {
+        "ms": 323657.1,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "entetes_activite": 3
+      },
+      {
+        "ms": 327906.6,
+        "titre_assistant": 0,
+        "etat_courant": "other-or-unavailable",
+        "entetes_activite": 3
+      },
+      {
+        "ms": 351974.1,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "entetes_activite": 3
+      },
+      {
+        "ms": 354073.8,
+        "titre_assistant": 0,
+        "etat_courant": "active-reasoning",
+        "entetes_activite": 4
+      },
+      {
+        "ms": 354541.9,
+        "titre_assistant": 0,
+        "etat_courant": "finished-reasoning",
+        "entetes_activite": 1,
+        "details_etendus": false
+      },
+      {
+        "ms": 355013.7,
+        "titre_assistant": 1,
+        "etat_courant": "finished-reasoning",
+        "etat_avant_titre": true
+      },
+      {
+        "ms": 361890.2,
+        "titre_assistant": 1,
+        "titres_contenu_H3": 1
+      },
+      {
+        "ms": 366960.8,
+        "titre_assistant": 1,
+        "titres_contenu_H3": 2
+      },
+      {
+        "ms": 374403.5,
+        "titre_assistant": 1,
+        "titres_contenu_H3": 3
+      },
+      {
+        "ms": 374671.9,
+        "titre_assistant": 1,
+        "titres_contenu_H3": 4
+      },
+      {
+        "ms": 385000.8,
+        "titre_assistant": 1,
+        "titres_contenu_H3": 6
+      },
+      {
+        "ms": 392107.7,
+        "titre_assistant": 1,
+        "etat_courant": "finished-reasoning",
+        "etat_avant_titre": true,
+        "commande_arreter_presente": false
+      }
+    ]
+  },
+  "retour_humain": {
+    "GPT6": "Structure de commentaires intermédiaires avec titres, comparable aux tours Codex décrits par l’utilisateur",
+    "GPT56": "Pas de titre de locuteur ajouté au début de la réflexion",
+    "deux_modeles": "Réflexion en cours au-dessus dans le parcours JAWS, hors continuité de lecture sous le repère assistant",
+    "details_deja_effectues": "Sous le titre dans le bon ordre, selon le retour utilisateur",
+    "adaptations_maintenues": "Repère de locuteur précoce et ordre de l’état de réflexion courant"
+  },
+  "limites": [
+    "Les temps ms sont relatifs au début de la capture, pas à l’envoi ; aucun identifiant privé de tour conservé.",
+    "La commande Arrêter est globale : sa présence n’est pas une preuve d’activité propre à chaque tour ancien.",
+    "Le DOM ne transcrit pas la parole ou le curseur JAWS ; le retour utilisateur complète la chronologie.",
+    "Aucune correction attribuée au support, ni cause d’alignement des interfaces établie."
+  ]
+}

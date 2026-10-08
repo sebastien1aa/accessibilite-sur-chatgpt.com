@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Sources natives — fixture locale</title>
+<h1>Sources natives — fixture locale</h1>
+<p>Les activations simulent une navigation externe et l’ouverture de l’aperçu. Aucun site externe, aucune conversation et aucun appel réseau ne sont utilisés. Cette page vérifie le DOM et les callbacks ; elle ne prouve pas la réception JAWS.</p>
+<section aria-labelledby="controls-title">
+  <h2 id="controls-title">Commandes de diagnostic</h2>
+  <button id="stop" type="button">Arrêter et restaurer le module</button>
+  <button id="restart" type="button">Redémarrer le module</button>
+  <button id="language" type="button">Basculer la langue français / anglais</button>
+  <button id="replace" type="button">Remplacer les hôtes sources</button>
+  <button id="close" type="button">Fermer les aperçus</button>
+  <button id="duplicate" type="button">Basculer un identifiant de dialogue dupliqué</button>
+  <button id="card-text" type="button">Vider ou rétablir le titre et l’extrait des cartes</button>
+  <button id="check" type="button">Vérifier les invariants DOM</button>
+</section>
+<main id="fixture">
+  <h2>Réponse synthétique avec sources</h2>
+  <article data-turn-key="synthetic-single">
+    <p>Exemple avec une source :
+      <span id="single" data-d-component="popover-trigger" data-d-inline data-d-inline-text role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="single-preview"><span data-d-component="badge"><span data-d-component="favicon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='navy'/%3E%3C/svg%3E"></span> Exemple A</span></span>.
+    </p>
+  </article>
+  <article data-turn-key="synthetic-group">
+    <p>Exemple avec plusieurs sources :
+      <span id="group" data-d-component="popover-trigger" data-d-inline data-d-inline-text role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="group-preview"><span data-d-component="badge"><span data-d-component="favicon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='navy'/%3E%3C/svg%3E"></span> Exemple B +1</span></span>.
+    </p>
+  </article>
+  <h2>Contrôles hors périmètre</h2>
+  <button id="ordinary" type="button" data-d-component="pressable" aria-label="Open Commande ordinaire">Commande ordinaire</button>
+  <span id="no-favicon" role="button" tabindex="0" data-d-component="popover-trigger" data-d-inline data-d-inline-text aria-haspopup="dialog" aria-expanded="false"><span data-d-component="badge">Popover sans favicon</span></span>
+  <article data-turn-key="synthetic-nested"><span id="nested" role="button" tabindex="0" data-d-component="popover-trigger" data-d-inline data-d-inline-text aria-haspopup="dialog" aria-expanded="false"><span data-d-component="badge"><span data-d-component="favicon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"></span>Source contenant une commande</span><button type="button">Commande imbriquée</button></span></article>
+</main>
+<h2>Résultats locaux</h2>
+<p id="counts" role="status">Navigations simulées : 0. Aperçus : 0. Touches natives : 0.</p>
+<pre id="report" aria-label="Résultat de vérification"></pre>
+<script>
+(() => {
+  'use strict';
+  const marker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v3');
+  const ids = ['single', 'group'];
+  const counters = { navigation: 0, preview: 0, keys: 0, ordinary: 0 };
+  const original = new Map();
+  const callbackRefs = new WeakMap();
+  function reportCounts() {
+    document.getElementById('counts').textContent = `Navigations simulées : ${counters.navigation}. Aperçus : ${counters.preview}. Touches natives : ${counters.keys}. Commandes ordinaires : ${counters.ordinary}.`;
+  }
+  function nativeProps(node, props) { node.__reactProps$fixture = props; }
+  function bindTrigger(node, sourceName, dialogId) {
+    function activate() {
+      counters.navigation++; counters.preview++;
+      node.setAttribute('aria-expanded', 'true');
+      let dialog = document.getElementById(dialogId);
+      if (!dialog) {
+        dialog = document.createElement('div'); dialog.id = dialogId; dialog.setAttribute('role', 'dialog');
+        const title = document.createElement('h2'); title.textContent = 'Aperçu ' + sourceName; dialog.append(title);
+        const card = document.createElement('button'); card.type = 'button'; card.dataset.dComponent = 'pressable'; card.setAttribute('aria-label', 'Open ' + sourceName);
+        const source = document.createElement('span'); source.dataset.fixtureCardText = ''; source.append(document.createTextNode(sourceName + ' '));
+        const cardTitle = document.createElement('span'); cardTitle.dataset.fixtureCardText = ''; cardTitle.append(document.createTextNode('Guide de référence pour cette source. '));
+        const excerpt = document.createElement('span'); excerpt.dataset.fixtureCardText = ''; excerpt.append(document.createTextNode('Cet extrait synthétique donne les informations visibles dans la carte d’aperçu.'));
+        for (const textHost of [source, cardTitle, excerpt]) textHost.dataset.originalText = textHost.textContent;
+        const cardFavicon=node.querySelector('[data-d-component="favicon"]').cloneNode(true);cardFavicon.querySelector('img').removeAttribute('alt');
+        card.append(cardFavicon, source, cardTitle, excerpt);
+        const onClick = () => { counters.navigation++; reportCounts(); };
+        nativeProps(card, { type: 'button', 'aria-label': 'Open ' + sourceName, onClick }); card.addEventListener('click', onClick);
+        callbackRefs.set(card, card.__reactProps$fixture); dialog.append(card); document.getElementById('fixture').append(dialog);
+      }
+      reportCounts();
+    }
+    const onKeyDown = event => {
+      counters.keys++;
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); }
+      reportCounts();
+    };
+    nativeProps(node, { role: 'button', onClick: activate, onKeyDown }); node.addEventListener('click', activate); node.addEventListener('keydown', onKeyDown);
+    callbackRefs.set(node, node.__reactProps$fixture);
+  }
+  function close() {
+    for (const id of ids) {
+      document.getElementById(id).setAttribute('aria-expanded', 'false');
+      for (const dialog of document.querySelectorAll('[role="dialog"][id="' + id + '-preview"]')) dialog.remove();
+    }
+  }
+  function check() {
+    const adapted = !!window[marker]?.active && /^fr(?:-|$)/i.test(document.documentElement.lang);
+    const results = [];
+    function verify(name, result) { results.push((result ? 'OK : ' : 'ÉCHEC : ') + name); }
+    for (const id of ids) {
+      const node = document.getElementById(id);
+      verify(id + ' rôle attendu', node.getAttribute('role') === (adapted ? 'link' : 'button'));
+      verify(id + ' attributs d’aperçu et focus conservés', node.getAttribute('aria-haspopup') === 'dialog' && node.getAttribute('tabindex') === '0' && node.getAttribute('aria-controls') === id + '-preview');
+      verify(id + ' favicon décorative ou alternative native restaurée',node.querySelector('[data-d-component="favicon"] img').getAttribute('alt')===(adapted?'':null));
+      verify(id + ' callbacks natifs conservés', node.__reactProps$fixture === callbackRefs.get(node));
+      const dialog = document.getElementById(id + '-preview'), card = dialog?.querySelector('button');
+      if (card) {
+        const unique = document.querySelectorAll('[role="dialog"][id="' + id + '-preview"]').length === 1;
+        const cardAdapted = adapted && unique && node.getAttribute('aria-expanded') === 'true' && card.textContent.trim().length > 0;
+        verify(id + ' carte liée au bon dialogue', card.getAttribute('role') === (cardAdapted ? 'link' : null));
+        verify(id + ' nom par contenu, ou libellé natif après restauration', card.getAttribute('aria-label') === (cardAdapted ? null : card.__reactProps$fixture['aria-label']));
+        verify(id + ' titre et extrait disponibles dans le DOM', !cardAdapted || (card.querySelectorAll('[data-fixture-card-text]').length === 3 && card.textContent.includes('Guide de référence') && card.textContent.includes('Cet extrait synthétique')));
+        verify(id + ' nom du dialogue de sources', dialog.getAttribute('aria-label') === (cardAdapted ? 'Aperçu des sources : ' + node.textContent.trim() : null));
+        verify(id + ' favicon de carte décorative ou restaurée',card.querySelector('[data-d-component="favicon"] img').getAttribute('alt')===(cardAdapted?'':null));
+        verify(id + ' callback et absence de href conservés', card.__reactProps$fixture === callbackRefs.get(card) && !card.hasAttribute('href'));
+      }
+    }
+    verify('commande ordinaire inchangée', document.getElementById('ordinary').getAttribute('role') === null);
+    for (const id of ['no-favicon', 'nested']) verify(id + ' inchangé', document.getElementById(id).getAttribute('role') === 'button');
+    document.getElementById('report').textContent = results.join('\n');
+    window.sourceLinksFixture.lastChecks = results;
+    return results;
+  }
+  function settledCheck() { requestAnimationFrame(() => requestAnimationFrame(check)); }
+  for (const id of ids) { const node = document.getElementById(id); original.set(id, node.cloneNode(true)); bindTrigger(node, id === 'single' ? 'Exemple A' : 'Exemple B', id + '-preview'); }
+  const ordinary = document.getElementById('ordinary');
+  const ordinaryClick = () => { counters.ordinary++; reportCounts(); };
+  nativeProps(ordinary, { type: 'button', 'aria-label': 'Open Commande ordinaire', onClick: ordinaryClick }); ordinary.addEventListener('click', ordinaryClick);
+  for (const id of ['no-favicon', 'nested']) nativeProps(document.getElementById(id), { role: 'button', onClick() {}, onKeyDown() {} });
+  document.getElementById('stop').onclick = () => { window[marker]?.stop(); settledCheck(); };
+  document.getElementById('restart').onclick = () => {
+    if (window[marker]?.active) { settledCheck(); return; }
+    const script = document.createElement('script'); script.src = '../../../extension/source-links-accessibility.js'; script.onload = () => { script.remove(); settledCheck(); }; document.head.append(script);
+  };
+  document.getElementById('language').onclick = () => { document.documentElement.lang = document.documentElement.lang === 'fr' ? 'en' : 'fr'; settledCheck(); };
+  document.getElementById('replace').onclick = () => {
+    close();
+    for (const id of ids) { const node = original.get(id).cloneNode(true); document.getElementById(id).replaceWith(node); bindTrigger(node, id === 'single' ? 'Exemple A' : 'Exemple B', id + '-preview'); }
+    settledCheck();
+  };
+  document.getElementById('close').onclick = () => { close(); settledCheck(); };
+  document.getElementById('duplicate').onclick = () => {
+    const existing = document.querySelector('[data-fixture-duplicate]');
+    if (existing) existing.remove();
+    else {
+      if (!document.getElementById('single-preview')?.querySelector('button')) { document.getElementById('report').textContent = 'Active d’abord la source Exemple A pour créer son aperçu, puis utilise ce contrôle.'; return; }
+      const duplicate = document.createElement('div'); duplicate.id = 'single-preview'; duplicate.setAttribute('role', 'dialog'); duplicate.dataset.fixtureDuplicate = ''; duplicate.textContent = 'Dialogue dupliqué de diagnostic'; document.getElementById('fixture').append(duplicate);
+    }
+    settledCheck();
+  };
+  document.getElementById('card-text').onclick = () => {
+    const cards = [...document.querySelectorAll('[role="dialog"] button[data-d-component="pressable"]')];
+    if (!cards.length) { document.getElementById('report').textContent = 'Active d’abord une source pour créer sa carte, puis utilise ce contrôle.'; return; }
+    for (const card of cards) {
+      const empty = card.textContent.trim().length === 0;
+      for (const textHost of card.querySelectorAll('[data-fixture-card-text]')) textHost.firstChild.data = empty ? textHost.dataset.originalText : '';
+    }
+    settledCheck();
+  };
+  document.getElementById('check').onclick = settledCheck;
+  window.sourceLinksFixture = { counters, check, settledCheck, lastChecks: [] };
+})();
+</script>
+<script src="../../../extension/source-links-accessibility.js" onload="sourceLinksFixture.settledCheck()"></script>
+</html>

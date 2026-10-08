@@ -1,0 +1,76 @@
+{
+  "dateLocal": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "language": "fr-FR",
+  "browser": "Chrome",
+  "page": "Accueil, composeur vide",
+  "modelLabelModuleActive": false,
+  "scope": "Relevés DOM et arbre d’accessibilité natifs ; aucune parole JAWS déduite.",
+  "closedNativeTriggerName": "Sélectionner le modèle ChatGPT",
+  "work": {
+    "model": "GPT-6.1 Sol",
+    "initialEffort": "medium",
+    "nativeLevels": [
+      {
+        "caption": "Minimal",
+        "status": "Minimal, 1 sur 6."
+      },
+      {
+        "caption": "Moyen",
+        "status": "Moyenne, 2 sur 6."
+      },
+      {
+        "caption": "Élevé",
+        "status": "Élevée, 3 sur 6."
+      },
+      {
+        "caption": "Très élevé",
+        "status": "Très élevé, 4 sur 6."
+      },
+      {
+        "caption": "Max",
+        "status": "Maximum, 5 sur 6."
+      },
+      {
+        "caption": "Ultra",
+        "status": "Ultra, 6 sur 6."
+      }
+    ]
+  },
+  "chat": {
+    "initialEffort": "high",
+    "nativeLevels": [
+      {
+        "caption": "Instantané",
+        "status": "Instantané, 1 sur 5."
+      },
+      {
+        "caption": "Moyenne",
+        "status": "Moyenne, 2 sur 5."
+      },
+      {
+        "caption": "Élevée",
+        "status": "Élevée, 3 sur 5."
+      },
+      {
+        "caption": "Très élevé",
+        "status": "Très élevé, 4 sur 5."
+      },
+      {
+        "caption": "6Pro",
+        "status": "Pro, 5 sur 5."
+      }
+    ]
+  },
+  "method": "Ouverture du sélecteur, parcours natif gauche/droite de Puissance, lecture séparée de la légende et du statut associé.",
+  "restoration": {
+    "workEffort": "medium",
+    "chatEffort": "high",
+    "mode": "Work",
+    "menuClosed": true,
+    "focus": "Déclencheur du sélecteur",
+    "composerEmpty": true,
+    "noMessageSent": true
+  },
+  "interpretation": "Formes natives hétérogènes, sans nouveau défaut grammatical ; alignement du démonstrateur sur le statut accessible, conservation des textes français natifs."
+}

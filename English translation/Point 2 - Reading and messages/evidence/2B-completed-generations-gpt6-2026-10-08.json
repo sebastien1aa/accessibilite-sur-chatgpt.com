@@ -1,0 +1,50 @@
+{
+  "nature": "Synthèse dérivée de preuves structurelles et de retours utilisateur ; pas une nouvelle génération",
+  "date": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "model": {
+    "value": "GPT-6",
+    "source": "Déclarations utilisateur concernant les générations et leurs titres"
+  },
+  "reasoningEffort": {
+    "value": "Élevé",
+    "source": "Précision utilisateur du 8 octobre ; distincte des champs capturés"
+  },
+  "finishedTurn": {
+    "reference": "2026-10-07-contrat-raisonnement-gpt6.json",
+    "capturedAt": "2026-10-07T21:27:40.137Z",
+    "completed": true,
+    "hasFinalAssistantStarted": true
+  },
+  "regionalTrace": {
+    "source": "Trace structurelle du 8 octobre, conservée dans le projet de travail",
+    "extensionActive": true,
+    "samples": 136,
+    "first": "2026-10-07T23:44:08.726Z",
+    "last": "2026-10-07T23:51:19.084Z",
+    "regionalPhaseTransitions": [
+      {
+        "at": "2026-10-07T23:46:26.262Z",
+        "completed": false
+      },
+      {
+        "at": "2026-10-07T23:46:59.418Z",
+        "completed": true
+      }
+    ],
+    "meaning": "La propriété native completed d’une même région passe de false à true ; l’extrait retient seulement cette transition de code, distincte du résultat adapté.",
+    "capturedExtensionVersion": "4.1.0"
+  },
+  "finalHeadings": {
+    "reference": "2026-10-08-regions-raisonnement.json",
+    "nativeAssistantHeadings": 2,
+    "addedEarlyHeading": 1
+  },
+  "human": {
+    "currentActivityBeforeCompletedDetails": true,
+    "multipleIntermediateHeadings": true,
+    "adaptedPathReceived": true,
+    "reference": "../../Point 1 - Sélecteur et composition/preuves/2026-10-08-reception-adaptee.json"
+  },
+  "proofBoundary": "Les props du tour terminé et les titres natifs sont isolés des ajouts de l’extension. La trace avec extension ne remplace pas le retour JAWS natif ni une capture vocale."
+}

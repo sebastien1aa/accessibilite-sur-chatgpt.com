@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr-FR"><meta charset="utf-8"><title>Retour de focus des menus de la barre latérale</title>
+<body tabindex="-1">
+  <h1>Fixture autonome du retour de focus après Échap</h1>
+<p>Ces contrôles utilisent des boutons et menus DOM natifs. Ils ne constituent pas une réception JAWS ni une preuve du code interne de ChatGPT.</p>
+<button id="run">Exécuter les contrôles de focus</button><pre id="results" role="status"></pre>
+<aside id="app-shell-sidebar">
+  <button id="profile" aria-label="Ouvrir le menu du profil" aria-haspopup="menu" aria-expanded="false">Profil synthétique</button>
+  <div data-app-action-sidebar-project-row data-app-action-sidebar-project-id="synthetic-project" data-app-action-sidebar-project-label="Projet synthétique">
+    <span>Projet synthétique</span><button id="project" aria-label="Options de la barre latérale de Chat" aria-haspopup="menu" aria-expanded="false">Actions du projet</button>
+    <div role="list"><div role="listitem"><a href="/g/synthetic-project/c/synthetic-nested">Chat imbriqué synthétique</a><button id="nested" aria-label="Actions du chat" aria-haspopup="menu" aria-expanded="false">Actions du chat imbriqué</button></div></div>
+  </div>
+  <div role="list"><div role="listitem"><a href="/c/synthetic-recent">Chat récent synthétique</a><button id="recent" aria-label="Actions du chat" aria-haspopup="menu" aria-expanded="false">Actions du chat récent</button></div></div>
+</aside>
+<main><label for="outside">Champ extérieur</label><input id="outside"><button id="other">Autre commande</button>
+  <button id="filter" aria-haspopup="menu" aria-pressed="false">Filtre synthétique</button>
+  <button id="explorer" aria-haspopup="dialog" data-slot="popover-trigger">Explorer synthétique</button>
+  <button id="reasoning" aria-haspopup="menu">Options extérieures synthétiques</button>
+</main>
+<script src="../../../extension/sidebar-menu-focus.js"></script>
+<script>
+const moduleSource = '../../../extension/sidebar-menu-focus.js';
+const api = () => window[Symbol.for('chatgpt-navigation-continue.sidebar-menu-focus.v4')];
+const tick = () => new Promise(resolve => setTimeout(resolve, 0));
+const settled = async () => { await tick(); await tick(); await tick(); };
+let serial = 0, nativeCloseCalls = 0, lifecyclePrevented = 0, nativeEscapePrevented = 0;
+function open(trigger, mode = 'lost') {
+  const menu = document.createElement('div'); menu.id = 'synthetic-menu-' + ++serial;
+  const dialog = trigger.getAttribute('aria-haspopup') === 'dialog';
+  menu.setAttribute('role', dialog ? 'dialog' : 'menu'); menu.setAttribute('data-state', 'open');
+  if (dialog) { menu.setAttribute('data-slot', 'popover-content'); menu.tabIndex = -1; }
+  const item = document.createElement('button'); item.setAttribute('role', trigger.id === 'filter' ? 'menuitemradio' : 'menuitem'); item.textContent = 'Action synthétique'; menu.append(item);
+  trigger.setAttribute('aria-controls', menu.id); trigger.setAttribute('aria-expanded', 'true'); trigger.setAttribute('data-state', 'open'); document.body.append(menu);
+  const close = () => {
+    nativeCloseCalls++; trigger.setAttribute('aria-expanded', 'false'); trigger.setAttribute('data-state', 'closed'); trigger.removeAttribute('aria-controls'); menu.remove();
+    // Synthetic counterpart of a native onCloseAutoFocus callback which opts
+    // out of restoring focus. The extension does not handle this custom event.
+    const lifecycle = new Event('synthetic-close-auto-focus', { cancelable: true });
+    const nativeCloseAutoFocus = event => event.preventDefault();
+    nativeCloseAutoFocus(lifecycle); lifecyclePrevented += Number(lifecycle.defaultPrevented);
+    if (mode === 'native') trigger.focus();
+    if (mode === 'timer') setTimeout(() => document.body.focus(), 0);
+    if (mode === 'two-stage') setTimeout(() => setTimeout(() => document.body.focus(), 0), 0);
+  };
+  const nativeKeydown = event => { if (event.key === 'Escape' && (!menu.contains(event.target) || event.target.closest('[role="menu"], [role="dialog"]') === menu)) { nativeEscapePrevented += Number(event.defaultPrevented); close(); } };
+  menu.addEventListener('keydown', nativeKeydown); (dialog ? menu : item).focus();
+  return { menu, item, close, nativeKeydown, escape(extras = {}, target = dialog ? menu : item) { const event = new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true, ...extras }); target.dispatchEvent(event); return event; } };
+}
+document.querySelector('#run').onclick = async () => {
+  const checks = [], check = (name, ok) => checks.push({ name, ok: !!ok });
+  const outside = document.querySelector('#outside'), other = document.querySelector('#other');
+  for (const id of ['profile', 'project', 'recent', 'nested', 'filter', 'explorer', 'reasoning']) {
+    const trigger = document.getElementById(id), fixture = open(trigger), originalFocus = trigger.focus;
+    const event = fixture.escape(); await settled();
+    check('Échap rend le focus au bouton exact ' + id, document.activeElement === trigger && !fixture.menu.isConnected && trigger.getAttribute('aria-expanded') === 'false');
+    check('Événement et bouton natifs conservés ' + id, !event.defaultPrevented && trigger.focus === originalFocus && !trigger.hasAttribute('aria-controls'));
+  }
+  const recent = document.querySelector('#recent');
+  let fixture = open(recent), firstTimerRan = false; setTimeout(() => { firstTimerRan = true; }, 0);
+  fixture.escape(); await Promise.resolve();
+  check('Premier retour après retrait dans la livraison MutationObserver avant toute nouvelle tâche', document.activeElement === recent && !firstTimerRan && recent.getAttribute('data-state') === 'closed'); await settled();
+  fixture = open(recent); fixture.menu.removeEventListener('keydown', fixture.nativeKeydown);
+  fixture.menu.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { recent.setAttribute('aria-expanded', 'false'); recent.setAttribute('data-state', 'closed'); fixture.menu.setAttribute('data-state', 'closed'); }
+  });
+  fixture.escape(); await Promise.resolve();
+  check('Popup closed retenu et encore visible conserve son item focalisé', document.activeElement === fixture.item && fixture.menu.getClientRects().length > 0);
+  fixture.close(); await Promise.resolve();
+  check('Fin de sortie visible puis retrait rend immédiatement le focus au déclencheur closed', document.activeElement === recent); await settled();
+  fixture = open(recent); fixture.menu.removeEventListener('keydown', fixture.nativeKeydown);
+  fixture.menu.addEventListener('keydown', event => { if (event.key === 'Escape') { recent.setAttribute('aria-expanded', 'false'); fixture.menu.setAttribute('data-state', 'closed'); fixture.menu.style.display = 'none'; } });
+  fixture.escape(); await Promise.resolve();
+  check('Popup forceMount réellement caché par CSS rend le focus dans MutationObserver', document.activeElement === recent && fixture.menu.isConnected && fixture.menu.getClientRects().length === 0); fixture.close(); await settled();
+  fixture = open(recent, 'timer'); fixture.escape(); await settled();
+  check('Tâche native perdant le focus après le premier retour corrigée par une seule revérification', document.activeElement === recent);
+  fixture = open(recent, 'native'); fixture.escape(); await settled();
+  check('Retour natif réussi conservé', document.activeElement === recent);
+  fixture = open(recent, 'two-stage'); fixture.escape(); await settled(); await settled();
+  check('Deux étapes natives différées sont corrigées pendant le bail borné', document.activeElement === recent);
+  fixture = open(recent); fixture.escape({}, fixture.menu); await settled();
+  check('Échap ciblant le menu avec un item focalisé conserve le retour exact', document.activeElement === recent);
+  for (const target of [document.body, recent]) {
+    fixture = open(recent); const event = fixture.escape({}, target); fixture.nativeKeydown(event); await settled();
+    check('Échap retargeté vers ' + (target === recent ? 'le déclencheur' : 'BODY') + ' conserve le retour exact', document.activeElement === recent);
+  }
+  fixture = open(recent); fixture.escape(); await settled(); await new Promise(resolve => setTimeout(resolve, 160)); document.body.focus(); await settled();
+  check('Aucune correction après expiration du bail de 150 ms', document.activeElement === document.body);
+  fixture = open(recent); fixture.menu.setAttribute('aria-labelledby', recent.id); recent.removeAttribute('aria-controls'); fixture.escape(); await settled();
+  check('Association labelledby native unique sans controls reconnue', document.activeElement === recent);
+  const parent = open(recent), subTrigger = document.createElement('button'); subTrigger.textContent = 'Sous-menu synthétique'; subTrigger.setAttribute('aria-haspopup', 'menu'); parent.menu.append(subTrigger);
+  const sub = open(subTrigger); sub.escape(); await settled();
+  check('Sous-menu associé revient à son propre bouton sans fermer le parent', document.activeElement === subTrigger && parent.menu.isConnected); parent.close();
+  const uncontrolled = document.createElement('div'); uncontrolled.id = 'uncontrolled-dialog'; uncontrolled.setAttribute('role', 'dialog'); uncontrolled.tabIndex = -1; document.body.append(uncontrolled); uncontrolled.focus();
+  uncontrolled.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); uncontrolled.remove(); await settled();
+  check('Dialogue permanent sans déclencheur associé exclu', document.activeElement === document.body);
+  fixture = open(recent); fixture.escape(); outside.focus(); await settled();
+  check('Focus extérieur saisi après Échap conservé', document.activeElement === outside);
+  fixture = open(recent); fixture.close(); outside.focus(); await settled();
+  check('Fermeture par action ne rappelle pas le bouton', document.activeElement === outside);
+  fixture = open(recent); fixture.escape(); document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true })); await settled();
+  check('Tab après Échap annule le retour', document.activeElement === document.body);
+  fixture = open(recent); fixture.escape(); other.dispatchEvent(new MouseEvent('click', { bubbles: true })); await settled();
+  check('Clic après Échap annule le retour', document.activeElement === document.body);
+  fixture = open(recent); fixture.escape(); fixture.escape({ repeat: true }); await settled();
+  check('Échap répété ne lance pas de retours concurrents', document.activeElement === recent);
+  const preview = document.createElement('a'); preview.href = '/c/synthetic-recent/?source=preview#detail'; preview.textContent = 'Aperçu du même chat'; recent.parentElement.append(preview);
+  fixture = open(recent); fixture.escape(); preview.remove(); await settled();
+  check('Retrait de l’aperçu du même chat conserve le retour exact', document.activeElement === recent);
+  fixture = open(recent); fixture.escape(); recent.parentElement.append(preview); await settled();
+  check('Ajout de l’aperçu du même chat conserve le retour exact', document.activeElement === recent); preview.remove();
+  fixture = open(recent); fixture.escape(); const link = recent.parentElement.querySelector('a'); const href = link.getAttribute('href'); link.setAttribute('href', '/c/synthetic-recycled'); await settled();
+  check('Ligne recyclée vers un autre chat ne récupère pas le focus', document.activeElement === document.body); link.setAttribute('href', href);
+  fixture = open(recent); fixture.escape(); api().stop(); await settled();
+  check('Arrêt annule le retour différé et désactive le module', document.activeElement === document.body && !api().active);
+  check('Callbacks natifs de fermeture préservés', nativeCloseCalls > 0 && lifecyclePrevented === nativeCloseCalls && nativeEscapePrevented === 0);
+  const script = document.createElement('script'); script.src = moduleSource; const loaded = new Promise(resolve => script.onload = resolve); document.body.append(script); await loaded;
+  fixture = open(document.querySelector('#nested')); fixture.escape(); await settled();
+  check('Réinjection après arrêt rétablit un module actif', api().active && document.activeElement === document.querySelector('#nested'));
+  api().stop();
+  window.sidebarMenuFocusResults = { passed: checks.filter(c => c.ok).length, total: checks.length, checks };
+  document.querySelector('#results').textContent = JSON.stringify(window.sidebarMenuFocusResults, null, 2);
+  document.querySelector('#run').disabled = true;
+};
+</script></body></html>

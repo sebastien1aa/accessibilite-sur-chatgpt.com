@@ -1,0 +1,34 @@
+{
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "version": "4.1.1",
+  "nature": "Réception native du sélecteur dans Edge et comparaison de sa légende visible avec son nom accessible",
+  "human": {
+    "at": "2026-10-08T01:55:00+02:00",
+    "browser": "Microsoft Edge",
+    "extension": false,
+    "models": [
+      "GPT-6",
+      "GPT-5.6 Sol"
+    ],
+    "announcement": "Sélectionner le modèle ChatGPT",
+    "result": "Le nom reste identique quel que soit le modèle sélectionné."
+  },
+  "technical": {
+    "nativeVisibleCaption": "Élevée",
+    "nativeAccessibleName": "Sélectionner le modèle ChatGPT",
+    "nativePresentationLabels": {
+      "effort": "Élevée",
+      "model": null,
+      "triggerPrefix": null
+    },
+    "adaptedAccessibleName": "Modèle ChatGPT : Élevée",
+    "hiddenModelAdded": false,
+    "modelAlreadyVisiblePreserved": true
+  },
+  "node": {
+    "passed": 22,
+    "failed": 0
+  },
+  "privacy": "Noms publics et attributs de commande uniquement."
+}

@@ -1,0 +1,87 @@
+{
+  "nature": "Inspection native DOM et propriétés React du rail et des catégories de paramètres ; comparaison documentaire des destinations épinglées",
+  "date": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "nativeEnvironment": {
+    "browser": "Microsoft Edge",
+    "version": "154.0.4258.62",
+    "chromium": "154.0.8037.98",
+    "language": "fr-FR",
+    "extension": "absence des marqueurs et propriétés adaptés ; attributs natifs concordant avec les props React"
+  },
+  "nativeRail": [
+    {
+      "label": "Accueil",
+      "destination": "builtin:home",
+      "peek": "home",
+      "ariaCurrent": "page",
+      "ariaExpanded": "false",
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Espace",
+      "destination": "builtin:space",
+      "peek": "space",
+      "ariaCurrent": null,
+      "ariaExpanded": "false",
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Planifié",
+      "destination": "builtin:automations",
+      "peek": "scheduled",
+      "ariaCurrent": null,
+      "ariaExpanded": "false",
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Plugins",
+      "destination": "builtin:customize",
+      "peek": "customize",
+      "ariaCurrent": null,
+      "ariaExpanded": "false",
+      "tag": "BUTTON"
+    }
+  ],
+  "nativeCode": {
+    "componentNameAtInspection": "ep",
+    "location": "Composant engagé propriétaire du bouton de destination, retrouvé par sa propriété data-sidebar-destination et son objet item",
+    "expandedExtract": "\"aria-current\":f.isCurrentDestination?\"page\":void 0,\"aria-expanded\":null!=q?H:void 0",
+    "selectionExtract": "onClick:t=>{t.defaultPrevented||(e?.onActivate(),f.onSelect(void 0,\"CHATGPT_SIDEBAR_MENU_ITEM_PLACEMENT_PRIMARY\"))}",
+    "interpretation": "L’état courant et l’état d’aperçu sont calculés séparément ; l’activation appelle onSelect. Le nom minifié est un repère daté, pas une API stable.",
+    "peekStateExtract": "H=null!=A&&A.area===q&&A.productMode===f.peekProductMode"
+  },
+  "nativeSettings": {
+    "selectedCategory": "Général",
+    "tag": "BUTTON",
+    "ariaCurrent": "page",
+    "ariaExpanded": null,
+    "comparison": "Une catégorie courante peut être exposée comme bouton de navigation avec aria-current, sans état réduit/étendu. Cette comparaison ne démontre pas une identité de composants ou de comportement JAWS.",
+    "expandedAbsentOnObservedCategories": true
+  },
+  "explorerDistinction": {
+    "trigger": {
+      "tag": "BUTTON",
+      "ariaHaspopup": "dialog",
+      "ariaExpanded": "false"
+    },
+    "dialogDestinationButtons": [
+      "Projets",
+      "Images",
+      "Sites",
+      "Maps",
+      "GPT",
+      "Codex"
+    ],
+    "dialogDestinationExpandedAttributes": 0,
+    "meaning": "Les destinations dans le panneau ne sont pas les mêmes contrôles que leurs épingles dans le rail ; le vrai déclencheur Explorer conserve sa sémantique de dépliage."
+  },
+  "pinnedDestinations": {
+    "source": "Observations et retours du 5 octobre : Sites et Images épinglés depuis Explorer",
+    "reportedAdaptedResult": "Retrait de l’état réduit/étendu accepté avec nuance",
+    "currentDemonstrator": "4.1.2",
+    "sourceFile": "../../../extension/ui-accessibility.js",
+    "guards": "Identifiant de destination non vide dans le rail ; absence de vrai popup et aria-controls ; absence de peek ou couple destination/peek reconnu ; ajouts et retraits dynamiques conservés"
+  },
+  "proofBoundary": "Le relevé du 8 octobre établit des propriétés natives et leur contraste avec les paramètres ; les annonces JAWS et épingles du 5 octobre conservent leur provenance et leur date."
+}

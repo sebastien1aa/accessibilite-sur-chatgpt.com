@@ -1,0 +1,57 @@
+{
+  "dateLocal": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "objet": "Virtualisation des tours chargés et effet du maintien local.",
+  "contexte": {
+    "extensionActive": "3.6.1 au relevé technique initial",
+    "maintienLocalApplique": false,
+    "limite": "Les autres adaptations étaient présentes ; ce relevé ne se présente pas comme une comparaison de toute l’extension désactivée."
+  },
+  "sourceNative": {
+    "url": "https://chatgpt.com/cdn/assets/672590.d8b5b4b48a.js",
+    "lengthUtf16": 64712,
+    "debuggerReportedHash": "691d0b1a621b042ac0f730f6a1e33611eb768954fe60a05bf08d684c8ffd66c1",
+    "hashAlgorithm": "Non attribué",
+    "module": "if6",
+    "exportKey": "a",
+    "getterSource": "()=>y",
+    "componentName": "y",
+    "componentOffsetUtf16": 29611,
+    "signatureOffsetsUtf16": {
+      "retainedTurnKeys": 30331,
+      "synchronousMeasurementTurnKey": 30298,
+      "getPendingRestoreScrollDistanceFromBottomPx": 30029,
+      "RowComponent": 29832
+    },
+    "observedContractStillMatches": true,
+    "validEntryGuards": true,
+    "rowComponentType": "function"
+  },
+  "renduNatifObserve": {
+    "entreesDisponibles": 17,
+    "lignesMonteesDansLaVueVisible": 6,
+    "retainedTurnKeysNatifs": 0,
+    "contratToujoursCompatible": true
+  },
+  "contournement": {
+    "module": "extension/keep-modern-turns.js",
+    "principe": "Ajouter les clés des entrées déjà chargées à retainedTurnKeys, par le renderer natif, sans copier les nœuds.",
+    "controleTechnique": {
+      "entreesDisponibles": 27,
+      "lignesMontees": 27,
+      "septNoeudsInitiauxToujoursConnectesAuRetourAuBas": true,
+      "paroleJawsMesuree": false
+    },
+    "receptionUtilisateur": {
+      "version": "3.6.2",
+      "dateLocal": "2026-10-07",
+      "declaration": "d'après mon test, c'est OK.",
+      "portee": "Parcours montant et descendant de la longue conversation dans le test proposé, reçu positivement."
+    }
+  },
+  "limites": [
+    "Messages disponibles dans le chargement examiné, pas tout l’historique du serveur.",
+    "Le succès du contournement ne constitue pas une correction native du site.",
+    "Comptes DOM, identité des nœuds et réception JAWS restent des preuves distinctes."
+  ]
+}

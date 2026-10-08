@@ -1,0 +1,46 @@
+<!doctype html><html lang="fr-FR"><meta charset="utf-8"><title>Régions de réflexion : contrôles</title>
+<button id="run">Exécuter les contrôles</button><pre id="results"></pre><main id="fixture"></main>
+<script src="../../../extension/reasoning-accessibility.js"></script>
+<script>
+const marker=Symbol.for('chatgpt-navigation-continue.reasoning-accessibility.current');
+const wait=()=>new Promise(resolve=>setTimeout(resolve,140));
+const owned=(turn,kind)=>turn.querySelector(`[${kind==='heading'?'data-chatgpt-reasoning-accessibility':'data-chatgpt-reasoning-accessibility-v2'}="${kind}"]`);
+const name=b=>b.getAttribute('aria-labelledby')?document.getElementById(b.getAttribute('aria-labelledby'))?.textContent:b.getAttribute('aria-label');
+function make(kind,key,regional=true){
+ const turn=document.createElement('article');turn.setAttribute('data-turn-key',key);
+ turn.innerHTML=`<h4 class="sr-only">Vous avez dit :</h4><div><span hidden data-chatgpt-agent-turn-start></span><div class="group"><div class="group/activity-header"><button aria-expanded="true" aria-labelledby="label-${key}"></button><span id="label-${key}">Recherche en cours</span></div><div class="body">Contenu synthétique</div></div></div>`;
+ const header=turn.querySelector('.group\\/activity-header'),group=header.parentElement,button=header.querySelector('button'),label=header.querySelector('span'),body=turn.querySelector('.body');
+ const state={},root={stateNode:state};state.current=root;
+ const owner={memoizedProps:{items:regional?[{type:'web-search'},{type:'assistant-message'}]:[{type:'reasoning'}],completed:false,hasFinalAssistantStarted:true},return:root};
+ const props=regional?{region:{kind},completed:false,reasoningRecap:null,activeSummary:{},canExpand:true,hasStandaloneItems:false,hideHeader:false}:{canExpand:true,defaultExpanded:true,shouldAnimateInitialCollapse:false,summary:{}};
+ if(!regional)owner.memoizedProps.hasFinalAssistantStarted=false;
+ const component={memoizedProps:props,return:owner};header.__reactFiber$fixture={return:component};
+ let clicks=0;const callback=()=>clicks++;button.onclick=callback;
+ document.getElementById('fixture').append(turn);return{turn,header,group,button,label,body,owner,component,callback,clicks:()=>clicks};
+}
+document.getElementById('run').onclick=async()=>{
+ window[marker]?.stop();document.getElementById('fixture').textContent='';const results=[];
+ const check=(label,condition)=>results.push({label,pass:!!condition});
+ const prefix=make('prefix','prefix'),suffix=make('suffix','suffix'),legacy=make('prefix','legacy',false);
+ const script=document.createElement('script');script.src='../../../extension/reasoning-accessibility.js';await new Promise((resolve,reject)=>{script.onload=resolve;script.onerror=reject;document.body.append(script);});await wait();
+ check('Prefix régional acquis dès activité Web sans item reasoning',name(prefix.button)==='Afficher/Masquer les détails du raisonnement'&&!!owned(prefix.turn,'summary'));
+ check('Suffix régional actif traité séparément',name(suffix.button)==='Afficher/Masquer les détails du raisonnement'&&!!owned(suffix.turn,'summary'));
+ check('Ancien contrat conservé',name(legacy.button)==='Afficher/Masquer les détails du raisonnement'&&!!owned(legacy.turn,'summary'));
+ check('Trois résumés actifs à la fin', [prefix,suffix,legacy].every(f=>owned(f.turn,'summary')===f.group.lastElementChild));
+ check('Activité native non dupliquée', [prefix,suffix,legacy].every(f=>f.label.hidden&&f.label.getAttribute('aria-hidden')==='true'&&owned(f.turn,'summary').textContent==='Recherche en cours'));
+ check('Corps et commandes natifs conservés', [prefix,suffix,legacy].every(f=>f.body.isConnected&&f.button.onclick===f.callback));
+ prefix.component.memoizedProps.completed=true;prefix.label.textContent='Réfléchi pendant 42s';await wait();
+ check('Fin du prefix respecte durée native',!owned(prefix.turn,'summary')&&name(prefix.button)==='Réfléchi pendant 42s');
+ check('Doublon de durée exclu seul',prefix.label.getAttribute('aria-hidden')==='true'&&!prefix.label.hidden);
+ check('Suffix actif après fin du prefix',!!owned(suffix.turn,'summary')&&name(suffix.button)==='Afficher/Masquer les détails du raisonnement');
+ suffix.button.setAttribute('aria-expanded','false');await wait();check('Repli suffix masque résumé sans retirer détails',owned(suffix.turn,'summary').hidden&&suffix.body.isConnected);
+ suffix.button.setAttribute('aria-expanded','true');await wait();check('Ouverture retrouve état courant à la fin',!owned(suffix.turn,'summary').hidden&&suffix.group.lastElementChild===owned(suffix.turn,'summary'));
+ prefix.component.memoizedProps.completed=false;prefix.label.textContent='Nouvelle recherche';await wait();check('Nouvelle activité régionale reprend son adaptation',owned(prefix.turn,'summary')?.textContent==='Nouvelle recherche'&&name(prefix.button)==='Afficher/Masquer les détails du raisonnement');
+ const late=make('prefix','late');late.owner.memoizedProps.items=[];await wait();
+ check('Contexte manquant non acquis',!owned(late.turn,'summary'));
+ late.owner.memoizedProps.items=[{type:'web-search'}];late.body.firstChild.nodeValue='Nouveau contenu synthétique';await wait();
+ check('Contexte tardif acquis sur changement du corps seul',name(late.button)==='Afficher/Masquer les détails du raisonnement'&&owned(late.turn,'summary')===late.group.lastElementChild);
+ window[marker].stop();check('Arrêt restitue noms et captions natifs',[prefix,suffix,legacy].every(f=>!owned(f.turn,'summary')&&!f.label.hidden&&f.label.getAttribute('aria-hidden')===null&&f.button.getAttribute('aria-labelledby')===f.label.id));
+ window.reasoningRegionResults={passed:results.filter(r=>r.pass).length,total:results.length,results};document.getElementById('results').textContent=JSON.stringify(window.reasoningRegionResults,null,2);
+};
+</script></html>

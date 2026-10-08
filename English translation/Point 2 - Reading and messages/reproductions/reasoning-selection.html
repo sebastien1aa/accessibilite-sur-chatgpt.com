@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Test de sélection des réflexions</title>
+<style>
+  body { font:16px system-ui; }
+  .select-none { user-select:none; }
+  #thread { height:240px; overflow:auto; }
+  #results { white-space:pre-wrap; }
+</style>
+<h1>Test de sélection des réflexions</h1>
+<button id="run">Exécuter les contrôles</button>
+<pre id="results" role="status">En attente</pre>
+<div id="outside" class="select-none active:select-auto data-has-range-start:select-auto"><button aria-expanded="true">Hors conversation</button><p>Ne pas modifier cette zone</p></div>
+<div id="thread">
+  <p id="before">DEBUT DU MESSAGE</p>
+  <div id="reason" class="select-none active:select-auto data-has-range-start:select-auto">
+    <button id="toggle" aria-expanded="true" class="select-none">Détails de réflexion</button>
+    <div id="detail"><div class="select-none">Titre intérieur</div><pre id="code"></pre><p id="long"></p></div>
+  </div>
+  <p id="after">FIN DU MESSAGE</p>
+  <div id="unrelated" class="select-none active:select-auto data-has-range-start:select-auto">Hors cible sans bouton de dépliage</div>
+  <textarea id="composer">Brouillon intact</textarea>
+</div>
+<script>
+const code=document.querySelector('#code'); code.textContent='CODE A\n  "texte" : <angle> & accents éà\nCODE Z';
+document.querySelector('#long').textContent='Détails longs : accents éà, ponctuation !\n'.repeat(21000);
+const before=document.querySelector('#before').firstChild;
+const after=document.querySelector('#after').firstChild;
+const select=()=>{const s=getSelection();s.setBaseAndExtent(before,0,after,after.length);return s.toString();};
+document.querySelector('#toggle').onclick=()=>{const d=document.querySelector('#detail');d.hidden=!d.hidden;document.querySelector('#toggle').setAttribute('aria-expanded',String(!d.hidden));};
+document.querySelector('#run').onclick=async()=>{
+  const results=[];
+  const check=(name,value)=>results.push({name,pass:!!value});
+  try{
+    const beforeFix=select();
+    check('Défaut initial reproduit : les détails sont exclus',!beforeFix.includes('CODE A')&&beforeFix.length<100);
+    const node=document.querySelector('#reason');const original=node.textContent;
+    const editableStyle=getComputedStyle(document.querySelector('#composer')).userSelect;
+    const link=document.createElement('link');link.rel='stylesheet';link.href='../../../extension/reasoning-selection.css';
+    await new Promise((resolve,reject)=>{link.onload=resolve;link.onerror=reject;document.head.append(link);});
+    const corrected=select();
+    check('Plus de 800 000 caractères sélectionnés avec code et titres',corrected.length>800000&&corrected.includes(code.textContent)&&corrected.includes('Titre intérieur')&&corrected.includes('Détails de réflexion'));
+    check('Texte et nœud originaux inchangés',node===document.querySelector('#reason')&&original===node.textContent);
+    check('Portée limitée au conteneur ciblé',getComputedStyle(document.querySelector('#outside')).userSelect==='none'&&getComputedStyle(document.querySelector('#unrelated')).userSelect==='none');
+    check('Champ de saisie préservé',document.querySelector('#composer').value==='Brouillon intact'&&getComputedStyle(document.querySelector('#composer')).userSelect===editableStyle);
+    getSelection().setBaseAndExtent(after,after.length,before,0);
+    check('Sélection inverse identique',getSelection().toString()===corrected);
+    getSelection().setBaseAndExtent(code.firstChild,7,code.firstChild,25);
+    check('Extrait exact à l’intérieur du code',getSelection().toString()===code.textContent.slice(7,25));
+    document.querySelector('#toggle').click();const closed=select();
+    check('Dépliage natif : le texte replié reste replié',document.querySelector('#detail').hidden&&!closed.includes('CODE A'));
+    document.querySelector('#toggle').click();
+    check('Réouverture : sélection complète rétablie',select()===corrected);
+    const later=node.cloneNode(true);for(const e of [later,...later.querySelectorAll('[id]')])e.removeAttribute('id');later.querySelector('pre').textContent='NOUVEAU DETAIL';document.querySelector('#thread').append(later);
+    check('Nouveaux blocs automatiquement couverts',getComputedStyle(later).userSelect==='text');
+    later.remove();select();
+  }catch(error){results.push({name:String(error),pass:false});}
+  document.querySelector('#results').textContent=JSON.stringify({passed:results.filter(r=>r.pass).length,total:results.length,results},null,2);
+  document.querySelector('#run').disabled=true;
+};
+</script>
+</html>

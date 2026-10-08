@@ -1,0 +1,31 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>Retour des actions de message 3.6.0</title>
+<script src="../../../extension/message-action-focus.js"></script>
+<h1>Contrôles publics du retour après Échap</h1><p>Contenu fictif. Ces contrôles ne prouvent pas la réception JAWS.</p>
+<button id="run">Exécuter les contrôles</button><pre id="results"></pre><div id="fixture"></div>
+<script>
+const marker=Symbol.for('chatgpt-navigation-continue.message-action-focus.v1'),wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));let source;
+async function setup(label='Partager'){
+  window[marker]?.stop();const root=document.getElementById('fixture');root.replaceChildren();
+  const turn=document.createElement('div');turn.setAttribute('data-turn-key','synthetic');const parent=document.createElement('span'),button=document.createElement('button');button.type='button';button.setAttribute('aria-label',label);button.textContent=label;parent.append(button);turn.append(parent);root.append(turn);(0,eval)(source);return{turn,button,root,label};
+}
+function open(a,{late=false,edit=a.label==='Modifier le message'}={}){
+  const surface=document.createElement(edit?'form':'div'),item=document.createElement('div');
+  if(edit){item.setAttribute('role','textbox');item.setAttribute('contenteditable','true');item.setAttribute('aria-label','Modifier le message');item.textContent='Texte fictif';const cancel=document.createElement('button');cancel.type='button';cancel.textContent='Annuler';const send=document.createElement('button');send.type='submit';send.textContent='Envoyer';surface.append(item,cancel,send);a.turn.append(surface);a.button.remove();}
+  else{surface.setAttribute('role','dialog');surface.setAttribute('aria-modal','true');item.tabIndex=0;surface.append(item);a.root.append(surface);}
+  item.focus();a.surface=surface;a.item=item;
+  item.addEventListener('keydown',event=>{if(event.key!=='Escape')return;a.beforeNativePrevented=event.defaultPrevented;a.nativeCalls=(a.nativeCalls||0)+1;surface.remove();if(edit){const parent=document.createElement('span'),replacement=document.createElement('button');replacement.type='button';replacement.setAttribute('aria-label',a.label);replacement.textContent=a.label;parent.append(replacement);a.turn.append(parent);a.returned=replacement;}else a.returned=a.button;if(late)setTimeout(()=>document.activeElement.blur(),0);});
+}
+async function activate(a,options){a.button.addEventListener('click',()=>open(a,options),{once:true});a.button.focus();a.button.click();await wait(20);}
+async function escape(a){a.item.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true}));await wait(180);}
+document.getElementById('run').addEventListener('click',async()=>{
+  source=await fetch('../../../extension/message-action-focus.js').then(r=>r.text());const results=[];
+  async function check(name,fn){try{results.push({name,ok:!!await fn()});}catch(error){results.push({name,ok:false,error:String(error)});}}
+  for(const label of ['Partager','Partager le prompt','Modifier le message'])for(const late of [false,true])await check(label+' retour, tâche native tardive='+late,async()=>{const a=await setup(label);await activate(a,{late});await escape(a);return document.activeElement===a.returned&&a.nativeCalls===1&&!a.beforeNativePrevented;});
+  await check('background masqué puis réintroduit',async()=>{const a=await setup();await activate(a);a.turn.setAttribute('aria-hidden','true');a.item.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));setTimeout(()=>a.turn.removeAttribute('aria-hidden'),30);await wait(180);return document.activeElement===a.button;});
+  await check('Tab après Escape annule retour tardif',async()=>{const a=await setup();await activate(a);a.item.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));window.dispatchEvent(new KeyboardEvent('keydown',{key:'Tab',bubbles:true}));await wait(180);return document.activeElement===document.body;});
+  await check('focus volontaire après fermeture préservé',async()=>{const a=await setup();await activate(a);a.item.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));const other=document.createElement('button');a.root.append(other);other.focus();await wait(180);return document.activeElement===other;});
+  await check('arrêt pendant bail annule réparation',async()=>{const a=await setup();await activate(a);a.item.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));window[marker].stop();await wait(180);return document.activeElement===document.body;});
+  await check('Réagir non traité',async()=>{const a=await setup('Réagir');await activate(a);await escape(a);return document.activeElement===document.body;});
+  window[marker]?.stop();window.messageActionResults={version:'3.6.0',passed:results.filter(r=>r.ok).length,total:results.length,results};document.getElementById('results').textContent=JSON.stringify(window.messageActionResults,null,2);
+});
+</script></html>

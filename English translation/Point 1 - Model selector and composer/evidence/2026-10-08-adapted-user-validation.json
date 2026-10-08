@@ -1,0 +1,21 @@
+{
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "version": "4.1.1",
+  "userQuote": "cela semble bien fonctionner à présent.",
+  "scope": [
+    "Sélecteur adapté et conservation des informations visibles",
+    "Aperçu de sources sans adresse de favicon parasite",
+    "Raisonnement GPT-6 : commande, activité après détails ouverts et durée sans doublon"
+  ],
+  "qualification": "Réception positive des parcours ciblés décrits ci-dessus.",
+  "newPreference": "Préfixe Raisonnement : ; informations visibles conservées, aucun modèle caché ajouté.",
+  "confirmationOfCurrentVersion": {
+    "version": "4.1.2",
+    "dateLocal": "2026-10-08",
+    "timezone": "Europe/Brussels",
+    "userQuote": "c'est OK",
+    "status": "received",
+    "reference": "2026-10-08-confirmation-4.1.2.json"
+  }
+}

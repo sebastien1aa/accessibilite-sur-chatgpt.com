@@ -1,0 +1,18 @@
+{
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "version": "4.1.2",
+  "userQuote": "c'est OK",
+  "scope": "Confirmation du nouveau préfixe Raisonnement : ; informations natives conservées.",
+  "previousTargetedReception": {
+    "version": "4.1.1",
+    "userQuote": "cela semble bien fonctionner à présent.",
+    "scope": [
+      "Sélecteur et choix visibles",
+      "Aperçu sans favicon parasite",
+      "Raisonnement GPT-6 : commande, ordre actif et durée sans doublon"
+    ],
+    "maintainedInCurrentVersion": true
+  },
+  "currentStatus": "received"
+}

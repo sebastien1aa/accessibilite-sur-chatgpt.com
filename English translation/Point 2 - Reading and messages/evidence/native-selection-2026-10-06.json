@@ -1,0 +1,33 @@
+{
+  "type": "mesure_structurelle_et_selection_native",
+  "date_UTC": "2026-10-06T21:48:00.988Z",
+  "date_Europe_Brussels": "2026-10-06T23:48:00.988+02:00",
+  "page": "copie partagee de conversation, URL et contenu non joints",
+  "interface_lang": "fr-FR",
+  "navigateur": {
+    "Microsoft Edge": "154.0.4258.62",
+    "Chromium": "154.0.8037.98",
+    "platform": "Windows"
+  },
+  "extension_accessibilite": {
+    "absente_selon_declaration_utilisateur": true,
+    "nombre_elements_data_chatgpt_a11y": 0,
+    "controle_inventaire_extensions_global_non_effectue": true
+  },
+  "operation": "selection souris de deux paragraphes visibles d'une reponse puis Ctrl+C",
+  "selection_nombre_caracteres": 607,
+  "range_count": 1,
+  "selection_traverse_plusieurs_paragraphes": true,
+  "copie_session_navigateur_nombre_caracteres": 606,
+  "egalite_exacte": false,
+  "egalite_apres_normalisation_espaces": true,
+  "contenu_non_conserve": true,
+  "canal_presse_papiers_session_initial_vide_retabli": true,
+  "limites": [
+    "petite selection, pas une copie globale massive",
+    "pas de reception JAWS ou de relecture du presse-papiers Windows",
+    "difference d'espacement, pas egalite exacte revendiquee",
+    "ne prouve pas une politique generale voulue d'OpenAI",
+    "controle conditionnel de perimetre, pas passe finale de fraicheur"
+  ]
+}

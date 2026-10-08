@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr-FR">
+<head><meta charset="utf-8"><title>Fixture du menu Évaluer la réponse</title>
+<script src="../../../extension/sidebar-menu-focus.js"></script>
+<script src="../../../extension/evaluation-menu-accessibility.js"></script></head>
+<body tabindex="-1">
+<h1>Menu d’évaluation synthétique</h1>
+<p>Ces contrôles vérifient les associations DOM et le focus Chromium. Ils ne prouvent pas la parole ni le curseur JAWS. Aucune évaluation réelle n’est envoyée.</p>
+<button id="run" type="button">Exécuter les contrôles</button><pre id="results" role="status"></pre>
+<main><article data-turn-key="synthetic-evaluation">
+<span type="button" id="radix-synthetic-evaluation" aria-haspopup="menu" aria-expanded="false" data-state="closed"><button type="button" aria-label="Évaluer la réponse"><svg aria-hidden="true" width="16" height="16"><circle cx="8" cy="8" r="6"></circle></svg></button></span>
+</article><label for="outside">Champ extérieur</label><input id="outside"></main>
+<script>
+const wrapper = document.getElementById('radix-synthetic-evaluation');
+const button = wrapper.querySelector('button');
+const api = () => window[Symbol.for('chatgpt-navigation-continue.evaluation-menu-accessibility.v1')];
+const tick = () => new Promise(resolve => setTimeout(resolve, 0));
+const settled = async () => { await tick(); await tick(); await tick(); };
+let serial = 0, openingCalls = 0, closingCalls = 0, evaluationCalls = 0, popup = null;
+function close(mode = 'body') {
+  closingCalls++; wrapper.setAttribute('aria-expanded', 'false'); wrapper.setAttribute('data-state', 'closed'); wrapper.removeAttribute('aria-controls');
+  popup?.remove(); popup = null;
+  (mode === 'native' ? button : document.body).focus();
+}
+function nativeOpen() {
+  openingCalls++; popup = document.createElement('div'); popup.id = 'synthetic-evaluation-menu-' + ++serial;
+  popup.setAttribute('role', 'menu'); popup.setAttribute('aria-labelledby', wrapper.id);
+  for (const name of ['Bonne réponse', 'Mauvaise réponse']) {
+    const item = document.createElement('div'); item.setAttribute('role', 'menuitem'); item.tabIndex = -1; item.textContent = name;
+    item.addEventListener('click', () => evaluationCalls++); popup.append(item);
+  }
+  popup.addEventListener('keydown', event => { if (event.key === 'Escape') close(popup.dataset.closeMode || 'body'); });
+  wrapper.setAttribute('aria-expanded', 'true'); wrapper.setAttribute('data-state', 'open'); document.body.append(popup); popup.firstElementChild.focus();
+}
+button.addEventListener('click', nativeOpen);
+function escape() {
+  const event = new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true });
+  popup.firstElementChild.dispatchEvent(event); return event;
+}
+document.getElementById('run').addEventListener('click', async () => {
+  const checks = [], check = (name, ok) => checks.push({ name, ok: !!ok });
+  const icon = button.firstElementChild, nativeFocus = button.focus;
+  await settled();
+  check('Le bouton natif expose le menu fermé sans rôle ajouté', button.getAttribute('aria-haspopup') === 'menu' && button.getAttribute('aria-expanded') === 'false' && !button.hasAttribute('role') && !button.hasAttribute('aria-controls'));
+  button.click(); await settled();
+  check('L’association ouverte utilise le menu exact sans controls sur le conteneur', button.getAttribute('aria-controls') === popup.id && button.getAttribute('aria-expanded') === 'true' && !wrapper.hasAttribute('aria-controls'));
+  const event = escape(); await settled();
+  check('Échap natif reste libre et le module existant reprend le bouton après BODY', !event.defaultPrevented && document.activeElement === button && popup === null);
+  check('Fermeture reflétée sans conserver une association obsolète', button.getAttribute('aria-expanded') === 'false' && !button.hasAttribute('aria-controls'));
+  await new Promise(resolve => setTimeout(resolve, 170));
+  button.click(); await settled(); popup.dataset.closeMode = 'native'; escape(); await settled();
+  check('Retour de focus natif réussi conservé', document.activeElement === button);
+  await new Promise(resolve => setTimeout(resolve, 170));
+  button.click(); await settled(); close(); await settled();
+  check('Fermeture ordinaire sans Échap ne rappelle pas le bouton', document.activeElement === document.body);
+  button.click(); await settled();
+  const duplicate = popup.cloneNode(true); duplicate.id = 'synthetic-ambiguous'; document.body.append(duplicate); await settled();
+  check('Deux menus labelledby identiques sont rejetés', !button.hasAttribute('aria-controls'));
+  duplicate.remove(); await settled();
+  check('Association unique rétablie après retrait du doublon', button.getAttribute('aria-controls') === popup.id);
+  close(); await settled();
+  check('Enfants, méthode focus et callbacks conservés sans activation des évaluations', button.firstElementChild === icon && button.focus === nativeFocus && openingCalls === 4 && closingCalls === 4 && evaluationCalls === 0);
+  document.documentElement.lang = 'en'; await settled();
+  check('Changement de langue restaure les seuls attributs fournis', !button.hasAttribute('aria-haspopup') && !button.hasAttribute('aria-expanded') && !button.hasAttribute('aria-controls'));
+  document.documentElement.lang = 'fr-FR'; await settled();
+  button.setAttribute('aria-expanded', 'native-foreign'); api().stop(); await settled();
+  check('Arrêt retire les attributs possédés et conserve une écriture étrangère', !button.hasAttribute('aria-haspopup') && button.getAttribute('aria-expanded') === 'native-foreign' && !api().active);
+  window.evaluationMenuResults = checks;
+  document.getElementById('results').textContent = checks.map(c => (c.ok ? 'OK ' : 'ÉCHEC ') + c.name).join('\n');
+});
+</script>
+</body></html>

@@ -1,0 +1,58 @@
+{
+  "nature": "inspection passive structurelle du tour GPT-6 terminé et extrait du code de composant natif",
+  "date": "2026-10-07",
+  "timezone": "Europe/Brussels",
+  "lastUserObservations": "23:20",
+  "finalStructureCapturedAt": "2026-10-07T21:27:40.137Z",
+  "extensionActive": true,
+  "mainDisclosure": {
+    "headerTag": "DIV",
+    "groupTag": "DIV",
+    "directButton": true,
+    "nativeAriaLabelledby": true,
+    "labelTag": "SPAN",
+    "labelInsideHeaderOutsideButton": true,
+    "nativeStandaloneLabelExposed": true,
+    "adaptedSummaryCount": 0
+  },
+  "nearestCommittedComponent": {
+    "keys": [
+      "region",
+      "completed",
+      "reasoningRecap",
+      "activeSummary",
+      "canExpand",
+      "hasStandaloneItems",
+      "hideHeader",
+      "children"
+    ],
+    "regionKeys": [
+      "id",
+      "kind",
+      "prefixActivity"
+    ],
+    "regionKind": "prefix",
+    "completed": true,
+    "canExpand": true,
+    "hasStandaloneItems": false,
+    "hideHeader": false,
+    "defaultExpandedPresent": false,
+    "summaryPresent": false,
+    "shouldAnimateInitialCollapsePresent": false,
+    "reasoningRecapType": "collapse"
+  },
+  "committedReasoningContext": {
+    "itemCount": 9,
+    "reasoningItemCount": 6,
+    "completed": true,
+    "hasFinalAssistantStarted": true
+  },
+  "nativeComponentExtract": "region:d,completed:u,reasoningRecap:g,activeSummary:m,canExpand:p,hasStandaloneItems:f,hideHeader:b,children:_ ; C = g?.type === keep_inline || (x ?? (w?.visibility === visible ? w.default_expanded : !u || suffix === d.kind)); disclosure: p ? {expanded:C,onToggle:()=>I(!C)} : undefined ; summary: k ?? (u ? Previous activity : m)",
+  "nativeParentExtract": "cA,{region:k,completed:w,reasoningRecap:W,activeSummary:o,canExpand:!l&&m.length>r.size,hasStandaloneItems:l||r.size>0,hideHeader:a,children:e=>m.map(...)}",
+  "privacy": "Aucun prompt, réponse, texte de réflexion, URL de conversation, identifiant de région ou clé de tour conservé. Les extraits contiennent uniquement la logique du code natif.",
+  "demonstratorMechanism": "Le module fourni reconnaît le contrat régional et suit son completed local, distinct de l’état global de la réponse, pour placer l’activité après les détails accomplis.",
+  "reasoningEffort": {
+    "value": "Élevé",
+    "provenance": "Précision utilisateur du 8 octobre ; réglage distinct des propriétés structurelles capturées"
+  }
+}

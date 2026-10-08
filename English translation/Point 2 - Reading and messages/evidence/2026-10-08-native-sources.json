@@ -1,0 +1,44 @@
+{
+  "nature": "Extrait des observations natives de sources, navigation simple et groupée et code de gestionnaire",
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "capturedAt": "2026-10-07T22:44:47.219Z",
+  "humanAnnouncement": "Bouton de menu réduit dialogue",
+  "native": {
+    "nativeCitationButtons": 17,
+    "previewCard": [
+      {
+        "hasHref": false,
+        "role": null
+      }
+    ],
+    "inlineHost": {
+      "tag": "SPAN",
+      "role": "button",
+      "tabindex": "0",
+      "hasPopup": "dialog",
+      "expanded": "false ou true",
+      "hasHref": false
+    },
+    "cardHost": {
+      "tag": "BUTTON",
+      "type": "button",
+      "hasHref": false,
+      "labelPattern": "Open [source]"
+    },
+    "singleActivation": {
+      "webTarget": "https://codex-reset.com/radar/",
+      "newTab": true,
+      "previewOpened": true
+    },
+    "groupedActivation": {
+      "webTargetOrigin": "https://www.sotwe.com",
+      "newTab": true,
+      "previewOpened": true,
+      "cards": 2
+    },
+    "keyboardHandler": "e=>{(\"Enter\"===e.key||\" \"===e.key)&&(e.preventDefault(),e.stopPropagation(),e.currentTarget.click())}",
+    "dilCallbackDispatch": "(e,o)=>{var a,l;let s=1===(a=e).length&&(L(l=a[0])||null!=l&&\"object\"==typeof l&&\"nativeEvent\"in l&&L(l.nativeEvent))?[]:a,u=\"onVisible\"===r||\"onLoad\"===r||\"onError\"===r?void 0:t.getInteractionCapability();return u?t.runner.triggerWithInteraction(n,{capability:u,source:i},o,...s):o?t.runner.triggerWithError(n,...s):t.runner.trigger(n,...s)}"
+  },
+  "privacy": "Aucun corps de conversation, identifiant de chat, cookie, jeton ou paramètre de challenge conservé."
+}

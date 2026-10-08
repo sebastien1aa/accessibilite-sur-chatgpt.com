@@ -1,0 +1,206 @@
+{
+  "nature": "Nom accessible abrégé des cartes de sources et correctif par contenu ; présence AX distincte de la réception JAWS",
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "capturedAt": "2026-10-07T23:18:30.637Z",
+  "version": "4.1.0",
+  "moduleRevision": 2,
+  "humanObservation": {
+    "dateLocal": "2026-10-08",
+    "announcement": "Ouvrir [nom du lien hypertexte]",
+    "detail": "Seul ce nom abrégé est accessible dans le parcours JAWS rapporté pour la carte."
+  },
+  "baseline400": {
+    "accessibleName": "Ouvrir Codex Reset",
+    "descendantTexts": [
+      "Codex Reset",
+      "Codex Radar: Reset, Limits & Service Signals",
+      "Total lines: 277"
+    ],
+    "dialogName": "",
+    "dialogModal": false,
+    "location": "Portail en fin de document, aperçu visuel près de la référence.",
+    "nativeAriaLabel": "Open Codex Reset"
+  },
+  "prepared410": {
+    "accessibleNodes": [
+      {
+        "role": "link",
+        "name": "Codex Reset Codex Radar: Reset, Limits & Service Signals Total lines: 277"
+      },
+      {
+        "role": "dialog",
+        "name": "Aperçu des sources : Codex Reset"
+      }
+    ],
+    "cardAriaLabelRemoved": true,
+    "visibleContentUsedForName": true,
+    "noTextCopiedOrMoved": true,
+    "keyboard": {
+      "focusOpensPreview": true,
+      "tabEntersCard": true,
+      "escapeClosesAndReturnsToReference": true,
+      "cardEnterDestination": "https://codex-reset.com/radar/"
+    },
+    "physicalJawsReceipt": false
+  },
+  "chromiumFixture": {
+    "file": "../reproductions/sources.html",
+    "scenarios": [
+      {
+        "label": "initial",
+        "checks": 9,
+        "failures": [],
+        "counters": {
+          "keys": 0,
+          "navigation": 0,
+          "ordinary": 0,
+          "preview": 0
+        }
+      },
+      {
+        "label": "carte par contenu",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 1,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "activation carte conservée",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "contenu vide restauration",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "contenu renseigné",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "arrêt",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "redémarrage",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "anglais restauration",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "retour français",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "ID ambigu",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "ID unique rétabli",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "remplacement",
+        "checks": 9,
+        "failures": [],
+        "counters": {
+          "keys": 1,
+          "navigation": 2,
+          "ordinary": 0,
+          "preview": 1
+        }
+      },
+      {
+        "label": "source groupée Espace",
+        "checks": 14,
+        "failures": [],
+        "counters": {
+          "keys": 2,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 2
+        }
+      }
+    ],
+    "scenarioCount": 13,
+    "checksAcrossScenarios": 172,
+    "failedChecks": 0
+  },
+  "moduleSha256": "5B896BAC67587529861B77421CDFE47D6CE6D710C8B2A19139D7F246D9851C3D",
+  "privacy": "Uniquement structure et métadonnées de source publique ; aucun corps de conversation, identifiant de chat, cookie ou jeton.",
+  "receptionFollowUp": {
+    "currentDemonstrator": "4.1.2",
+    "currentRelevantAdaptationStatus": "received",
+    "reference": "../../Point 1 - Sélecteur et composition/preuves/2026-10-08-reception-adaptee.json",
+    "meaningOfEarlierReceiptFields": "Les valeurs de réception false décrivent le point de contrôle technique avant confirmation humaine ; elles ne constituent pas un statut actuel."
+  }
+}
