@@ -1,8 +1,8 @@
-**Human validation of the native site without the extension: 8 October 2026 at 01:55, Brussels time (Europe/Brussels, UTC+02:00).** In Edge without the extension, the selector continues to be announced as “Sélectionner le modèle ChatGPT” with GPT-6 as well as GPT-5.6 Sol. The [dated evidence](Point%201%20-%20Model%20selector%20and%20composer/evidence/2026-10-08-selector-user-validation-edge.json) retains the scope of that validation.
-
 # Environment and usage confirmations
 
 User checks on **7 October 2026** started around **19:18** and ended at **22:40**, Brussels time, Europe/Brussels, UTC+02:00. Additional reasoning observations continued until approximately **23:20**, Brussels time, that day. On **8 October**, further JAWS feedback described the abbreviated name of source cards; DOM/AX inspection and keyboard checks establish their content and operation. Point 2B distinguishes GPT-6 with High reasoning effort from GPT-5.6: evidence from completed turns and subsequent user validation describes intermediate headings, the order of the current activity, and the final duration. The High effort setting is specified by the user; not all structural captures record that setting.
+
+**Human validation of the native site without the extension: 8 October 2026 at 01:55, Brussels time (Europe/Brussels, UTC+02:00).** In Edge without the extension, the selector continues to be announced as “Sélectionner le modèle ChatGPT” with GPT-6 as well as GPT-5.6 Sol. The [dated evidence](Point%201%20-%20Model%20selector%20and%20composer/evidence/2026-10-08-selector-user-validation-edge.json) retains the scope of that validation.
 
 ## Versions identified on the computer
 

@@ -50,6 +50,8 @@ This is a structural logic excerpt, not a standalone program: constants and labe
 
 The [demonstrator 4.1.2 module](../../../extension/reasoning-accessibility.js) recognizes both signatures, preserves independent tool controls, adds the current status at the end of expanded details and removes only the second reading of the caption. Native names and duration are restored on completion; bodies and callbacks are preserved. [60 Node tests](../reproductions/reasoning-accessibility.test.cjs) and [15 regional Chromium checks](2026-10-08-reasoning-regions.json) verify mechanisms without replacing JAWS user validation of this adaptation. The [local fixture](../reproductions/reasoning-regions.html) is synthetic and executes no message.
 
+The [additional October 8 observation](2026-10-08-reasoning-regions.json) preserves the order of markers and groups without recording their content. The local regional signature is handled from the initial activity, before a reasoning item is necessarily available. The context remains a committed, bounded activity list with boolean indicators; nested tool controls do not become main groups.
+
 **43 Python cards: inspected native branch.** The verified native type is `chatgpt-python-execution`. The inspected parent rendering function `dU`, with `streamingParentRegion` absent, separates analysis items, renders the rest through `dK`, then renders the cards through `o8` as siblings in a Fragment. They are therefore outside the main collapse control. This case belongs to this actually mounted branch, not another prefix branch of `dK`.
 
 These names come from inspection of the **actually mounted** public functions and their contracts; no `dU/dK` offset is claimed in the snapshot above. Identically named functions exist there in other components. To re-examine this, connect the rendered owner to types/phase/region and the actual sibling rather than keeping the first occurrence of a minified name.
@@ -107,8 +109,6 @@ On October 7, the native defect is confirmed as unchanged: request reusable/copy
 The basis is a DOM/AX observation: `h4.sr-only`, exact text « Dernière réponse », outside the message. This exposure adds a heading stop; no particular native navigation algorithm is attributed to this element alone. The `hideLastResponseHeading` function in [ui-accessibility.js](../../../extension/ui-accessibility.js) targets the exact marker and preserves headings within messages. Human reproduction and its overall acceptance are in [the procedures](../reproductions/PROCEDURES.md) and [the findings](observations-2026-10-03-05.json). This is a requested simplification, not universal proof that such a heading is invalid.
 
 The user confirms this heading's native presence on October 7.
-
-The [additional October 8 observation](2026-10-08-reasoning-regions.json) preserves the order of markers and groups without recording their content. The local regional signature is handled from the initial activity, before a reasoning item is necessarily available. The context remains a committed, bounded activity list with boolean indicators; nested tool controls do not become main groups.
 
 ## 2G — Web navigation, card name and dialog
 

@@ -1,8 +1,8 @@
-**Réception humaine du site natif sans extension : 8 octobre 2026 à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00).** Dans Edge sans extension, le sélecteur reste annoncé « Sélectionner le modèle ChatGPT » avec GPT-6 comme avec GPT-5.6 Sol. La [preuve datée](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-selecteur-reception-edge.json) conserve le périmètre de cette réception.
-
 # Environnement et confirmations d’usage
 
 Les vérifications utilisateur du **7 octobre 2026** ont commencé vers **19 h 18** et se sont terminées à **22 h 40**, heure de Bruxelles, Europe/Brussels, UTC+02:00. Les observations complémentaires de raisonnement se poursuivent jusqu’à environ **23 h 20**, heure de Bruxelles, le même jour. Le **8 octobre**, un retour JAWS supplémentaire décrit le nom abrégé des cartes de sources ; l’inspection DOM/AX et les essais clavier établissent leur contenu et leur fonctionnement. Le Point 2B distingue GPT‑6 en raisonnement Élevé et GPT‑5.6 : les preuves de tours terminés et les réceptions ultérieures décrivent les titres intermédiaires, l’ordre de l’activité et la durée finale. Le niveau Élevé est précisé par l’utilisateur ; les captures structurelles n’enregistrent pas toutes ce réglage.
+
+**Réception humaine du site natif sans extension : 8 octobre 2026 à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00).** Dans Edge sans extension, le sélecteur reste annoncé « Sélectionner le modèle ChatGPT » avec GPT-6 comme avec GPT-5.6 Sol. La [preuve datée](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-selecteur-reception-edge.json) conserve le périmètre de cette réception.
 
 ## Versions relevées sur l’ordinateur
 

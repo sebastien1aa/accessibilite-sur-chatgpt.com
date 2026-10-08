@@ -50,6 +50,8 @@ Il s’agit d’un extrait structurel de logique, pas d’un programme autonome 
 
 Le [module du démonstrateur 4.1.2](../../../extension/reasoning-accessibility.js) reconnaît les deux signatures, conserve les commandes d’outil indépendantes, ajoute le statut courant en fin des détails ouverts et retire seulement la seconde lecture de la légende. Les noms et durée natifs sont restaurés à la fin ; les corps et callbacks sont conservés. [60 tests Node](../reproductions/reasoning-accessibility.test.cjs) et [15 contrôles Chromium régionaux](2026-10-08-regions-raisonnement.json) vérifient les mécanismes sans se substituer à la réception JAWS de cette adaptation. La [fixture locale](../reproductions/reasoning-regions.html) est synthétique et n’exécute aucun message.
 
+Le [complément du 8 octobre](2026-10-08-regions-raisonnement.json) conserve l’ordre des repères et groupes sans enregistrer leurs contenus. La signature régionale locale est traitée dès l’activité initiale, avant qu’un item reasoning soit nécessairement disponible. Le contexte reste une liste d’activités engagée et bornée, avec indicateurs booléens ; les commandes d’outil imbriquées ne deviennent pas des groupes principaux.
+
 **43 cartes Python : branche native inspectée.** Le type natif vérifié est `chatgpt-python-execution`. La fonction montante inspectée `dU`, avec `streamingParentRegion` absent, sépare les items d’analyse, rend le reste via `dK`, puis rend les cartes par `o8` comme sœurs dans un Fragment. Elles sont ainsi hors du repli principal. Ce cas relève de cette branche effectivement montée, et non d’une autre branche préfixe de `dK`.
 
 Ces noms proviennent de l’inspection des fonctions publiques **effectivement montées** et de leurs contrats ; aucun offset de `dU/dK` n’est revendiqué dans le snapshot ci-dessus. Des homonymes y existent dans d’autres composants. Pour réexaminer, relier le propriétaire rendu aux types/phase/région et au sibling réel plutôt que retenir la première occurrence d’un nom minifié.
@@ -107,8 +109,6 @@ Le 7 octobre, le défaut natif est reçu comme inchangé : demande de rédaction
 La racine est un relevé DOM/AX : `h4.sr-only`, texte exact « Dernière réponse », hors du message. C’est cette exposition qui ajoute un arrêt de titre ; aucun algorithme natif de navigation particulier n’est attribué à ce seul élément. La fonction `hideLastResponseHeading` de [ui-accessibility.js](../../../extension/ui-accessibility.js) cible le repère exact et conserve les titres dans les messages. La reproduction humaine et son acceptation globale sont dans [les procédures](../reproductions/PROCEDURES.md) et [les constats](constats-2026-10-03-05.json). Il s’agit d’une simplification demandée, pas d’une preuve universelle qu’un tel titre est invalide.
 
 La présence native de ce titre est confirmée par l’utilisateur le 7 octobre.
-
-Le [complément du 8 octobre](2026-10-08-regions-raisonnement.json) conserve l’ordre des repères et groupes sans enregistrer leurs contenus. La signature régionale locale est traitée dès l’activité initiale, avant qu’un item reasoning soit nécessairement disponible. Le contexte reste une liste d’activités engagée et bornée, avec indicateurs booléens ; les commandes d’outil imbriquées ne deviennent pas des groupes principaux.
 
 ## 2G — Navigation Web, nom de carte et dialogue
 
