@@ -11,7 +11,6 @@
   "dRepeatWithoutReloadDoesNotRetrigger": true,
   "dAltTabReturnAfterLeavingModeRetriggers": true,
   "altTabDifferenceFromOriginalSiteExplicitlyReported": true,
-  "frenchNextButtonShortcutReported": "U",
   "internalJawsModeRead": false,
   "newExtensionFixPhysicallyReceived": false,
   "passiveVisibleTrace": {

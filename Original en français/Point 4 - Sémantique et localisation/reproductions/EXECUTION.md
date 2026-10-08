@@ -30,7 +30,7 @@ Retour historique : C normal, D bloque au premier passage, puis répétition nor
 
 Le bouton « Exécuter les contrôles DOM » vérifie le retrait ciblé de sortable/draggable, la conservation des rôles, instructions et callbacks, ainsi que la restauration des valeurs natives au changement de langue ou à l’arrêt. Les données de déplacement sont synthétiques ; les routes n’ont pas à être activées. Le résultat est écrit en texte dans la page. Les compteurs historiques de validation figurent dans les preuves ; aucun nouveau résultat n’est attribué à la copie publique.
 
-Cette reproduction vérifie des invariants DOM ; elle ne certifie pas les annonces de JAWS. Pour comparer une parole native à la correction, conserver des documents frais et distinguer version/configuration de JAWS, navigateur, rôle DOM et nom calculé.
+Cette reproduction vérifie des invariants DOM ; elle ne certifie pas les annonces de JAWS. Pour comparer une parole native à la correction, conserver des pages nouvellement chargées et distinguer version/configuration de JAWS, navigateur, rôle DOM et nom calculé.
 
 Les parcours sur le site pour les cinq sous-points sont réunis dans [PROCEDURES.md](PROCEDURES.md).
 

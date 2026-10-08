@@ -1,37 +1,46 @@
 # Procédures de reproduction — Point 1
 
-Relever la date, le navigateur, Windows, la version et le mode du lecteur d’écran, la langue française et l’état de l’extension. Comparer le site natif et le démonstrateur dans des documents frais distincts. Ces procédures permettent à un tiers de reproduire les comportements. Les [retours natifs reçus le 7 octobre, de 19 h 18 à 22 h 40, heure de Bruxelles (Europe/Brussels, UTC+02:00)](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) donnent les conditions et leur provenance. Aucun envoi de message n’est nécessaire pour ces essais.
+Ces parcours concernent le site natif, extension désactivée. L’[environnement observé](../../ENVIRONNEMENT.md) et les [preuves](../preuves/reception-native-2026-10-07.json) accompagnent le [rapport](../RAPPORT.md). Pour comparer le démonstrateur, reprendre le même parcours après son chargement et l’ouverture d’une nouvelle page.
 
-## 1A — Le sélecteur fermé ne permet pas d’identifier rapidement le choix
+## 1A — Sélecteur et informations de raisonnement
 
-1. Ouvrir chatgpt.com en français, avec un choix de modèle/niveau déjà effectué et l’extension désactivée.
-2. En curseur PC virtuel, parcourir les commandes du composeur aux flèches ; rejoindre le sélecteur fermé.
-3. Écouter si son nom fournit le choix courant. Ouvrir par Espace ou Entrée ; dans Chat, parcourir haut/bas « Sélectionner le modèle. 1 sur 2 » et « Puissance. 2 sur 2. Arrow left arrow right », puis gauche/droite pour les niveaux.
-4. Comparer les annonces reçues en Chat (« Instant », « Medium », « High », « Extra high », « Pro »), les légendes et les statuts exposés ; ne pas déduire la parole des seules valeurs DOM/AX.
-5. Dans Work, relever « Activer le mode rapide non coché » lorsque désactivé et « Activer le mode standard coché » lorsqu’activé, puis « Rétablir la sélection par défaut ». Comparer l’action annoncée et l’état courant ; relever aussi les différences entre légendes et statuts des niveaux.
-6. Fermer par Échap et relire le sélecteur : la réception native donne toujours « Sélectionner le modèle ChatGPT » dans les deux modes.
+**Conditions :** interface française ; modes Chat puis Work ; un modèle et un niveau sélectionnés.
 
-**Attendu :** nom utile du sélecteur fermé, comprenant le modèle et le niveau réellement choisis lorsqu’ils font partie de l’information proposée par le produit ; niveaux annoncés dans la langue de l’interface, avec légendes et statuts cohérents ; distinction claire entre l’état actuel du mode rapide et l’action proposée pour le changer. Le dossier ne demande pas de révéler un identifiant interne non destiné à l’utilisateur.
+1. Parcourir les commandes du composeur aux flèches avec le curseur PC virtuel et atteindre le sélecteur fermé.
+2. Comparer son nom accessible avec la légende affichée. Ouvrir avec Espace ou Entrée.
+3. Dans Chat, atteindre Puissance avec les flèches haut/bas, puis parcourir les niveaux avec gauche/droite. Comparer les annonces, la langue des niveaux et les légendes.
+4. Dans Work, comparer de même les niveaux. Examiner séparément le libellé et l’état coché de la commande de mode rapide, avant et après sa bascule.
+5. Fermer avec Échap et relire le sélecteur.
 
-## 1B — Le menu « Ajouter des fichiers et plus encore » ferme sans activer l’option voulue
+**Constat :** le nom fermé reste « Sélectionner le modèle ChatGPT » malgré une légende informative. Le retour JAWS décrit des niveaux anglais en Chat et une ambiguïté « Activer le mode standard coché » lorsque le mode rapide est actif. Les écarts entre légendes et statuts français sont détaillés dans le rapport.
 
-1. Sur une page fraîche française, composeur vide, rejoindre Ajouter des fichiers et plus encore avec le curseur virtuel.
-2. Appuyer sur Espace ; relever l’annonce et le focus. La réception native donne le champ de prompt à la première ouverture, le bouton aux suivantes et aucune annonce d’ouverture. Relire le déclencheur : sans fermeture par Échap, il est annoncé étendu.
-3. Descendre aux flèches après l’éditeur et les deux « Fin de région principale ». Relever l’ordre Ajouter, fichiers depuis l’ordinateur, fichiers d’un espace, projet, recherche approfondie, Plugins, puis les fonctions et « Type to search plugins ». L’option de fichiers est reçue « bouton actuel » sans sélection volontaire.
-4. Activer une option qui ne transmet pas de données par Espace ou Entrée ; comparer activation effective, fermeture et destination du focus. Le retour reçu donne fermeture sans activation et retour au haut de la page. Ne pas envoyer le message.
-5. Rouvrir après la tentative : le focus initial dans le champ se reproduit selon l’utilisateur. Fermer par Échap et retirer uniquement une éventuelle sélection de test.
+**Résultat attendu :** choix affiché identifiable depuis le bouton fermé ; niveaux localisés et cohérents ; état du mode rapide distinct de l’action proposée.
 
-**Attendu :** déclencheur et popup cohérents, accès clavier aux items disponibles, activation fiable de l’item focalisé et retour au contexte à la fermeture. Le choix précis des rôles dépend du composant retenu par le produit, mais il doit être utilisable avec le lecteur d’écran.
+## 1B — Menu d’ajout
 
-## 1C — Flèche haut ajoute involontairement un ancien prompt dans un champ vide
+**Conditions :** composeur vide, interface française.
 
-1. Utiliser un compte avec historique de prompts, sans exiger un envoi préalable depuis le navigateur de test.
-2. Ouvrir une discussion existante, puis une nouvelle discussion, sans brouillon à préserver. Relever si le navigateur a déjà servi à créer une discussion : le retour Opera confirme le phénomène même sans cet usage antérieur.
-3. Avec le composeur réellement vide et focalisé, appuyer une fois sur Flèche haut non modifiée, dans le mode où cette touche atteint le champ.
-4. Vérifier si le texte d’un prompt antérieur remplit l’éditeur. Ne rien envoyer ; noter la distinction avec un menu de suggestions déjà ouvert.
+1. Atteindre « Ajouter des fichiers et plus encore » aux flèches et ouvrir avec Espace.
+2. Parcourir les options et comparer la position de lecture avec l’éditeur : les options sont rencontrées après celui-ci et deux fins de région principale dans le retour JAWS.
+3. Activer une option avec Espace ou Entrée et vérifier si la fonction choisie est effectivement sélectionnée.
+4. Rouvrir le menu, comparer le focus d’entrée avec celui de la première ouverture, puis fermer avec Échap.
 
-**Attendu :** navigation aux flèches utilisable sans modification imprévue du brouillon, et accès explicite, accessible et volontaire à l’historique lorsqu’il est proposé. Un menu dédié est une piste, pas une implémentation imposée.
+**Constat :** le focus initial va dans l’éditeur, les ouvertures suivantes laissent la lecture sur le déclencheur ; l’activation d’une option ferme le menu sans l’action voulue et ramène la lecture en haut de page.
 
-Les noms calculés et rôles mesurés ne constituent pas une transcription de la parole JAWS. Pour 1C, l’adaptation bloque le rappel involontaire mais ne fournit aucun accès alternatif à l’historique.
+**Résultat attendu :** entrée dans un popup utilisable au clavier, activation de l’option parcourue et retour au contexte à sa fermeture.
 
-Les [contrôles synthétiques](EXECUTION.md) vérifient séparément les mécanismes du démonstrateur.
+## 1C — Rappel involontaire de prompts
+
+**Conditions :** distinguer une discussion déjà utilisée d’un nouveau chat. Pour ce dernier, distinguer un navigateur ayant déjà envoyé un prompt créant une discussion d’un navigateur n’ayant jamais effectué cet envoi.
+
+1. Ouvrir une discussion déjà utilisée, vider le composeur, puis placer le focus dans l’éditeur.
+2. Appuyer sur Flèche haut sans modificateur, dans le mode où la touche est transmise à l’éditeur.
+3. Observer si un ancien prompt remplit le champ.
+4. Comparer avec un nouveau chat dans un navigateur ayant déjà servi à envoyer un prompt créant une discussion.
+5. Comparer enfin avec un nouveau chat dans un navigateur n’ayant jamais servi à cet envoi.
+
+**Constat :** le remplissage involontaire concerne les discussions déjà utilisées et le nouveau chat après un envoi créant une discussion dans ce navigateur. Le test Opera confirme son absence dans le nouveau chat tant que ce navigateur n’a jamais servi à cet envoi.
+
+**Résultat attendu :** navigation sans modification imprévue du brouillon et accès volontaire, accessible, à l’historique des prompts.
+
+Les [tests et fixtures](EXECUTION.md) isolent les mécanismes du démonstrateur.

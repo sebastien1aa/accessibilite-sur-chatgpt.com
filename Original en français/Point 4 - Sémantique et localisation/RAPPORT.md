@@ -1,18 +1,18 @@
 # Point 4 — Sémantique et localisation
 
-Ce dossier décrit cinq difficultés distinctes : des descriptions de rôle anglaises qui prennent la place d’un rôle informatif, un état « réduit » sur des commandes de navigation, des groupes répétés autour des chats, un blocage au premier passage dans certaines listes et des commandes de projet non traduites. Leur origine et leur niveau de preuve diffèrent. Une correction locale reçue ne signifie pas que ChatGPT a été corrigé en amont.
+Ce Point traite de cinq obstacles : descriptions de rôle qui masquent la fonction, état réduit sur les destinations, groupes redondants, blocage des flèches au premier focus et épinglage des projets non traduit. Les mécanismes natifs, l’interopérabilité et les demandes de simplification sont distingués dans chaque sous-point.
 
-Les investigations historiques des 3–5 octobre 2026 relevaient Windows 10 Home 22H2, build 19045.6466, avec Chrome 154.0.8037.93. Les nouveaux retours humains natifs datent du **7 octobre, de 19 h 18 à 22 h 40, Bruxelles**. La version de JAWS 2021 utilisée reste inchangée. L’utilisateur indique des résultats identiques avec Edge et JAWS 2025 d’après son expérience, et dans un nouvel essai avec Opera. Ces observations lui sont attribuées, sans les transformer en essais mesurés par l’agent. Voir les [repères d’environnement](../ENVIRONNEMENT.md). Les heures sont celles de Bruxelles, Europe/Brussels, UTC+02:00 à ces dates.
-
-Une actualisation passive, réalisée le **6 octobre 2026 à 23 h 48 dans Edge, sans extension, sur une conversation partagée**, confirme encore les descriptions `sortable` sur trois boutons et l’état réduit de quatre destinations. Ce relevé DOM/arbre d’accessibilité constitue une preuve actuelle de structure ; il n’est pas une nouvelle réception JAWS. Le navigateur indique Edge **154.0.4258.62**, Chromium **154.0.8037.98**.
-
-Les [preuves sélectionnées](preuves/CONSTATS_ET_PROVENANCE.md) distinguent les relevés historiques, les retours utilisateur et cette actualisation. Les [reproductions locales](reproductions/PROCEDURES.md) utilisent uniquement des exemples synthétiques, sans compte ni contenu de conversation.
-
-Les [procédures de reproduction](reproductions/PROCEDURES.md) réunissent les parcours du site ; les [tests et fixtures](reproductions/EXECUTION.md) vérifient séparément les mécanismes synthétiques.
+Les [conditions et versions](../ENVIRONNEMENT.md) sont communes. Les [procédures du site](reproductions/PROCEDURES.md), les [preuves](preuves/CONSTATS_ET_PROVENANCE.md) et les [tests isolés](reproductions/EXECUTION.md) accompagnent les sous-points. Le démonstrateur fourni est la **4.1.2**.
 
 ## 4A — « Sortable » et « draggable » à la place de rôles informatifs
 
-Le 7 octobre, l’utilisateur reconfirme « sortable » sur les sections Épinglés, Projets et Récents. Les états de dépliage persistent : il précise notamment **« sortable étendu » pour Projets**, qui affiche ou masque réellement ses chats. Dans les listes imbriquées des projets, il entend sortable à la place de lien/bouton, et **« sortable réduit menu »** sur les boutons d’actions. Après Tab sur une ligne, puis Échap ou retour manuel au curseur PC et reprise aux flèches, **« draggable » remplace également les annonces lien/bouton**, notamment sur le premier chat de Récents. Ces descriptions techniques anglaises masquent la fonction utile dans le parcours.
+**Problème.** Les annonces « sortable » et « draggable » masquent les rôles utiles des sections, liens et boutons.
+
+**Résultat attendu.** Fonctions reconnaissables, avec accès au tri et instructions de déplacement conservés.
+
+**Reproduction.** [Parcours 4A](reproductions/PROCEDURES.md#4a--descriptions-de-rôle).
+
+Le 7 octobre, l’utilisateur reconfirme « sortable » sur les sections Épinglés, Projets et Récents. Les états de dépliage persistent : il précise notamment **« sortable étendu » pour Projets**, qui affiche ou masque réellement ses chats. Dans les listes imbriquées des projets, il entend sortable à la place de lien/bouton, et **« sortable réduit menu »** sur les boutons d’actions. Après Tab sur une ligne, puis Échap ou retour manuel au curseur PC et reprise aux flèches, **« draggable » remplace également les annonces lien/bouton**, notamment sur le premier chat de Récents quand c'est lui qui a été focalisé par Tab, sinon cela se produit pour les attribus dans le groupe du chat concerné. Ces descriptions techniques anglaises masquent la fonction utile dans le parcours (généralement "bouton" ou "lien").
 
 Le même retour relie ce remplacement au chat dont le bouton Actions vient d’être activé. Il faut donc relever séparément deux déclencheurs observés : accès par Tab et activation d’Actions. Cette corrélation datée n’établit pas que tout changement décrit après Actions relève d’une causalité identique à l’initialisation technique au premier focus.
 
@@ -22,23 +22,58 @@ Il faut distinguer le rôle et sa description : `button`, `link` ou `listitem` n
 
 Le contournement retire les valeurs exactes `sortable` dans la portée reconnue et `draggable` sur les conversations reconnues ou leurs parents propriétaires. Il conserve les rôles, liens, commandes, instructions de déplacement `aria-describedby` et callbacks natifs. Il ne désactive pas le tri. Les [sources communes](../../extension/sidebar-sortable-accessibility.js) montrent ce ciblage et sa restauration à l’arrêt.
 
-Les rôles informatifs ont été reçus dans le parcours global 3.2.3. Le démarrage a ensuite été avancé à `document_start`, avec un retour positif en 3.3.1. Le 6 octobre, les trois boutons natifs sans extension portent toujours `sortable` et `tabindex="0"`. Ce dernier attribut ne doit pas être confondu avec le parent `tabindex="-1"` étudié en 4D.
+Les rôles informatifs ont été reçus dans le parcours global du 4 octobre. Le démarrage a ensuite été avancé à `document_start`, avec un retour positif. Le 6 octobre, les trois boutons natifs sans extension portent toujours `sortable` et `tabindex="0"`. Ce dernier attribut ne doit pas être confondu avec le parent `tabindex="-1"` étudié en 4D.
 
 Une solution en amont devrait garder le rôle reconnaissable, localiser les informations de déplacement réellement utiles et vérifier les annonces au focus initial comme après les mises à jour. La correction de la description de rôle ne doit pas supprimer l’accès au tri ni ses instructions.
 
 ## 4B — « Réduit » sur des destinations de navigation
 
-Le 7 octobre, l’utilisateur confirme les boutons de destinations annoncés **« réduits »**, avec **« page courante »** lorsqu’il se trouve sur la destination correspondante. Accueil, Espace, Planifié et Plugins figuraient déjà dans le relevé historique alors que leur activation navigue. Le code natif du composant observé, identifié `oB`, lie `aria-expanded` à un aperçu secondaire tandis que l’action de sélection navigue. Sur Espace, la navigation rend la destination courante mais laisse `expanded=false`. Aucun contrôle de dépliage de cet aperçu n’a été constaté dans ce rendu. Ces destinations ne doivent pas être confondues avec Projets, Épinglés ou Récents, dont les commandes déplient effectivement des listes.
+**Problème.** Des destinations sont annoncées réduites alors que leur activation navigue ; cet état ne décrit pas la page courante.
 
-L’attribut est donc natif ; l’écart observé porte sur ce que l’état décrit par rapport à l’action accessible. Le rapport ne prétend pas que tout bouton de navigation utilisant `aria-expanded` est incorrect : un contrôle qui ouvre effectivement un panneau doit garder son état et ses relations.
+**Résultat attendu.** Navigation et page courante clairement annoncées ; états de dépliage attachés au contenu qu’ils contrôlent effectivement.
 
-Le contournement retire cet état des quatre couples destination/aperçu reconnus. Il couvre également les destinations épinglées présentes ou futures dans le rail lorsqu’elles n’ont pas de vrai popup ou contrôle associé. Il conserve le nœud, la navigation, `aria-current`, les callbacks, l’ordre et l’affichage. Les widgets inconnus restent natifs. Voir les [gardes du module d’interface](../../extension/ui-accessibility.js).
+**Reproduction.** [Parcours 4B](reproductions/PROCEDURES.md#4b--état-des-destinations).
 
-Les destinations déjà adaptées ont été acceptées lors des étapes 3.3.1 et 3.3.2. Le 5 octobre, l’utilisateur a jugé corrigés, avec nuance, les boutons épinglés tels que Sites et Images. Sa demande initiale de déplacer Sites avant Explorer a été retirée : l’emplacement natif après Explorer est jugé cohérent. Ce choix d’organisation n’est pas un défaut à signaler. La réception intégrée 3.4.0 conserve les acquis ; elle ne constitue pas un nouvel essai de chaque épingle ou d’Edge.
+### Observations et code natifs
 
-Le 6 octobre à 23 h 48, l’arbre d’accessibilité d’Edge sans extension expose encore Accueil, Espace, Planifié et Plugins comme réduits. Aucun essai d’activation ni parole JAWS n’est déduit de ce relevé passif.
+Le 7 octobre, l’utilisateur confirme « réduit » sur les destinations et « page courante » lorsqu’une destination est active. Le [relevé natif du 8 octobre](preuves/4B-destinations-parametres-2026-10-08.json), dans Edge, retrouve Accueil, Espace, Planifié et Plugins avec aria-expanded=false ; Accueil porte aussi aria-current=page. Le bouton navigue alors que cet état décrit un aperçu secondaire.
+
+Le propriétaire React actuellement identifié ep calcule séparément la page courante et l’aperçu :
+
+~~~js
+"aria-current": f.isCurrentDestination ? "page" : void 0,
+"aria-expanded": null != q ? H : void 0,
+onClick: t => {
+  t.defaultPrevented || (e?.onActivate(),
+    f.onSelect(void 0, "CHATGPT_SIDEBAR_MENU_ITEM_PLACEMENT_PRIMARY"));
+}
+~~~
+
+Cet extrait de code natif provient du composant engagé propriétaire de data-sidebar-destination. Le même composant définit `H = null != A && A.area === q && A.productMode === f.peekProductMode` : l’état annoncé dépend de l’aperçu correspondant à une zone et un mode, séparément de `f.isCurrentDestination`. L’identifiant minifié ep est daté ; le diagnostic historique du même mécanisme identifiait oB. L’action onSelect et l’état d’aperçu sont distincts. Le constat porte sur leur compréhension dans ce parcours : un vrai déclencheur de panneau, comme Explorer, doit garder son état de dépliage.
+
+### Destinations épinglées depuis Explorer
+
+Le cas concerne aussi les boutons de **Sites et Images épinglés dans le rail depuis Explorer**, relevés le 5 octobre. Il faut distinguer ces épingles des boutons de destination situés à l’intérieur du panneau Explorer : dans le panneau natif examiné le 8 octobre, les destinations n’ont pas aria-expanded ; le déclencheur Explorer possède légitimement aria-haspopup=dialog et son état ouvert/fermé.
+
+Les quatre destinations principales portent un couple data-sidebar-destination/data-slate-sidebar-peek-area reconnu. Les épingles peuvent porter un identifiant de destination sans cet attribut d’aperçu. Le contournement doit donc reconnaître cette seconde structure, plutôt que dépendre d’une liste de noms Sites/Images. La [preuve](preuves/4B-destinations-parametres-2026-10-08.json) distingue le relevé actuel des destinations principales et les observations datées d’épingles.
+
+### Comparaison avec les paramètres
+
+Dans la page Paramètres native, **Général** est un bouton de catégorie avec aria-current=page **sans aria-expanded**. Les autres catégories examinées ne portent pas non plus cet état. Cette comparaison montre une manière déjà utilisée par le produit pour exposer une destination et sa page courante sans annoncer un dépliage. Elle ne présume ni un composant identique ni un transfert direct de toute la logique des paramètres vers le rail.
+
+### Illustration du contournement et résultat
+
+Dans [ui-accessibility.js](../../extension/ui-accessibility.js), navigationButton vérifie un bouton de destination dans le rail, exclut tout vrai popup ou aria-controls et accepte soit un couple d’aperçu connu, soit une destination sans peek. normalizeRailNavigation retire seulement aria-expanded sur ce périmètre. Les nœuds, callbacks, navigation, aria-current, ordre et affichage sont conservés ; les ajouts/retraits dynamiques sont couverts et les widgets inconnus restent natifs.
+
+Les destinations principales et les épingles Sites/Images ont reçu un retour positif, avec nuance pour ces dernières le 5 octobre. La comparaison DOM actuelle dans Chrome avec adaptation retrouve les quatre états retirés et aria-current conservé ; elle ne redéfinit pas cette réception JAWS. Les vrais dépliages Projets, Épinglés, Récents et les menus Explorer/Profil restent distincts.
 
 ## 4C — Groupes redondants autour des chats
+
+**Problème.** Des frontières de groupe ajoutent deux arrêts répétitifs autour de chaque chat et de ses actions.
+
+**Résultat attendu.** Parcours direct des chats et commandes dans leurs listes, sans frontières redondantes.
+
+**Reproduction.** [Parcours 4C](reproductions/PROCEDURES.md#4c--groupes-des-conversations).
 
 Le 7 octobre, l’utilisateur reconfirme les groupes et le parcours décrits dans son signalement initial à l’assistance. Cela concerne les conversations ordinaires, épinglées **et celles d’un projet déplié**. Chaque groupe ajoute deux lignes à parcourir ; le coût se répète lors d’une recherche dans la liste. Transcription initiale autorisée, noms de chats remplacés :
 
@@ -52,17 +87,23 @@ Début du groupe [Nom du chat suivant]
 [Nom du chat suivant]
 ```
 
-Le résultat demandé conserve la liste, les liens et leurs actions, sans arrêts Début/Fin du groupe autour de chaque chat. Ce relevé décrit les lignes et libellés utiles ; il n’ajoute pas un rôle prononcé à chaque ligne. La première adaptation ne couvrait que les conversations ordinaires : cette omission locale a ensuite été corrigée.
+Le résultat demandé conserve la liste, les liens et leurs actions, sans arrêts Début/Fin du groupe autour de chaque chat. Ce relevé décrit les lignes et libellés utiles ; il n’ajoute pas un rôle prononcé à chaque ligne. Le périmètre du démonstrateur comprend ces trois familles de chats.
 
 Le rendu inspecté comporte une ligne `listitem`, puis un élément `.sidebar-item` de rôle `group`, contenant le lien de conversation et le bouton Actions du chat. Le rôle `group` est réellement natif ; son retrait n’est pas une réparation d’un rôle HTML disparu. Le problème décrit est le coût de répétition et de navigation dans ce parcours. Il ne faut pas en déduire que tous les groupes ARIA sont superflus : un groupe de commandes distinctes, comme ceux du panneau Explorer, n’est pas couvert par ce ciblage.
 
 Le contournement retire seulement le rôle et les références de nom du groupe identifié par sa ligne, un lien de conversation et son bouton d’actions. La liste, la ligne, le lien et le bouton gardent leur identité et leur fonctionnement. Aucun élément n’est déplacé ou cloné. Le [module d’interface](../../extension/ui-accessibility.js) conserve les groupes qui ne correspondent pas à cette structure.
 
-Les contrôles DOM/Chromium historiques couvrent les conversations ordinaires puis les conversations de projets. La réception globale 3.2.3 accepte les points sans réserve signalée, dont la navigation ordinaire des listes ; ce retour doit être présenté comme une réception d’ensemble, sans inventer une annonce verbatim pour chaque groupe. La navigation des chats ordinaires et des chats de projet est reçue en 3.2.3. L’actualisation Edge du 6 octobre porte sur les sous-points 4A et 4B.
+Les contrôles DOM/Chromium historiques couvrent les conversations ordinaires puis les conversations de projets. La réception globale du 4 octobre accepte les parcours proposés, dont les chats ordinaires et de projets ; les constats DOM et les retours de lecture gardent leur provenance. L’actualisation Edge du 6 octobre porte sur les sous-points 4A et 4B.
 
 ## 4D — Blocage au premier passage dans les projets et les listes
 
-Après la réception initiale des contrôles de projet, l’utilisateur rapporte qu’un premier Espace ou Entrée sur un dépliage provoque un bruit évoquant le mode formulaire et que les flèches cessent de parcourir la page normalement. Le retour au curseur PC virtuel rétablit le parcours ; une répétition dans le même document ne reproduit généralement pas le phénomène. Il précise ensuite que Tab suffit à le déclencher dans un contexte de liste, notamment Récents, avant même l’activation d’un projet. La simple lecture aux flèches n’entraîne pas ce nouveau phénomène.
+**Problème.** Au premier accès par Tab ou au dépliage d’un projet, un passage en mode formulaire bloque les flèches dans le retour JAWS.
+
+**Résultat attendu.** Navigation aux flèches disponible dès le premier passage, sans sortie manuelle imposée.
+
+**Reproduction.** [Parcours 4D](reproductions/PROCEDURES.md#4d--premier-passage-dans-une-liste).
+
+Après la réception initiale des contrôles de projet, l’utilisateur rapporte qu’un premier Espace ou Entrée sur un dépliage provoque un bruit évoquant l'activation du mode formulaire et que les flèches cessent de parcourir la page normalement. Le retour au curseur PC virtuel rétablit le parcours ; une répétition dans le même document ne reproduit généralement pas le phénomène. Il précise ensuite que Tab suffit à le déclencher dans un contexte de liste, notamment Récents, avant même l’activation d’un projet. La simple lecture aux flèches n’entraîne pas ce nouveau phénomène.
 
 Le 7 octobre, l’utilisateur reconfirme le passage ressenti en mode formulaire, bruit et blocage lors de l’affichage/masquage des chats d’un projet et après Tab avant ou dans Récents. Échap ou la commande manuelle de retour au curseur PC rétablit les flèches. Ce retour natif actuel s’ajoute aux observations historiques. L’agent n’a pas mesuré l’état interne JAWS ; la corrélation avec ces gestes ne démontre pas la cause de sa décision interne.
 
@@ -77,13 +118,19 @@ La focalisabilité du parent est causale **dans ces deux reproductions**. Le foc
 
 Le contournement traite les conteneurs et lignes documentaires reconnus portant exactement `tabindex="-1"` au repos. Il garde les liens et boutons focalisables et préserve les appels de focus natifs nécessaires, notamment pour la pagination. Voir [le module de listes](../../extension/sidebar-list-accessibility.js). La transformation du nom de projet en texte statique et le placement d’un bouton de dépliage distinct sont, séparément, des choix d’organisation demandés ; ils déplacent visuellement le chevron et ne doivent pas être présentés comme une correction invisible imposée à tous.
 
-Les parcours Récents et projets sont reçus en 0.1.9 ; le complément 3.2.3 couvre aussi les chats imbriqués, avec une réception globale de la navigation ordinaire et du dépliage. La correction des listes simples et imbriquées est reçue ; ces réceptions de l’adaptation et la reconfirmation native du 7 octobre restent des preuves distinctes.
+Les parcours Récents et projets sont reçus ; le complément du 4 octobre couvre aussi les chats imbriqués, avec une réception globale de la navigation ordinaire et du dépliage. La correction des listes simples et imbriquées est reçue ; ces réceptions de l’adaptation et la reconfirmation native du 7 octobre restent des preuves distinctes.
 
 ## 4E — « Pin project » et « Unpin project » en interface française
 
+**Problème.** La galerie expose Pin project/Unpin project dans une interface française alors que les actions du menu latéral sont traduites.
+
+**Résultat attendu.** Épingler/Désépingler le projet localisés de façon cohérente.
+
+**Reproduction.** [Parcours 4E](reproductions/PROCEDURES.md#4e--localisation-de-lépinglage-des-projets).
+
 Le 7 octobre, l’utilisateur reconfirme la traduction manquante dans **la galerie des projets**, conformément à son signalement initial : `Pin project` / `Unpin project` sont les libellés ciblés. Dans la barre latérale, l’épinglage se trouve dans **Actions du projet**, menu atteint seulement par Tab et inaccessible aux flèches/raccourcis, comme Nouveau chat. Le défaut de localisation de galerie et le défaut d’accès au menu latéral sont distincts. Le menu latéral était déjà français lors de l’inspection du 3 octobre ; il ne faut pas présenter toutes les commandes de projet comme anglaises.
 
-Le module remplace les noms exacts par « Épingler le projet » et « Désépingler le projet » dans son périmètre français, sans modifier les callbacks. Les contrôles réels ont compté six boutons « Épingler le projet » et aucun `Pin project` après adaptation. **Aucun épinglage n’a été effectué pour ce test** ; le résultat atteste le nom, pas le fonctionnement physique de chacune des deux actions. Voir [le module de projets](../../extension/project-accessibility.js).
+Le module remplace les noms exacts par « Épingler le projet » et « Désépingler le projet » dans son périmètre français, sans modifier les callbacks. Les contrôles réels ont compté six boutons « Épingler le projet » et aucun `Pin project` après adaptation. Le résultat établit le nom exposé ; les noms et l’activation de chaque action sont des mesures distinctes. Voir [le module de projets](../../extension/project-accessibility.js).
 
 Les noms adaptés sont couverts par la réception d’ensemble. La reconfirmation humaine du 7 octobre actualise le constat natif de galerie du 3 octobre. L’actualisation passive Edge du 6 octobre ne portait pas sur cette galerie. La correction en amont attendue est une localisation cohérente des noms dans tous les emplacements qui proposent la même action.
 

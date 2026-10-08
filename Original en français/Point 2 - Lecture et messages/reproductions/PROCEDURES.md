@@ -1,78 +1,88 @@
 # Procédures de reproduction — Point 2
 
-Utiliser une conversation de test sans donnée privée, dans l’interface française. Relever date, système, versions du navigateur et du lecteur d’écran, mode de navigation, extension active ou absente. Comparer le site natif et l’adaptation dans des essais séparés. Ne pas déduire la parole JAWS du seul focus DOM. Ces procédures sont destinées à la reproduction par un tiers. Les [retours natifs du 7 octobre, 19 h 18–22 h 40, heure de Bruxelles (Europe/Brussels, UTC+02:00)](../preuves/reception-native-2026-10-07.json) et [l’environnement commun](../../ENVIRONNEMENT.md) conservent les conditions et leur provenance.
-
-Pour comparer des variantes touchant au mode ou au curseur JAWS, partir d’un document frais pour chacune. Espace est l’activation habituelle de l’utilisateur ; dans sa configuration française, U atteint le bouton suivant.
+Les parcours concernent le site natif, extension désactivée, avec JAWS et son curseur PC virtuel pour la lecture aux flèches. Le [rapport](../RAPPORT.md) distingue les observations, le code et les résultats adaptés ; l’[environnement](../../ENVIRONNEMENT.md) définit les conditions observées. La comparaison du démonstrateur se fait après chargement d’une nouvelle page.
 
 ## 2A — Lecture longue
 
-1. Ouvrir une longue conversation déjà chargée et repérer deux tours éloignés.
-2. Parcourir les messages aux flèches avec le curseur virtuel du bas vers le haut, puis en redescendant.
-3. Relever toute omission, rupture, saut ou perte de la position de lecture.
-4. Séparément, inspecter si les descendants des tours hors écran demeurent rendus ; distinguer emplacements vides, texte effectivement présent et identité des nœuds.
-5. Refaire le parcours avec l’adaptation. Ne pas envoyer de message uniquement pour cet essai.
+1. Ouvrir une longue conversation.
+2. Lire les messages aux flèches du bas vers le haut, puis en redescendant.
+3. Observer les ruptures de lecture, pertes de position et messages qui deviennent indisponibles.
+4. Dans l’inspection du rendu, comparer le texte des tours chargés et celui des tours montés hors de la zone visible.
 
-Attendu : les tours disponibles restent lisibles dans les deux sens. Le 7 octobre, les sauts natifs dans les deux sens sont reçus ; aucun seuil précis n’est requis pour décrire cette observation. Une copie exacte de grande taille exige une preuve distincte.
+**Constat :** sauts de position dans les deux sens ; certains tours disponibles ne sont pas montés par le virtualiseur.
 
-## 2B — Raisonnement
+**Résultat attendu :** lecture continue des tours chargés dans les deux sens, y compris hors de la zone visible.
 
-1. Dans une conversation de test, sélectionner GPT-6 avec raisonnement au moins élevé et envoyer un message choisi qui provoque une réflexion. Comparer séparément avec GPT-5.6 au même niveau ou supérieur, dans un document frais. Repérer le début du tour assistant par les titres.
-2. Relever si « ChatGPT a dit » est présent dès le début de la réflexion, puis pendant les commentaires intermédiaires et la réponse finale. Noter le modèle : GPT-5.6 et GPT-6 peuvent présenter des structures différentes. Dans la comparaison du 7 octobre, GPT-5.6 n’expose ce titre qu’après la réflexion ; le premier essai GPT-6 a été interrompu, sans conclusion sur sa réponse achevée.
-3. Ouvrir les détails du raisonnement, si proposés ; parcourir aux flèches depuis le repère assistant. Comparer la position de l’état courant et celle des détails déjà réalisés : le statut actif doit suivre ces détails ouverts, y compris si un commentaire intermédiaire a déjà commencé ailleurs dans le tour. Dans les deux modèles du test du 7 octobre, l’état courant est au-dessus pour JAWS tandis que les détails réalisés suivent le titre dans le bon ordre. Attendu : repère de locuteur avant le début de la réflexion, état courant ensuite dans la continuité de lecture. Relever le nom de commande et l’état rendu sans inventer une étape non exposée.
-4. À la fin, relever le nom/durée de la commande puis utiliser Flèche bas : comparer la seconde ligne sans rôle particulier avec l’activité ou « Réfléchi pendant [durée] » déjà annoncé par le bouton. Le retour utilisateur du 7 octobre vers 23 h 20, heure de Bruxelles, décrit cette répétition exacte dans GPT-6. Comparer avec l’adaptation : le nom d’action Afficher/Masquer les détails pendant la réflexion doit céder au nom et à la durée natifs à la fin, sans doublon exact.
-5. Dans un tour existant qui présente réellement des cartes d’analyse autonomes, replier le raisonnement puis parcourir la suite. Relever si les cartes restent exposées indépendamment du repli principal. Avec l’adaptation, ouvrir la commande d’ensemble, puis une commande native « Analysé » avec Espace ; vérifier que le détail existant s’ouvre et que le repli d’ensemble masque les cartes sans les supprimer.
+## 2B — Repères et ordre du raisonnement
 
-Attendu : repère de locuteur dès le début de la réflexion, puis état courant dans la continuité de lecture ; détails déjà réalisés accessibles après le repère ; commande finale avec son nom et sa durée sans doublon exact. Pour les cartes autonomes, une commande d’ensemble accessible permet de maîtriser leur exposition tout en conservant les commandes natives de détail. Le cas des 43 cartes est un exemple observé, pas une condition à fabriquer en lançant de nouvelles analyses.
+**Conditions :** GPT‑6 en raisonnement **Élevé**, puis comparaison séparée avec GPT‑5.6 au même niveau ; détails de raisonnement ouverts lorsqu’ils sont proposés.
 
-## 2C — Sélection accessible et sélection native
+1. Envoyer un message qui déclenche un raisonnement et parcourir le début de la réponse pendant la génération.
+2. Vérifier si « ChatGPT a dit » permet d’identifier le locuteur dès le début de la réflexion, puis observer les titres des commentaires intermédiaires et de la réponse finale.
+3. Dans les détails ouverts, parcourir les étapes déjà effectuées et l’activité en cours. Comparer leur ordre avec celui du repère assistant. Continuer lors des nouveaux commentaires intermédiaires.
+4. Laisser la génération se terminer. Relire le bouton du raisonnement, puis utiliser Flèche bas pour chercher une seconde ligne reprenant exactement son activité ou « Réfléchi pendant [durée] ».
+5. Dans une réponse présentant des cartes d’analyse autonomes, replier le raisonnement principal et parcourir les cartes ; comparer leur exposition avec l’état replié.
 
-1. Depuis un message, établir une petite sélection traversant plusieurs messages avec les commandes habituelles du lecteur d’écran.
-2. Copier, puis coller dans un éditeur local choisi par l’utilisateur.
-3. Comparer le contenu attendu et la stabilité de la sélection. Relever séparément l’absence éventuelle des locuteurs, de la durée de réflexion et des dates/heures affichées ; ne pas conserver le texte privé dans une pièce de preuve.
-4. Inspecter séparément les règles `user-select` des métadonnées et la stabilité des tours sélectionnés.
-5. Pour la comparaison visuelle native, sélectionner à la souris deux paragraphes d’une réponse et copier par Ctrl+C ; relever longueurs et égalités, sans exporter leur contenu.
+**Constat :** GPT‑5.6 n’expose le repère de locuteur qu’après la réflexion. GPT‑6 peut produire plusieurs commentaires avec titres, sans garantir ce repère au début. L’activité courante précède les détails accomplis dans le parcours JAWS ; la légende d’activité ou de durée peut être exposée deux fois. Les cartes autonomes de l’exemple documenté restent indépendantes du repli principal.
 
-Le 7 octobre, l’utilisateur reçoit la sélection comme fonctionnelle tant qu’un saut ne l’interrompt pas. La stabilité nécessaire à la lecture et à la copie étendue est le problème d’accessibilité ; inclure les locuteurs, durées et horodatages est une demande produit séparée. Le contrôle Edge du 6 octobre établit une possibilité native sur une petite sélection sans remplacer la réception JAWS ni une preuve de copie globale exacte. Une divergence d’espaces doit être distinguée d’un contenu manquant.
+**Résultat attendu :** repère assistant dès le début, détails accomplis puis activité courante dans la continuité de lecture, commande Afficher/Masquer explicite pendant l’activité, durée finale sans doublon. Les cartes autonomes doivent pouvoir être parcourues et repliées de façon cohérente en conservant leurs commandes natives.
 
-## 2D — Partager global et Copier
+## 2C — Sélection et copie de plusieurs messages
 
-Partager produit un lien public : cet essai doit utiliser une conversation prévue pour être partagée et une autorisation explicite. Une inspection passive de textes et d’attributs n’autorise pas la création d’un lien.
+1. Sélectionner un passage traversant plusieurs messages avec Maj+Flèches ou Maj+Page précédente/Page suivante.
+2. Copier avec Ctrl+C et coller dans un éditeur de texte.
+3. Comparer la continuité de la sélection et du contenu copié. Examiner séparément les locuteurs, durées et horodatages.
+4. Pour la comparaison native à la souris, sélectionner deux paragraphes d’une réponse puis copier de la même façon.
 
-1. Sur cette conversation autorisée, activer Partager avec Espace et attendre son résultat.
-2. Relever la confirmation, l’état indisponible et la position de lecture, y compris un saut temporaire au sommet.
-3. Dans un autre parcours, activer Copier sous une réponse et relever immédiatement sa présence dans la navigation, son indisponibilité et la confirmation.
-4. Répéter pour Copier le message sous un message envoyé.
-5. Vérifier que les boutons redeviennent disponibles et que la confirmation ne prétend pas une réussite en cas d’échec.
+**Constat :** la sélection fonctionne tant qu’un saut de lecture ne l’interrompt pas. Certaines métadonnées affichées sont exclues du texte copié.
 
-Réception native du 7 octobre : aucune annonce, saut vers Partager après copie d’une réponse et retour au haut de page après Partager la conversation. Attendu : confirmation audible après réussite, position préservée, bouton parcourable et indisponibilité signalée pendant la suspension réelle de son action. L’adaptation reçue ajoute « Message copié » ; les deux phrases du partage sont natives.
+**Résultat attendu :** stabilité de la sélection accessible et de la copie étendue. L’inclusion des métadonnées reste une demande produit distincte.
 
-## 2E — Champ de rédaction
+## 2D — Copier et Partager
 
-1. Utiliser une génération autorisée d’un texte réutilisable et copiable, ou ouvrir un exemple existant de Writing Block copiable/modifiable.
-2. Attendre la fin complète de la génération puis aller tout au bas de la page, comme dans la réception utilisateur du 7 octobre.
-3. Relever les boutons sans commande descriptivement compréhensible et, séparément, leur visibilité/activité effective et leur parcours par Tab.
-4. Avec l’adaptation, vérifier que seules les poignées inactives disparaissent et que le champ/Copier demeurent utilisables. La réception du 7 octobre confirme le défaut natif inchangé.
+1. Dans une conversation, activer « Partager » et attendre la confirmation de création/copie du lien public.
+2. Vérifier l’annonce de réussite, l’état indisponible pendant l’attente et la reprise de lecture.
+3. Dans un parcours séparé, activer « Copier » sous une réponse, puis « Copier le message » sous un message envoyé.
+4. Vérifier pour chacun la confirmation, sa présence dans le parcours pendant l’attente et son retour à l’état disponible.
 
-Attendu : aucun contrôle inactif invisible inutile dans le parcours ; des commandes réellement actives doivent rester disponibles et correctement nommées.
+**Constat :** aucune confirmation JAWS reçue ; retour en haut de page après Partager et vers Partager après copie d’une réponse. Les annonces et indisponibilités des deux familles de copie diffèrent.
 
-## 2F — Titres
+**Résultat attendu :** confirmation audible après réussite, maintien du point de lecture et état indisponible compréhensible pendant la suspension réelle de l’action.
 
-1. Parcourir les titres d’une conversation existante.
-2. Relever la position de « Dernière réponse » par rapport au message et aux titres utiles.
-3. Inspecter séparément le `h4.sr-only` exact « Dernière réponse » hors du message ; distinguer ce repère des titres placés dans le contenu.
-4. Avec l’adaptation, vérifier le retrait de ce seul repère, sans suppression des titres du contenu. Le contrôle structurel consiste à vérifier le ciblage exact de `hideLastResponseHeading` dans [ui-accessibility.js](../../../extension/ui-accessibility.js), puis le parcours humain décrit ici.
+## 2E — Poignées des champs de rédaction
 
-La présence native de Dernière réponse est reçue le 7 octobre. Le retrait reçoit une préférence de simplification ; il ne démontre pas une invalidité générale de toute navigation comportant ce titre.
+1. Demander un texte réutilisable qui produit un Writing Block copiable/modifiable, ou ouvrir un exemple existant.
+2. Attendre la fin de la génération puis parcourir le bas de la page.
+3. Comparer les boutons « ⋮⋮ » rencontrés avec leur visibilité et leur activité réelle ; comparer aussi le parcours Tab.
+4. Dans le démonstrateur, comparer l’accès au champ, à Copier et aux seules poignées devenues actives.
+
+**Constat :** des poignées invisibles et inactives restent exposées comme boutons sans nom explicite.
+
+**Résultat attendu :** parcours dépourvu de contrôles inactifs invisibles ; commandes actives disponibles et correctement nommées.
+
+## 2F — Titre « Dernière réponse »
+
+1. Parcourir les titres d’une conversation.
+2. Comparer « Dernière réponse » avec les repères de locuteur et les titres du message.
+3. Inspecter le `h4.sr-only` exact placé hors du message ; comparer avec le démonstrateur.
+
+**Constat :** arrêt supplémentaire redondant dans le parcours des titres.
+
+**Résultat attendu :** navigation plus directe entre repères utiles, en préservant les titres du contenu. Cette simplification est une demande d’organisation.
 
 ## 2G — Références et aperçus de sources
 
-1. Ouvrir une réponse GPT-6 présentant ce rendu de citations ; repérer une référence simple et, si disponible, une référence regroupée avec un compteur. Aucun nouveau message n’est nécessaire si ces références existent déjà.
-2. Sans extension, parcourir la référence aux flèches et relever son nom, rôle et états. Le retour JAWS fourni est « Bouton de menu réduit dialogue ». Comparer avec le parcours des liens du lecteur d’écran.
-3. Activer par Espace ou Entrée : relever l’ouverture de la page Web, puis revenir au chat. Distinguer cette navigation du panneau d’aperçu également ouvert.
-4. Donner simplement le focus clavier à la référence pour ouvrir l’aperçu sans navigation. Utiliser Tab pour entrer dans la carte. Comparer le nom « Open [source] » aux informations visibles dans la carte : source, titre et texte disponible. Le panneau se trouve à la fin du document dans le parcours aux flèches. Relever son rôle et son nom.
-5. Appuyer sur Échap et vérifier la fermeture avec retour à la référence. Les essais techniques établissent ce comportement ; ne pas supposer qu’un seul Shift+Tab sort de tous les panneaux.
-6. Avec le démonstrateur 4.1.2 dans un document frais, comparer le rôle lien, le nom du panneau et le nom de la carte issu de son contenu visible. Vérifier que la navigation, Tab et Échap conservent leur fonctionnement et que la favicon décorative n’ajoute pas son adresse ou une annonce graphique parasite. La carte doit restituer ce que fournit le site ; le texte intégral de l’article n’est pas un attendu lorsque le panneau ne le fournit pas.
+**Conditions :** réponse GPT‑6 présentant des citations avec ce rendu ; référence simple puis regroupée si disponible.
 
-Attendu : références accessibles comme liens, aperçu secondaire nommé et contenu disponible lisible sans réduction au seul « Open/Ouvrir [source] ». Le [rapport](../RAPPORT.md#2g--références-web-et-contenu-des-aperçus-de-sources) distingue le retour JAWS natif, le nom calculé dans Chromium et la réception de la restitution adaptée.
+1. Parcourir la référence aux flèches et comparer avec la navigation par liens du lecteur d’écran.
+2. Activer avec Espace ou Entrée, vérifier la navigation Web, puis revenir à la conversation.
+3. Donner le focus clavier à la référence pour ouvrir l’aperçu ; utiliser Tab pour entrer dans sa carte.
+4. Comparer le nom « Open [source] » avec la source, le titre et les informations visibles de la carte. Parcourir aussi le panneau ajouté en fin de document.
+5. Fermer avec Échap et vérifier le retour à la référence.
+6. Avec le démonstrateur, comparer le rôle lien, le nom du panneau et le nom de la carte issu de son contenu, ainsi que la lecture de la favicon décorative.
 
-Les [tests et fixtures](EXECUTION.md) complètent ces parcours sans remplacer une réception JAWS.
+**Constat :** référence annoncée « Bouton de menu réduit dialogue » malgré la navigation Web ; carte réduite au nom de source et adresse de favicon parasite.
+
+**Résultat attendu :** références identifiables comme liens ; aperçu nommé dont les informations disponibles sont lisibles sans nom abrégé ni adresse d’image parasite.
+
+Les [tests et fixtures](EXECUTION.md) complètent ces parcours par des mécanismes isolés.

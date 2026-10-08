@@ -21,17 +21,19 @@ Extrait structurel normalisé, noms et identifiants réels omis ; **ce n’est p
 
 L’extrait essentiel du contournement est consultable dans [la source commune](../../../extension/sidebar-sortable-accessibility.js) : la fonction `suppressedValue` reconnaît exactement `sortable`, ou `draggable` lorsque `chatRole` confirme une conversation. Ce code est celui de l’extension, **pas un extrait natif du site**.
 
-Au jalon 3.2.3 : 227 tests Node, dont 18 sur les descriptions ; 26 contrôles Chromium de descriptions et huit contrôles conjoints. La réception globale accepte les rôles informatifs. En 3.3.0, les scripts automatiques passent à `document_start` ; le retour 3.3.1 est positif. Aucun délai précis de mise à disposition des annonces n’est mesuré.
+Contrôle du 4 octobre : 227 tests Node, dont 18 sur les descriptions ; 26 contrôles Chromium de descriptions et huit contrôles conjoints. La réception globale accepte les rôles informatifs. Lors du passage au démarrage précoce, les scripts automatiques passent à `document_start` ; le retour utilisateur est positif. Aucun délai précis de mise à disposition des annonces n’est mesuré.
 
 ## 4B — État d’aperçu et navigation
 
-Diagnostic du 4 octobre, version 3.3.0 : le composant public `oB` lie l’état expanded à l’aperçu secondaire ; sa sélection navigue. Après passage à Espace, destination courante vraie, expanded=false. Aucun contrôle d’expansion de cet aperçu constaté dans ce rendu. Le fragment original intégral du composant n’est pas joint ; ce mécanisme est une paraphrase technique du diagnostic conservé, **pas une citation de code native inventée**.
+Le [relevé du 8 octobre : destinations, Explorer et paramètres](4B-destinations-parametres-2026-10-08.json) contient le contraste actuel, l’extrait natif du composant ep et les gardes du démonstrateur. Le [rapport 4B](../RAPPORT.md#4b---réduit--sur-des-destinations-de-navigation) introduit les destinations principales, les épingles et la comparaison des catégories avant la solution locale.
 
-Le [module d’interface commun](../../../extension/ui-accessibility.js) conserve les quatre couples démontrés et laisse un widget inconnu intact. Depuis 3.3.3, les épingles reconnues sans vrai contrôle/popup associé sont couvertes dynamiquement. Aucun épinglage par l’agent ; ordre et affichage natifs conservés. Les états des destinations déjà adaptées sont reçus historiquement ; les boutons épinglés sont acceptés avec nuance le 5 octobre. La réception intégrée 3.4.0 conserve ces acquis sans nouvel essai exhaustif.
+Diagnostic du 4 octobre, sur le rail natif : le composant public `oB` lie l’état expanded à l’aperçu secondaire ; sa sélection navigue. Après passage à Espace, destination courante vraie, expanded=false. Aucun contrôle d’expansion de cet aperçu constaté dans ce rendu. Le fragment original intégral du composant n’est pas joint ; ce mécanisme est une paraphrase technique du diagnostic conservé, **pas une citation de code native inventée**.
+
+Le [module d’interface commun](../../../extension/ui-accessibility.js) conserve les quatre couples démontrés et laisse un widget inconnu intact. Dans le démonstrateur fourni, les épingles reconnues sans vrai contrôle/popup associé sont couvertes dynamiquement. Ordre et affichage natifs conservés. Les états des destinations déjà adaptées sont reçus historiquement ; les boutons épinglés sont acceptés avec nuance le 5 octobre. La réception intégrée du 5 octobre conserve ces acquis sans nouvel essai exhaustif.
 
 ## 4C — Groupes de chats
 
-Diagnostic du 3 octobre : groupes supplémentaires sur les lignes natives de chats ordinaires. Retour ultérieur : même difficulté dans les projets, initialement omise par l’adaptation. La fixture d’interface V2 couvre ensuite ces chats parmi 16 contrôles Chromium. La réception globale 3.2.3 accepte les points sans réserve et le parcours ordinaire, sans enregistrement verbatim distinct d’une annonce pour chaque type de ligne.
+Diagnostic du 3 octobre : groupes supplémentaires sur les lignes natives de chats ordinaires. Retour ultérieur : même difficulté dans les projets, initialement omise par l’adaptation. La fixture d’interface V2 couvre ensuite ces chats parmi 16 contrôles Chromium. La réception globale du 4 octobre accepte les points sans réserve et le parcours ordinaire, sans enregistrement verbatim distinct d’une annonce pour chaque type de ligne.
 
 Structure normalisée, avec route synthétique ; **ceci illustre les attributs relevés, pas la totalité du DOM privé** :
 
@@ -52,11 +54,11 @@ Le 4 octobre, version JAWS 2021 déclarée : A normal, B reproduit exactement le
 
 Comparaison C/D : C normal ; D bruit et blocage initiaux, répétition normale. Différence pertinente identique sur le parent ; mêmes boutons HTML, gardes et relais synthétiques. Trace passive : 37 entrées, flèches reçues au DOM sur button-d. Le retour Alt+Tab de D reproduit un blocage que l’utilisateur distingue du site. Aucun mode interne mesuré. Les [deux pages locales](../reproductions/PROCEDURES.md) sont des copies d’exemples synthétiques historiques et non une capture du compte.
 
-Le parent focalisable est causal dans ces structures. Le symptôme initial du projet sur le site ne dispose pas d’une attribution exclusive ni d’une décision interne JAWS connue. L’adaptation 0.1.9 reçoit les parcours simples ; le complément 3.2.3 cible aussi les chats imbriqués, avec une réception globale de la navigation ordinaire. Le module [sidebar-list-accessibility.js](../../../extension/sidebar-list-accessibility.js) conserve les focus directs et la pagination natifs en traitant les tabindex des structures reconnues au repos.
+Le parent focalisable est causal dans ces structures. Le symptôme initial du projet sur le site ne dispose pas d’une attribution exclusive ni d’une décision interne JAWS connue. Les parcours simples puis les chats imbriqués sont reçus, avec une réception globale de la navigation ordinaire. Le module [sidebar-list-accessibility.js](../../../extension/sidebar-list-accessibility.js) conserve les focus directs et la pagination natifs en traitant les tabindex des structures reconnues au repos.
 
 ## 4E — Localisation
 
-Le 3 octobre, galerie : présence native de `Pin project`, menu latéral déjà français. Après correction 0.1.4 : six boutons français, zéro bouton anglais ; zéro action d’épinglage exécutée. La traduction de `Unpin project` est présente dans le code, mais le compteur précédent ne constitue pas une réception physique exhaustive de ce pendant.
+Le 3 octobre, galerie : présence native de `Pin project`, menu latéral déjà français. Après localisation : six boutons français, zéro bouton anglais. La traduction de `Unpin project` est présente dans le code, mais le compteur précédent ne constitue pas une réception physique exhaustive de ce pendant.
 
 Extrait littéral du **code de l’extension**, fonction de localisation du module projet ; il ne doit pas être présenté comme code natif OpenAI :
 

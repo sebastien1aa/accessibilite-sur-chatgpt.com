@@ -43,7 +43,7 @@
         "Maximum",
         "Ultra"
       ],
-      "reference_orthographe": "1A-libelles-natifs-2026-10-07.json; ne pas deduire une difference audible des formes phonetiquement equivalentes",
+      "reference_orthographe": "1A-libelles-natifs-2026-10-07.json : les formes phonetiquement equivalentes ne constituent pas une difference audible",
       "observation_produit": "Incoherence entre niveaux et entre legende et statut; action future mode standard associee a coche alors que rapide actif",
       "nouveau_correctif_mode_rapide_revendique": false,
       "ecart_chat_DOM_AX_parole": "Releve DOM/AX francais conserve separement des annonces anglaises recues, sans cause supposee"
@@ -75,11 +75,11 @@
       "activation_Espace_Entree": "Ferme sans activer la fonction voulue, focus au haut de page"
     },
     "1C": {
-      "discussion_existante": true,
-      "discussion_nouvelle": true,
-      "Opera_navigateur_sans_prompt_creation_anterieur": true,
-      "compte_avec_historique": true,
-      "precondition_envoi_depuis_navigateur_test_exigee": false,
+      "discussion_deja_utilisee_rappel": true,
+      "nouveau_chat_apres_envoi_creation_depuis_navigateur_rappel": true,
+      "nouveau_chat_avant_tout_envoi_creation_depuis_navigateur_rappel": false,
+      "Opera": "Nouveau chat sans rappel : navigateur n’ayant jamais envoyé de prompt créant une discussion",
+      "provenance": "Test utilisateur du 7 octobre, clarifié par son retour du 8 octobre",
       "mesure_stockage_ou_synchronisation_Opera": false
     }
   },

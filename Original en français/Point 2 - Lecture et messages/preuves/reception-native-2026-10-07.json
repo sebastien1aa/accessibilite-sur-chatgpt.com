@@ -18,13 +18,14 @@
       "mesures_techniques_separees": "2A-virtualisation-2026-10-07.json"
     },
     "2B": {
-      "titre_assistant": "GPT-5.6 : absent pendant la réflexion, apparaît après ; GPT-6 : titre pendant une activité intermédiaire dans la génération interrompue",
+      "titre_assistant": "Première comparaison : GPT-5.6 absent pendant la réflexion, apparaît après ; premier GPT-6 décrit dans la chronologie historique jointe",
       "statut": "Réception terminée ; adaptations maintenues",
       "etat_raisonnement_courant": "Au-dessus pour JAWS dans les deux modèles ; ordre de lecture à corriger",
       "details_deja_realises": "Après titre dans le bon ordre selon retour utilisateur",
       "correction_native_confirmee": false,
       "retrait_fonction_extension_revendique": false,
-      "preuve_structurelle": "2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json"
+      "preuve_structurelle": "2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json",
+      "preuves_ulterieures": "2B-generations-terminees-gpt6-2026-10-08.json : tours GPT-6 terminés, titres intermédiaires et réception adaptée"
     },
     "2C": {
       "selection_native": "Fonctionne sauf en cas de sauts de position",

@@ -25,7 +25,7 @@ Chaque cas dispose d’un parcours sur le site et de preuves datées. Les pages 
 | [Retours des menus](sidebar-menu-focus.html) | Charge [sidebar-menu-focus.js](../../../extension/sidebar-menu-focus.js). Bouton Exécuter les contrôles de focus. | Vérifie association, retour/annulation DOM ; ne prouve pas le curseur JAWS ni tout le code du site. |
 | [Propriété popup Explorer](explorer-popup-hint-release.html) | Charge [sidebar-menu-focus.js](../../../extension/sidebar-menu-focus.js) et [explorer-accessibility.js](../../../extension/explorer-accessibility.js). Bouton Vérifier la propriété. | Contrôle la distribution intégrée et la restauration de propriété ; ne mesure aucun mode JAWS. |
 | [Actions de messages](message-action-focus.html) | Charge [message-action-focus.js](../../../extension/message-action-focus.js). Bouton Exécuter les contrôles. | Contrôle retours, tâches tardives et annulations. Le cas historique Réagir est un contrôle d’exclusion ; il ne reproduit pas le contrôle courant Évaluer la réponse. |
-| [Menu Évaluer](evaluation-menu.html) | Charge [evaluation-menu-accessibility.js](../../../extension/evaluation-menu-accessibility.js) et [sidebar-menu-focus.js](../../../extension/sidebar-menu-focus.js). Bouton Exécuter les contrôles. | Onze contrôles Chromium réussis en validation 3.7.0 ; propriétés de menu, relation, Échap, retour, ambiguïtés et restauration. |
+| [Menu Évaluer](evaluation-menu.html) | Charge [evaluation-menu-accessibility.js](../../../extension/evaluation-menu-accessibility.js) et [sidebar-menu-focus.js](../../../extension/sidebar-menu-focus.js). Bouton Exécuter les contrôles. | Onze contrôles Chromium réussis en validation du mécanisme ; propriétés de menu, relation, Échap, retour, ambiguïtés et restauration. |
 
 Les pages sont conservées telles que les fixtures de travail, avec **seuls les chemins vers l’extension ajustés** pour ce dossier. Les résultats automatisés affichés à l’écran sont des contrôles DOM synthétiques. Ils ne sont pas des tickets supplémentaires ni une nouvelle réception.
 
@@ -49,7 +49,7 @@ http://127.0.0.1:8765/Original%20en%20fran%C3%A7ais/Point%203%20-%20Navigation%2
 
 Changer seulement le dernier nom pour les autres pages. Arrêter le serveur par Ctrl+C après utilisation. Ces instructions ne constituent pas un nouveau résultat de test.
 
-Pour une comparaison physique A/B : sur document frais, Tab vers le lien A puis Flèche bas ; comparer le premier passage vers B avec Tab puis Flèche bas, sans activer les liens. Pour C/D : utiliser les flèches/raccourcis habituels vers C puis D, activer avec Espace et relever le premier parcours. Le raccourci bouton dépend de la configuration du lecteur d’écran.
+Pour une comparaison physique A/B : sur page nouvellement chargée, Tab vers le lien A puis Flèche bas ; comparer le premier passage vers B avec Tab puis Flèche bas, sans activer les liens. Pour C/D : utiliser les flèches/raccourcis habituels vers C puis D, activer avec Espace et relever le premier parcours. Le raccourci bouton dépend de la configuration du lecteur d’écran.
 
 ## Menu Évaluer la réponse
 

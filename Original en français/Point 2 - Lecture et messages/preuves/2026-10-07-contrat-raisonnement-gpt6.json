@@ -49,7 +49,10 @@
   },
   "nativeComponentExtract": "region:d,completed:u,reasoningRecap:g,activeSummary:m,canExpand:p,hasStandaloneItems:f,hideHeader:b,children:_ ; C = g?.type === keep_inline || (x ?? (w?.visibility === visible ? w.default_expanded : !u || suffix === d.kind)); disclosure: p ? {expanded:C,onToggle:()=>I(!C)} : undefined ; summary: k ?? (u ? Previous activity : m)",
   "nativeParentExtract": "cA,{region:k,completed:w,reasoningRecap:W,activeSummary:o,canExpand:!l&&m.length>r.size,hasStandaloneItems:l||r.size>0,hideHeader:a,children:e=>m.map(...)}",
-  "cause": "L’extension 3.7.0 exige summary et shouldAnimateInitialCollapse sur le plus proche composant canExpand ; ces propriétés n’existent pas dans ce contrat régional GPT-6. Il est rejeté avant le traitement de l’état courant.",
-  "proposedMechanism": "Reconnaître séparément le contrat régional démontré et suivre son completed local, tout en conservant le contrat antérieur et l’exclusion des commandes d’outil imbriquées. Ne pas substituer l’état global de la réponse à celui de chaque région.",
-  "privacy": "Aucun prompt, réponse, texte de réflexion, URL de conversation, identifiant de région ou clé de tour conservé. Les extraits contiennent uniquement la logique du code natif."
+  "privacy": "Aucun prompt, réponse, texte de réflexion, URL de conversation, identifiant de région ou clé de tour conservé. Les extraits contiennent uniquement la logique du code natif.",
+  "demonstratorMechanism": "Le module fourni reconnaît le contrat régional et suit son completed local, distinct de l’état global de la réponse, pour placer l’activité après les détails accomplis.",
+  "reasoningEffort": {
+    "value": "Élevé",
+    "provenance": "Précision utilisateur du 8 octobre ; réglage distinct des propriétés structurelles capturées"
+  }
 }
