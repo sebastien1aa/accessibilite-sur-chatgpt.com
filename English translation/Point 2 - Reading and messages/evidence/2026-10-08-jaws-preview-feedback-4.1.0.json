@@ -39,7 +39,7 @@
   "receptionFollowUp": {
     "currentDemonstrator": "4.1.2",
     "currentRelevantAdaptationStatus": "received",
-    "reference": "../../Point 1 - Sélecteur et composition/preuves/2026-10-08-reception-adaptee.json",
+    "reference": "../../Point 1 - Model selector and composer/evidence/2026-10-08-adapted-user-validation.json",
     "meaningOfEarlierReceiptFields": "Le retour négatif décrit la 4.1.0 avant correction ; les versions 4.1.1 puis 4.1.2 sont ensuite reçues."
   }
 }

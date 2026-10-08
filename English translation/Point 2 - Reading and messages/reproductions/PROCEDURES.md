@@ -72,7 +72,7 @@ These workflows concern the native site, with the extension disabled, using JAWS
 
 ## 2G — References and source previews
 
-**Conditions:** a GPT‑6 response containing citations with this rendering; a single reference, then a grouped reference if available.
+**Conditions:** a GPT‑6 response containing citations with this rendering; a single-source reference, then a grouped reference if available.
 
 1. Navigate through the reference with the arrow keys and compare with the screen reader's link navigation.
 2. Activate with Space or Enter, check Web navigation, then return to the conversation.

@@ -7,7 +7,7 @@ The [extension](../extension/manifest.json) folder contains the complete 4.1.2 d
 1. Start with the extension disabled, on a newly loaded page, under the conditions of the subpoint being examined.
 2. On Chrome or Edge's native extensions page, enable developer mode if necessary, choose “Load unpacked”, then select this repository's `extension` folder.
 3. Check the name **Accessibilité pour ChatGPT web** and version **4.1.2**. Avoid running two copies of the demonstration extension, or an experimental injection alongside the complete version.
-4. Open a new ChatGPT page in French and repeat the specified flow. The preservation modules and several adaptations must be present from startup: loading the extension after the document has opened does not replace a newly loaded page.
+4. Open a new ChatGPT page in French and repeat the specified flow. The preservation modules and several adaptations must be present from startup: loading the extension after a page has opened is not equivalent to loading a new page with it enabled.
 5. Disable the demonstration extension and open a new page to return to the native rendering.
 
 Version 4.1.2 preserves the adaptations validated by the user on the dates given in the reports. Upward and downward navigation in a long conversation was validated on 7 October; the evidence retains the version actually tested. The procedures allow the teams to compare the site with the demonstration extension while preserving the documented results for each flow.

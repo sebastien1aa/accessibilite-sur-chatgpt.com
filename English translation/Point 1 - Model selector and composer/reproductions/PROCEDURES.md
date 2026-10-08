@@ -34,15 +34,15 @@ These procedures concern the native site with the extension disabled. The [obser
 
 ## 1C — Unintentional prompt recall
 
-**Conditions:** distinguish a previously used conversation from a new chat. For the latter, distinguish a browser that has already sent a prompt creating a conversation from a browser that has never performed that send.
+**Conditions:** distinguish a previously used conversation from a new chat. For the latter, distinguish a browser that has already sent a prompt creating a conversation from a browser that has never been used to submit such a prompt.
 
 1. Open a previously used conversation, empty the composer, then place focus in the editor.
 2. Press Up Arrow without a modifier, in the mode where the key is passed to the editor.
 3. Observe whether an old prompt fills the field.
 4. Compare with a new chat in a browser already used to send a prompt creating a conversation.
-5. Finally, compare with a new chat in a browser never used for that send.
+5. Finally, compare with a new chat in a browser never used to submit such a prompt.
 
-**Observation:** unintentional insertion affects previously used conversations and new chats after a send creating a conversation in that browser. The Opera test confirms its absence in a new chat as long as that browser has never been used for that send.
+**Observation:** unintentional insertion affects previously used conversations and new chats after a prompt creating a conversation has been submitted from that browser. The Opera test confirms its absence in a new chat as long as that browser has never been used to submit such a prompt.
 
 **Expected result:** navigation without unexpected changes to the draft and deliberate, accessible access to prompt history.
 

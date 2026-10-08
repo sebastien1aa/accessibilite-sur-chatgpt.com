@@ -1,7 +1,7 @@
 {
   "dateLocal": "2026-10-04",
   "nature": "Extrait documentaire de la piece historique; mention d'autorisation d'implementation et precision d'installation retirees, observations et limites utiles conservees.",
-  "fixture": "tests/list-button-first-focus.html",
+  "fixture": "../reproductions/list-button-first-focus.html",
   "source": "Retour direct de l’utilisateur, navigation habituelle aux flèches puis activation C et D",
   "jawsVersionReported": "2021",
   "cParentTabindex": null,

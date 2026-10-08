@@ -4,7 +4,7 @@ Local times cited in this document are in Brussels time (Europe/Brussels, UTC+02
 
 The original documentation is in French and is authoritative. The dossier describes chatgpt.com, studied on Windows with JAWS and an interface set to French. The [current versions and confirmations](ENVIRONMENT.md) accompany feedback received on 7 October. Each set introduces its evidence where it is used, so it can be read without consulting a development history.
 
-In this English translation, French announcements, measured native labels and code strings retain their original wording. English glosses explain their meaning; they are not announcements heard with English JAWS. JSON evidence and executable reproduction files retain their original French content. Their filenames and the documentation links have been adapted to the English folder structure.
+In this English translation, French announcements, measured native labels and code strings retain their original wording. English glosses explain their meaning; they are not announcements heard with English JAWS. JSON evidence and executable reproduction files retain their original French content. Filenames and documentary paths are adapted to each language folder: documentary references in JSON evidence items are relative to the item's directory and point to the corresponding supplied file. These path differences do not change announcements, code excerpts, dates, measurements, results or evidence provenance; executable reproductions and the shared extension remain unchanged.
 
 ## Navigation terminology
 
@@ -53,7 +53,7 @@ Each subpoint first presents the issue and expected result, followed by observat
 
 ## Attribution
 
-A native attribute, removal of nodes or a callback in public code can establish a site mechanism. JAWS becoming unsynchronized despite correct DOM focus retains unresolved interoperability attribution. Valid `aria-haspopup="dialog"` does not become invalid because a temporary adaptation improves Explorer. A focusable parent in a fixture may cause the observed symptom without demonstrating a universal ARIA violation.
+A native attribute, removal of nodes or a callback in public code can establish a site mechanism. A discrepancy between the JAWS reading position and correct DOM focus leaves the cause of the interoperability problem unresolved. Valid `aria-haspopup="dialog"` does not become invalid because a temporary adaptation improves Explorer. A focusable parent in a fixture may cause the observed symptom without demonstrating a universal ARIA violation.
 
 An incorrect guard, a name applied at the wrong time or an unstable proxy introduced by the extension are local errors. They are not added to the ChatGPT issue report. Initial hypotheses that were rejected must not remain described as established causes.
 
@@ -65,7 +65,7 @@ Initial observations from September and 3–6 October are supplemented by the us
 
 General user validation without reservations covers the points actually proposed for testing. Subsequent validation may resolve an earlier pending result without retroactively turning the old test into a success. Reproducibility reservations, qualified acceptances and negative tests remain visible when they affect interpretation.
 
-A later reproduction must carry its own date and environment. A historical or unreproduced result and unresolved attribution retain their qualifications. A writing date is not a reproduction date.
+A later reproduction must carry its own date and environment. A historical or unreproduced result and unresolved attribution retain their qualifications. A document's drafting date is not a reproduction date.
 
 ## Evidence items and demonstration extension
 

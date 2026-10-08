@@ -34,7 +34,7 @@
     "contratToujoursCompatible": true
   },
   "contournement": {
-    "module": "extension/keep-modern-turns.js",
+    "module": "../../../extension/keep-modern-turns.js",
     "principe": "Ajouter les clés des entrées déjà chargées à retainedTurnKeys, par le renderer natif, sans copier les nœuds.",
     "controleTechnique": {
       "entreesDisponibles": 27,

@@ -3,7 +3,7 @@
   "date": "2026-10-07",
   "fuseau": "Europe/Brussels",
   "debut": "19:18",
-  "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
+  "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONMENT.md",
   "comparaisons_humaines": {
     "Opera": "Meme resultat declare apres verification recente",
     "Edge_et_JAWS_2025": "Resultats identiques declares selon experience utilisateur",
@@ -43,7 +43,7 @@
         "Maximum",
         "Ultra"
       ],
-      "reference_orthographe": "1A-libelles-natifs-2026-10-07.json : les formes phonetiquement equivalentes ne constituent pas une difference audible",
+      "reference_orthographe": "1A-native-labels-2026-10-07.json : les formes phonetiquement equivalentes ne constituent pas une difference audible",
       "observation_produit": "Incoherence entre niveaux et entre legende et statut; action future mode standard associee a coche alors que rapide actif",
       "nouveau_correctif_mode_rapide_revendique": false,
       "ecart_chat_DOM_AX_parole": "Releve DOM/AX francais conserve separement des annonces anglaises recues, sans cause supposee"

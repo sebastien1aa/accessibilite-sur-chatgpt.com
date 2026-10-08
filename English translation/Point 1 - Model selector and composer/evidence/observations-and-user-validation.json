@@ -10,7 +10,7 @@
       "nom_AX_adapte_mesure": "Niveau de raisonnement : 6 Pro",
       "traduction_sliderLabel_prioritaire_sur_repli": true,
       "localisation_anglais_constat_historique": "chemin sliderLabel examine le 3 octobre ; ne decrit pas les libelles francais releves le 7 octobre",
-      "releve_natif_2026_10_07": "1A-libelles-natifs-2026-10-07.json",
+      "releve_natif_2026_10_07": "1A-native-labels-2026-10-07.json",
       "chat_legendes_natives": ["Instantané", "Moyenne", "Élevée", "Très élevé", "6Pro"],
       "chat_statuts_accessibles_natifs": ["Instantané", "Moyenne", "Élevée", "Très élevé", "Pro"],
       "work_modele_observe": "GPT-6.1 Sol",
@@ -41,7 +41,7 @@
     }
   },
   "limites": [
-    "Receptions historiques conservees; nouvelle reception native du 7 octobre dans reception-native-2026-10-07.json",
+    "Receptions historiques conservees; nouvelle reception native du 7 octobre dans native-user-validation-2026-10-07.json",
     "noms AX distincts de parole JAWS",
     "pas de verification exhaustive des fonctions fichiers et plugins",
     "Opera, Edge et JAWS 2025: resultats identiques declares par utilisateur; pas de nouvelles mesures instrumentees dans ces environnements"

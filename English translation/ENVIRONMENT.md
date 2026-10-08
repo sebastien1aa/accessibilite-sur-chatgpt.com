@@ -14,7 +14,7 @@ User checks on **7 October 2026** started around **19:18** and ended at **22:40*
 | JAWS 2021 | 2021.2107.12.400 |
 | JAWS 2025 | 2025.2503.39.400 |
 
-These versions come from the metadata of the installed executables. JAWS 2021 is used for the pass described, according to the user's feedback; its version has been unchanged since the investigations began. The system is Windows 10 Home 22H2, build 19045.6466. The ChatGPT interface is set to French.
+These versions come from the metadata of the installed executables. JAWS 2021 is used for the test session described, according to the user's feedback; its version has been unchanged since the investigations began. The system is Windows 10 Home 22H2, build 19045.6466. The ChatGPT interface is set to French.
 
 The user confirms encountering the same difficulties with Edge and JAWS 2025 based on their experience. They also encounter them in Opera. For prompt recall, that browser provides the control case: a new chat remains empty until a prompt creating a conversation has been submitted from that browser, unlike conversations already used. These confirmations supplement DOM inspection, traces and analysis of the native code.
 

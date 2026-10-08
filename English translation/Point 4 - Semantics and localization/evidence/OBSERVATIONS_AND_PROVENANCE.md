@@ -2,7 +2,7 @@
 
 Local times cited in this document are Brussels time (Europe/Brussels, UTC+02:00 for dates in September and early October 2026). Technical timestamps retain their explicit time zone; the ISO suffix `Z` denotes UTC.
 
-This item is a **derived synthesis**, prepared on October 6, 2026, then updated on October 7 from historical diagnostic notes, validation and user validation, the initial report, a passive update of October 6, and new native human feedback. It does not replace a raw log and does not claim to be a new capture. Private items are not linked from this deliverable. No real project name, identifier, personal path, account address, or conversation link is retained.
+This item is a **derived synthesis**, prepared on October 6, 2026, then updated on October 7 from historical diagnostic notes, technical validation and user testing, the initial report, a passive update of October 6, and new native human feedback. It does not replace a raw log and does not claim to be a new capture. Private items are not linked from this deliverable. No real project name, identifier, personal path, account address, or conversation link is retained.
 
 ## 4A — Structures and results
 
@@ -27,7 +27,7 @@ October 4 check: 227 Node tests, including 18 on descriptions; 26 Chromium descr
 
 The [October 8 record: destinations, “Explorer” (Explore), and settings](4B-destinations-settings-2026-10-08.json) contains the current contrast, the native ep component excerpt, and the demonstrator's guards. The [4B report](../REPORT.md#4b--r%C3%A9duit-on-navigation-destinations) introduces main destinations, pins, and the category comparison before the local solution.
 
-October 4 diagnosis on the native rail: the public `oB` component connects expanded state to the secondary preview; selecting it navigates. After switching to Espace (Space), current destination true, expanded=false. No expansion control for this preview observed in that rendering. The component's full original fragment is not attached; this mechanism is a technical paraphrase of the retained diagnosis, **not an invented native code quotation**.
+October 4 diagnosis on the native rail: the public `oB` component connects expanded state to the secondary preview; selecting it navigates. After switching to the Espace (Space) destination, current destination true, expanded=false. No expansion control for this preview observed in that rendering. The component's full original fragment is not attached; this mechanism is a technical paraphrase of the retained diagnosis, **not an invented native code quotation**.
 
 The [shared interface module](../../../extension/ui-accessibility.js) preserves the four demonstrated pairs and leaves an unknown widget intact. In the supplied demonstrator, recognized pins without a real associated control/popup are covered dynamically. Native order and display preserved. States of destinations already adapted were historically validated by the user; pinned buttons are accepted with qualification on October 5. Integrated user validation of October 5 retains these results without a new exhaustive trial.
 
@@ -50,7 +50,7 @@ The `flattenChatGroups` workaround checks the row, native group role, conversati
 
 ## 4D — Physical reproductions and boundaries
 
-On October 4, declared JAWS version 2021: A normal, B reproduces exactly the sound and blockage on first pass; repetition without reloading is normal. Difference: list parent `tabindex=-1` only in B. No movement code or extension in this reproduction. The 18-event trace records focus on the links, not the list; it does not date the sound and contains no arrow-key event. User feedback and the trace must not be conflated.
+On October 4, declared JAWS version 2021: A normal, B reproduces exactly the sound and blockage on first pass; repetition without reloading is normal. Difference: list parent `tabindex=-1` only in B. No movement code or extension in this reproduction. The 18-event trace records focus on the links, not the list; it does not establish when the sound occurred and contains no arrow-key event. User feedback and the trace must not be conflated.
 
 C/D comparison: C normal; D initial sound and blockage, normal repetition. Identical relevant difference on the parent; same HTML buttons, guards, and synthetic forwarding. Passive trace: 37 entries, arrow keys received in the DOM on button-d. D's Alt+Tab return reproduces a blockage that the user distinguishes from the site. No internal mode measured. The [two local pages](../reproductions/PROCEDURES.md) are copies of historical synthetic examples rather than an account capture.
 

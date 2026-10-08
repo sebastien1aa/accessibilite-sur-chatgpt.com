@@ -1,7 +1,7 @@
 {
   "dateLocal": "2026-10-04",
   "nature": "Extrait documentaire de la piece historique; mention d'autorisation d'implementation et precision d'installation retirees, observations et limites utiles conservees.",
-  "fixture": "tests/list-button-first-focus.html",
+  "fixture": "../reproductions/list-button-first-focus.html",
   "source": "Retour direct de l’utilisateur, navigation habituelle aux flèches puis activation C et D",
   "jawsVersionReported": "2021",
   "cParentTabindex": null,
@@ -49,6 +49,6 @@
   "receptionFollowUp": {
     "meaningOfEarlierReceiptFields": "Le champ newExtensionFixPhysicallyReceived décrit cette comparaison technique historique, pas le statut du parcours adapté courant.",
     "currentPathReception": "Le parcours de projets et listes est reçu globalement en 3.2.3 le 4 octobre ; cet acquis est conservé en 4.1.2.",
-    "reference": "../RAPPORT.md"
+    "reference": "../REPORT.md"
   }
 }

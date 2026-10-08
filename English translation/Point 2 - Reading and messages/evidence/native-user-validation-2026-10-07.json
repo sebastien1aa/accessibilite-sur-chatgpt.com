@@ -3,7 +3,7 @@
   "date": "2026-10-07",
   "fuseau": "Europe/Brussels",
   "debut": "19:18",
-  "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONNEMENT.md",
+  "environnement": "Chrome habituel, extension desactivee selon protocole, JAWS 2021 inchange; versions et provenance dans ../../ENVIRONMENT.md",
   "comparaisons_humaines": {
     "Opera": "Memes resultats declares apres verification recente",
     "Edge_et_JAWS_2025": "Resultats identiques declares selon experience utilisateur",
@@ -15,7 +15,7 @@
       "lecture_aux_fleches": "Sauts de position en remontant et en redescendant une longue discussion",
       "reproduction_humaine": "Lecture du bas vers le haut puis retour vers le bas",
       "seuil_precis_longueur": null,
-      "mesures_techniques_separees": "2A-virtualisation-2026-10-07.json"
+      "mesures_techniques_separees": "2A-virtualization-2026-10-07.json"
     },
     "2B": {
       "titre_assistant": "Première comparaison : GPT-5.6 absent pendant la réflexion, apparaît après ; premier GPT-6 décrit dans la chronologie historique jointe",
@@ -24,8 +24,8 @@
       "details_deja_realises": "Après titre dans le bon ordre selon retour utilisateur",
       "correction_native_confirmee": false,
       "retrait_fonction_extension_revendique": false,
-      "preuve_structurelle": "2B-titre-raisonnement-gpt6-gpt56-2026-10-07.json",
-      "preuves_ulterieures": "2B-generations-terminees-gpt6-2026-10-08.json : tours GPT-6 terminés, titres intermédiaires et réception adaptée"
+      "preuve_structurelle": "2B-reasoning-heading-gpt6-gpt56-2026-10-07.json",
+      "preuves_ulterieures": "2B-completed-generations-gpt6-2026-10-08.json : tours GPT-6 terminés, titres intermédiaires et réception adaptée"
     },
     "2C": {
       "selection_native": "Fonctionne sauf en cas de sauts de position",
@@ -43,7 +43,7 @@
       "copier_reponse": "Pas d'annonce; saut vers Partager",
       "partager_discussion": "Focus au haut de page sans annonce de confirmation JAWS",
       "statut": "Resultats natifs revérifiés par utilisateur et strictement identiques",
-      "receptions_adaptees_5_octobre": "Acquises, dates conservees dans constats-2026-10-03-05.json"
+      "receptions_adaptees_5_octobre": "Acquises, dates conservees dans observations-2026-10-03-05.json"
     },
     "2E": {
       "Writing_Blocks": "Probleme natif inchange selon verification utilisateur",

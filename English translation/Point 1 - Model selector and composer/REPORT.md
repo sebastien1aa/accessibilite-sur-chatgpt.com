@@ -102,7 +102,7 @@ The usable menu is accepted in the overall user validation of October 4. Success
 
 When focus is in the empty composer, Up Arrow can recall an old prompt into it. The user relies on the arrows to navigate and leave fields; they may therefore begin a new draft using content they did not intend to reuse. If this insertion is not noticed, the sent message contains unwanted material.
 
-The user feedback distinguishes two contexts: recall occurs in **previously used conversations**, and in a **new chat if this browser has already been used to send a prompt that creates a conversation**. In Opera, a browser that had never performed this send, the **new chat remains empty** after Up Arrow. This control case rules out generalizing to every new chat on an account with history. This distinction comes from the user's test; it does not attribute storage to a particular internal mechanism.
+The user feedback distinguishes two contexts: recall occurs in **previously used conversations**, and in a **new chat if this browser has already been used to send a prompt that creates a conversation**. In Opera, a browser that had never been used to submit a prompt creating a conversation, the **new chat remains empty** after Up Arrow. This control case rules out generalizing to every new chat on an account with history. This distinction comes from the user's test; it does not attribute storage to a particular internal mechanism.
 
 This problem affects accessibility and writing reliability. Blocking recall in the extension is a workaround; this does not reduce the obstacle to a mere aesthetic preference.
 

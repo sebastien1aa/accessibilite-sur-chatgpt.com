@@ -1,6 +1,6 @@
 {
   "dateLocal": "2026-10-04",
-  "fixture": "tests/list-first-focus.html",
+  "fixture": "../reproductions/list-first-focus.html",
   "source": "Direct user result and passive read of the Chrome test tab",
   "requestedJawsVersion": "2021",
   "jawsVersionIndependentlyRead": false,
@@ -238,7 +238,7 @@
     "focusWindowRoundTripsMayBeIncluded": true
   },
   "buttonComparison": {
-    "file": "tests/list-button-first-focus.html",
+    "file": "../reproductions/list-button-first-focus.html",
     "caseC": "native disclosure button under role=list without tabindex",
     "caseD": "same button under role=list tabindex=-1",
     "nativeRowClickRelayAndKeyboardGuardsInBoth": true,

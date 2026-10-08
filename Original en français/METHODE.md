@@ -45,6 +45,8 @@ Une reproduction ultérieure doit porter sa propre date et son environnement. Un
 
 Les pièces copiées conservent leur provenance et leur version. Les fichiers dérivés indiquent qu’ils synthétisent des preuves, plutôt que de se présenter comme de nouvelles captures brutes. Les corps de discussions, coordonnées personnelles, noms de projets, chemins de profil, identifiants privés, cookies et jetons ne sont pas inclus. Les reproductions utilisent des contenus synthétiques.
 
+Les noms de fichiers et les chemins documentaires sont adaptés à chaque dossier de langue : les renvois documentaires des pièces de preuve JSON vers les fichiers joints sont relatifs au dossier qui contient cette pièce et désignent le fichier correspondant fourni dans le dépôt. Ces différences de chemins ne modifient ni les annonces, ni les extraits de code, ni les dates, mesures, résultats ou provenance des preuves ; les reproductions exécutables et l’extension commune restent inchangées.
+
 L’extension 4.1.2 est une copie du démonstrateur de travail, pas une proposition de patch prêt à intégrer. Elle conserve les nœuds et actions natifs autant que le mécanisme le permet. Les contrats internes peuvent changer. Elle n’est pas une solution pérenne de l’accessibilité de ChatGPT : cette accessibilité doit être assurée dans le produit.
 
 Les fonctions complètes du démonstrateur incluent des choix personnels hors du signalement. Les références de chaque sous-point indiquent le module pertinent. Les procédures du raisonnement et des Writing Blocks utilisent une génération de texte choisie par le testeur ; les autres constats structurels peuvent être examinés directement dans le code et les pièces du Point concerné.

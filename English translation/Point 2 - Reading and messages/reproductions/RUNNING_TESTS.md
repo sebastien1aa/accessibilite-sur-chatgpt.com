@@ -1,6 +1,6 @@
 # Existing checks for Point 2
 
-These files select the tests and fixtures already used to verify the workarounds related to Point 2. The four modern retention cases check key retention, preservation of native parameters and callbacks, and scope guards. HTML fixture paths point to the shared extension.
+These files contain a selection of the tests and fixtures already used to verify the workarounds related to Point 2. The four modern retention cases check key retention, preservation of native parameters and callbacks, and scope guards. HTML fixture paths point to the shared extension.
 
 ## Node — from the repository root
 
