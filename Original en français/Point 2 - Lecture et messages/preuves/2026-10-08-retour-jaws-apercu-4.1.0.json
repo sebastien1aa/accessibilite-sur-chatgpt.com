@@ -35,5 +35,11 @@
     "visualLineBreaksDoNotEnsureSeparateLinkAnnouncements": true,
     "physicalReceptionAccepted": false
   },
-  "privacy": "Uniquement données publiques de carte et attributs ; aucun contenu de conversation ni identifiant privé."
+  "privacy": "Uniquement données publiques de carte et attributs ; aucun contenu de conversation ni identifiant privé.",
+  "receptionFollowUp": {
+    "currentDemonstrator": "4.1.2",
+    "currentRelevantAdaptationStatus": "received",
+    "reference": "../../Point 1 - Sélecteur et composition/preuves/2026-10-08-reception-adaptee.json",
+    "meaningOfEarlierReceiptFields": "Le retour négatif décrit la 4.1.0 avant correction ; les versions 4.1.1 puis 4.1.2 sont ensuite reçues."
+  }
 }

@@ -196,5 +196,11 @@
     "failedChecks": 0
   },
   "moduleSha256": "5B896BAC67587529861B77421CDFE47D6CE6D710C8B2A19139D7F246D9851C3D",
-  "privacy": "Uniquement structure et métadonnées de source publique ; aucun corps de conversation, identifiant de chat, cookie ou jeton."
+  "privacy": "Uniquement structure et métadonnées de source publique ; aucun corps de conversation, identifiant de chat, cookie ou jeton.",
+  "receptionFollowUp": {
+    "currentDemonstrator": "4.1.2",
+    "currentRelevantAdaptationStatus": "received",
+    "reference": "../../Point 1 - Sélecteur et composition/preuves/2026-10-08-reception-adaptee.json",
+    "meaningOfEarlierReceiptFields": "Les valeurs de réception false décrivent le point de contrôle technique avant confirmation humaine ; elles ne constituent pas un statut actuel."
+  }
 }

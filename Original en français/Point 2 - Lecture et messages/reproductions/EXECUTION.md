@@ -38,8 +38,23 @@ Les contenus sont fictifs. Les routes `chatgpt.com/c/fixture` ou `example.test` 
 | 2D — Copier et Partager | Tests et fixture `feedback-actions` ; traces natives [de partage](../preuves/2026-10-05-partage-copie-natif.json) et [de disponibilité de copie](../preuves/2026-10-05-copie-disponibilite-native.json), [réceptions adaptées datées](../preuves/constats-2026-10-03-05.json) et [retour natif récent](../preuves/reception-native-2026-10-07.json). |
 | 2E — Writing Blocks | Fixture `writing-block-accessibility` ; [signature DOM et callbacks natifs](../preuves/mecanismes-natifs.md), [réception du retrait adapté](../preuves/constats-2026-10-03-05.json) et [confirmation native récente](../preuves/reception-native-2026-10-07.json). |
 | 2F — Dernière réponse | Contrôle structurel du `h4.sr-only` exact hors message et de `hideLastResponseHeading` dans [ui-accessibility.js](../../../extension/ui-accessibility.js) ; [procédure de parcours des titres](PROCEDURES.md), [réception adaptée](../preuves/constats-2026-10-03-05.json) et [présence native confirmée](../preuves/reception-native-2026-10-07.json). |
+| 2G — Sources et aperçus | [Fixture de sources](sources.html), 18 tests Node et neuf états Chromium stabilisés de la 4.1.1 ; les treize scénarios précédents restent des résultats historiques ; [noms et contenu DOM/AX](../preuves/2026-10-08-contenu-apercu-sources.json) | [Liens et nom des cartes](../../../extension/source-links-accessibility.js), callbacks/clavier et aperçu conservés |
 
-Les [procédures du site](PROCEDURES.md) couvrent les six sous-points. Pour 2F, le ciblage structurel et le parcours reçu constituent la vérification pertinente.
+Les [procédures du site](PROCEDURES.md) couvrent les sept sous-points. Pour 2F, le ciblage structurel et le parcours reçu constituent la vérification pertinente.
+
+## Contrôler les références et cartes de sources — 2G
+
+Depuis la racine du dépôt contenant `extension/` et `Original en français/`, exécuter :
+
+```powershell
+node --test "Original en français/Point 2 - Lecture et messages/reproductions/source-links-accessibility.test.cjs"
+```
+
+Ces dix-huit tests Node n’exigent aucune dépendance externe. Servir cette même racine sur localhost et ouvrir [sources.html](sources.html) pour les contrôles Chromium. La fixture charge explicitement `../../../extension/source-links-accessibility.js` ; elle n’installe pas l’extension. Les références, titres, textes et callbacks sont synthétiques.
+
+Les scénarios historiques conservés dans la preuve du contenu des cartes couvrent adaptation initiale, noms issus du contenu, activation native, carte vidée puis remplie, arrêt/reprise, langue hors français puis retour, ambiguïté d’ID puis unicité, remplacement de contrôle et activation d’une référence regroupée par Espace. Les contrôles du 8 octobre en 4.1.1 comprennent [neuf états stabilisés et 153 invariants sans échec](../preuves/2026-10-08-favicons-controles.json), avec favicon sans alternative puis restauration. Les rôles et noms calculés de l’exemple réel, avec conservation de Tab, Entrée et Échap, figurent dans la [preuve complémentaire](../preuves/2026-10-08-contenu-apercu-sources.json).
+
+Les tests conservent les éléments et callbacks natifs ; ils vérifient aussi l’exclusion des boutons et panneaux non reconnus. Le passage d’un nom explicite abrégé au nom issu du contenu est établi dans l’arbre Chromium. Les données de la carte demeurent celles rendues ; les résultats ne constituent pas une nouvelle transcription JAWS ni une garantie sur tous les aperçus futurs.
 
 ## Valeur et limites
 

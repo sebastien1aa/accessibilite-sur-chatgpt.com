@@ -16,12 +16,27 @@
   "newExtensionFixPhysicallyReceived": false,
   "passiveVisibleTrace": {
     "frames": 37,
-    "nativeRowActivations": {"c": 1, "d": 5},
-    "focusinTargets": ["button-c", "button-d"],
+    "nativeRowActivations": {
+      "c": 1,
+      "d": 5
+    },
+    "focusinTargets": [
+      "button-c",
+      "button-d"
+    ],
     "keydowns": [
-      {"key": "ArrowDown", "target": "button-d"},
-      {"key": "ArrowDown", "target": "button-d"},
-      {"key": "ArrowUp", "target": "button-d"}
+      {
+        "key": "ArrowDown",
+        "target": "button-d"
+      },
+      {
+        "key": "ArrowDown",
+        "target": "button-d"
+      },
+      {
+        "key": "ArrowUp",
+        "target": "button-d"
+      }
     ],
     "syntheticIdsOnly": true,
     "noAgentFocusClickOrReload": true,
@@ -31,5 +46,10 @@
     "Parent focalisable causal dans les structures synthétiques de liens et boutons ; aucune lecture du mode interne JAWS.",
     "Le retour Alt+Tab de D ne reproduit pas exactement celui du site ; cette divergence est conservée.",
     "Le relevé structurel ne date pas le son et ne lit pas le mode JAWS."
-  ]
+  ],
+  "receptionFollowUp": {
+    "meaningOfEarlierReceiptFields": "Le champ newExtensionFixPhysicallyReceived décrit cette comparaison technique historique, pas le statut du parcours adapté courant.",
+    "currentPathReception": "Le parcours de projets et listes est reçu globalement en 3.2.3 le 4 octobre ; cet acquis est conservé en 4.1.2.",
+    "reference": "../RAPPORT.md"
+  }
 }

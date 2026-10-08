@@ -46,15 +46,4 @@ Attendu : conserver la navigation aux flèches dès le premier passage, après T
 
 Attendu : noms français Épingler le projet et Désépingler le projet dans la galerie, cohérents avec le menu latéral. L’accès par flèches aux commandes latérales est traité séparément en [3A](../../Point%203%20-%20Navigation%20et%20focus/reproductions/PROCEDURES.md#3a--projets-et-premier-focus).
 
-## 4F — Références et aperçus de sources
-
-1. Ouvrir une réponse GPT-6 présentant ce rendu de citations ; repérer une référence simple et, si disponible, une référence regroupée avec un compteur. Aucun nouveau message n’est nécessaire si ces références existent déjà.
-2. Sans extension, parcourir la référence aux flèches et relever son nom, rôle et états. Le retour JAWS fourni est « Bouton de menu réduit dialogue ». Comparer avec le parcours des liens du lecteur d’écran.
-3. Activer par Espace ou Entrée : relever l’ouverture de la page Web, puis revenir au chat. Distinguer cette navigation du panneau d’aperçu également ouvert.
-4. Donner simplement le focus clavier à la référence pour ouvrir l’aperçu sans navigation. Utiliser Tab pour entrer dans la carte. Comparer le nom « Open [source] » aux informations visibles dans la carte : source, titre et texte disponible. Le panneau se trouve à la fin du document dans le parcours aux flèches. Relever son rôle et son nom.
-5. Appuyer sur Échap et vérifier la fermeture avec retour à la référence. Les essais techniques établissent ce comportement ; ne pas supposer qu’un seul Shift+Tab sort de tous les panneaux.
-6. Avec le démonstrateur 4.1.2 dans un document frais, comparer le rôle lien, le nom du panneau et le nom de la carte issu de son contenu visible. Vérifier que la navigation, Tab et Échap conservent leur fonctionnement et que la favicon décorative n’ajoute pas son adresse ou une annonce graphique parasite. La carte doit restituer ce que fournit le site ; le texte intégral de l’article n’est pas un attendu lorsque le panneau ne le fournit pas.
-
-Attendu : références accessibles comme liens, aperçu secondaire nommé et contenu disponible lisible sans réduction au seul « Open/Ouvrir [source] ». Le [rapport](../RAPPORT.md#4f--références-web-et-contenu-des-aperçus-de-sources) distingue le retour JAWS natif, le nom calculé dans Chromium et la réception de la restitution adaptée.
-
 Les résultats historiques et la portée de chaque constat figurent dans le [rapport](../RAPPORT.md) et les [preuves](../preuves/CONSTATS_ET_PROVENANCE.md). Les [tests et fixtures](EXECUTION.md) fournissent les comparaisons synthétiques et leurs limites.

@@ -4,7 +4,7 @@ Ce dossier décrit des barrières rencontrées dans **l’interface française d
 
 Le travail représente **plusieurs heures de tests personnels et d’investigation technique avec Codex**. L’objectif est sa transmission aux équipes responsables de l’accessibilité et de l’interface ChatGPT pour examen et, si possible, suivi. Il peut aussi servir à prévenir les mêmes mécanismes de régression dans de futures interfaces.
 
-**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 22 h 40**, complétant les preuves de septembre et des 3–6 octobre. Elle comprend la comparaison du raisonnement avec GPT-6 puis GPT-5.6 ; le Point 2B en décrit les résultats. Les observations complémentaires de raisonnement se poursuivent vers **23 h 20**, heure de Bruxelles, puis les réceptions des cartes et régions GPT-6 le **8 octobre**. La dernière réception humaine, dans Edge sans extension pour le nom du sélecteur, date du **8 octobre à 01 h 55, heure de Bruxelles (UTC+02:00)**. Chaque preuve garde sa date et sa provenance.
+**Réinvestigation native du 7 octobre 2026, de 19 h 18 à 22 h 40**, complétant les preuves de septembre et des 3–6 octobre. Elle comprend la comparaison du raisonnement avec GPT-6 puis GPT-5.6 ; le Point 2B en décrit les résultats. Les observations complémentaires de raisonnement se poursuivent vers **23 h 20**, heure de Bruxelles, puis les réceptions des cartes et régions GPT-6 le **8 octobre**. La dernière réception humaine du site natif, dans Edge sans extension pour le nom du sélecteur, date du **8 octobre à 01 h 55, heure de Bruxelles (UTC+02:00)**. Chaque preuve garde sa date et sa provenance.
 
 ## Lire les quatre ensembles
 
