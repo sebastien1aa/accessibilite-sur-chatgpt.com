@@ -89,7 +89,7 @@ function fibers(button, selected, alternate, committed = true, depth = 27) {
 test('French trigger announces the native accessible level; identity and settings are preserved', () => {
   const e = environment(); const button = trigger(e); const chosen = selection(); const snapshot = JSON.stringify(chosen);
   fibers(button, chosen); e.mount(button); e.run();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Élevée');
   assert.equal(button.childNodes[0].nodeValue, 'Élevée');
   assert.equal(e.document.querySelectorAll('button')[0], button);
   assert.equal(JSON.stringify(chosen), snapshot);
@@ -122,17 +122,17 @@ test('effort changes refresh the button and an effort mismatch removes stale add
   const next = selection({ id: 'next', reasoningEffort: 'medium', sliderLabel: 'Medium', powerSettingIndex: 1 });
   fiber.memoizedProps = { selectedPowerSelection: next, powerSelections: [next] };
   button.setAttribute('data-selected-reasoning-effort', 'medium'); button.childNodes[0].nodeValue = 'Medium'; e.flush();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Moyenne');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Moyenne');
   button.setAttribute('data-selected-reasoning-effort', 'max'); e.flush();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Moyenne');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Moyenne');
 });
 
 test('committed alternate resolves Pro without hidden model names; ambiguity uses only the exposed caption', () => {
   const e = environment(); const button = trigger(e, 'medium', 'Pro');
   fibers(button, selection({ reasoningEffort: 'medium', sliderLabel: 'Medium' }), selection({ model: 'gpt-6-pro', modelLabel: '6', id: 'fresh', reasoningEffort: 'medium', sliderLabel: 'Pro' })); e.mount(button); e.run();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Pro');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Pro');
   const ambiguous = trigger(e); fibers(ambiguous, selection(), selection({ modelLabel: 'Other', id: 'other' }), false); e.mount(ambiguous); e.flush();
-  assert.equal(ambiguous.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+  assert.equal(ambiguous.getAttribute('aria-label'), 'Raisonnement : Élevée');
 });
 
 test('native labels supply names for different models and Pro without fixed model or slider positions', () => {
@@ -143,20 +143,20 @@ test('native labels supply names for different models and Pro without fixed mode
     [selection({ model: 'native-instant', sliderLabel: 'Instant', reasoningEffort: 'none', powerSettingIndex: 0 }), 'Instantané']
   ]) {
     const e = environment(); const button = trigger(e, chosen.reasoningEffort, chosen.sliderLabel); fibers(button, chosen); e.mount(button); e.run();
-    assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : ' + expected);
+    assert.equal(button.getAttribute('aria-label'), 'Raisonnement : ' + expected);
   }
 });
 
 test('unavailable, malformed, unknown or unlisted selections never fabricate a model name', () => {
   for (const chosen of [null, selection({ modelLabel: '' }), selection({ sliderLabel: 'Future level' }), selection({ powerSettingIndex: -1 }), selection({ reasoningEffort: 'medium' })]) {
     const e = environment(); const button = trigger(e); fibers(button, chosen); e.mount(button); e.run();
-    assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+    assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Élevée');
   }
   const e = environment(); const absent = trigger(e); const unlisted = trigger(e); const f = fibers(unlisted, selection()); f.memoizedProps.powerSelections = [];
   const inaccessible = trigger(e); Object.defineProperty(inaccessible, '__reactFiber$throws', { enumerable: true, get() { throw new Error('unavailable'); } });
   const unrelated = e.element('button', { 'aria-label': 'Sélectionner le modèle ChatGPT' }, 'High');
   e.mount(absent, unlisted, inaccessible, unrelated); e.run();
-  for (const button of [absent, unlisted, inaccessible]) assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+  for (const button of [absent, unlisted, inaccessible]) assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Élevée');
   assert.equal(unrelated.getAttribute('aria-label'), 'Sélectionner le modèle ChatGPT');
   assert.equal(unrelated.childNodes[0].nodeValue, 'High');
 });
@@ -180,7 +180,7 @@ test('native French forms are preserved, unknown levels and arbitrary status sen
 test('ordinary conversation mutations cause no label writes and newly mounted controls are discovered', () => {
   const e = environment(); const conversation = e.element('article', {}, 'Text'); e.mount(conversation); e.run();
   const count = e.writes(); conversation.childNodes[0].nodeValue = 'High'; e.flush(); assert.equal(e.writes(), count + 1);
-  const button = trigger(e); fibers(button, selection()); e.mount(button); e.flush(); assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+  const button = trigger(e); fibers(button, selection()); e.mount(button); e.flush(); assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Élevée');
 });
 
 test('status text split across native children keeps the position nodes and markup', () => {
@@ -201,7 +201,7 @@ test('fiber traversal is bounded and unrelated native aria labels are respected'
   owner.memoizedProps = props;
   const custom = trigger(e); fibers(custom, selection()); custom.setAttribute('aria-label', 'Nom natif différent');
   e.mount(tooDeep, custom); e.run();
-  assert.equal(tooDeep.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+  assert.equal(tooDeep.getAttribute('aria-label'), 'Raisonnement : Élevée');
   assert.equal(custom.getAttribute('aria-label'), 'Nom natif différent');
 });
 
@@ -210,7 +210,7 @@ test('exposed model names are preserved and hidden measurement captions are excl
   button.append(e.element('span', { 'aria-hidden': 'true' }, 'Effort de réflexion'));
   button.append(e.element('span', {}, 'Astra'), e.element('span', {}, 'High'));
   fibers(button, selection({ modelLabel: 'Astra' })); e.mount(button); e.run();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Astra Élevée');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Astra Élevée');
 });
 
 test('temporary legacy naming converges to the requested caption, including after native reset', () => {
@@ -218,16 +218,16 @@ test('temporary legacy naming converges to the requested caption, including afte
   fibers(button, selection({ model: 'gpt-6-pro', modelLabel: '6', reasoningEffort: 'medium', sliderLabel: 'Pro' }));
   e.context.window[Symbol.for('chatgpt-navigation-continue.model-labels.v1')] = true;
   button.setAttribute('aria-label', 'Sélectionner le modèle ChatGPT : 6 Pro, Pro'); e.mount(button); e.run();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Pro');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Pro');
   button.setAttribute('aria-label', 'Sélectionner le modèle ChatGPT'); e.flush();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Pro');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Pro');
 });
 
 test('native feminine Medium labels and preset props are preserved in button, slider and header', () => {
   const e = environment(); const button = trigger(e, 'medium', 'Moyenne'); const chosen = selection({ reasoningEffort: 'medium', sliderLabel: 'Moyenne', powerSettingIndex: 1 });
   fibers(button, chosen); const slider = e.element('div', { 'data-reasoning-slider': '', 'aria-label': 'Puissance' }, 'Moyenne'); const header = e.element('button', { 'data-model-picker-view-toggle': '' }, 'Moyenne');
   const outside = e.element('button', { 'aria-label': 'Moyenne' }, 'Moyenne'); const conversation = e.element('article', {}, 'Moyenne'); e.mount(button, slider, header, outside, conversation); e.run();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Moyenne'); assert.equal(button.childNodes[0].nodeValue, 'Moyenne'); assert.equal(slider.childNodes[0].nodeValue, 'Moyenne'); assert.equal(header.childNodes[0].nodeValue, 'Moyenne');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Moyenne'); assert.equal(button.childNodes[0].nodeValue, 'Moyenne'); assert.equal(slider.childNodes[0].nodeValue, 'Moyenne'); assert.equal(header.childNodes[0].nodeValue, 'Moyenne');
   assert.equal(slider.getAttribute('aria-label'), 'Puissance'); assert.equal(chosen.sliderLabel, 'Moyenne'); assert.equal(chosen.modelLabel, '5.6');
   assert.equal(outside.getAttribute('aria-label'), 'Moyenne'); assert.equal(outside.childNodes[0].nodeValue, 'Moyenne'); assert.equal(conversation.childNodes[0].nodeValue, 'Moyenne');
 });
@@ -246,23 +246,23 @@ test('feminine Medium status variants retain their original positions, whitespac
 test('native French labels survive updates but never rewrites arbitrary French sentences or other languages', () => {
   const e = environment(); const button = trigger(e, 'medium', 'Medium'); fibers(button, selection({ reasoningEffort: 'medium', sliderLabel: 'Medium' }));
   const slider = e.element('div', { 'data-reasoning-slider': '', 'aria-describedby': 'status' }); const status = e.element('span', { id: 'status', role: 'status', 'aria-live': 'polite' }, 'Medium, 2 sur 5.'); e.mount(button, slider, status); e.run();
-  button.childNodes[0].nodeValue = 'Moyenne'; status.childNodes[0].nodeValue = 'Moyenne, 2 sur 5.'; e.flush(); assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Moyenne'); assert.equal(status.childNodes[0].nodeValue, 'Moyenne, 2 sur 5.');
+  button.childNodes[0].nodeValue = 'Moyenne'; status.childNodes[0].nodeValue = 'Moyenne, 2 sur 5.'; e.flush(); assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Moyenne'); assert.equal(status.childNodes[0].nodeValue, 'Moyenne, 2 sur 5.');
   status.childNodes[0].nodeValue = 'Moyenne, conserver les résultats.'; e.flush(); assert.equal(status.childNodes[0].nodeValue, 'Moyenne, conserver les résultats.');
   e.document.documentElement.lang = 'en-US'; e.flush(); assert.equal(button.childNodes[0].nodeValue, 'Medium'); assert.equal(status.childNodes[0].nodeValue, 'Moyenne, conserver les résultats.');
 });
 
 test('model label stop restores native feminine strings and cancels queued work without changing settings', () => {
   const e = environment(); const button = trigger(e, 'medium', 'Moyenne'); const chosen = selection({ reasoningEffort: 'medium', sliderLabel: 'Moyenne' }); fibers(button, chosen); e.mount(button); e.run();
-  const api = e.context.window[Symbol.for('chatgpt-navigation-continue.model-labels.current')]; assert.equal(api.version, 4); e.document.listeners.focusin({ target: button }); api.stop(); e.flush();
+  const api = e.context.window[Symbol.for('chatgpt-navigation-continue.model-labels.current')]; assert.equal(api.version, 5); e.document.listeners.focusin({ target: button }); api.stop(); e.flush();
   assert.equal(api.active, false); assert.equal(button.childNodes[0].nodeValue, 'Moyenne'); assert.equal(button.getAttribute('aria-label'), 'Sélectionner le modèle ChatGPT'); assert.equal(chosen.sliderLabel, 'Moyenne'); assert.equal(e.document.listeners.focusin, undefined);
-  e.run(); assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Moyenne');
+  e.run(); assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Moyenne');
 });
 
 
 test('document_start boots before HTML and adapts later native widgets without a load event', () => {
   const e = environment(); e.bootWithoutHTML();
   const button = trigger(e); fibers(button, selection()); e.mount(button); e.flush();
-  assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : Élevée');
+  assert.equal(button.getAttribute('aria-label'), 'Raisonnement : Élevée');
   e.context.window[Symbol.for('chatgpt-navigation-continue.model-labels.current')].stop();
   assert.equal(button.getAttribute('aria-label'), 'Sélectionner le modèle ChatGPT');
 });
@@ -277,8 +277,8 @@ test('Work keeps native masculine captions while the closed trigger matches its 
     const explicitModel = trigger(e, effort, ''); fibers(explicitModel, chosen);
     explicitModel.append(e.element('span', {}, chosen.modelLabel), e.element('span', {}, caption));
     e.mount(button, slider, status, header, explicitModel); e.run();
-    assert.equal(button.getAttribute('aria-label'), 'Modèle ChatGPT : ' + statusLabel);
-    assert.equal(explicitModel.getAttribute('aria-label'), 'Modèle ChatGPT : ' + chosen.modelLabel + ' ' + statusLabel);
+    assert.equal(button.getAttribute('aria-label'), 'Raisonnement : ' + statusLabel);
+    assert.equal(explicitModel.getAttribute('aria-label'), 'Raisonnement : ' + chosen.modelLabel + ' ' + statusLabel);
     assert.equal(explicitModel.childNodes[2].childNodes[0].nodeValue, caption);
     assert.equal(button.childNodes[0].nodeValue, caption); assert.equal(header.childNodes[0].nodeValue, caption);
     assert.equal(status.childNodes[0].nodeValue, statusLabel + ', 2 sur 6.'); assert.equal(chosen.sliderLabel, caption);
@@ -293,7 +293,7 @@ test('GPT-6 keeps its native effort-only caption instead of announcing a hidden 
  const e=environment(), button=trigger(e,'high','Élevée');
  const chosen=selection({id:'gpt-6-thinking:extended',model:'gpt-6-thinking',modelLabel:'GPT-6',sliderLabel:'Élevée'});
  fibers(button,chosen); const snapshot=JSON.stringify(chosen); e.mount(button); e.run();
- assert.equal(button.getAttribute('aria-label'),'Modèle ChatGPT : Élevée');
+ assert.equal(button.getAttribute('aria-label'),'Raisonnement : Élevée');
  assert.equal(button.childNodes[0].nodeValue,'Élevée');assert.equal(JSON.stringify(chosen),snapshot);
  e.context.window[Symbol.for('chatgpt-navigation-continue.model-labels.current')].stop();
  assert.equal(button.getAttribute('aria-label'),'Sélectionner le modèle ChatGPT');
@@ -302,13 +302,13 @@ test('GPT-6 keeps its native effort-only caption instead of announcing a hidden 
 test('new prefix stops the previous runtime without changing native choices', () => {
  const e=environment(),b=trigger(e); fibers(b,selection());e.mount(b);
  let stopped=0;e.context.window[Symbol.for('chatgpt-navigation-continue.model-labels.current')]={active:true,stop(){stopped++;}};
- e.run();assert.equal(stopped,1);assert.equal(b.getAttribute('aria-label'),'Modèle ChatGPT : Élevée');
+ e.run();assert.equal(stopped,1);assert.equal(b.getAttribute('aria-label'),'Raisonnement : Élevée');
 });
 
 test('abbreviated native visible model caption survives a fuller selection label', () => {
   const e=environment(),button=trigger(e,'high','5.6 Élevé');
   fibers(button,selection({modelLabel:'GPT-5.6 Sol',sliderLabel:'Élevé'}));
   e.mount(button);e.run();
-  assert.equal(button.getAttribute('aria-label'),'Modèle ChatGPT : 5.6 Élevée');
+  assert.equal(button.getAttribute('aria-label'),'Raisonnement : 5.6 Élevée');
   assert.equal(button.childNodes[0].nodeValue,'5.6 Élevé');
 });

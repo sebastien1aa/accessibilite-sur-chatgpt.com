@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Accessibilité pour ChatGPT web",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Améliore la lecture, la sélection, les menus et la navigation au clavier sur chatgpt.com avec un lecteur d’écran.",
   "minimum_chrome_version": "111",
   "content_scripts": [

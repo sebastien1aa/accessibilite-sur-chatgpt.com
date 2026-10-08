@@ -2,7 +2,7 @@
  * only; no model choice, conversation content, or native handler is changed. */
 (() => {
   "use strict";
-  const marker = Symbol.for("chatgpt-navigation-continue.model-labels.v4");
+  const marker = Symbol.for("chatgpt-navigation-continue.model-labels.v5");
   const currentMarker = Symbol.for("chatgpt-navigation-continue.model-labels.current");
   if (window[marker]?.active) return;
   window[currentMarker]?.stop?.();
@@ -10,7 +10,7 @@
   const controlSelector = `${triggerSelector}, [data-reasoning-slider], [data-model-picker-view-toggle]`;
   const baseName = "Sélectionner le modèle ChatGPT";
   const reasoningName = "Niveau de raisonnement";
-  const choiceName = "Modèle ChatGPT";
+  const choiceName = "Raisonnement";
   const labels = new Map([
     ["Instant", "Instantané"], ["Minimal", "Minimal"], ["Medium", "Moyenne"], ["High", "Élevée"],
     ["Extra High", "Très élevé"], ["Pro", "Pro"],
@@ -238,7 +238,7 @@
   };
   const events = ["focusin", "click", "change"];
   for (const event of events) document.addEventListener(event, nativeEvent, true);
-  const api = { version: 4, active: true, stop() {
+  const api = { version: 5, active: true, stop() {
     if (stopped) return;
     stopped = true; api.active = false; pending = false;
     observer.disconnect();

@@ -29,4 +29,6 @@ Les annonces rapportées reproduisent les informations utiles au signalement. L�
 
 Les différences entre libellés affichés, noms accessibles mesurés et informations réellement entendues sont décrites séparément lorsqu’elles changent la compréhension du problème. Les transcriptions phonétiquement identiques sont orthographiées selon les chaînes natives effectivement relevées, sans modifier le sens du retour utilisateur.
 
-Contrôle technique courant du **8 octobre 2026 à 02 h 03, heure de Bruxelles (Europe/Brussels, UTC+02:00)** : 25 sources identiques, archive/empreinte 4.1.1 et 243 tests joints au dossier ; retours humains conservés avec leur périmètre.
+Contrôle technique courant du **8 octobre 2026 à 02 h 03, heure de Bruxelles (Europe/Brussels, UTC+02:00)** : 25 sources identiques, archive/empreinte 4.1.2 et 243 tests joints au dossier ; retours humains conservés avec leur périmètre.
+
+Le retour adapté positif du 8 octobre reçoit les trois parcours ciblés demandés en 4.1.1. La version 4.1.2 conserve ces mécanismes et emploie le préfixe Raisonnement ; aucune heure plus précise n’est attribuée à ce retour humain.

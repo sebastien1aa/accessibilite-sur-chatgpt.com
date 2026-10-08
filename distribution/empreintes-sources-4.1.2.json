@@ -1,5 +1,5 @@
 {
-  "version": "4.1.1",
+  "version": "4.1.2",
   "algorithm": "SHA-256",
   "files": [
     {
@@ -36,7 +36,7 @@
     },
     {
       "file": "extension/manifest.json",
-      "sha256": "3ecbf260a15b44033aae83df144b44ea4a107baae92714684efbed0848e5e2fe"
+      "sha256": "35e37347915dd79aae25f0be8bd8d6d9dfa8d2657921cfc86da5f1a552b072a3"
     },
     {
       "file": "extension/message-action-focus.js",
@@ -44,7 +44,7 @@
     },
     {
       "file": "extension/model-accessibility.js",
-      "sha256": "85a30198fe05451f6061808f4b276df3329332fdade89c0f30645d740a5dd5bd"
+      "sha256": "8019f80bb4ba0aa604d0ac993161ba9aa4b2c2c5021d7558429f0b5ad7a7ee9f"
     },
     {
       "file": "extension/page-selection.js",

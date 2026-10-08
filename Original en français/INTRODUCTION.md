@@ -15,7 +15,7 @@ L’ordre correspond à l’impact et aux priorités de l’utilisateur. Chaque 
 3. [Navigation et focus](Point%203%20-%20Navigation%20et%20focus/RAPPORT.md) : actions des projets, barre latérale, pagination, fermetures de menus et panneaux, cas Explorer, menu Évaluer la réponse.
 4. [Sémantique et localisation](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) : descriptions de rôles, états de destinations, groupes redondants, premier passage dans un mode bloquant et commandes de projets en anglais.
 
-La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **4.1.1**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
+La [méthode](METHODE.md) explique les niveaux de preuve. L’[extension complète](../extension/manifest.json), version **4.1.2**, est le démonstrateur commun ; ses [instructions de chargement](DEMONSTRATEUR.md) permettent de comparer le comportement sans et avec adaptation.
 
 ## Chronologie et environnement
 

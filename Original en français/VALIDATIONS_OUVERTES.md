@@ -20,4 +20,8 @@ Les preuves techniques gardent leurs dates ; les transcriptions utilisateur priv
 
 Les observations JAWS du 8 octobre et les inspections natives établissent le rôle trompeur des références et le nom abrégé des cartes malgré leur contenu visible. Le [Point 4F](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) détaille le mécanisme et la comparaison avec le démonstrateur ; les noms calculés, la navigation et la fermeture sont contrôlés dans Chromium. Les contrôles techniques sont distingués de la réception vocale de chaque adaptation.
 
-Dernière réception humaine courante : **8 octobre à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00)**, sélecteur natif dans Edge sans extension. Le démonstrateur 4.1.1 intègre les reprises du raisonnement et de favicon ; leurs contrôles DOM/AX sont documentés séparément de la réception vocale à venir.
+Dernière réception humaine courante : **8 octobre à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00)**, sélecteur natif dans Edge sans extension. Le démonstrateur 4.1.2 intègre les reprises du raisonnement et de favicon ; leurs contrôles DOM/AX sont documentés séparément du retour vocal positif reçu ensuite le 8 octobre.
+
+## Parcours ciblés reçus le 8 octobre
+
+Le [retour positif](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-reception-adaptee.json) concerne les trois parcours adaptés demandés : sélecteur, aperçu et raisonnement GPT-6. La 4.1.2 conserve ces mécanismes et emploie désormais le préfixe Raisonnement. Les autres limites natives et demandes produit restent distinctes.

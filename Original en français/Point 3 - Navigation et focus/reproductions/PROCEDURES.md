@@ -71,7 +71,7 @@ Attendu : retour au bouton du même message à la fermeture effective. Le rempla
 1. Sur un document frais, atteindre Évaluer la réponse sous une réponse existante ; relever l’annonce de sa fonction, le rôle DOM et les propriétés accessibles du déclencheur.
 2. Ouvrir avec Espace sans choisir d’évaluation ; relever le panneau réellement ouvert et ses relations avec le bouton.
 3. Appuyer une fois sur Échap puis essayer Flèche bas ; relever fermeture, focus DOM et point de lecture.
-4. Comparer le rendu natif au démonstrateur 4.1.1 dans un document distinct. Vérifier les propriétés du bouton fermé puis ouvert, la relation au menu et la reprise au même message. Dater chaque résultat et distinguer le focus DOM de la position du curseur de lecture.
+4. Comparer le rendu natif au démonstrateur 4.1.2 dans un document distinct. Vérifier les propriétés du bouton fermé puis ouvert, la relation au menu et la reprise au même message. Dater chaque résultat et distinguer le focus DOM de la position du curseur de lecture.
 
 Retour natif du 7 octobre : « bouton », menu ouvert, un seul Échap ferme puis lecture au haut de la page. L’inspection native retrouve pourtant le bouton au focus DOM et situe ses propriétés de menu sur le SPAN parent. Attendu : fonction de menu identifiable sur le bouton activable et reprise au déclencheur du même message. L’ancien libellé Réagir est absent ; son signalement historique de deux Échap ne s’applique pas à ce contrôle courant.
 

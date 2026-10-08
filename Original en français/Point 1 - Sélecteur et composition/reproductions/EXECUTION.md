@@ -16,4 +16,4 @@ node --test "Original en français/Point 1 - Sélecteur et composition/reproduct
 
 Le DOM est simulé : ces tests ne reproduisent ni toute l’interface ChatGPT, ni la parole, ni le curseur PC virtuel de JAWS. Le cas du mode rapide de 1A est un constat produit reçu ; aucun traitement local ni test de correction de cette ambiguïté n’est revendiqué.
 
-Le [contrôle complémentaire du 8 octobre](../preuves/2026-10-08-selecteur-reception-edge.json) comprend 22 tests du sélecteur : préfixe Modèle ChatGPT, absence d’ajout d’un modèle non visible, formes natives, choix ambigus et restauration.
+Le [contrôle complémentaire du 8 octobre](../preuves/2026-10-08-selecteur-reception-edge.json) comprend 22 tests du sélecteur : préfixe Raisonnement, absence d’ajout d’un modèle non visible, formes natives, choix ambigus et restauration.
