@@ -32,6 +32,7 @@ These glosses explain the controls referenced in French evidence; they are not a
 | Afficher plus | Show more |
 | Épinglés / Projets / Récents / Accueil | Pinned / Projects / Recents / Home |
 | réduit / étendu / page courante | collapsed / expanded / current page |
+| coché / non coché | checked / not checked |
 
 ## Reading an evidence item
 
@@ -76,6 +77,6 @@ The demonstration extension's complete functionality includes personal choices o
 
 ## Check of the distributed evidence — 8 October 2026
 
-The nine Node test files supplied in Points 1, 2 and 4 pass **243 tests, zero failures**. Fixture pages isolate the stated mechanisms, with procedures and results documented in each Point. Local links and dependencies, JSON and script syntax have been checked. The extension's **25 files** match the supplied 4.1.2 archive and its source hashes exactly; the ZIP's SHA-256 hash accompanies it in `distribution/`.
+The nine Node test files supplied in Points 1 and 2 pass **243 tests, zero failures**. Fixture pages isolate the stated mechanisms, with procedures and results documented in each Point. Local links and dependencies, JSON and script syntax have been checked. The extension's **25 files** match the supplied 4.1.2 archive and its source hashes exactly; the ZIP's SHA-256 hash accompanies it in `distribution/`.
 
 The demonstration extension's consistency is verified through source and hash identity. Native observations rest on user feedback from 7 and 8 October and on DOM, accessibility and code measurements linked in each Point; earlier measurements retain their dates.

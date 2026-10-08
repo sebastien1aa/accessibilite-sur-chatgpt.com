@@ -16,4 +16,6 @@ node --test "English translation/Point 1 - Model selector and composer/reproduct
 
 The DOM is simulated: these tests reproduce neither the entire ChatGPT interface, nor speech, nor the JAWS virtual PC cursor. The fast-mode case in 1A is a product observation confirmed by user feedback; no local treatment or test correcting this ambiguity is claimed.
 
-The [additional check of October 8](../evidence/2026-10-08-selector-user-validation-edge.json) includes 22 selector tests: the Raisonnement prefix, no addition of a model that is not visible, native forms, ambiguous choices, and restoration.
+The [historical October 8 check in 4.1.1](../evidence/2026-10-08-selector-user-validation-edge.json) retains 22 passing tests and the adapted name « Modèle ChatGPT : Élevée », which predates the final prefix.
+
+The [22 selector tests currently supplied in 4.1.2](model-accessibility.test.cjs) cover the Raisonnement prefix, no addition of a model that is not visible, native forms, ambiguous choices, and restoration. The [human confirmation of 4.1.2](../evidence/2026-10-08-confirmation-4.1.2.json) validates the final « Raisonnement : » prefix and preservation of the native information.

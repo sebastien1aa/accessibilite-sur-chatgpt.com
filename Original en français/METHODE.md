@@ -51,6 +51,6 @@ Les fonctions complètes du démonstrateur incluent des choix personnels hors du
 
 ## Contrôle des pièces distribuées — 8 octobre 2026
 
-Les neuf fichiers de tests Node joints dans les Points 1, 2 et 4 passent **243 tests, zéro échec**. Les pages de fixtures isolent les mécanismes annoncés, avec leurs procédures et résultats documentés dans chaque Point. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **25 fichiers** de l’extension correspondent exactement à l’archive 4.1.2 jointe et à ses empreintes de sources, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
+Les neuf fichiers de tests Node joints dans les Points 1 et 2 passent **243 tests, zéro échec**. Les pages de fixtures isolent les mécanismes annoncés, avec leurs procédures et résultats documentés dans chaque Point. Les liens et dépendances locaux, JSON et syntaxes de scripts ont été contrôlés. Les **25 fichiers** de l’extension correspondent exactement à l’archive 4.1.2 jointe et à ses empreintes de sources, dont l’empreinte SHA-256 accompagne le ZIP dans `distribution/`.
 
 La cohérence du démonstrateur est vérifiée par identité des sources et des empreintes. Les constats natifs reposent sur les retours utilisateur des 7 et 8 octobre et sur les mesures DOM, d’accessibilité et de code liées dans chaque Point ; les mesures antérieures gardent leur date.
