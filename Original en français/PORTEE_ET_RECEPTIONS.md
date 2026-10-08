@@ -20,10 +20,14 @@ Les preuves techniques gardent leurs dates ; les transcriptions utilisateur priv
 
 Les observations JAWS du 8 octobre et les inspections natives établissent le rôle trompeur des références et le nom abrégé des cartes malgré leur contenu visible. Le [Point 2G](Point%202%20-%20Lecture%20et%20messages/RAPPORT.md) détaille le mécanisme et la comparaison avec le démonstrateur ; les noms calculés, la navigation et la fermeture sont contrôlés dans Chromium. Les contrôles techniques sont distingués de la réception vocale de chaque adaptation.
 
-Dernière réception humaine du site natif sans extension : **8 octobre à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00)**, sélecteur natif dans Edge sans extension. Le démonstrateur 4.1.2 intègre les reprises du raisonnement et de favicon ; leurs contrôles DOM/AX sont documentés séparément du retour vocal positif reçu ensuite le 8 octobre.
+Réception humaine du site natif sans extension : **8 octobre à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00)**, sélecteur natif dans Edge sans extension. Le démonstrateur 4.1.2 intègre les reprises du raisonnement et de favicon ; leurs contrôles DOM/AX sont documentés séparément du retour vocal positif reçu ensuite le 8 octobre.
 
 ## Parcours ciblés reçus le 8 octobre
 
 Le [retour positif](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-reception-adaptee.json) concerne les trois parcours adaptés demandés : sélecteur, aperçu et raisonnement GPT-6. La 4.1.2 conserve ces mécanismes et emploie désormais le préfixe Raisonnement. Les autres limites natives et demandes produit restent distinctes.
 
 La [confirmation de la version courante 4.1.2](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-confirmation-4.1.2.json) reçoit le préfixe Raisonnement. Les réceptions adaptées décrites ci-dessus sont acquises ; cette page précise la portée des constats natifs et des demandes produit, sans réserver ces parcours comme non validés.
+
+## Complément du menu GPT‑5.6 en mode Chat
+
+Le retour du 8 octobre ajoute le parcours à trois items et l’annonce redondante de « Rétablir la sélection par défaut ». L’item natif est retrouvé dans Edge et demeure identique dans Chrome avec adaptation. Le démonstrateur 4.1.2 ne traite pas ce doublon ; cette observation complète [1A](Point%201%20-%20Sélecteur%20et%20composition/RAPPORT.md) pour investigation côté produit.

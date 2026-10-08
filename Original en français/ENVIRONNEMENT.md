@@ -1,4 +1,4 @@
-**Dernière réception humaine du site natif sans extension : 8 octobre 2026 à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00).** Dans Edge sans extension, le sélecteur reste annoncé « Sélectionner le modèle ChatGPT » avec GPT-6 comme avec GPT-5.6 Sol. La [preuve datée](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-selecteur-reception-edge.json) conserve le périmètre de cette réception.
+**Réception humaine du site natif sans extension : 8 octobre 2026 à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00).** Dans Edge sans extension, le sélecteur reste annoncé « Sélectionner le modèle ChatGPT » avec GPT-6 comme avec GPT-5.6 Sol. La [preuve datée](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-selecteur-reception-edge.json) conserve le périmètre de cette réception.
 
 # Environnement et confirmations d’usage
 
@@ -32,3 +32,5 @@ Les différences entre libellés affichés, noms accessibles mesurés et informa
 Contrôle technique du **8 octobre 2026 à 02 h 03, heure de Bruxelles (Europe/Brussels, UTC+02:00)** : 25 sources identiques, archive/empreinte 4.1.2 et 243 tests joints au dossier ; retours humains conservés avec leur périmètre.
 
 Le retour adapté positif du 8 octobre reçoit les trois parcours ciblés demandés en 4.1.1. La version 4.1.2 conserve ces mécanismes et emploie le préfixe Raisonnement. Le [retour adapté ultérieur du 8 octobre](Point%201%20-%20Sélecteur%20et%20composition/preuves/2026-10-08-confirmation-4.1.2.json) confirme « c’est OK » pour cette version ; aucune heure plus précise n’est attribuée à ces retours adaptés.
+
+Complément utilisateur du **8 octobre 2026**, heure de Bruxelles (date seule) : avec GPT‑5.6 en mode Chat, le menu comporte trois items et « Rétablir la sélection par défaut » est annoncé deux fois. La [comparaison native/adaptée](Point%201%20-%20Sélecteur%20et%20composition/preuves/1A-gpt56-retablissement-2026-10-08.json) confirme la commande supplémentaire ; le démonstrateur ne traite pas sa répétition.

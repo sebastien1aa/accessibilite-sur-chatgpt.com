@@ -1,0 +1,47 @@
+{
+  "nature": "Retour JAWS utilisateur et comparaison DOM native/adaptée du menu de modèle",
+  "date": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "human": {
+    "mode": "Chat",
+    "model": "GPT-5.6",
+    "language": "français",
+    "scope": "L’item supplémentaire apparaît quel que soit le niveau de raisonnement selon le retour utilisateur",
+    "announcements": [
+      "Sélectionner le modèle, 1 sur 3",
+      "Rétablir la sélection par défaut, 2 sur 3. Rétablir la sélection par défaut",
+      "Puissance, 3 sur 3. Arrow left Arrow right"
+    ]
+  },
+  "nativeInspection": {
+    "browser": "Edge",
+    "extensionAdaptation": false,
+    "selectedRadio": "GPT-5.6 Sol",
+    "status": "Élevée, 3 sur 5.",
+    "menuItems": [
+      "Sélectionner le modèle",
+      "Rétablir la sélection par défaut",
+      "Puissance"
+    ],
+    "resetItem": {
+      "tag": "DIV",
+      "role": "menuitem",
+      "ariaLabel": "Rétablir la sélection par défaut",
+      "textContent": "",
+      "dataState": "closed",
+      "tabindex": "-1",
+      "classMarker": "ResetToDefault-niy99b"
+    }
+  },
+  "adaptedInspection": {
+    "browser": "Chrome",
+    "extensionAdaptation": true,
+    "sameResetItemAttributes": true
+  },
+  "demonstrator": {
+    "version": "4.1.2",
+    "resetAnnouncementDuplicateHandled": false,
+    "module": "../../../extension/model-accessibility.js"
+  },
+  "interpretation": "L’inspection confirme la commande supplémentaire native et sa présence inchangée avec adaptation. La répétition vocale est le retour JAWS fourni par l’utilisateur ; elle n’est pas déduite du seul aria-label. Ce cas est soumis aux équipes avec le reste de 1A, sans correctif du démonstrateur revendiqué."
+}

@@ -25,3 +25,7 @@ La [réception humaine du 7 octobre](reception-native-2026-10-07.json) reçoit s
 ## Complément du 8 octobre — légende du sélecteur
 
 Le DOM inspecté contient `data-selected-reasoning-effort=high`. La légende visible est Élevée, tandis que les props natives du bouton conservent `aria-label=Sélectionner le modèle ChatGPT`. Les métadonnées de présentation du choix ont `labels.effort=Élevée`, `labels.model=null` et `labels.triggerPrefix=null` : le modèle absent de cette légende relève du rendu natif. La [réception Edge sans extension à 01 h 55](2026-10-08-selecteur-reception-edge.json), heure de Bruxelles, confirme le nom générique pour les deux modèles essayés. Le contournement conserve la portée du texte visible et adapte son préfixe.
+
+## Complément du 8 octobre — rétablissement dans le menu GPT‑5.6
+
+Le [relevé natif/adapté et le retour JAWS](1A-gpt56-retablissement-2026-10-08.json) décrivent les trois items du mode Chat lorsque GPT‑5.6 est sélectionné. Le contrôle supplémentaire est un DIV de rôle menuitem portant aria-label « Rétablir la sélection par défaut » et la classe ResetToDefault-niy99b ; son contenu textuel est vide. La comparaison Edge/Chrome retrouve les mêmes attributs. Le module fourni adapte le sélecteur et ses niveaux, mais ne supprime pas la répétition vocale de cette commande. La présence de l’item et la double annonce sont deux sources de preuve distinctes.

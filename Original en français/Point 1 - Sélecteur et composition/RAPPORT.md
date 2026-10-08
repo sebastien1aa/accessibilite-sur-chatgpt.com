@@ -14,7 +14,7 @@ Les [conditions et versions](../ENVIRONNEMENT.md) sont communes. Les [procédure
 
 ### Obstacle et conséquence
 
-Le 7 octobre, JAWS annonce toujours **« Sélectionner le modèle ChatGPT »**, sans le choix courant, après fermeture par Échap et quel que soit le niveau sélectionné, dans Chat comme dans Work. Espace ou Entrée ouvre le sélecteur. Dans Chat, les flèches haut/bas parcourent « Sélectionner le modèle. 1 sur 2 », puis « Puissance. 2 sur 2. Arrow left arrow right ». Sur Puissance, gauche/droite annonce successivement **« Instant », « Medium », « High », « Extra high », « Pro »** : ces annonces reçues sont anglaises dans une interface française. Elles sont distinctes du relevé DOM/AX français décrit plus bas.
+Le 7 octobre, JAWS annonce toujours **« Sélectionner le modèle ChatGPT »**, sans le choix courant, après fermeture par Échap et quel que soit le niveau sélectionné, dans Chat comme dans Work. Espace ou Entrée ouvre le sélecteur. Dans le parcours Chat du 7 octobre, les flèches haut/bas parcourent « Sélectionner le modèle. 1 sur 2 », puis « Puissance. 2 sur 2. Arrow left arrow right ». Sur Puissance, gauche/droite annonce successivement **« Instant », « Medium », « High », « Extra high », « Pro »** : ces annonces reçues sont anglaises dans une interface française. Elles sont distinctes du relevé DOM/AX français décrit plus bas.
 
 Dans Work, le parcours reçu comporte « Sélectionner le modèle. 1 sur 4 », puis, mode rapide désactivé, « Activer le mode rapide non coché. 2 sur 4 ». Mode rapide activé, JAWS annonce **« Activer le mode standard coché. 2 sur 4 »** : le libellé désigne une action future tandis que « coché » peut faire comprendre à tort que le mode standard est déjà actif. « Rétablir la sélection par défaut. 3 sur 4 » est aussi annoncé. Les niveaux Work sont français ; leur orthographe native est donnée ci-dessous. L’ambiguïté de l’état du mode rapide est une observation produit reçue, sans nouveau correctif local revendiqué.
 
@@ -27,6 +27,20 @@ Le contrôle natif identifié porte `data-codex-intelligence-trigger` et la cibl
 La [réception native dans Edge sans extension du 8 octobre à 01 h 55](preuves/2026-10-08-selecteur-reception-edge.json), heure de Bruxelles (UTC+02:00), confirme « Sélectionner le modèle ChatGPT » quel que soit le modèle, notamment GPT-6 ou GPT-5.6 Sol. La légende visible de GPT-6 est seulement « Élevée » dans le rendu inspecté ; son nom n’y est pas affiché. Le démonstrateur 4.1.2 expose « Raisonnement : Élevée » et conserve un modèle seulement lorsqu’il figure déjà dans la légende visible. Il n’ajoute pas une identité cachée. Le nom générique natif, qui n’annonce même pas le niveau visible, reste le défaut signalé. Le [retour « c’est OK » sur la 4.1.2](preuves/2026-10-08-confirmation-4.1.2.json) confirme le préfixe Raisonnement et la conservation des informations visibles.
 
 Module : [model-accessibility.js](../../extension/model-accessibility.js), fonctions `selectedModel`, `exposedLabel` et `update`. La [preuve synthétisée](preuves/constats-et-receptions.json) distingue le signalement, la mesure et la réception. Les [tests reproductibles](reproductions/EXECUTION.md) couvrent notamment les choix contradictoires, la langue, la préservation des réglages et l’arrivée tardive du contrôle.
+
+### Ligne supplémentaire avec GPT‑5.6 en mode Chat
+
+Le **8 octobre 2026**, l’utilisateur relève le parcours suivant, quel que soit le niveau de raisonnement choisi :
+
+~~~text
+Sélectionner le modèle, 1 sur 3
+Rétablir la sélection par défaut, 2 sur 3. Rétablir la sélection par défaut
+Puissance, 3 sur 3. Arrow left Arrow right
+~~~
+
+Par rapport au parcours Chat à deux items décrit dans le retour du 7 octobre, le menu GPT‑5.6 comporte donc une commande supplémentaire, dont le nom est annoncé deux fois dans ce retour JAWS. La [comparaison du 8 octobre](preuves/1A-gpt56-retablissement-2026-10-08.json) retrouve nativement les trois items dans Edge et le même contrôle dans Chrome avec adaptation : DIV de rôle menuitem, aria-label « Rétablir la sélection par défaut », sans texte de contenu. L’item supplémentaire est un fait de structure ; sa répétition vocale provient du retour utilisateur.
+
+**Le démonstrateur 4.1.2 ne traite pas ce doublon d’annonce.** Il est inclus dans 1A pour investigation par les équipes d’OpenAI avec les autres difficultés du sélecteur. Le résultat attendu est une seule annonce utile de cette commande, en conservant sa fonction de rétablissement.
 
 ### Traduction des niveaux, dans le même sous-point
 
@@ -64,7 +78,7 @@ Trois faits ont été reliés au rendu réel du 3 octobre :
 - Le plugin natif de suggestions ferme par une transaction `dismiss` quand l’éditeur perd le focus ; sa garde de maintien ne couvrait pas ce transfert vers les boutons d’ajout.
 - Un écouteur clavier en capture sur `window` choisit l’action selon un index surligné, qui peut différer du bouton effectivement focalisé.
 
-La note de [mécanismes et localisation du code](preuves/mecanismes-natifs.md) relie ces chemins aux modules `tfV`, `UPl.k` et `VCs.a`. Une sonde minimale a permis à **Entrée** de sélectionner réellement Recherche approfondie dans Chrome . Cela démontre cette activation précise, pas l’ensemble des actions de fichiers et plugins.
+La note de [mécanismes et localisation du code](preuves/mecanismes-natifs.md) relie ces chemins aux modules `tfV`, `UPl.k` et `VCs.a`. Une sonde minimale a permis à **Entrée** de sélectionner réellement Recherche approfondie dans Chrome. Cela démontre cette activation précise, pas l’ensemble des actions de fichiers et plugins.
 
 Le `aria-current=true` natif observé sur Ajouter des photos et fichiers explique l’information d’item « actuel » ; il n’est pas un état de surlignage ajouté par l’extension. Son retrait local est ciblé et réversible.
 

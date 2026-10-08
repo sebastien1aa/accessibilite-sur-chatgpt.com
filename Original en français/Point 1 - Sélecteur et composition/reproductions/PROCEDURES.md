@@ -10,7 +10,10 @@ Ces parcours concernent le site natif, extension désactivée. L’[environnemen
 2. Comparer son nom accessible avec la légende affichée. Ouvrir avec Espace ou Entrée.
 3. Dans Chat, atteindre Puissance avec les flèches haut/bas, puis parcourir les niveaux avec gauche/droite. Comparer les annonces, la langue des niveaux et les légendes.
 4. Dans Work, comparer de même les niveaux. Examiner séparément le libellé et l’état coché de la commande de mode rapide, avant et après sa bascule.
-5. Fermer avec Échap et relire le sélecteur.
+5. Sélectionner séparément GPT‑5.6 en mode Chat : parcourir les trois items. Comparer la répétition « Rétablir la sélection par défaut, 2 sur 3. Rétablir la sélection par défaut » avec une annonce unique de commande. Reprendre à un autre niveau de raisonnement.
+6. Fermer avec Échap et relire le sélecteur.
+
+**Constat complémentaire GPT‑5.6 :** la commande de rétablissement ajoute un deuxième item, annoncé deux fois dans le retour JAWS du 8 octobre ; le démonstrateur fourni ne traite pas ce doublon. La [preuve](../preuves/1A-gpt56-retablissement-2026-10-08.json) distingue l’inspection et le retour vocal.
 
 **Constat :** le nom fermé reste « Sélectionner le modèle ChatGPT » malgré une légende informative. Le retour JAWS décrit des niveaux anglais en Chat et une ambiguïté « Activer le mode standard coché » lorsque le mode rapide est actif. Les écarts entre légendes et statuts français sont détaillés dans le rapport.
 
