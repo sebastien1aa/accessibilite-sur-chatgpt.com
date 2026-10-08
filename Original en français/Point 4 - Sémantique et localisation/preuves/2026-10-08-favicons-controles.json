@@ -1,0 +1,127 @@
+{
+  "dateLocal": "2026-10-08",
+  "timezone": "Europe/Brussels",
+  "version": "4.1.1",
+  "nature": "Image décorative de favicon et contrôles de restauration ciblée",
+  "node": {
+    "passed": 18,
+    "failed": 0
+  },
+  "chromium": {
+    "scenarios": [
+      {
+        "label": "état courant stabilisé",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "arrêt",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "reprise",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "anglais",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "français",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "carte vide",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "contenu rétabli",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "ID ambigu",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      },
+      {
+        "label": "ID unique",
+        "checks": 17,
+        "failures": [],
+        "counters": {
+          "keys": 3,
+          "navigation": 3,
+          "ordinary": 0,
+          "preview": 3
+        }
+      }
+    ],
+    "scenarioCount": 9,
+    "failedChecks": 0
+  },
+  "actualCard": {
+    "name": "Codex Reset Codex Radar: Reset, Limits & Service Signals Total lines: 277",
+    "faviconAlt": "",
+    "role": "link",
+    "visibleLines": [
+      "Codex Reset",
+      "Codex Radar: Reset, Limits & Service Signals",
+      "Total lines: 277"
+    ],
+    "escapePreserved": true
+  },
+  "physicalReceiptOfNewCorrection": false
+}

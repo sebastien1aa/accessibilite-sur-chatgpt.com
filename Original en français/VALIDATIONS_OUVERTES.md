@@ -19,3 +19,5 @@ Les preuves techniques gardent leurs dates ; les transcriptions utilisateur priv
 ## Aperçus de sources
 
 Les observations JAWS du 8 octobre et les inspections natives établissent le rôle trompeur des références et le nom abrégé des cartes malgré leur contenu visible. Le [Point 4F](Point%204%20-%20Sémantique%20et%20localisation/RAPPORT.md) détaille le mécanisme et la comparaison avec le démonstrateur ; les noms calculés, la navigation et la fermeture sont contrôlés dans Chromium. Les contrôles techniques sont distingués de la réception vocale de chaque adaptation.
+
+Dernière réception humaine courante : **8 octobre à 01 h 55, heure de Bruxelles (Europe/Brussels, UTC+02:00)**, sélecteur natif dans Edge sans extension. Le démonstrateur 4.1.1 intègre les reprises du raisonnement et de favicon ; leurs contrôles DOM/AX sont documentés séparément de la réception vocale à venir.

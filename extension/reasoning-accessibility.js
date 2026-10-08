@@ -3,7 +3,7 @@
  * read, cloned, logged or stored. React properties are read only. */
 (() => {
   "use strict";
-  const marker = Symbol.for("chatgpt-navigation-continue.reasoning-accessibility.v7");
+  const marker = Symbol.for("chatgpt-navigation-continue.reasoning-accessibility.v8");
   const currentMarker = Symbol.for("chatgpt-navigation-continue.reasoning-accessibility.current");
   if (window[marker]?.active) return;
   window[currentMarker]?.stop?.();
@@ -20,6 +20,7 @@
   const attributes = new WeakMap();
   const controls = new WeakMap();
   const labels = new WeakMap();
+  const pendingGroups = new WeakMap();
   let watched = new WeakSet();
   let queued = new WeakSet();
   let dirty = [];
@@ -87,6 +88,7 @@
       let defaultMissing = false;
       let groupContract = null;
       const regionalPhases = new Set();
+      let activitySeen = false;
       let reasoningSeen = false;
       const phases = new Set();
       for (let depth = 0; fiber && depth < 40; depth++, fiber = fiber.return) {
@@ -115,6 +117,8 @@
               missing: !Object.hasOwn(props, "defaultExpanded") });
           }
           if (!Array.isArray(props?.items) || props.items.length > 1000) continue;
+          if (props.items.length && typeof props.completed === "boolean" &&
+              typeof props.hasFinalAssistantStarted === "boolean") activitySeen = true;
           // The only item field examined is its native activity type enum.
           const reasoning = props.items.some(item => item?.type === "reasoning");
           // Filtered tool/web-only item lists do not describe a reflection's
@@ -134,9 +138,13 @@
           for (const candidate of disclosureCandidates) if (candidate.mode) regionalPhases.add(candidate.mode);
         }
       }
-      if (!principalGroup || !reasoningSeen) return "invalid";
-      if (groupContract === "regional") return regionalPhases.size === 1 ? [...regionalPhases][0] : "unknown";
-      if (groupContract !== "legacy") return "invalid";
+      if (!principalGroup) return "invalid";
+      // An activity region may start with web-search or assistant-message
+      // items before any reasoning item exists. Its complete local contract
+      // and a committed activity context qualify it throughout that interval.
+      if (groupContract === "regional") return !activitySeen ? "invalid" :
+        regionalPhases.size === 1 ? [...regionalPhases][0] : "unknown";
+      if (groupContract !== "legacy" || !reasoningSeen) return "invalid";
       if (phases.has("finished")) return "finished";
       if (defaultMissing) return "invalid";
       if (phases.has("active")) return "active";
@@ -193,6 +201,7 @@
   }
 
   function cleanupTurn(state) {
+    clearPendingGroups(state);
     state.heading?.remove();
     state.heading = null;
     for (const ref of state.duplicates) {
@@ -201,6 +210,22 @@
     }
     state.duplicates.clear();
     for (const [ref, groupState] of state.groups) { cleanupGroup(groupState); state.groups.delete(ref); }
+  }
+
+  function clearPendingGroups(state) {
+    for (const ref of state.pendingGroups) {
+      const group = ref.deref();
+      if (group && pendingGroups.get(group) === state) pendingGroups.delete(group);
+    }
+    state.pendingGroups.clear();
+  }
+
+  function pendingTurn(target) {
+    for (let parent = target, depth = 0; parent && depth < 512; parent = parent.parentElement, depth++) {
+      if (pendingGroups.has(parent)) return parent.closest(turnSelector);
+      if (parent.matches(turnSelector)) break;
+    }
+    return null;
   }
 
   function nativeHeading(node) {
@@ -290,10 +315,11 @@
       return;
     }
     if (!state) {
-      state = { heading: null, duplicates: new Set(), groups: new Map() };
+      state = { heading: null, duplicates: new Set(), groups: new Map(), pendingGroups: new Set() };
       states.set(turn, state);
       tracked.add(new WeakRef(turn));
     }
+    clearPendingGroups(state);
     watched.add(turn);
     watched.add(anchor.parentElement);
     updateHeading(turn, anchor, state);
@@ -307,7 +333,14 @@
         entry[1].group === parts.group && entry[1].anchor === anchor;
       let phase = reflectionPhase(header);
       if (phase === "unknown" && same) phase = entry[1].mode;
-      if (phase === "unknown" || phase === "invalid") continue;
+      if (phase === "unknown" || phase === "invalid") {
+        // React can attach props or populate activity items without changing
+        // this header. Retry only this unacquired native group when its own
+        // descendants mutate; never read their text or poll the whole turn.
+        pendingGroups.set(parts.group, state);
+        state.pendingGroups.add(new WeakRef(parts.group));
+        continue;
+      }
       const legacyWidgets = [...header.querySelectorAll(`[${ownedAttribute}="caption"]`), ...parts.group.querySelectorAll(`[${ownedAttribute}="summary"]`)];
       if (phase === "active" && legacyWidgets.length) {
         // v1 qualifies groups through the actual aria-labelledby attribute.
@@ -450,6 +483,8 @@
     for (const record of records) {
       if (owned(record.target)) continue;
       const target = record.target.nodeType === 1 ? record.target : record.target.parentElement;
+      const pending = pendingTurn(target);
+      if (pending) turns.add(pending);
       if (record.type !== "childList") {
         // A new control may commit before its props/reference are ready. The
         // next relevant native attribute can qualify it in this microtask.
@@ -527,7 +562,7 @@
   };
   const events = ["click", "focusin", "change"];
   for (const event of events) document.addEventListener(event, nativeEvent, true);
-  const api = { version: 7, active: true, stop() {
+  const api = { version: 8, active: true, stop() {
     if (stopped) return;
     stopped = true;
     api.active = false;

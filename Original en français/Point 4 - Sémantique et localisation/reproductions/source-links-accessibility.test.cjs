@@ -4,8 +4,8 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const source = fs.readFileSync(path.join(__dirname, '../../../extension/source-links-accessibility.js'), 'utf8');
-const marker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v2');
-const previousMarker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v1');
+const marker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v3');
+const previousMarker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v2');
 
 // Small DOM double for ownership, native callback preservation and scheduling.
 // It does not model browser accessibility trees or JAWS reception.
@@ -176,16 +176,109 @@ test('dialog names provided by native DOM or props are preserved; foreign late n
   }
   const e = environment(), f = citation(e, { expanded: true }); e.run(); f.dialog.setAttribute('aria-label', 'Nom natif ultérieur'); e.settle(); e.api().stop(); assert.equal(f.dialog.getAttribute('aria-label'), 'Nom natif ultérieur');
 });
-test('v2 stops the previous adapter before applying content-based names and does not stack itself', () => {
+test('v3 stops v2 before adapting favicons and does not stack itself', () => {
   const e = environment(), f = citation(e, { expanded: true }); let oldStops = 0;
+  const image = f.card.querySelector('[data-d-component="favicon"] img'); image.removeAttribute('alt');
   f.trigger.setAttribute('role', 'link'); f.card.setAttribute('role', 'link'); f.card.setAttribute('aria-label', 'Ouvrir Exemple');
   const oldFrame = 99; e.frames.set(oldFrame, () => { throw new Error('Previous adapter frame survived'); });
   const oldObserver = { active: true, options: { attributeFilter: [] }, callback() {} }; e.observers.push(oldObserver);
   e.window[previousMarker] = { active: true, stop() {
+    assert.equal(image.getAttribute('alt'), null);
     oldStops++; this.active = false; oldObserver.active = false; e.frames.delete(oldFrame);
     f.trigger.setAttribute('role', 'button'); f.card.removeAttribute('role'); f.card.setAttribute('aria-label', 'Open Exemple');
   } };
   e.run(); e.run(); assert.equal(oldStops, 1); assert.equal(e.window[previousMarker].active, false); assert.equal(e.observers.filter(o => o.active).length, 1);
-  assert.equal(e.api().version, 2); assert.equal(f.card.getAttribute('aria-label'), null); assert.equal(f.card.getAttribute('role'), 'link');
-  e.api().stop(); assert.equal(f.card.getAttribute('aria-label'), 'Open Exemple');
+  assert.equal(e.api().version, 3); assert.equal(f.card.getAttribute('aria-label'), null); assert.equal(f.card.getAttribute('role'), 'link');
+  assert.equal(image.getAttribute('alt'), '');
+  e.api().stop(); assert.equal(f.card.getAttribute('aria-label'), 'Open Exemple'); assert.equal(image.getAttribute('alt'), null);
+});
+
+test('v3 also stops an older v1 adapter when v2 is absent', () => {
+  const e = environment(); let stops = 0;
+  e.window[Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v1')] = { stop() { stops++; } };
+  e.run(); e.run(); assert.equal(stops, 1); assert.equal(e.api().version, 3);
+});
+
+test('only missing alternatives in recognized source favicons become decorative', () => {
+  // Shape from docs/preuves/2026-10-08-retour-jaws-apercu-4.1.0.json:
+  // the presentation wrapper has an IMG without alt; thumbnail already has alt="".
+  const e = environment(), f = citation(e, { expanded: true });
+  const triggerImage = f.trigger.querySelector('[data-d-component="favicon"] img');
+  const cardImage = f.card.querySelector('[data-d-component="favicon"] img');
+  for (const image of [triggerImage, cardImage]) {
+    image.removeAttribute('alt'); image.setAttribute('src', '/s2/favicons');
+    image.parentElement.setAttribute('role', 'presentation');
+  }
+  const thumbnail = e.element('img', { alt: '' }), ordinary = e.element('img', { src: '/photo.png' });
+  const outside = e.element('div', { 'data-d-component': 'favicon' }).append(e.element('img'));
+  f.card.append(thumbnail, ordinary); e.body.append(outside);
+  const text = f.card.textContent, children = [...f.card.children];
+  e.run();
+  for (const image of [triggerImage, cardImage]) {
+    assert.equal(image.getAttribute('alt'), ''); assert.equal(image.getAttribute('role'), null);
+    assert.equal(image.getAttribute('aria-hidden'), null); assert.equal(image.getAttribute('src'), '/s2/favicons');
+  }
+  assert.equal(ordinary.getAttribute('alt'), null); assert.equal(outside.children[0].getAttribute('alt'), null);
+  assert.equal(thumbnail.getAttribute('alt'), ''); assert.equal(f.card.textContent, text); assert.deepEqual(f.card.children, children);
+  e.api().stop(); assert.equal(triggerImage.getAttribute('alt'), null); assert.equal(cardImage.getAttribute('alt'), null); assert.equal(thumbnail.getAttribute('alt'), '');
+});
+
+test('meaningful image attributes and React alternatives remain native', () => {
+  for (const name of ['alt', 'title', 'aria-label', 'aria-labelledby', 'aria-describedby', 'role', 'tabindex']) {
+    for (const viaProps of [false, true]) {
+      const e = environment(), f = citation(e, { expanded: true });
+      const image = f.card.querySelector('[data-d-component="favicon"] img'); image.removeAttribute('alt');
+      const value = name === 'role' ? 'img' : name === 'tabindex' ? '0' : 'Description native';
+      if (viaProps) image.__reactProps$fixture = { [name === 'tabindex' ? 'tabIndex' : name]: value };
+      else image.setAttribute(name, value);
+      e.run(); assert.equal(image.getAttribute('alt'), !viaProps && name === 'alt' ? value : null);
+      e.api().stop(); assert.equal(image.getAttribute('alt'), !viaProps && name === 'alt' ? value : null);
+    }
+  }
+});
+
+test('favicons in rejected hosts stay native and late source images are discovered', () => {
+  const e = environment(), rejected = citation(e, { expanded: true });
+  rejected.trigger.removeAttribute('data-d-inline');
+  const rejectedImage = rejected.card.querySelector('[data-d-component="favicon"] img'); rejectedImage.removeAttribute('alt');
+  const f = citation(e, { expanded: true, serial: 'late' }); e.run();
+  assert.equal(rejectedImage.getAttribute('alt'), null);
+  for (const host of [f.trigger, f.card]) {
+    const wrapper = host.querySelector('[data-d-component="favicon"]');
+    const image = e.element('img', { src: '/s2/favicons' }); wrapper.append(image); e.settle();
+    assert.equal(image.getAttribute('alt'), '');
+  }
+});
+
+test('language, removed source scope, and stop restore owned missing alt', () => {
+  for (const action of ['language', 'scope', 'detach', 'stop']) {
+    const e = environment(), f = citation(e, { expanded: true });
+    const image = f.card.querySelector('[data-d-component="favicon"] img'); image.removeAttribute('alt');
+    e.run(); assert.equal(image.getAttribute('alt'), '');
+    if (action === 'language') e.html.setAttribute('lang', 'en');
+    if (action === 'scope') f.trigger.setAttribute('aria-expanded', 'false');
+    if (action === 'detach') image.remove();
+    if (action === 'stop') e.api().stop(); else e.settle();
+    assert.equal(image.getAttribute('alt'), null);
+  }
+});
+
+test('late native image alternatives and foreign writes supersede owned alt', () => {
+  for (const name of ['alt', 'title', 'aria-label', 'role']) {
+    const e = environment(), f = citation(e, { expanded: true });
+    const image = f.card.querySelector('[data-d-component="favicon"] img'); image.removeAttribute('alt'); image.__reactProps$fixture = {};
+    e.run(); assert.equal(image.getAttribute('alt'), '');
+    const value = name === 'role' ? 'img' : 'Description ultérieure';
+    image.__reactProps$fixture = { [name]: value };
+    // The native property must win even if stop precedes the next observer frame.
+    if (name === 'alt') { e.api().stop(); assert.equal(image.getAttribute('alt'), value); }
+    else { image.setAttribute(name, value); e.settle(); assert.equal(image.getAttribute('alt'), null); e.api().stop(); assert.equal(image.getAttribute(name), value); }
+  }
+  const e = environment(), f = citation(e, { expanded: true });
+  const image = f.card.querySelector('[data-d-component="favicon"] img'); image.removeAttribute('alt'); e.run();
+  image.setAttribute('alt', 'Nom écrit par le site'); e.settle(); e.api().stop(); assert.equal(image.getAttribute('alt'), 'Nom écrit par le site');
+  const removed = environment(), other = citation(removed, { expanded: true });
+  const otherImage = other.card.querySelector('[data-d-component="favicon"] img'); otherImage.removeAttribute('alt'); removed.run();
+  otherImage.removeAttribute('alt'); removed.settle(); other.card.setAttribute('title', 'Mutation ultérieure'); removed.settle();
+  assert.equal(otherImage.getAttribute('alt'), null); removed.api().stop(); assert.equal(otherImage.getAttribute('alt'), null);
 });

@@ -2,7 +2,7 @@
  * only; no model choice, conversation content, or native handler is changed. */
 (() => {
   "use strict";
-  const marker = Symbol.for("chatgpt-navigation-continue.model-labels.v3");
+  const marker = Symbol.for("chatgpt-navigation-continue.model-labels.v4");
   const currentMarker = Symbol.for("chatgpt-navigation-continue.model-labels.current");
   if (window[marker]?.active) return;
   window[currentMarker]?.stop?.();
@@ -10,6 +10,7 @@
   const controlSelector = `${triggerSelector}, [data-reasoning-slider], [data-model-picker-view-toggle]`;
   const baseName = "Sélectionner le modèle ChatGPT";
   const reasoningName = "Niveau de raisonnement";
+  const choiceName = "Modèle ChatGPT";
   const labels = new Map([
     ["Instant", "Instantané"], ["Minimal", "Minimal"], ["Medium", "Moyenne"], ["High", "Élevée"],
     ["Extra High", "Très élevé"], ["Pro", "Pro"],
@@ -176,16 +177,16 @@
         const previous = changes.get(control)?.get("aria-label");
         let choice = null;
         if (selected && level) {
-          if (level === "Pro") {
-            choice = /\bPro$/i.test(selected.modelLabel) ? selected.modelLabel : `${selected.modelLabel} Pro`;
-          } else {
-            // Chat exposes an effort preset, not its underlying internal model.
-            // Keep a model name only when the native visible caption includes it.
-            choice = exposed && exposed.includes(selected.modelLabel) && !labels.has(exposed) ? exposed : level;
-            const captionLevel = labels.get(selected.sliderLabel);
-            if (captionLevel && captionLevel !== level && choice.endsWith(` ${captionLevel}`)) {
-              choice = choice.slice(0, -captionLevel.length) + level;
-            }
+          // Keep a model only when its native visible caption includes it.
+          // GPT-6 and Pro can expose just a preset caption; do not supplement
+          // it with a model identity that sighted users cannot see here.
+          // A visible model caption can abbreviate the public modelLabel
+          // (e.g. 5.6 versus GPT-5.6 Sol). Preserve that caption verbatim,
+          // instead of requiring it to repeat the internal public label.
+          choice = exposed && exposed !== "Effort de réflexion" && exposed.length <= 200 && !labels.has(exposed) ? exposed : level;
+          const captionLevel = labels.get(selected.sliderLabel);
+          if (captionLevel && captionLevel !== level && choice.endsWith(` ${captionLevel}`)) {
+            choice = choice.slice(0, -captionLevel.length) + level;
           }
         } else if (exposed && exposed !== "Effort de réflexion" &&
                    exposed.length <= 200 && control.getAttribute("aria-expanded") !== "true") {
@@ -193,7 +194,7 @@
         }
         const legacy = window[Symbol.for("chatgpt-navigation-continue.model-labels.v1")] && name?.startsWith(`${baseName} : `);
         if (choice && (name === baseName || name === previous?.applied || name?.startsWith(`${reasoningName} : `) || legacy)) {
-          replace(control, "aria-label", `${reasoningName} : ${choice}`);
+          replace(control, "aria-label", `${choiceName} : ${choice}`);
         } else restore(control, "aria-label");
       } else if (control.hasAttribute("data-model-picker-view-toggle")) {
         translateText(control);
@@ -237,7 +238,7 @@
   };
   const events = ["focusin", "click", "change"];
   for (const event of events) document.addEventListener(event, nativeEvent, true);
-  const api = { version: 3, active: true, stop() {
+  const api = { version: 4, active: true, stop() {
     if (stopped) return;
     stopped = true; api.active = false; pending = false;
     observer.disconnect();

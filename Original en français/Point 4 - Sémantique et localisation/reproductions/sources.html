@@ -19,18 +19,18 @@
   <h2>Réponse synthétique avec sources</h2>
   <article data-turn-key="synthetic-single">
     <p>Exemple avec une source :
-      <span id="single" data-d-component="popover-trigger" data-d-inline data-d-inline-text role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="single-preview"><span data-d-component="badge"><span data-d-component="favicon"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='navy'/%3E%3C/svg%3E"></span> Exemple A</span></span>.
+      <span id="single" data-d-component="popover-trigger" data-d-inline data-d-inline-text role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="single-preview"><span data-d-component="badge"><span data-d-component="favicon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='navy'/%3E%3C/svg%3E"></span> Exemple A</span></span>.
     </p>
   </article>
   <article data-turn-key="synthetic-group">
     <p>Exemple avec plusieurs sources :
-      <span id="group" data-d-component="popover-trigger" data-d-inline data-d-inline-text role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="group-preview"><span data-d-component="badge"><span data-d-component="favicon"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='navy'/%3E%3C/svg%3E"></span> Exemple B +1</span></span>.
+      <span id="group" data-d-component="popover-trigger" data-d-inline data-d-inline-text role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="group-preview"><span data-d-component="badge"><span data-d-component="favicon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='navy'/%3E%3C/svg%3E"></span> Exemple B +1</span></span>.
     </p>
   </article>
   <h2>Contrôles hors périmètre</h2>
   <button id="ordinary" type="button" data-d-component="pressable" aria-label="Open Commande ordinaire">Commande ordinaire</button>
   <span id="no-favicon" role="button" tabindex="0" data-d-component="popover-trigger" data-d-inline data-d-inline-text aria-haspopup="dialog" aria-expanded="false"><span data-d-component="badge">Popover sans favicon</span></span>
-  <article data-turn-key="synthetic-nested"><span id="nested" role="button" tabindex="0" data-d-component="popover-trigger" data-d-inline data-d-inline-text aria-haspopup="dialog" aria-expanded="false"><span data-d-component="badge"><span data-d-component="favicon"><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"></span>Source contenant une commande</span><button type="button">Commande imbriquée</button></span></article>
+  <article data-turn-key="synthetic-nested"><span id="nested" role="button" tabindex="0" data-d-component="popover-trigger" data-d-inline data-d-inline-text aria-haspopup="dialog" aria-expanded="false"><span data-d-component="badge"><span data-d-component="favicon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"></span>Source contenant une commande</span><button type="button">Commande imbriquée</button></span></article>
 </main>
 <h2>Résultats locaux</h2>
 <p id="counts" role="status">Navigations simulées : 0. Aperçus : 0. Touches natives : 0.</p>
@@ -38,7 +38,7 @@
 <script>
 (() => {
   'use strict';
-  const marker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v2');
+  const marker = Symbol.for('chatgpt-navigation-continue.source-links-accessibility.v3');
   const ids = ['single', 'group'];
   const counters = { navigation: 0, preview: 0, keys: 0, ordinary: 0 };
   const original = new Map();
@@ -60,7 +60,8 @@
         const cardTitle = document.createElement('span'); cardTitle.dataset.fixtureCardText = ''; cardTitle.append(document.createTextNode('Guide de référence pour cette source. '));
         const excerpt = document.createElement('span'); excerpt.dataset.fixtureCardText = ''; excerpt.append(document.createTextNode('Cet extrait synthétique donne les informations visibles dans la carte d’aperçu.'));
         for (const textHost of [source, cardTitle, excerpt]) textHost.dataset.originalText = textHost.textContent;
-        card.append(node.querySelector('[data-d-component="favicon"]').cloneNode(true), source, cardTitle, excerpt);
+        const cardFavicon=node.querySelector('[data-d-component="favicon"]').cloneNode(true);cardFavicon.querySelector('img').removeAttribute('alt');
+        card.append(cardFavicon, source, cardTitle, excerpt);
         const onClick = () => { counters.navigation++; reportCounts(); };
         nativeProps(card, { type: 'button', 'aria-label': 'Open ' + sourceName, onClick }); card.addEventListener('click', onClick);
         callbackRefs.set(card, card.__reactProps$fixture); dialog.append(card); document.getElementById('fixture').append(dialog);
@@ -89,6 +90,7 @@
       const node = document.getElementById(id);
       verify(id + ' rôle attendu', node.getAttribute('role') === (adapted ? 'link' : 'button'));
       verify(id + ' attributs d’aperçu et focus conservés', node.getAttribute('aria-haspopup') === 'dialog' && node.getAttribute('tabindex') === '0' && node.getAttribute('aria-controls') === id + '-preview');
+      verify(id + ' favicon décorative ou alternative native restaurée',node.querySelector('[data-d-component="favicon"] img').getAttribute('alt')===(adapted?'':null));
       verify(id + ' callbacks natifs conservés', node.__reactProps$fixture === callbackRefs.get(node));
       const dialog = document.getElementById(id + '-preview'), card = dialog?.querySelector('button');
       if (card) {
@@ -98,6 +100,7 @@
         verify(id + ' nom par contenu, ou libellé natif après restauration', card.getAttribute('aria-label') === (cardAdapted ? null : card.__reactProps$fixture['aria-label']));
         verify(id + ' titre et extrait disponibles dans le DOM', !cardAdapted || (card.querySelectorAll('[data-fixture-card-text]').length === 3 && card.textContent.includes('Guide de référence') && card.textContent.includes('Cet extrait synthétique')));
         verify(id + ' nom du dialogue de sources', dialog.getAttribute('aria-label') === (cardAdapted ? 'Aperçu des sources : ' + node.textContent.trim() : null));
+        verify(id + ' favicon de carte décorative ou restaurée',card.querySelector('[data-d-component="favicon"] img').getAttribute('alt')===(cardAdapted?'':null));
         verify(id + ' callback et absence de href conservés', card.__reactProps$fixture === callbackRefs.get(card) && !card.hasAttribute('href'));
       }
     }

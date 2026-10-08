@@ -8,7 +8,7 @@ Ce groupe rassemble les difficultés de navigation dans les projets, la barre la
 
 Le relevé technique du 3 octobre identifie Windows 10 Home 22H2, build 19045.6466, et Chrome 154.0.8037.93. La version de JAWS 2021 utilisée reste inchangée. Le 7 octobre, l’utilisateur indique les mêmes résultats avec Edge et JAWS 2025 d’après son expérience, ainsi que dans un nouvel essai avec Opera. Ces retours lui sont attribués ; ils ne sont pas des essais mesurés par l’agent. Les [repères d’environnement](../ENVIRONNEMENT.md) centralisent cette provenance. La date d’apparition du changement d’interface, le 25 septembre à 23 h 16 à Bruxelles, vient de son récit, pas d’un horodatage de déploiement.
 
-L’[extension locale commune](../../extension), version 4.1.0, conserve les adaptations reçues dans leurs versions historiques respectives, indiquées ci-dessous. Elles ne signifient pas que chatgpt.com a été corrigé par OpenAI. Les validations des parcours adaptés restent acquises ; les procédures sont fournies pour permettre leur examen par les équipes.
+L’[extension locale commune](../../extension), version 4.1.1, conserve les adaptations reçues dans leurs versions historiques respectives, indiquées ci-dessous. Elles ne signifient pas que chatgpt.com a été corrigé par OpenAI. Les validations des parcours adaptés restent acquises ; les procédures sont fournies pour permettre leur examen par les équipes.
 
 ## Repères pour lire les preuves
 

@@ -2,11 +2,13 @@
  * link function without replacing React hosts or changing the native preview. */
 (() => {
   "use strict";
-  const marker = Symbol.for("chatgpt-navigation-continue.source-links-accessibility.v2");
+  const marker = Symbol.for("chatgpt-navigation-continue.source-links-accessibility.v3");
   if (window[marker]?.active) return;
+  window[Symbol.for("chatgpt-navigation-continue.source-links-accessibility.v2")]?.stop();
   window[Symbol.for("chatgpt-navigation-continue.source-links-accessibility.v1")]?.stop();
   let active = true, frame = null;
   const owned = new Map();
+  const nativeFavicons = new WeakSet();
   const triggerSelector = 'span[data-d-component="popover-trigger"]';
   const cardSelector = 'button[data-d-component="pressable"]';
   const french = () => /^fr(?:-|$)/i.test(document.documentElement?.lang || "");
@@ -15,6 +17,21 @@
     return key ? node[key] : null;
   };
   const favicon = node => !!node.querySelector('[data-d-component="favicon"] img');
+  function decorativeFavicon(node) {
+    const props = nativeProps(node), saved = owned.get(node)?.get("alt");
+    const alt = node.getAttribute("alt");
+    if (saved && alt !== saved.applied) nativeFavicons.add(node);
+    if (nativeFavicons.has(node)) return false;
+    // Only the unnamed favicon proved in the source hosts is decorative.
+    // Preserve native descriptions, explicit image semantics and focusability.
+    if (alt !== null && !(saved && alt === saved.applied)) return false;
+    for (const name of ["alt", "title", "aria-label", "aria-labelledby", "aria-describedby", "role", "tabindex"]) {
+      const nativeValue = props?.[name === "tabindex" ? "tabIndex" : name];
+      if (nativeValue != null && String(nativeValue).trim()) return false;
+      if (name !== "alt" && node.getAttribute(name)?.trim()) return false;
+    }
+    return true;
+  }
   function trigger(node) {
     const props = nativeProps(node), expanded = node.getAttribute("aria-expanded");
     return node.isConnected && node.tagName === "SPAN" &&
@@ -98,9 +115,19 @@
         }
       }
     }
+    // A presentation role on the favicon wrapper does not give its IMG an
+    // empty alternative; JAWS can fall back to its URL (private return proof:
+    // docs/preuves/2026-10-08-retour-jaws-apercu-4.1.0.json).
+    for (const [node, info] of [...candidates]) {
+      if (info?.kind === "dialog") continue;
+      for (const image of node.querySelectorAll('[data-d-component="favicon"] img')) {
+        if (decorativeFavicon(image)) candidates.set(image, { kind: "favicon" });
+      }
+    }
     for (const [node, entry] of owned) if (!candidates.has(node)) restore(node, entry);
     for (const [node, info] of candidates) {
       if (info?.kind === "dialog") { apply(node, "aria-label", info.label); continue; }
+      if (info?.kind === "favicon") { apply(node, "alt", ""); continue; }
       apply(node, "role", "link");
       // A short explicit name hides the title/snippet from normal link reading.
       // Let the browser derive the name from the existing visible card content.
@@ -119,12 +146,12 @@
   const observer = new MutationObserver(records => {
     if (records.some(record => record.type === "attributes" ||
       (record.type === "characterData" && !!record.target?.parentElement?.closest(cardSelector)) ||
-      (record.type === "childList" && !!record.target?.closest?.(cardSelector)) ||
+      (record.type === "childList" && !!record.target?.closest?.(`${triggerSelector}, ${cardSelector}`)) ||
       relevant(record.target) || [...record.addedNodes, ...record.removedNodes].some(relevant))) schedule();
   });
   observer.observe(document, { subtree: true, childList: true, characterData: true, attributes: true,
-    attributeFilter: ["lang", "role", "aria-label", "aria-labelledby", "aria-haspopup", "aria-expanded", "aria-controls", "id", "type", "tabindex", "data-d-component", "data-d-inline", "data-d-inline-text", "data-turn-key"] });
-  window[marker] = { version: 2, get active() { return active; }, stop() {
+    attributeFilter: ["lang", "role", "alt", "title", "aria-describedby", "aria-label", "aria-labelledby", "aria-haspopup", "aria-expanded", "aria-controls", "id", "type", "tabindex", "data-d-component", "data-d-inline", "data-d-inline-text", "data-turn-key"] });
+  window[marker] = { version: 3, get active() { return active; }, stop() {
     if (!active) return;
     active = false; observer.disconnect();
     if (frame !== null) cancelAnimationFrame(frame);

@@ -15,3 +15,5 @@ node --test "Original en français/Point 1 - Sélecteur et composition/reproduct
 | 1C — Historique involontaire | [prompt-history-accessibility.test.cjs](prompt-history-accessibility.test.cjs) : éditeur vide, gardes de menus/sélection/langue et démarrage précoce. | [Constats historiques](../preuves/constats-et-receptions.json), [réception du 7 octobre](../preuves/reception-native-2026-10-07.json) et [procédure 1C](PROCEDURES.md#1c--flèche-haut-ajoute-involontairement-un-ancien-prompt-dans-un-champ-vide). |
 
 Le DOM est simulé : ces tests ne reproduisent ni toute l’interface ChatGPT, ni la parole, ni le curseur PC virtuel de JAWS. Le cas du mode rapide de 1A est un constat produit reçu ; aucun traitement local ni test de correction de cette ambiguïté n’est revendiqué.
+
+Le [contrôle complémentaire du 8 octobre](../preuves/2026-10-08-selecteur-reception-edge.json) comprend 22 tests du sélecteur : préfixe Modèle ChatGPT, absence d’ajout d’un modèle non visible, formes natives, choix ambigus et restauration.
