@@ -11,7 +11,7 @@ The work represents **a substantial number of hours of personal testing and tech
 The order reflects the impact and the user's priorities. Each folder contains its detailed report and the evidence or reproductions needed to read it. Subpoints have stable identifiers and can be examined independently.
 
 1. [Model selector and composer](Point%201%20-%20Model%20selector%20and%20composer/REPORT.md): model and reasoning effort, localization of that effort, the add menu, unintentional prompt recall.
-2. [Reading and messages](Point%202%20-%20Reading%20and%20messages/REPORT.md): long conversations, reasoning, selection, copying and sharing, generated writing areas and navigation landmarks.
+2. [Reading and messages](Point%202%20-%20Reading%20and%20messages/REPORT.md): long conversations, reasoning, selection, copying and sharing, generated writing areas and navigation markers.
 3. [Navigation and focus](Point%203%20-%20Navigation%20and%20focus/REPORT.md): project actions, sidebar, pagination, closing menus and panels, the Explorer case, the response-rating menu.
 4. [Semantics and localization](Point%204%20-%20Semantics%20and%20localization/REPORT.md): role descriptions, destination states, redundant groups, entering a blocking mode on the first pass, and project controls in English.
 

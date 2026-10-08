@@ -2,6 +2,8 @@
 
 This Point covers controls used before sending: recognizing the reasoning choice, choosing a function in the add menu, and composing without unintentionally recalling a prompt. Each subpoint begins with the problem and expected result, then presents the observations, mechanism, and local illustration.
 
+French announcements and native labels are retained as evidence; their meaning is explained in the [French-label glossary](../METHODOLOGY.md#french-labels-used-in-the-reports).
+
 The [conditions and versions](../ENVIRONMENT.md) are shared. The [site procedures](reproductions/PROCEDURES.md), [native evidence and JAWS feedback](evidence/native-user-validation-2026-10-07.json), and [isolated tests](reproductions/RUNNING_TESTS.md) allow independent examination. The supplied demonstrator is **4.1.2**.
 
 ## 1A — The closed selector does not allow the choice to be identified quickly

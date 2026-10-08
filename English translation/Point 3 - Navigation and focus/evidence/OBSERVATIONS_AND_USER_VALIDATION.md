@@ -46,7 +46,7 @@ Attached synthetic checks cover association, already-correct native return, actu
 |---|---|---|
 | [Entry aligned with destination](3E-explore-entry-2026-10-05.json) | Container → destination transfer; Escape closes then restores the button, Down Arrow reopens natively. | Bounded entry validated by the user; exit concern still present at this stage. |
 | [Return after lifecycle](3E-exit-lifecycle-2026-10-05.json) | Panel removed, return to the button after native lifecycle, focus still present at 250 ms. | Physical result unchanged; variant not integrated. |
-| [Popup-property comparison](3E-popup-ownership-2026-10-05.json) | Panel removal, exact return, and popup property absent at focus. | Qualified positive human feedback; no internal JAWS state measured. |
+| [Popup-property comparison](3E-popup-property-2026-10-05.json) | Panel removal, exact return, and popup property absent at focus. | Qualified positive human feedback; no internal JAWS state measured. |
 | [Integrated user validation of October 5](3E-user-validation-3.4.0-2026-10-05.json) | Expected behavior declared, including after user unpinning. | Physical user validation of the integrated distribution; pinning/unpinning actions are attributed to human feedback. |
 
 Independent native comparison: Enter focused DIV dialog tabindex=-1; Down Arrow focused the first destination, Projets (Projects). The twelve destination/pinning buttons had the same roles/tabindex in both observed openings. The closed button exposed hasPopup=dialog in the Chrome tree; the property is valid for the dialog panel. The final popup-property adaptation is an interoperability workaround and does not demonstrate a native semantic error.
