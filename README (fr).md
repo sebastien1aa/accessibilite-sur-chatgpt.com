@@ -38,7 +38,7 @@ L’ordre regroupe les problèmes par parcours et priorité. Les demandes produi
 | Cas | Problème ou demande |
 |---|---|
 | [2A](Original%20en%20fran%C3%A7ais/Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2a--parcourir-une-longue-conversation-sans-perdre-les-messages) | Ruptures de lecture des longues conversations et tours hors écran non montés. |
-| [2B](Original%20en%20fran%C3%A7ais/Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2b--repérer-la-réponse-et-parcourir-le-raisonnement) | Repère assistant tardif, activité avant les étapes accomplies et légende répétée ; GPT‑5.6 et GPT‑6 Élevé distingués. |
+| [2B](Original%20en%20fran%C3%A7ais/Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2b--repérer-la-réponse-et-parcourir-le-raisonnement) | Titre « ChatGPT a dit » présent seulement après la fin de la réflexion avec GPT‑5.6 Sol ; activité avant les étapes accomplies dans les deux modèles et légende répétée ; GPT‑6 Élevé possède son titre initial. |
 | [2C](Original%20en%20fran%C3%A7ais/Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2c--sélection-étendue-et-informations-qui-laccompagnent) | Sélection interrompue par les sauts ; inclusion des métadonnées dans la copie comme demande produit distincte. |
 | [2D](Original%20en%20fran%C3%A7ais/Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2d--comprendre-la-réussite-de-copier-et-partager-sans-perdre-sa-position) | Copier/Partager sans confirmation audible fiable ni maintien de position ; disponibilité inégalement exposée. |
 | [2E](Original%20en%20fran%C3%A7ais/Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2e--poignées-inactives-des-champs-de-rédaction) | Poignées invisibles et inactives des champs de rédaction exposées comme boutons. |

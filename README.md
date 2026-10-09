@@ -40,7 +40,7 @@ The order groups issues by navigation flow and priority. Product or organization
 | Case | Issue or request |
 |---|---|
 | [2A](English%20translation/Point%202%20-%20Reading%20and%20messages/REPORT.md#2a--navigating-a-long-conversation-without-losing-messages) | Reading disruptions in long conversations and off-screen turns that are not mounted. |
-| [2B](English%20translation/Point%202%20-%20Reading%20and%20messages/REPORT.md#2b--locating-the-response-and-navigating-reasoning) | Late assistant heading, activity before completed steps and repeated caption; GPT-5.6 and GPT-6 with High reasoning effort distinguished. |
+| [2B](English%20translation/Point%202%20-%20Reading%20and%20messages/REPORT.md#2b--locating-the-response-and-navigating-reasoning) | « ChatGPT a dit » heading present only after reasoning has finished with GPT-5.6 Sol; activity before completed steps in both models and repeated caption; GPT-6 with High reasoning effort has its initial heading. |
 | [2C](English%20translation/Point%202%20-%20Reading%20and%20messages/REPORT.md#2c--extended-selection-and-accompanying-information) | Selection interrupted by jumps; including metadata in copied text as a separate product request. |
 | [2D](English%20translation/Point%202%20-%20Reading%20and%20messages/REPORT.md#2d--understanding-copy-and-share-success-without-losing-position) | Copy/Share without reliable audible confirmation or preservation of position; availability exposed inconsistently. |
 | [2E](English%20translation/Point%202%20-%20Reading%20and%20messages/REPORT.md#2e--inactive-writing-block-handles) | Invisible, inactive writing-block handles exposed as buttons. |

@@ -2,9 +2,9 @@
 
 Les retours natifs détaillés du 7 octobre actualisent les annonces et comportements des quatre Points. Les parcours adaptés déjà reçus restent acquis. Les [versions et confirmations](ENVIRONNEMENT.md) définissent le contexte de reproduction.
 
-## Titre assistant et raisonnement
+## Titre « ChatGPT a dit » et raisonnement
 
-Avec GPT‑5.6, le titre assistant n’apparaît qu’après la réflexion. Avec **GPT‑6 en raisonnement Élevé**, les tours terminés et les observations ultérieures montrent des titres de commentaires intermédiaires ; ceux-ci ne garantissent pas un repère de locuteur dès le début. Dans les deux rendus, l’activité courante précède les détails accomplis dans le parcours JAWS. Le [contrat du tour terminé](Point%202%20-%20Lecture%20et%20messages/preuves/2026-10-07-contrat-raisonnement-gpt6.json), les [régions observées](Point%202%20-%20Lecture%20et%20messages/preuves/2026-10-08-regions-raisonnement.json) et les réceptions positives sont présentés en [2B](Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2b--repérer-la-réponse-et-parcourir-le-raisonnement).
+Avec GPT‑5.6 Sol, le titre « ChatGPT a dit » n’apparaît qu’après la fin de la réflexion et demeure alors normalement présent une fois la réponse intégrée au chat. Avec **GPT‑6 en raisonnement Élevé**, le titre « ChatGPT a dit » est présent dès le début de la réflexion ; les tours terminés présentent également des titres de commentaires intermédiaires. Dans les deux rendus, l’activité courante précède les détails accomplis dans le parcours JAWS. Le [contrat du tour terminé](Point%202%20-%20Lecture%20et%20messages/preuves/2026-10-07-contrat-raisonnement-gpt6.json), les [régions observées](Point%202%20-%20Lecture%20et%20messages/preuves/2026-10-08-regions-raisonnement.json) et les réceptions positives sont présentés en [2B](Point%202%20-%20Lecture%20et%20messages/RAPPORT.md#2b--repérer-la-réponse-et-parcourir-le-raisonnement).
 
 ## Sélection et copie
 

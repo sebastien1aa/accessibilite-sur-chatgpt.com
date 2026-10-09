@@ -18,14 +18,14 @@ Les parcours concernent le site natif, extension désactivée, avec JAWS et son 
 **Conditions :** GPT‑6 en raisonnement **Élevé**, puis comparaison séparée avec GPT‑5.6 au même niveau ; détails de raisonnement ouverts lorsqu’ils sont proposés.
 
 1. Envoyer un message qui déclenche un raisonnement et parcourir le début de la réponse pendant la génération.
-2. Vérifier si « ChatGPT a dit » permet d’identifier le locuteur dès le début de la réflexion, puis observer les titres des commentaires intermédiaires et de la réponse finale.
-3. Dans les détails ouverts, parcourir les étapes déjà effectuées et l’activité en cours. Comparer leur ordre avec celui du repère assistant. Continuer lors des nouveaux commentaires intermédiaires.
+2. Comparer le titre « ChatGPT a dit » présent dès le début avec GPT‑6 et son apparition seulement après la fin de la réflexion avec GPT‑5.6 Sol et son maintien une fois la réponse intégrée au chat, puis observer les titres des commentaires intermédiaires et de la réponse finale.
+3. Dans les détails ouverts, parcourir les étapes déjà effectuées et l’activité en cours. Comparer leur ordre avec celui du titre « ChatGPT a dit ». Continuer lors des nouveaux commentaires intermédiaires.
 4. Laisser la génération se terminer. Relire le bouton du raisonnement, puis utiliser Flèche bas pour chercher une seconde ligne reprenant exactement son activité ou « Réfléchi pendant [durée] ».
 5. Dans une réponse présentant des cartes d’analyse autonomes, replier le raisonnement principal et parcourir les cartes ; comparer leur exposition avec l’état replié.
 
-**Constat :** GPT‑5.6 n’expose le repère de locuteur qu’après la réflexion. GPT‑6 peut produire plusieurs commentaires avec titres, sans garantir ce repère au début. L’activité courante précède les détails accomplis dans le parcours JAWS ; la légende d’activité ou de durée peut être exposée deux fois. Les cartes autonomes de l’exemple documenté restent indépendantes du repli principal.
+**Constat :** GPT‑5.6 Sol n’expose le titre « ChatGPT a dit » qu’après la fin de la réflexion ; il demeure alors normalement présent une fois la réponse intégrée au chat. GPT‑6 expose le titre « ChatGPT a dit » dès le début et peut produire plusieurs commentaires avec titres. L’activité courante précède les détails accomplis dans le parcours JAWS ; la légende d’activité ou de durée peut être exposée deux fois. Les cartes autonomes de l’exemple documenté restent indépendantes du repli principal.
 
-**Résultat attendu :** repère assistant dès le début, détails accomplis puis activité courante dans la continuité de lecture, commande Afficher/Masquer explicite pendant l’activité, durée finale sans doublon. Les cartes autonomes doivent pouvoir être parcourues et repliées de façon cohérente en conservant leurs commandes natives.
+**Résultat attendu :** titre « ChatGPT a dit » dès le début avec GPT‑5.6, titre natif initial conservé avec GPT‑6, détails accomplis puis activité courante dans la continuité de lecture pour les deux modèles, commande Afficher/Masquer explicite pendant l’activité, durée finale sans doublon. Les cartes autonomes doivent pouvoir être parcourues et repliées de façon cohérente en conservant leurs commandes natives.
 
 ## 2C — Sélection et copie de plusieurs messages
 

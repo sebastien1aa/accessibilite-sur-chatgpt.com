@@ -18,14 +18,14 @@ These workflows concern the native site, with the extension disabled, using JAWS
 **Conditions:** GPT‑6 with **High** reasoning, followed by a separate comparison with GPT‑5.6 at the same level; reasoning details expanded when offered.
 
 1. Send a message that triggers reasoning and navigate through the start of the response during generation.
-2. Check whether « ChatGPT a dit » identifies the speaker from the start of reasoning, then observe the headings for intermediate comments and the final response.
-3. In the expanded details, navigate through the steps already completed and the current activity. Compare their order with that of the assistant marker. Continue as new intermediate comments appear.
+2. Compare the « ChatGPT a dit » heading present from the start with GPT-6 and its appearance only after reasoning has finished with GPT-5.6 Sol and its continued presence once the response has been added to the chat, then observe headings for intermediate comments and the final response.
+3. In the expanded details, navigate through the steps already completed and the current activity. Compare their order with that of the « ChatGPT a dit » heading. Continue as new intermediate comments appear.
 4. Let generation finish. Read the reasoning button again, then use Down Arrow to look for a second line repeating exactly its activity or « Réfléchi pendant [durée] ».
 5. In a response containing standalone analysis cards, collapse the main reasoning and navigate through the cards; compare their exposure with the collapsed state.
 
-**Finding:** GPT‑5.6 exposes the speaker marker only after reasoning. GPT‑6 can produce several comments with headings, without guaranteeing this marker at the start. The current activity precedes the completed details in JAWS navigation; the activity or duration caption can be exposed twice. The standalone cards in the documented example remain independent of the main collapse state.
+**Finding:** GPT-5.6 Sol exposes the « ChatGPT a dit » heading only after reasoning has finished; it then remains normally present once the response has been added to the chat. GPT-6 exposes the « ChatGPT a dit » heading from the start and can produce several comments with headings. The current activity precedes the completed details in JAWS navigation; the activity or duration caption can be exposed twice. The standalone cards in the documented example remain independent of the main collapse state.
 
-**Expected result:** an assistant marker from the start, completed details followed by the current activity in continuous reading, an explicit Show/Hide control during activity, and a final duration without duplication. Standalone cards should allow consistent navigation and collapsing while retaining their native controls.
+**Expected result:** an « ChatGPT a dit » heading from the start with GPT-5.6, preservation of the native initial heading with GPT-6, completed details followed by the current activity in continuous reading for both models, an explicit Show/Hide control during activity, and a final duration without duplication. Standalone cards should allow consistent navigation and collapsing while retaining their native controls.
 
 ## 2C — Selecting and copying several messages
 

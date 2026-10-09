@@ -2,9 +2,9 @@
 
 Detailed native-site feedback from 7 October updates the announcements and behavior in the four Points. Previously validated adapted flows remain accepted. The [versions and confirmations](ENVIRONMENT.md) define the reproduction context.
 
-## Assistant heading and reasoning
+## « ChatGPT a dit » heading and reasoning
 
-With GPT-5.6, the assistant heading appears only after thinking. With **GPT-6 using High reasoning effort**, completed turns and subsequent observations show intermediate commentary headings; these do not guarantee a speaker heading from the start. In both renderings, the current activity precedes the completed details in JAWS navigation. The [completed-turn contract](Point%202%20-%20Reading%20and%20messages/evidence/2026-10-07-reasoning-contract-gpt6.json), [observed regions](Point%202%20-%20Reading%20and%20messages/evidence/2026-10-08-reasoning-regions.json) and positive user validation are presented in [2B](Point%202%20-%20Reading%20and%20messages/REPORT.md#2b--locating-the-response-and-navigating-reasoning).
+With GPT-5.6 Sol, the « ChatGPT a dit » heading appears only after reasoning has finished and then remains normally present once the response has been added to the chat. With **GPT-6 using High reasoning effort**, the « ChatGPT a dit » heading is present from the start of reasoning; completed turns also contain intermediate commentary headings. In both renderings, the current activity precedes the completed details in JAWS navigation. The [completed-turn contract](Point%202%20-%20Reading%20and%20messages/evidence/2026-10-07-reasoning-contract-gpt6.json), [observed regions](Point%202%20-%20Reading%20and%20messages/evidence/2026-10-08-reasoning-regions.json) and positive user validation are presented in [2B](Point%202%20-%20Reading%20and%20messages/REPORT.md#2b--locating-the-response-and-navigating-reasoning).
 
 ## Selection and copying
 
