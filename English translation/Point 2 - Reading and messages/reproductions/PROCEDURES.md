@@ -25,7 +25,7 @@ These workflows concern the native site, with the extension disabled, using JAWS
 
 **Finding:** GPT-5.6 Sol exposes the « ChatGPT a dit » heading only after reasoning has finished; it then remains normally present once the response has been added to the chat. GPT-6 exposes the « ChatGPT a dit » heading from the start and can produce several comments with headings. The current activity precedes the completed details in JAWS navigation; the activity or duration caption can be exposed twice. The standalone cards in the documented example remain independent of the main collapse state.
 
-**Expected result:** an « ChatGPT a dit » heading from the start with GPT-5.6, preservation of the native initial heading with GPT-6, completed details followed by the current activity in continuous reading for both models, an explicit Show/Hide control during activity, and a final duration without duplication. Standalone cards should allow consistent navigation and collapsing while retaining their native controls.
+**Expected result:** a « ChatGPT a dit » heading from the start with GPT-5.6, preservation of the native initial heading with GPT-6, completed details followed by the current activity in continuous reading for both models, an explicit Show/Hide control during activity, and a final duration without duplication. Standalone cards should allow consistent navigation and collapsing while retaining their native controls.
 
 ## 2C — Selecting and copying several messages
 

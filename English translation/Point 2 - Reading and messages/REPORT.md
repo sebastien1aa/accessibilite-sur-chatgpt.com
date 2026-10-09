@@ -28,7 +28,7 @@ The [conditions and versions](../ENVIRONMENT.md) are shared. The [site procedure
 
 **Problem.** With GPT-5.6, the « ChatGPT a dit » heading is missing at the start of reasoning. GPT-6 has a « ChatGPT a dit » heading from the start of reasoning. In both models, the current activity precedes completed details and its caption can be read twice.
 
-**Expected result.** An « ChatGPT a dit » heading from the start with GPT-5.6 and preservation of the native heading with GPT-6; completed steps followed by the current activity in both models, an explicit control, and the final duration without duplication.
+**Expected result.** A « ChatGPT a dit » heading from the start with GPT-5.6 and preservation of the native heading with GPT-6; completed steps followed by the current activity in both models, an explicit control, and the final duration without duplication.
 
 **Reproduction.** [Workflow 2B](reproductions/PROCEDURES.md#2b--markers-and-reasoning-order).
 
